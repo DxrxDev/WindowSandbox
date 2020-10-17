@@ -17,6 +17,10 @@ INT CALLBACK WinMain(
 			// TranslateMessage will post auxilliary WM_CHAR messages from key msgs
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
+
+			if (window.kbd.KeyIsPressed(VK_SPACE)) {
+				MessageBoxA(nullptr, "SHITS GOIN DOWN", "YOOOO", MB_OK | MB_ICONINFORMATION);
+			}
 		}
 
 		// check if GetMessage call itself borked

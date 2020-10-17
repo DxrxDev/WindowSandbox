@@ -161,11 +161,13 @@
   <ItemGroup>
     <ClCompile Include="src\EntryPoint.cpp" />
     <ClCompile Include="src\Exception.cpp" />
+    <ClCompile Include="src\Keyboard.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="res\resource.h" />
     <ClInclude Include="src\Exception.h" />
+    <ClInclude Include="src\Keyboard.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -175,7 +177,6 @@
     <None Include="res\WindowSandbox.aps" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Logo.ico" />
     <Image Include="res\Logo.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

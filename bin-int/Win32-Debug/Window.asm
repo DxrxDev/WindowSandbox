@@ -48,6 +48,8 @@ __4324C6B3_xutility DB 01H
 __A58979FC_xmemory DB 01H
 __D15AFF60_xstring DB 01H
 __3AFA803E_string DB 01H
+__0ED96A82_algorithm DB 01H
+__781ADC3E_Keyboard@h DB 01H
 __0A4FAB91_cmath DB 01H
 __6D5B120B_stdexcept DB 01H
 __160863A3_xcall_once@h DB 01H
@@ -63,11 +65,14 @@ __1597A171_xiosbase DB 01H
 __90E3ED46_xlocnum DB 01H
 __165C22CB_ios DB 01H
 __D8B84C1C_Window@h DB 01H
+__E561F523_queue DB 01H
 __EA726F75_Window@cpp DB 01H
 __BD0AA72F_sstream DB 01H
 __7EA464AF_istream DB 01H
 __1D745195_ostream DB 01H
 __6FFBAAB7_streambuf DB 01H
+__0657B1E2_deque DB 01H
+__3990E35C_bitset DB 01H
 __528871F3_iterator DB 01H
 __3E6EDFAA_iosfwd DB 01H
 __CF1C1A3F_utility DB 01H
@@ -154,6 +159,57 @@ PUBLIC	??1?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types
 PUBLIC	??1Exception@@UAE@XZ				; Exception::~Exception
 PUBLIC	??0Exception@@QAE@ABV0@@Z			; Exception::Exception
 PUBLIC	??_GException@@UAEPAXI@Z			; Exception::`scalar deleting destructor'
+PUBLIC	??0Keyboard@@QAE@XZ				; Keyboard::Keyboard
+PUBLIC	??0?$bitset@$0BAA@@std@@QAE@XZ			; std::bitset<256>::bitset<256>
+PUBLIC	??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ	; std::allocator<Keyboard::Event>::allocator<Keyboard::Event>
+PUBLIC	?deallocate@?$allocator@VEvent@Keyboard@@@std@@QAEXQAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event>::deallocate
+PUBLIC	?deallocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEXQAPAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event *>::deallocate
+PUBLIC	??0?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::deque<Keyboard::Event,std::allocator<Keyboard::Event> >
+PUBLIC	??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::~deque<Keyboard::Event,std::allocator<Keyboard::Event> >
+PUBLIC	?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::empty
+PUBLIC	?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::pop_back
+PUBLIC	?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Tidy
+PUBLIC	?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_off
+PUBLIC	?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getblock
+PUBLIC	?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_all
+PUBLIC	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+PUBLIC	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+PUBLIC	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+PUBLIC	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+PUBLIC	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
+PUBLIC	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+PUBLIC	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+PUBLIC	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+PUBLIC	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+PUBLIC	??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >
+PUBLIC	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Getblock
+PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Get_first
+PUBLIC	??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >
+PUBLIC	??1?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::~queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >
+PUBLIC	?deallocate@?$allocator@PAD@std@@QAEXQAPADI@Z	; std::allocator<char *>::deallocate
+PUBLIC	??0?$deque@DV?$allocator@D@std@@@std@@QAE@XZ	; std::deque<char,std::allocator<char> >::deque<char,std::allocator<char> >
+PUBLIC	??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ	; std::deque<char,std::allocator<char> >::~deque<char,std::allocator<char> >
+PUBLIC	?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ ; std::deque<char,std::allocator<char> >::empty
+PUBLIC	?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ ; std::deque<char,std::allocator<char> >::pop_back
+PUBLIC	?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ ; std::deque<char,std::allocator<char> >::_Tidy
+PUBLIC	?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z ; std::deque<char,std::allocator<char> >::_Orphan_off
+PUBLIC	?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z ; std::deque<char,std::allocator<char> >::_Getblock
+PUBLIC	?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ ; std::deque<char,std::allocator<char> >::_Orphan_all
+PUBLIC	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+PUBLIC	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+PUBLIC	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+PUBLIC	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+PUBLIC	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
+PUBLIC	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
+PUBLIC	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ; std::deque<char,std::allocator<char> >::_Myoff
+PUBLIC	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mysize
+PUBLIC	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ; std::deque<char,std::allocator<char> >::_Mysize
+PUBLIC	??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ ; std::_Deque_val<std::_Deque_simple_types<char> >::_Deque_val<std::_Deque_simple_types<char> >
+PUBLIC	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<char> >::_Getblock
+PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Get_first
+PUBLIC	??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ ; std::queue<char,std::deque<char,std::allocator<char> > >::queue<char,std::deque<char,std::allocator<char> > >
+PUBLIC	??1?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ ; std::queue<char,std::deque<char,std::allocator<char> > >::~queue<char,std::deque<char,std::allocator<char> > >
+PUBLIC	??1Keyboard@@QAE@XZ				; Keyboard::~Keyboard
 PUBLIC	??0WindowException@Window@@QAE@HPBDJ@Z		; Window::WindowException::WindowException
 PUBLIC	?what@WindowException@Window@@UBEPBDXZ		; Window::WindowException::what
 PUBLIC	?GetType@WindowException@Window@@UBEPBDXZ	; Window::WindowException::GetType
@@ -206,18 +262,25 @@ PUBLIC	??1sentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QAE@XZ ; std::basi
 PUBLIC	??Bsentry@?$basic_ostream@DU?$char_traits@D@std@@@std@@QBE_NXZ ; std::basic_ostream<char,std::char_traits<char> >::sentry::operator bool
 PUBLIC	??$min@I@std@@YAABIABI0@Z			; std::min<unsigned int>
 PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
+PUBLIC	??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
+PUBLIC	??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z ; std::exchange<std::_Container_proxy *,std::nullptr_t>
 PUBLIC	??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
+PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1><>
+PUBLIC	??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
+PUBLIC	??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><Keyboard::Event>
+PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1><>
 PUBLIC	??0?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@std@@@std@@QAE@AAV?$allocator@U_Container_proxy@std@@@1@AAU_Container_base12@1@@Z ; std::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >
 PUBLIC	??1?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@std@@@std@@QAE@XZ ; std::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >::~_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >
-PUBLIC	??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
-PUBLIC	??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
 PUBLIC	??$addressof@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@AAV10@@Z ; std::addressof<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >
 PUBLIC	??$move@AAV?$allocator@D@std@@@std@@YA$$QAV?$allocator@D@0@AAV10@@Z ; std::move<std::allocator<char> &>
 PUBLIC	??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@D@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><std::allocator<char> >
 PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><>
 PUBLIC	??$_Unfancy@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@PAU10@@Z ; std::_Unfancy<std::_Container_proxy>
 PUBLIC	??$addressof@D@std@@YAPADAAD@Z			; std::addressof<char>
+PUBLIC	??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<char *>::allocator<char *><char>
 PUBLIC	??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z	; std::_Destroy_in_place<char *>
+PUBLIC	??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ; std::allocator<Keyboard::Event *>::allocator<Keyboard::Event *><Keyboard::Event>
+PUBLIC	??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z ; std::_Destroy_in_place<Keyboard::Event *>
 PUBLIC	??R<lambda_9366063389c5f42a00a5088cf24e69de>@@QBEXQADIQBD@Z ; <lambda_9366063389c5f42a00a5088cf24e69de>::operator()
 PUBLIC	??$_Reallocate_for@V<lambda_9366063389c5f42a00a5088cf24e69de>@@PBD@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEAAV01@IV<lambda_9366063389c5f42a00a5088cf24e69de>@@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Reallocate_for<<lambda_9366063389c5f42a00a5088cf24e69de>,char const *>
 PUBLIC	??$_Construct_in_place@PADABQAD@std@@YAXAAPADABQAD@Z ; std::_Construct_in_place<char *,char * const &>
@@ -227,6 +290,9 @@ PUBLIC	??$_Get_size_of_n@$00@std@@YAII@Z		; std::_Get_size_of_n<1>
 PUBLIC	??$_Allocate@$07U_Default_allocate_traits@std@@$0A@@std@@YAPAXI@Z ; std::_Allocate<8,std::_Default_allocate_traits,0>
 PUBLIC	??$_Deallocate@$07$0A@@std@@YAXPAXI@Z		; std::_Deallocate<8,0>
 PUBLIC	??$_Get_size_of_n@$07@std@@YAII@Z		; std::_Get_size_of_n<8>
+PUBLIC	??$destroy@D@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QAD@Z ; std::_Default_allocator_traits<std::allocator<char> >::destroy<char>
+PUBLIC	??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z ; std::_Unfancy<Keyboard::Event>
+PUBLIC	??$destroy@VEvent@Keyboard@@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@@Z ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::destroy<Keyboard::Event>
 PUBLIC	??$addressof@V?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@YAPAV?$_String_val@U?$_Simple_types@D@std@@@0@AAV10@@Z ; std::addressof<std::_String_val<std::_Simple_types<char> > >
 PUBLIC	??$addressof@$$CBV?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@YAPBV?$_String_val@U?$_Simple_types@D@std@@@0@ABV10@@Z ; std::addressof<std::_String_val<std::_Simple_types<char> > const >
 PUBLIC	??$?0ABV?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@ABV?$allocator@D@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><std::allocator<char> const &>
@@ -283,6 +349,12 @@ PUBLIC	??_C@_0O@BLDOFIJ@?$FLDescription?$FN@		; `string'
 PUBLIC	??_C@_0N@CHALHMAE@?$FLError?5Code?$FN@		; `string'
 PUBLIC	??_C@_0BB@DAPHOIPK@Window?5Exception@		; `string'
 PUBLIC	??_C@_0BF@KPHDJHEI@Undefined?5Error?5Code@	; `string'
+PUBLIC	??_C@_0BH@EDKEEENI@deque?5empty?5before?5pop@	; `string'
+PUBLIC	??_C@_0GG@LDDGPICM@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsof@ ; `string'
+PUBLIC	??_C@_1MM@LIKMHCEL@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe@ ; `string'
+PUBLIC	??_C@_1GO@EGGDOJHA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ ; `string'
+PUBLIC	??_C@_1DC@NJAACHCD@?$AA?$CC?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAe?$AAm?$AAp?$AAt?$AAy?$AA?5?$AAb?$AAe@ ; `string'
+PUBLIC	??_C@_1LC@OPOCPHBN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
 PUBLIC	??_C@_1EO@GFNCMDLA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAl?$AAl?$AAo?$AAc?$AAa?$AAt?$AAe?$AA_@ ; `string'
 PUBLIC	??_R4exception@std@@6B@				; std::exception::`RTTI Complete Object Locator'
 PUBLIC	??_R3exception@std@@8				; std::exception::`RTTI Class Hierarchy Descriptor'
@@ -374,6 +446,11 @@ EXTRN	?what@Exception@@UBEPBDXZ:PROC			; Exception::what
 EXTRN	?GetType@Exception@@UBEPBDXZ:PROC		; Exception::GetType
 EXTRN	?GetOriginString@Exception@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ:PROC ; Exception::GetOriginString
 EXTRN	??_EException@@UAEPAXI@Z:PROC			; Exception::`vector deleting destructor'
+EXTRN	?AutorepeatIsEnabled@Keyboard@@QBE_NXZ:PROC	; Keyboard::AutorepeatIsEnabled
+EXTRN	?OnKeyPressed@Keyboard@@AAEXE@Z:PROC		; Keyboard::OnKeyPressed
+EXTRN	?OnKeyReleased@Keyboard@@AAEXE@Z:PROC		; Keyboard::OnKeyReleased
+EXTRN	?OnChar@Keyboard@@AAEXD@Z:PROC			; Keyboard::OnChar
+EXTRN	?ClearState@Keyboard@@AAEXXZ:PROC		; Keyboard::ClearState
 EXTRN	??_EWindowException@Window@@UAEPAXI@Z:PROC	; Window::WindowException::`vector deleting destructor'
 EXTRN	__imp_?good@ios_base@std@@QBE_NXZ:PROC
 EXTRN	__imp_?flags@ios_base@std@@QBEHXZ:PROC
@@ -863,6 +940,75 @@ CONST	SEGMENT
 	DB	00H, 't', 00H, 'o', 00H, 'r', 00H, '_', 00H, 'a', 00H, 'l', 00H
 	DB	'i', 00H, 'g', 00H, 'n', 00H, 'e', 00H, 'd', 00H, 00H, 00H ; `string'
 CONST	ENDS
+;	COMDAT ??_C@_1LC@OPOCPHBN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?$DM?$AAc?$AAl?$AAa?$AAs@
+CONST	SEGMENT
+??_C@_1LC@OPOCPHBN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ DB 's'
+	DB	00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, 'd', 00H, 'e', 00H
+	DB	'q', 00H, 'u', 00H, 'e', 00H, '<', 00H, 'c', 00H, 'l', 00H, 'a'
+	DB	00H, 's', 00H, 's', 00H, ' ', 00H, 'K', 00H, 'e', 00H, 'y', 00H
+	DB	'b', 00H, 'o', 00H, 'a', 00H, 'r', 00H, 'd', 00H, ':', 00H, ':'
+	DB	00H, 'E', 00H, 'v', 00H, 'e', 00H, 'n', 00H, 't', 00H, ',', 00H
+	DB	'c', 00H, 'l', 00H, 'a', 00H, 's', 00H, 's', 00H, ' ', 00H, 's'
+	DB	00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, 'a', 00H, 'l', 00H
+	DB	'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H, 't', 00H, 'o', 00H, 'r'
+	DB	00H, '<', 00H, 'c', 00H, 'l', 00H, 'a', 00H, 's', 00H, 's', 00H
+	DB	' ', 00H, 'K', 00H, 'e', 00H, 'y', 00H, 'b', 00H, 'o', 00H, 'a'
+	DB	00H, 'r', 00H, 'd', 00H, ':', 00H, ':', 00H, 'E', 00H, 'v', 00H
+	DB	'e', 00H, 'n', 00H, 't', 00H, '>', 00H, ' ', 00H, '>', 00H, ':'
+	DB	00H, ':', 00H, 'p', 00H, 'o', 00H, 'p', 00H, '_', 00H, 'b', 00H
+	DB	'a', 00H, 'c', 00H, 'k', 00H, 00H, 00H	; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1DC@NJAACHCD@?$AA?$CC?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAe?$AAm?$AAp?$AAt?$AAy?$AA?5?$AAb?$AAe@
+CONST	SEGMENT
+??_C@_1DC@NJAACHCD@?$AA?$CC?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAe?$AAm?$AAp?$AAt?$AAy?$AA?5?$AAb?$AAe@ DB '"'
+	DB	00H, 'd', 00H, 'e', 00H, 'q', 00H, 'u', 00H, 'e', 00H, ' ', 00H
+	DB	'e', 00H, 'm', 00H, 'p', 00H, 't', 00H, 'y', 00H, ' ', 00H, 'b'
+	DB	00H, 'e', 00H, 'f', 00H, 'o', 00H, 'r', 00H, 'e', 00H, ' ', 00H
+	DB	'p', 00H, 'o', 00H, 'p', 00H, '"', 00H, 00H, 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1GO@EGGDOJHA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?$DM?$AAc?$AAh?$AAa?$AAr@
+CONST	SEGMENT
+??_C@_1GO@EGGDOJHA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?$DM?$AAc?$AAh?$AAa?$AAr@ DB 's'
+	DB	00H, 't', 00H, 'd', 00H, ':', 00H, ':', 00H, 'd', 00H, 'e', 00H
+	DB	'q', 00H, 'u', 00H, 'e', 00H, '<', 00H, 'c', 00H, 'h', 00H, 'a'
+	DB	00H, 'r', 00H, ',', 00H, 'c', 00H, 'l', 00H, 'a', 00H, 's', 00H
+	DB	's', 00H, ' ', 00H, 's', 00H, 't', 00H, 'd', 00H, ':', 00H, ':'
+	DB	00H, 'a', 00H, 'l', 00H, 'l', 00H, 'o', 00H, 'c', 00H, 'a', 00H
+	DB	't', 00H, 'o', 00H, 'r', 00H, '<', 00H, 'c', 00H, 'h', 00H, 'a'
+	DB	00H, 'r', 00H, '>', 00H, ' ', 00H, '>', 00H, ':', 00H, ':', 00H
+	DB	'p', 00H, 'o', 00H, 'p', 00H, '_', 00H, 'b', 00H, 'a', 00H, 'c'
+	DB	00H, 'k', 00H, 00H, 00H			; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1MM@LIKMHCEL@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe@
+CONST	SEGMENT
+??_C@_1MM@LIKMHCEL@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe@ DB 'C'
+	DB	00H, ':', 00H, '\', 00H, 'P', 00H, 'r', 00H, 'o', 00H, 'g', 00H
+	DB	'r', 00H, 'a', 00H, 'm', 00H, ' ', 00H, 'F', 00H, 'i', 00H, 'l'
+	DB	00H, 'e', 00H, 's', 00H, ' ', 00H, '(', 00H, 'x', 00H, '8', 00H
+	DB	'6', 00H, ')', 00H, '\', 00H, 'M', 00H, 'i', 00H, 'c', 00H, 'r'
+	DB	00H, 'o', 00H, 's', 00H, 'o', 00H, 'f', 00H, 't', 00H, ' ', 00H
+	DB	'V', 00H, 'i', 00H, 's', 00H, 'u', 00H, 'a', 00H, 'l', 00H, ' '
+	DB	00H, 'S', 00H, 't', 00H, 'u', 00H, 'd', 00H, 'i', 00H, 'o', 00H
+	DB	'\', 00H, '2', 00H, '0', 00H, '1', 00H, '9', 00H, '\', 00H, 'C'
+	DB	00H, 'o', 00H, 'm', 00H, 'm', 00H, 'u', 00H, 'n', 00H, 'i', 00H
+	DB	't', 00H, 'y', 00H, '\', 00H, 'V', 00H, 'C', 00H, '\', 00H, 'T'
+	DB	00H, 'o', 00H, 'o', 00H, 'l', 00H, 's', 00H, '\', 00H, 'M', 00H
+	DB	'S', 00H, 'V', 00H, 'C', 00H, '\', 00H, '1', 00H, '4', 00H, '.'
+	DB	00H, '2', 00H, '7', 00H, '.', 00H, '2', 00H, '9', 00H, '1', 00H
+	DB	'1', 00H, '0', 00H, '\', 00H, 'i', 00H, 'n', 00H, 'c', 00H, 'l'
+	DB	00H, 'u', 00H, 'd', 00H, 'e', 00H, '\', 00H, 'd', 00H, 'e', 00H
+	DB	'q', 00H, 'u', 00H, 'e', 00H, 00H, 00H	; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0GG@LDDGPICM@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsof@
+CONST	SEGMENT
+??_C@_0GG@LDDGPICM@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsof@ DB 'C:\Pro'
+	DB	'gram Files (x86)\Microsoft Visual Studio\2019\Community\VC\To'
+	DB	'ols\MSVC\14.27.29110\include\deque', 00H	; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0BH@EDKEEENI@deque?5empty?5before?5pop@
+CONST	SEGMENT
+??_C@_0BH@EDKEEENI@deque?5empty?5before?5pop@ DB 'deque empty before pop', 00H ; `string'
+CONST	ENDS
 ;	COMDAT ??_C@_0BF@KPHDJHEI@Undefined?5Error?5Code@
 CONST	SEGMENT
 ??_C@_0BF@KPHDJHEI@Undefined?5Error?5Code@ DB 'Undefined Error Code', 00H ; `string'
@@ -1250,6 +1396,16 @@ __ehfuncinfo$??$addressof@V?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@YAP
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
+__ehfuncinfo$??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
 __ehfuncinfo$??$_Deallocate@$07$0A@@std@@YAXPAXI@Z DD 019930522H
 	DD	00H
 	DD	00H
@@ -1290,7 +1446,37 @@ __ehfuncinfo$??$_Construct_in_place@PADABQAD@std@@YAXAAPADABQAD@Z DD 019930522H
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
+__ehfuncinfo$??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
 __ehfuncinfo$??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -1340,16 +1526,6 @@ __ehfuncinfo$??$addressof@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
-__ehfuncinfo$??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
 __ehfuncinfo$??1?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@std@@@std@@QAE@XZ DD 019930522H
 	DD	00H
 	DD	00H
@@ -1360,7 +1536,57 @@ __ehfuncinfo$??1?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@st
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
+__ehfuncinfo$??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
 __ehfuncinfo$??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -1586,6 +1812,18 @@ __ehfuncinfo$??1Window@@QAE@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
+__unwindtable$??0Window@@QAE@HHPBD@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??0Window@@QAE@HHPBD@Z$0
+__ehfuncinfo$??0Window@@QAE@HHPBD@Z DD 019930522H
+	DD	01H
+	DD	FLAT:__unwindtable$??0Window@@QAE@HHPBD@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
 __ehfuncinfo$??1WindowClass@Window@@AAE@XZ DD 019930522H
 	DD	00H
 	DD	00H
@@ -1667,6 +1905,436 @@ xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
 __ehfuncinfo$?what@WindowException@Window@@UBEPBDXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$bitset@$0BAA@@std@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0Keyboard@@QAE@XZ DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -3429,6 +4097,134 @@ __ehhandler$??$addressof@V?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@YAPA
 text$x	ENDS
 ??$addressof@V?$_String_val@U?$_Simple_types@D@std@@@std@@@std@@YAPAV?$_String_val@U?$_Simple_types@D@std@@@0@AAV10@@Z ENDP ; std::addressof<std::_String_val<std::_Simple_types<char> > >
 ; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$destroy@VEvent@Keyboard@@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@@Z
+_TEXT	SEGMENT
+___formal$ = 8						; size = 4
+__Ptr$ = 12						; size = 4
+??$destroy@VEvent@Keyboard@@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@@Z PROC ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::destroy<Keyboard::Event>, COMDAT
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 698
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-192]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 700
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 192				; 000000c0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??$destroy@VEvent@Keyboard@@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@@Z ENDP ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::destroy<Keyboard::Event>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z
+_TEXT	SEGMENT
+__$EHRec$ = -12						; size = 12
+__Ptr$ = 8						; size = 4
+??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z PROC ; std::_Unfancy<Keyboard::Event>, COMDAT
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstddef
+; Line 288
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	ecx, OFFSET __38038D2D_xstddef
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 289
+	mov	eax, DWORD PTR __Ptr$[ebp]
+; Line 290
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-208]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z ENDP ; std::_Unfancy<Keyboard::Event>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$destroy@D@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QAD@Z
+_TEXT	SEGMENT
+___formal$ = 8						; size = 4
+__Ptr$ = 12						; size = 4
+??$destroy@D@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QAD@Z PROC ; std::_Default_allocator_traits<std::allocator<char> >::destroy<char>, COMDAT
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 698
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-192]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 700
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 192				; 000000c0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??$destroy@D@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QAD@Z ENDP ; std::_Default_allocator_traits<std::allocator<char> >::destroy<char>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$_Get_size_of_n@$07@std@@YAII@Z
 _TEXT	SEGMENT
 __Max_possible$1 = -20					; size = 4
@@ -4093,6 +4889,135 @@ __Ptr$ = 16						; size = 4
 ??R<lambda_9366063389c5f42a00a5088cf24e69de>@@QBEXQADIQBD@Z ENDP ; <lambda_9366063389c5f42a00a5088cf24e69de>::operator()
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z
+_TEXT	SEGMENT
+__$EHRec$ = -12						; size = 12
+__Obj$ = 8						; size = 4
+??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z PROC ; std::_Destroy_in_place<Keyboard::Event *>, COMDAT
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 267
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 269
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-208]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z ENDP ; std::_Destroy_in_place<Keyboard::Event *>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+___formal$ = 8						; size = 4
+??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z PROC ; std::allocator<Keyboard::Event *>::allocator<Keyboard::Event *><Keyboard::Event>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 799
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ENDP ; std::allocator<Keyboard::Event *>::allocator<Keyboard::Event *><Keyboard::Event>
+; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
@@ -4154,6 +5079,73 @@ __ehhandler$??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z:
 	jmp	___CxxFrameHandler3
 text$x	ENDS
 ??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z ENDP		; std::_Destroy_in_place<char *>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+___formal$ = 8						; size = 4
+??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z PROC ; std::allocator<char *>::allocator<char *><char>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 799
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z ENDP ; std::allocator<char *>::allocator<char *><char>
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$addressof@D@std@@YAPADAAD@Z
 _TEXT	SEGMENT
@@ -4494,136 +5486,6 @@ __ehhandler$??$addressof@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2
 text$x	ENDS
 ??$addressof@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YAPAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@AAV10@@Z ENDP ; std::addressof<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z
-_TEXT	SEGMENT
-_this$ = -20						; size = 4
-__$EHRec$ = -12						; size = 12
-___formal$ = 8						; size = 4
-??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z PROC ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>, COMDAT
-; _this$ = ecx
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
-; Line 799
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	sub	esp, 204				; 000000ccH
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, OFFSET __A58979FC_xmemory
-	call	@__CheckForDebuggerJustMyCode@4
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 216				; 000000d8H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-	int	3
-	int	3
-	int	3
-	int	3
-	int	3
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z:
-	npad	1
-	npad	1
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ENDP ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z
-_TEXT	SEGMENT
-$T1 = -224						; size = 4
-__New_proxy$ = -20					; size = 4
-_this$ = -8						; size = 4
-__Al$ = 8						; size = 4
-??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z PROC ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >, COMDAT
-; _this$ = ecx
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
-; Line 1101
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 228				; 000000e4H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-228]
-	mov	ecx, 57					; 00000039H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, OFFSET __A58979FC_xmemory
-	call	@__CheckForDebuggerJustMyCode@4
-; Line 1102
-	push	1
-	mov	ecx, DWORD PTR __Al$[ebp]
-	call	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
-	push	eax
-	call	??$_Unfancy@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@PAU10@@Z ; std::_Unfancy<std::_Container_proxy>
-	add	esp, 4
-	mov	DWORD PTR __New_proxy$[ebp], eax
-; Line 1103
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR $T1[ebp], eax
-	lea	ecx, DWORD PTR $T1[ebp]
-	push	ecx
-	mov	edx, DWORD PTR __New_proxy$[ebp]
-	push	edx
-	call	??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z ; std::_Construct_in_place<std::_Container_proxy,std::_Container_base12 *>
-	add	esp, 8
-; Line 1104
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR __New_proxy$[ebp]
-	mov	DWORD PTR [eax], ecx
-; Line 1105
-	mov	eax, DWORD PTR __New_proxy$[ebp]
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax], ecx
-; Line 1106
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 228				; 000000e4H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ENDP ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
@@ -4774,6 +5636,278 @@ __Mycont$ = 12						; size = 4
 ??0?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@std@@@std@@QAE@AAV?$allocator@U_Container_proxy@std@@@1@AAU_Container_base12@1@@Z ENDP ; std::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+___formal$ = 8						; size = 1
+??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z PROC ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1><>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 1336
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ ; std::allocator<Keyboard::Event>::allocator<Keyboard::Event>
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ENDP ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1><>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+___formal$ = 8						; size = 4
+??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z PROC ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><Keyboard::Event>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 799
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ENDP ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><Keyboard::Event>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z
+_TEXT	SEGMENT
+$T1 = -224						; size = 4
+__New_proxy$ = -20					; size = 4
+_this$ = -8						; size = 4
+__Al$ = 8						; size = 4
+??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z PROC ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 1101
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 228				; 000000e4H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-228]
+	mov	ecx, 57					; 00000039H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1102
+	push	1
+	mov	ecx, DWORD PTR __Al$[ebp]
+	call	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
+	push	eax
+	call	??$_Unfancy@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@PAU10@@Z ; std::_Unfancy<std::_Container_proxy>
+	add	esp, 4
+	mov	DWORD PTR __New_proxy$[ebp], eax
+; Line 1103
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR $T1[ebp], eax
+	lea	ecx, DWORD PTR $T1[ebp]
+	push	ecx
+	mov	edx, DWORD PTR __New_proxy$[ebp]
+	push	edx
+	call	??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z ; std::_Construct_in_place<std::_Container_proxy,std::_Container_base12 *>
+	add	esp, 8
+; Line 1104
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __New_proxy$[ebp]
+	mov	DWORD PTR [eax], ecx
+; Line 1105
+	mov	eax, DWORD PTR __New_proxy$[ebp]
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax], ecx
+; Line 1106
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 228				; 000000e4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ENDP ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+___formal$ = 8						; size = 1
+??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z PROC ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1><>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 1336
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0?$allocator@D@std@@QAE@XZ		; std::allocator<char>::allocator<char>
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ ; std::_Deque_val<std::_Deque_simple_types<char> >::_Deque_val<std::_Deque_simple_types<char> >
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ENDP ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1><>
+; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z
 _TEXT	SEGMENT
 __$EHRec$ = -12						; size = 12
@@ -4843,6 +5977,148 @@ __ehhandler$??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@
 	jmp	___CxxFrameHandler3
 text$x	ENDS
 ??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z ENDP ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z
+_TEXT	SEGMENT
+__Old_val$ = -20					; size = 4
+__$EHRec$ = -12						; size = 12
+__Val$ = 8						; size = 4
+__New_val$ = 12						; size = 4
+??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z PROC ; std::exchange<std::_Container_proxy *,std::nullptr_t>, COMDAT
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility
+; Line 597
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	ecx, OFFSET __CF1C1A3F_utility
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 599
+	mov	eax, DWORD PTR __Val$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR __Old_val$[ebp], ecx
+; Line 600
+	mov	eax, DWORD PTR __Val$[ebp]
+	mov	ecx, DWORD PTR __New_val$[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	DWORD PTR [eax], edx
+; Line 601
+	mov	eax, DWORD PTR __Old_val$[ebp]
+; Line 602
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z ENDP ; std::exchange<std::_Container_proxy *,std::nullptr_t>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+___formal$ = 8						; size = 4
+??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z PROC ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 799
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ENDP ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z
 _TEXT	SEGMENT
@@ -8493,9 +9769,14 @@ _lParam$ = 20						; size = 4
 ; Line 88
 	mov	eax, DWORD PTR _msg$[ebp]
 	mov	DWORD PTR tv64[ebp], eax
-	cmp	DWORD PTR tv64[ebp], 16			; 00000010H
-	je	SHORT $LN4@HandleMsg
-	jmp	SHORT $LN2@HandleMsg
+	mov	ecx, DWORD PTR tv64[ebp]
+	sub	ecx, 8
+	mov	DWORD PTR tv64[ebp], ecx
+	cmp	DWORD PTR tv64[ebp], 250		; 000000faH
+	ja	SHORT $LN2@HandleMsg
+	mov	edx, DWORD PTR tv64[ebp]
+	movzx	eax, BYTE PTR $LN12@HandleMsg[edx]
+	jmp	DWORD PTR $LN13@HandleMsg[eax*4]
 $LN4@HandleMsg:
 ; Line 92
 	mov	esi, esp
@@ -8505,9 +9786,48 @@ $LN4@HandleMsg:
 	call	__RTC_CheckEsp
 ; Line 93
 	xor	eax, eax
-	jmp	SHORT $LN5@HandleMsg
-$LN2@HandleMsg:
+	jmp	SHORT $LN11@HandleMsg
+$LN5@HandleMsg:
+; Line 95
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?ClearState@Keyboard@@AAEXXZ		; Keyboard::ClearState
 ; Line 96
+	jmp	SHORT $LN2@HandleMsg
+$LN6@HandleMsg:
+; Line 98
+	mov	eax, DWORD PTR _lParam$[ebp]
+	and	eax, 1073741824				; 40000000H
+	je	SHORT $LN8@HandleMsg
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?AutorepeatIsEnabled@Keyboard@@QBE_NXZ	; Keyboard::AutorepeatIsEnabled
+	movzx	eax, al
+	test	eax, eax
+	je	SHORT $LN7@HandleMsg
+$LN8@HandleMsg:
+; Line 99
+	movzx	eax, BYTE PTR _wParam$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?OnKeyPressed@Keyboard@@AAEXE@Z		; Keyboard::OnKeyPressed
+$LN7@HandleMsg:
+; Line 101
+	jmp	SHORT $LN2@HandleMsg
+$LN9@HandleMsg:
+; Line 103
+	movzx	eax, BYTE PTR _wParam$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?OnKeyReleased@Keyboard@@AAEXE@Z	; Keyboard::OnKeyReleased
+; Line 104
+	jmp	SHORT $LN2@HandleMsg
+$LN10@HandleMsg:
+; Line 106
+	movzx	eax, BYTE PTR _wParam$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?OnChar@Keyboard@@AAEXD@Z		; Keyboard::OnChar
+$LN2@HandleMsg:
+; Line 110
 	mov	esi, esp
 	mov	eax, DWORD PTR _lParam$[ebp]
 	push	eax
@@ -8520,8 +9840,8 @@ $LN2@HandleMsg:
 	call	DWORD PTR __imp__DefWindowProcA@16
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-$LN5@HandleMsg:
-; Line 97
+$LN11@HandleMsg:
+; Line 111
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -8534,6 +9854,266 @@ $LN5@HandleMsg:
 	mov	esp, ebp
 	pop	ebp
 	ret	16					; 00000010H
+	npad	1
+$LN13@HandleMsg:
+	DD	$LN5@HandleMsg
+	DD	$LN4@HandleMsg
+	DD	$LN6@HandleMsg
+	DD	$LN9@HandleMsg
+	DD	$LN10@HandleMsg
+	DD	$LN2@HandleMsg
+$LN12@HandleMsg:
+	DB	0
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	1
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	5
+	DB	2
+	DB	3
+	DB	4
 	int	3
 	int	3
 	int	3
@@ -8799,12 +10379,14 @@ __$EHRec$ = -12						; size = 12
 ; Line 57
 	mov	esi, esp
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+8]
+	mov	ecx, DWORD PTR [eax+88]
 	push	ecx
 	call	DWORD PTR __imp__DestroyWindow@4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 ; Line 58
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1Keyboard@@QAE@XZ
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -8840,8 +10422,9 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??0Window@@QAE@HHPBD@Z
 _TEXT	SEGMENT
-$T1 = -284						; size = 76
-_this$ = -8						; size = 4
+$T2 = -296						; size = 76
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
 _width$ = 8						; size = 4
 _height$ = 12						; size = 4
 _name$ = 16						; size = 4
@@ -8851,25 +10434,37 @@ _name$ = 16						; size = 4
 ; Line 38
 	push	ebp
 	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0Window@@QAE@HHPBD@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
 	sub	esp, 288				; 00000120H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-288]
+	lea	edi, DWORD PTR [ebp-300]
 	mov	ecx, 72					; 00000048H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0Keyboard@@QAE@XZ			; Keyboard::Keyboard
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _width$[ebp]
-	mov	DWORD PTR [eax], ecx
+	mov	DWORD PTR [eax+80], ecx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR _height$[ebp]
-	mov	DWORD PTR [eax+4], ecx
+	mov	DWORD PTR [eax+84], ecx
 ; Line 40
 	mov	esi, esp
 	mov	eax, DWORD PTR _this$[ebp]
@@ -8894,10 +10489,10 @@ _name$ = 16						; size = 4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [ecx+8], eax
+	mov	DWORD PTR [ecx+88], eax
 ; Line 47
 	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax+8], 0
+	cmp	DWORD PTR [eax+88], 0
 	jne	SHORT $LN2@Window
 ; Line 48
 	mov	esi, esp
@@ -8909,10 +10504,10 @@ _name$ = 16						; size = 4
 	mov	eax, DWORD PTR ?__LINE__Var@?0???0Window@@QAE@HHPBD@Z@4JA
 	add	eax, 10					; 0000000aH
 	push	eax
-	lea	ecx, DWORD PTR $T1[ebp]
+	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0WindowException@Window@@QAE@HPBDJ@Z	; Window::WindowException::WindowException
 	push	OFFSET __TI3?AVWindowException@Window@@
-	lea	ecx, DWORD PTR $T1[ebp]
+	lea	ecx, DWORD PTR $T2[ebp]
 	push	ecx
 	call	__CxxThrowException@8
 $LN2@Window:
@@ -8920,25 +10515,50 @@ $LN2@Window:
 	mov	esi, esp
 	push	10					; 0000000aH
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+8]
+	mov	ecx, DWORD PTR [eax+88]
 	push	ecx
 	call	DWORD PTR __imp__ShowWindow@8
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 ; Line 53
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	mov	eax, DWORD PTR _this$[ebp]
 $LN3@Window:
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 288				; 00000120H
+	add	esp, 300				; 0000012cH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	12					; 0000000cH
-??0Window@@QAE@HHPBD@Z ENDP				; Window::Window
 _TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??0Window@@QAE@HHPBD@Z$0:
+	mov	ecx, DWORD PTR _this$[ebp]
+	jmp	??1Keyboard@@QAE@XZ
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+__ehhandler$??0Window@@QAE@HHPBD@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-304]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0Window@@QAE@HHPBD@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0Window@@QAE@HHPBD@Z ENDP				; Window::Window
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?__autoclassinit2@WindowClass@Window@@QAEXI@Z
 _TEXT	SEGMENT
@@ -9139,7 +10759,19 @@ __$EHRec$ = -12						; size = 12
 	call	?GetName@WindowClass@Window@@SAPBDXZ	; Window::WindowClass::GetName
 	mov	DWORD PTR _wc$[ebp+40], eax
 ; Line 20
-	mov	DWORD PTR _wc$[ebp+44], 0
+	mov	esi, esp
+	push	0
+	push	16					; 00000010H
+	push	16					; 00000010H
+	push	1
+	push	101					; 00000065H
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	push	ecx
+	call	DWORD PTR __imp__LoadImageA@24
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	mov	DWORD PTR _wc$[ebp+44], eax
 ; Line 21
 	mov	esi, esp
 	lea	eax, DWORD PTR _wc$[ebp]
@@ -9171,7 +10803,7 @@ __$EHRec$ = -12						; size = 12
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	2
+	npad	3
 $LN6@WindowClas:
 	DD	1
 	DD	$LN5@WindowClas
@@ -9458,7 +11090,7 @@ ___$ReturnUdt$ = 8					; size = 4
 ?GetErrorString@WindowException@Window@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ PROC ; Window::WindowException::GetErrorString, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 134
+; Line 148
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9483,7 +11115,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 135
+; Line 149
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+72]
 	push	ecx
@@ -9492,7 +11124,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	call	?TranslateErrorCode@WindowException@Window@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@J@Z ; Window::WindowException::TranslateErrorCode
 	add	esp, 8
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
-; Line 136
+; Line 150
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -9533,7 +11165,7 @@ __$EHRec$ = -12						; size = 12
 ?GetErrorCode@WindowException@Window@@QBEJXZ PROC	; Window::WindowException::GetErrorCode, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 130
+; Line 144
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9558,10 +11190,10 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 131
+; Line 145
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	eax, DWORD PTR [eax+72]
-; Line 132
+; Line 146
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -9606,7 +11238,7 @@ ___$ReturnUdt$ = 8					; size = 4
 _hr$ = 12						; size = 4
 ?TranslateErrorCode@WindowException@Window@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@J@Z PROC ; Window::WindowException::TranslateErrorCode, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 116
+; Line 130
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9629,9 +11261,9 @@ _hr$ = 12						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 117
+; Line 131
 	mov	DWORD PTR _pMsgBuf$[ebp], 0
-; Line 118
+; Line 132
 	mov	esi, esp
 	push	0
 	push	0
@@ -9646,29 +11278,29 @@ _hr$ = 12						; size = 4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _nMsgLen$[ebp], eax
-; Line 122
+; Line 136
 	cmp	DWORD PTR _nMsgLen$[ebp], 0
 	jne	SHORT $LN2@TranslateE
-; Line 123
+; Line 137
 	push	OFFSET ??_C@_0BF@KPHDJHEI@Undefined?5Error?5Code@
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
 	jmp	SHORT $LN3@TranslateE
 $LN2@TranslateE:
-; Line 125
+; Line 139
 	mov	eax, DWORD PTR _pMsgBuf$[ebp]
 	push	eax
 	lea	ecx, DWORD PTR _errorString$[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
-; Line 126
+; Line 140
 	mov	esi, esp
 	mov	eax, DWORD PTR _pMsgBuf$[ebp]
 	push	eax
 	call	DWORD PTR __imp__LocalFree@4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 127
+; Line 141
 	lea	eax, DWORD PTR _errorString$[ebp]
 	push	eax
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
@@ -9677,7 +11309,7 @@ $LN2@TranslateE:
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
 $LN3@TranslateE:
-; Line 128
+; Line 142
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -9764,7 +11396,7 @@ __$EHRec$ = -12						; size = 12
 ?GetType@WindowException@Window@@UBEPBDXZ PROC		; Window::WindowException::GetType, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 112
+; Line 126
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9789,9 +11421,9 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 113
+; Line 127
 	mov	eax, OFFSET ??_C@_0BB@DAPHOIPK@Window?5Exception@
-; Line 114
+; Line 128
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -9840,7 +11472,7 @@ __$EHRec$ = -12						; size = 12
 ?what@WindowException@Window@@UBEPBDXZ PROC		; Window::WindowException::what, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 101
+; Line 115
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9866,14 +11498,14 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 102
+; Line 116
 	push	152					; 00000098H
 	lea	ecx, DWORD PTR _oss$[ebp]
 	call	?__autoclassinit2@?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z
 	push	1
 	lea	ecx, DWORD PTR _oss$[ebp]
 	call	??0?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >
-; Line 103
+; Line 117
 	lea	eax, DWORD PTR $T5[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -9945,7 +11577,7 @@ __$EHRec$ = -12						; size = 12
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	ecx, DWORD PTR $T5[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
-; Line 108
+; Line 122
 	lea	eax, DWORD PTR $T3[ebp]
 	push	eax
 	lea	ecx, DWORD PTR _oss$[ebp]
@@ -9956,7 +11588,7 @@ __$EHRec$ = -12						; size = 12
 	call	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@$$QAV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
-; Line 109
+; Line 123
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 44					; 0000002cH
 	call	?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::c_str
@@ -9964,7 +11596,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR _oss$[ebp]
 	call	??_D?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
 	mov	eax, DWORD PTR $T2[ebp]
-; Line 110
+; Line 124
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -10033,7 +11665,7 @@ _hr$ = 16						; size = 4
 ??0WindowException@Window@@QAE@HPBDJ@Z PROC		; Window::WindowException::WindowException, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 99
+; Line 113
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -10072,6 +11704,4195 @@ _hr$ = 16						; size = 4
 	ret	12					; 0000000cH
 ??0WindowException@Window@@QAE@HPBDJ@Z ENDP		; Window::WindowException::WindowException
 _TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??1Keyboard@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+??1Keyboard@@QAE@XZ PROC				; Keyboard::~Keyboard, COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 60					; 0000003cH
+	call	??1?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 40					; 00000028H
+	call	??1?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??1Keyboard@@QAE@XZ ENDP				; Keyboard::~Keyboard
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??1?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+??1?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ PROC ; std::queue<char,std::deque<char,std::allocator<char> > >::~queue<char,std::deque<char,std::allocator<char> > >, COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ ; std::deque<char,std::allocator<char> >::~deque<char,std::allocator<char> >
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??1?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ ENDP ; std::queue<char,std::deque<char,std::allocator<char> > >::~queue<char,std::deque<char,std::allocator<char> > >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ PROC ; std::queue<char,std::deque<char,std::allocator<char> > >::queue<char,std::deque<char,std::allocator<char> > >, COMDAT
+; _this$ = ecx
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 53
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __EA726F75_Window@cpp
+	call	@__CheckForDebuggerJustMyCode@4
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\queue
+; Line 154
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0?$deque@DV?$allocator@D@std@@@std@@QAE@XZ ; std::deque<char,std::allocator<char> >::deque<char,std::allocator<char> >
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 53
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ ENDP ; std::queue<char,std::deque<char,std::allocator<char> > >::queue<char,std::deque<char,std::allocator<char> > >
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ PROC ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Get_first, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 1343
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1344
+	mov	eax, DWORD PTR _this$[ebp]
+; Line 1345
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ ENDP ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Get_first
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+__Off$ = 8						; size = 4
+?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z PROC ; std::_Deque_val<std::_Deque_simple_types<char> >::_Getblock, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 545
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 547
+	mov	eax, DWORD PTR __Off$[ebp]
+	shr	eax, 4
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	sub	edx, 1
+	and	eax, edx
+; Line 548
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z ENDP ; std::_Deque_val<std::_Deque_simple_types<char> >::_Getblock
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ PROC ; std::_Deque_val<std::_Deque_simple_types<char> >::_Deque_val<std::_Deque_simple_types<char> >, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 543
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0_Container_base12@std@@QAE@XZ	; std::_Container_base12::_Container_base12
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+4], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+8], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+12], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+16], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ ENDP ; std::_Deque_val<std::_Deque_simple_types<char> >::_Deque_val<std::_Deque_simple_types<char> >
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ PROC ; std::deque<char,std::allocator<char> >::_Mysize, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1560
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1561
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	add	eax, 16					; 00000010H
+; Line 1562
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ENDP ; std::deque<char,std::allocator<char> >::_Mysize
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ PROC ; std::deque<char,std::allocator<char> >::_Mysize, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1556
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1557
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	add	eax, 16					; 00000010H
+; Line 1558
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ENDP ; std::deque<char,std::allocator<char> >::_Mysize
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ PROC ; std::deque<char,std::allocator<char> >::_Myoff, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1552
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1553
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	add	eax, 12					; 0000000cH
+; Line 1554
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ENDP ; std::deque<char,std::allocator<char> >::_Myoff
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ PROC ; std::deque<char,std::allocator<char> >::_Myoff, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1548
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1549
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	add	eax, 12					; 0000000cH
+; Line 1550
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ENDP ; std::deque<char,std::allocator<char> >::_Myoff
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ PROC ; std::deque<char,std::allocator<char> >::_Mapsize, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1540
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1541
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	add	eax, 8
+; Line 1542
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ENDP ; std::deque<char,std::allocator<char> >::_Mapsize
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ PROC ; std::deque<char,std::allocator<char> >::_Map, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1532
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1533
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	add	eax, 4
+; Line 1534
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ENDP ; std::deque<char,std::allocator<char> >::_Map
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ PROC ; std::deque<char,std::allocator<char> >::_Get_data, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1528
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1529
+	mov	eax, DWORD PTR _this$[ebp]
+; Line 1530
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ENDP ; std::deque<char,std::allocator<char> >::_Get_data
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ PROC ; std::deque<char,std::allocator<char> >::_Get_data, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1524
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1525
+	mov	eax, DWORD PTR _this$[ebp]
+; Line 1526
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ENDP ; std::deque<char,std::allocator<char> >::_Get_data
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ PROC ; std::deque<char,std::allocator<char> >::_Getal, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1516
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1517
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Get_first
+; Line 1518
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ENDP ; std::deque<char,std::allocator<char> >::_Getal
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ PROC ; std::deque<char,std::allocator<char> >::_Orphan_all, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1512
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1513
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	mov	ecx, eax
+	call	?_Orphan_all@_Container_base12@std@@QAEXXZ ; std::_Container_base12::_Orphan_all
+; Line 1514
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ ENDP ; std::deque<char,std::allocator<char> >::_Orphan_all
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+__Off$ = 8						; size = 4
+?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z PROC ; std::deque<char,std::allocator<char> >::_Getblock, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1508
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1509
+	mov	eax, DWORD PTR __Off$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	mov	ecx, eax
+	call	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<char> >::_Getblock
+; Line 1510
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z ENDP ; std::deque<char,std::allocator<char> >::_Getblock
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z
+_TEXT	SEGMENT
+tv71 = -272						; size = 4
+__Pnextoff$2 = -72					; size = 4
+__Pnext$ = -60						; size = 4
+__Lock$ = -48						; size = 4
+__Offhigh$ = -36					; size = 4
+_this$ = -24						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+__Offlo$ = 8						; size = 4
+?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z PROC ; std::deque<char,std::allocator<char> >::_Orphan_off, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1488
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 260				; 00000104H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-272]
+	mov	ecx, 65					; 00000041H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1489
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ; std::deque<char,std::allocator<char> >::_Myoff
+	mov	esi, eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ; std::deque<char,std::allocator<char> >::_Mysize
+	mov	ecx, DWORD PTR [esi]
+	add	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Offlo$[ebp]
+	add	edx, 1
+	cmp	ecx, edx
+	ja	SHORT $LN9@Orphan_off
+	mov	DWORD PTR tv71[ebp], -1
+	jmp	SHORT $LN10@Orphan_off
+$LN9@Orphan_off:
+	mov	eax, DWORD PTR __Offlo$[ebp]
+	mov	DWORD PTR tv71[ebp], eax
+$LN10@Orphan_off:
+	mov	ecx, DWORD PTR tv71[ebp]
+	mov	DWORD PTR __Offhigh$[ebp], ecx
+; Line 1490
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ; std::deque<char,std::allocator<char> >::_Myoff
+	mov	ecx, DWORD PTR __Offlo$[ebp]
+	cmp	ecx, DWORD PTR [eax]
+	jne	SHORT $LN4@Orphan_off
+; Line 1491
+	mov	DWORD PTR __Offlo$[ebp], 0
+$LN4@Orphan_off:
+; Line 1494
+	mov	esi, esp
+	push	3
+	lea	ecx, DWORD PTR __Lock$[ebp]
+	call	DWORD PTR __imp_??0_Lockit@std@@QAE@H@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 1495
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	mov	eax, DWORD PTR [eax]
+	add	eax, 4
+	mov	DWORD PTR __Pnext$[ebp], eax
+$LN2@Orphan_off:
+; Line 1496
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	cmp	DWORD PTR [eax], 0
+	je	SHORT $LN3@Orphan_off
+; Line 1497
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+8]
+	mov	DWORD PTR __Pnextoff$2[ebp], edx
+; Line 1498
+	mov	eax, DWORD PTR __Pnextoff$2[ebp]
+	cmp	eax, DWORD PTR __Offlo$[ebp]
+	jb	SHORT $LN7@Orphan_off
+	mov	eax, DWORD PTR __Offhigh$[ebp]
+	cmp	eax, DWORD PTR __Pnextoff$2[ebp]
+	jae	SHORT $LN5@Orphan_off
+$LN7@Orphan_off:
+; Line 1499
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	add	ecx, 4
+	mov	DWORD PTR __Pnext$[ebp], ecx
+; Line 1500
+	jmp	SHORT $LN6@Orphan_off
+$LN5@Orphan_off:
+; Line 1501
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR [ecx], 0
+; Line 1502
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Pnext$[ebp]
+	mov	eax, DWORD PTR [ecx+4]
+	mov	DWORD PTR [edx], eax
+$LN6@Orphan_off:
+; Line 1504
+	jmp	SHORT $LN2@Orphan_off
+$LN3@Orphan_off:
+; Line 1505
+	mov	esi, esp
+	lea	ecx, DWORD PTR __Lock$[ebp]
+	call	DWORD PTR __imp_??1_Lockit@std@@QAE@XZ
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN14@Orphan_off
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 272				; 00000110H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	npad	1
+$LN14@Orphan_off:
+	DD	1
+	DD	$LN13@Orphan_off
+$LN13@Orphan_off:
+	DD	-48					; ffffffd0H
+	DD	4
+	DD	$LN11@Orphan_off
+$LN11@Orphan_off:
+	DB	95					; 0000005fH
+	DB	76					; 0000004cH
+	DB	111					; 0000006fH
+	DB	99					; 00000063H
+	DB	107					; 0000006bH
+	DB	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-276]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z ENDP ; std::deque<char,std::allocator<char> >::_Orphan_off
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ
+_TEXT	SEGMENT
+__Block$2 = -48						; size = 4
+__Almap$ = -33						; size = 1
+_this$ = -24						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ PROC	; std::deque<char,std::allocator<char> >::_Tidy, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1464
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 232				; 000000e8H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1465
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ ; std::deque<char,std::allocator<char> >::_Orphan_all
+; Line 1467
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+	push	eax
+	lea	ecx, DWORD PTR __Almap$[ebp]
+	call	??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<char *>::allocator<char *><char>
+$LN2@Tidy:
+; Line 1468
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ ; std::deque<char,std::allocator<char> >::empty
+	movzx	eax, al
+	test	eax, eax
+	jne	SHORT $LN3@Tidy
+; Line 1469
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ ; std::deque<char,std::allocator<char> >::pop_back
+; Line 1470
+	jmp	SHORT $LN2@Tidy
+$LN3@Tidy:
+; Line 1472
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR __Block$2[ebp], eax
+$LN6@Tidy:
+	cmp	DWORD PTR __Block$2[ebp], 0
+	jbe	SHORT $LN5@Tidy
+; Line 1473
+	mov	eax, DWORD PTR __Block$2[ebp]
+	sub	eax, 1
+	mov	DWORD PTR __Block$2[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Block$2[ebp]
+	cmp	DWORD PTR [ecx+edx*4], 0
+	je	SHORT $LN7@Tidy
+; Line 1474
+	push	16					; 00000010H
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Block$2[ebp]
+	mov	edx, DWORD PTR [eax+ecx*4]
+	push	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+	mov	ecx, eax
+	call	?deallocate@?$allocator@D@std@@QAEXQADI@Z ; std::allocator<char>::deallocate
+; Line 1475
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Block$2[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	push	edx
+	call	??$_Destroy_in_place@PAD@std@@YAXAAPAD@Z ; std::_Destroy_in_place<char *>
+	add	esp, 4
+$LN7@Tidy:
+; Line 1477
+	jmp	SHORT $LN6@Tidy
+$LN5@Tidy:
+; Line 1479
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	cmp	DWORD PTR [eax], 0
+	je	SHORT $LN8@Tidy
+; Line 1480
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
+	mov	eax, DWORD PTR [eax]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	mov	ecx, DWORD PTR [eax]
+	push	ecx
+	lea	ecx, DWORD PTR __Almap$[ebp]
+	call	?deallocate@?$allocator@PAD@std@@QAEXQAPADI@Z ; std::allocator<char *>::deallocate
+$LN8@Tidy:
+; Line 1483
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
+	mov	DWORD PTR [eax], 0
+; Line 1484
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	mov	DWORD PTR [eax], 0
+; Line 1485
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN13@Tidy
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 244				; 000000f4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	npad	2
+$LN13@Tidy:
+	DD	1
+	DD	$LN12@Tidy
+$LN12@Tidy:
+	DD	-33					; ffffffdfH
+	DD	1
+	DD	$LN10@Tidy
+$LN10@Tidy:
+	DB	95					; 0000005fH
+	DB	65					; 00000041H
+	DB	108					; 0000006cH
+	DB	109					; 0000006dH
+	DB	97					; 00000061H
+	DB	112					; 00000070H
+	DB	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-248]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ ENDP	; std::deque<char,std::allocator<char> >::_Tidy
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
+_TEXT	SEGMENT
+tv140 = -244						; size = 4
+__Block$2 = -44						; size = 4
+__Newoff$3 = -32					; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ PROC ; std::deque<char,std::allocator<char> >::pop_back, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1125
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 232				; 000000e8H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1127
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ ; std::deque<char,std::allocator<char> >::empty
+	movzx	eax, al
+	test	eax, eax
+	je	SHORT $LN5@pop_back
+$LN4@pop_back:
+; Line 1128
+	mov	esi, esp
+	push	OFFSET ??_C@_0BH@EDKEEENI@deque?5empty?5before?5pop@
+	push	OFFSET ??_C@_02DKCKIIND@?$CFs@
+	push	0
+	push	1128					; 00000468H
+	push	OFFSET ??_C@_0GG@LDDGPICM@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsof@
+	push	2
+	call	DWORD PTR __imp___CrtDbgReport
+	add	esp, 24					; 00000018H
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	cmp	eax, 1
+	jne	SHORT $LN9@pop_back
+	int	3
+$LN9@pop_back:
+	mov	esi, esp
+	push	0
+	push	1128					; 00000468H
+	push	OFFSET ??_C@_1MM@LIKMHCEL@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe@
+	push	OFFSET ??_C@_1GO@EGGDOJHA@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?$DM?$AAc?$AAh?$AAa?$AAr@
+	push	OFFSET ??_C@_1DC@NJAACHCD@?$AA?$CC?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAe?$AAm?$AAp?$AAt?$AAy?$AA?5?$AAb?$AAe@
+	call	DWORD PTR __imp___invalid_parameter
+	add	esp, 20					; 00000014H
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	xor	eax, eax
+	jne	SHORT $LN4@pop_back
+; Line 1129
+	jmp	$LN8@pop_back
+$LN5@pop_back:
+; Line 1130
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
+	mov	esi, eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mysize
+	mov	ecx, DWORD PTR [esi]
+	mov	edx, DWORD PTR [eax]
+	lea	eax, DWORD PTR [ecx+edx-1]
+	mov	DWORD PTR __Newoff$3[ebp], eax
+; Line 1131
+	mov	eax, DWORD PTR __Newoff$3[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Orphan_off@?$deque@DV?$allocator@D@std@@@std@@ABEXI@Z ; std::deque<char,std::allocator<char> >::_Orphan_off
+; Line 1132
+	mov	eax, DWORD PTR __Newoff$3[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z ; std::deque<char,std::allocator<char> >::_Getblock
+	mov	DWORD PTR __Block$2[ebp], eax
+; Line 1133
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	mov	ecx, DWORD PTR [eax]
+	mov	eax, DWORD PTR __Newoff$3[ebp]
+	xor	edx, edx
+	mov	esi, 16					; 00000010H
+	div	esi
+	mov	eax, DWORD PTR __Block$2[ebp]
+	add	edx, DWORD PTR [ecx+eax*4]
+	push	edx
+	call	??$_Unfancy@D@std@@YAPADPAD@Z		; std::_Unfancy<char>
+	add	esp, 4
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+	push	eax
+	call	??$destroy@D@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QAD@Z ; std::_Default_allocator_traits<std::allocator<char> >::destroy<char>
+	add	esp, 8
+; Line 1134
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mysize
+	mov	DWORD PTR tv140[ebp], eax
+	mov	eax, DWORD PTR tv140[ebp]
+	mov	ecx, DWORD PTR [eax]
+	sub	ecx, 1
+	mov	edx, DWORD PTR tv140[ebp]
+	mov	DWORD PTR [edx], ecx
+	mov	eax, DWORD PTR tv140[ebp]
+	cmp	DWORD PTR [eax], 0
+	jne	SHORT $LN8@pop_back
+; Line 1135
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
+	mov	DWORD PTR [eax], 0
+$LN8@pop_back:
+; Line 1147
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 244				; 000000f4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-248]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ ENDP ; std::deque<char,std::allocator<char> >::pop_back
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ
+_TEXT	SEGMENT
+tv67 = -220						; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ PROC	; std::deque<char,std::allocator<char> >::empty, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1008
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 208				; 000000d0H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1009
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ; std::deque<char,std::allocator<char> >::_Mysize
+	cmp	DWORD PTR [eax], 0
+	jne	SHORT $LN3@empty
+	mov	DWORD PTR tv67[ebp], 1
+	jmp	SHORT $LN4@empty
+$LN3@empty:
+	mov	DWORD PTR tv67[ebp], 0
+$LN4@empty:
+	mov	al, BYTE PTR tv67[ebp]
+; Line 1010
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 220				; 000000dcH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-224]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ ENDP	; std::deque<char,std::allocator<char> >::empty
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+$T2 = -240						; size = 4
+__Proxy_allocator$ = -33				; size = 1
+_this$ = -24						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ PROC	; std::deque<char,std::allocator<char> >::~deque<char,std::allocator<char> >, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 868
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 232				; 000000e8H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 869
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ ; std::deque<char,std::allocator<char> >::_Tidy
+; Line 870
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+	push	eax
+	lea	ecx, DWORD PTR __Proxy_allocator$[ebp]
+	call	??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
+; Line 871
+	mov	DWORD PTR $T2[ebp], 0
+	lea	eax, DWORD PTR $T2[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	push	eax
+	call	??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z ; std::exchange<std::_Container_proxy *,std::nullptr_t>
+	add	esp, 8
+	push	eax
+	lea	ecx, DWORD PTR __Proxy_allocator$[ebp]
+	push	ecx
+	call	??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
+	add	esp, 8
+; Line 872
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN6@deque
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 244				; 000000f4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	npad	3
+$LN6@deque:
+	DD	1
+	DD	$LN5@deque
+$LN5@deque:
+	DD	-33					; ffffffdfH
+	DD	1
+	DD	$LN3@deque
+$LN3@deque:
+	DB	95					; 0000005fH
+	DB	80					; 00000050H
+	DB	114					; 00000072H
+	DB	111					; 0000006fH
+	DB	120					; 00000078H
+	DB	121					; 00000079H
+	DB	95					; 0000005fH
+	DB	97					; 00000061H
+	DB	108					; 0000006cH
+	DB	108					; 0000006cH
+	DB	111					; 0000006fH
+	DB	99					; 00000063H
+	DB	97					; 00000061H
+	DB	116					; 00000074H
+	DB	111					; 0000006fH
+	DB	114					; 00000072H
+	DB	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-248]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ ENDP	; std::deque<char,std::allocator<char> >::~deque<char,std::allocator<char> >
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$deque@DV?$allocator@D@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+$T1 = -221						; size = 1
+$T2 = -209						; size = 1
+_this$ = -8						; size = 4
+??0?$deque@DV?$allocator@D@std@@@std@@QAE@XZ PROC	; std::deque<char,std::allocator<char> >::deque<char,std::allocator<char> >, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 595
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 228				; 000000e4H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-228]
+	mov	ecx, 57					; 00000039H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+	movzx	eax, BYTE PTR $T2[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1><>
+; Line 596
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+	push	eax
+	lea	ecx, DWORD PTR $T1[ebp]
+	call	??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	mov	ecx, eax
+	call	??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
+; Line 597
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 228				; 000000e4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??0?$deque@DV?$allocator@D@std@@@std@@QAE@XZ ENDP	; std::deque<char,std::allocator<char> >::deque<char,std::allocator<char> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?deallocate@?$allocator@PAD@std@@QAEXQAPADI@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+__Ptr$ = 8						; size = 4
+__Count$ = 12						; size = 4
+?deallocate@?$allocator@PAD@std@@QAEXQAPADI@Z PROC	; std::allocator<char *>::deallocate, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 801
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 803
+	mov	eax, DWORD PTR __Count$[ebp]
+	shl	eax, 2
+	push	eax
+	mov	ecx, DWORD PTR __Ptr$[ebp]
+	push	ecx
+	call	??$_Deallocate@$07$0A@@std@@YAXPAXI@Z	; std::_Deallocate<8,0>
+	add	esp, 8
+; Line 804
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+?deallocate@?$allocator@PAD@std@@QAEXQAPADI@Z ENDP	; std::allocator<char *>::deallocate
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??1?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+??1?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ PROC ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::~queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >, COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::~deque<Keyboard::Event,std::allocator<Keyboard::Event> >
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??1?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ ENDP ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::~queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ PROC ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >, COMDAT
+; _this$ = ecx
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 53
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __EA726F75_Window@cpp
+	call	@__CheckForDebuggerJustMyCode@4
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\queue
+; Line 154
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::deque<Keyboard::Event,std::allocator<Keyboard::Event> >
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 53
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ ENDP ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ PROC ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Get_first, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 1343
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1344
+	mov	eax, DWORD PTR _this$[ebp]
+; Line 1345
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ENDP ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Get_first
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+__Off$ = 8						; size = 4
+?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z PROC ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Getblock, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 545
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 547
+	mov	eax, DWORD PTR __Off$[ebp]
+	shr	eax, 1
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+8]
+	sub	edx, 1
+	and	eax, edx
+; Line 548
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z ENDP ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Getblock
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ PROC ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 543
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0_Container_base12@std@@QAE@XZ	; std::_Container_base12::_Container_base12
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+4], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+8], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+12], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax+16], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ ENDP ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1560
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1561
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	add	eax, 16					; 00000010H
+; Line 1562
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1556
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1557
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	add	eax, 16					; 00000010H
+; Line 1558
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1552
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1553
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	add	eax, 12					; 0000000cH
+; Line 1554
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1548
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1549
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	add	eax, 12					; 0000000cH
+; Line 1550
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1540
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1541
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	add	eax, 8
+; Line 1542
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1532
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1533
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	add	eax, 4
+; Line 1534
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1528
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1529
+	mov	eax, DWORD PTR _this$[ebp]
+; Line 1530
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1524
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1525
+	mov	eax, DWORD PTR _this$[ebp]
+; Line 1526
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1516
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1517
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Get_first
+; Line 1518
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_all, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1512
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1513
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	mov	ecx, eax
+	call	?_Orphan_all@_Container_base12@std@@QAEXXZ ; std::_Container_base12::_Orphan_all
+; Line 1514
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_all
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+__Off$ = 8						; size = 4
+?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getblock, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1508
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1509
+	mov	eax, DWORD PTR __Off$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	mov	ecx, eax
+	call	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Getblock
+; Line 1510
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getblock
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z
+_TEXT	SEGMENT
+tv71 = -272						; size = 4
+__Pnextoff$2 = -72					; size = 4
+__Pnext$ = -60						; size = 4
+__Lock$ = -48						; size = 4
+__Offhigh$ = -36					; size = 4
+_this$ = -24						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+__Offlo$ = 8						; size = 4
+?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_off, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1488
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 260				; 00000104H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-272]
+	mov	ecx, 65					; 00000041H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1489
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+	mov	esi, eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+	mov	ecx, DWORD PTR [esi]
+	add	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Offlo$[ebp]
+	add	edx, 1
+	cmp	ecx, edx
+	ja	SHORT $LN9@Orphan_off
+	mov	DWORD PTR tv71[ebp], -1
+	jmp	SHORT $LN10@Orphan_off
+$LN9@Orphan_off:
+	mov	eax, DWORD PTR __Offlo$[ebp]
+	mov	DWORD PTR tv71[ebp], eax
+$LN10@Orphan_off:
+	mov	ecx, DWORD PTR tv71[ebp]
+	mov	DWORD PTR __Offhigh$[ebp], ecx
+; Line 1490
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+	mov	ecx, DWORD PTR __Offlo$[ebp]
+	cmp	ecx, DWORD PTR [eax]
+	jne	SHORT $LN4@Orphan_off
+; Line 1491
+	mov	DWORD PTR __Offlo$[ebp], 0
+$LN4@Orphan_off:
+; Line 1494
+	mov	esi, esp
+	push	3
+	lea	ecx, DWORD PTR __Lock$[ebp]
+	call	DWORD PTR __imp_??0_Lockit@std@@QAE@H@Z
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 1495
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	mov	eax, DWORD PTR [eax]
+	add	eax, 4
+	mov	DWORD PTR __Pnext$[ebp], eax
+$LN2@Orphan_off:
+; Line 1496
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	cmp	DWORD PTR [eax], 0
+	je	SHORT $LN3@Orphan_off
+; Line 1497
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR [ecx+8]
+	mov	DWORD PTR __Pnextoff$2[ebp], edx
+; Line 1498
+	mov	eax, DWORD PTR __Pnextoff$2[ebp]
+	cmp	eax, DWORD PTR __Offlo$[ebp]
+	jb	SHORT $LN7@Orphan_off
+	mov	eax, DWORD PTR __Offhigh$[ebp]
+	cmp	eax, DWORD PTR __Pnextoff$2[ebp]
+	jae	SHORT $LN5@Orphan_off
+$LN7@Orphan_off:
+; Line 1499
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	add	ecx, 4
+	mov	DWORD PTR __Pnext$[ebp], ecx
+; Line 1500
+	jmp	SHORT $LN6@Orphan_off
+$LN5@Orphan_off:
+; Line 1501
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR [ecx], 0
+; Line 1502
+	mov	eax, DWORD PTR __Pnext$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Pnext$[ebp]
+	mov	eax, DWORD PTR [ecx+4]
+	mov	DWORD PTR [edx], eax
+$LN6@Orphan_off:
+; Line 1504
+	jmp	SHORT $LN2@Orphan_off
+$LN3@Orphan_off:
+; Line 1505
+	mov	esi, esp
+	lea	ecx, DWORD PTR __Lock$[ebp]
+	call	DWORD PTR __imp_??1_Lockit@std@@QAE@XZ
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN14@Orphan_off
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 272				; 00000110H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	npad	1
+$LN14@Orphan_off:
+	DD	1
+	DD	$LN13@Orphan_off
+$LN13@Orphan_off:
+	DD	-48					; ffffffd0H
+	DD	4
+	DD	$LN11@Orphan_off
+$LN11@Orphan_off:
+	DB	95					; 0000005fH
+	DB	76					; 0000004cH
+	DB	111					; 0000006fH
+	DB	99					; 00000063H
+	DB	107					; 0000006bH
+	DB	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-276]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_off
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ
+_TEXT	SEGMENT
+__Block$2 = -48						; size = 4
+__Almap$ = -33						; size = 1
+_this$ = -24						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Tidy, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1464
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 232				; 000000e8H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1465
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_all
+; Line 1467
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	push	eax
+	lea	ecx, DWORD PTR __Almap$[ebp]
+	call	??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ; std::allocator<Keyboard::Event *>::allocator<Keyboard::Event *><Keyboard::Event>
+$LN2@Tidy:
+; Line 1468
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::empty
+	movzx	eax, al
+	test	eax, eax
+	jne	SHORT $LN3@Tidy
+; Line 1469
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::pop_back
+; Line 1470
+	jmp	SHORT $LN2@Tidy
+$LN3@Tidy:
+; Line 1472
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR __Block$2[ebp], eax
+$LN6@Tidy:
+	cmp	DWORD PTR __Block$2[ebp], 0
+	jbe	SHORT $LN5@Tidy
+; Line 1473
+	mov	eax, DWORD PTR __Block$2[ebp]
+	sub	eax, 1
+	mov	DWORD PTR __Block$2[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	mov	ecx, DWORD PTR [eax]
+	mov	edx, DWORD PTR __Block$2[ebp]
+	cmp	DWORD PTR [ecx+edx*4], 0
+	je	SHORT $LN7@Tidy
+; Line 1474
+	push	2
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Block$2[ebp]
+	mov	edx, DWORD PTR [eax+ecx*4]
+	push	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	mov	ecx, eax
+	call	?deallocate@?$allocator@VEvent@Keyboard@@@std@@QAEXQAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event>::deallocate
+; Line 1475
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Block$2[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	push	edx
+	call	??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z ; std::_Destroy_in_place<Keyboard::Event *>
+	add	esp, 4
+$LN7@Tidy:
+; Line 1477
+	jmp	SHORT $LN6@Tidy
+$LN5@Tidy:
+; Line 1479
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	cmp	DWORD PTR [eax], 0
+	je	SHORT $LN8@Tidy
+; Line 1480
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
+	mov	eax, DWORD PTR [eax]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	mov	ecx, DWORD PTR [eax]
+	push	ecx
+	lea	ecx, DWORD PTR __Almap$[ebp]
+	call	?deallocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEXQAPAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event *>::deallocate
+$LN8@Tidy:
+; Line 1483
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
+	mov	DWORD PTR [eax], 0
+; Line 1484
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	mov	DWORD PTR [eax], 0
+; Line 1485
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN13@Tidy
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 244				; 000000f4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	npad	2
+$LN13@Tidy:
+	DD	1
+	DD	$LN12@Tidy
+$LN12@Tidy:
+	DD	-33					; ffffffdfH
+	DD	1
+	DD	$LN10@Tidy
+$LN10@Tidy:
+	DB	95					; 0000005fH
+	DB	65					; 00000041H
+	DB	108					; 0000006cH
+	DB	109					; 0000006dH
+	DB	97					; 00000061H
+	DB	112					; 00000070H
+	DB	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-248]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Tidy
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
+_TEXT	SEGMENT
+tv141 = -244						; size = 4
+__Block$2 = -44						; size = 4
+__Newoff$3 = -32					; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::pop_back, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1125
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 232				; 000000e8H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1127
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::empty
+	movzx	eax, al
+	test	eax, eax
+	je	SHORT $LN5@pop_back
+$LN4@pop_back:
+; Line 1128
+	mov	esi, esp
+	push	OFFSET ??_C@_0BH@EDKEEENI@deque?5empty?5before?5pop@
+	push	OFFSET ??_C@_02DKCKIIND@?$CFs@
+	push	0
+	push	1128					; 00000468H
+	push	OFFSET ??_C@_0GG@LDDGPICM@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsof@
+	push	2
+	call	DWORD PTR __imp___CrtDbgReport
+	add	esp, 24					; 00000018H
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	cmp	eax, 1
+	jne	SHORT $LN9@pop_back
+	int	3
+$LN9@pop_back:
+	mov	esi, esp
+	push	0
+	push	1128					; 00000468H
+	push	OFFSET ??_C@_1MM@LIKMHCEL@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe@
+	push	OFFSET ??_C@_1LC@OPOCPHBN@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?$DM?$AAc?$AAl?$AAa?$AAs@
+	push	OFFSET ??_C@_1DC@NJAACHCD@?$AA?$CC?$AAd?$AAe?$AAq?$AAu?$AAe?$AA?5?$AAe?$AAm?$AAp?$AAt?$AAy?$AA?5?$AAb?$AAe@
+	call	DWORD PTR __imp___invalid_parameter
+	add	esp, 20					; 00000014H
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	xor	eax, eax
+	jne	SHORT $LN4@pop_back
+; Line 1129
+	jmp	$LN8@pop_back
+$LN5@pop_back:
+; Line 1130
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+	mov	esi, eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+	mov	ecx, DWORD PTR [esi]
+	mov	edx, DWORD PTR [eax]
+	lea	eax, DWORD PTR [ecx+edx-1]
+	mov	DWORD PTR __Newoff$3[ebp], eax
+; Line 1131
+	mov	eax, DWORD PTR __Newoff$3[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Orphan_off@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXI@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_off
+; Line 1132
+	mov	eax, DWORD PTR __Newoff$3[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getblock
+	mov	DWORD PTR __Block$2[ebp], eax
+; Line 1133
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	mov	ecx, DWORD PTR [eax]
+	mov	eax, DWORD PTR __Newoff$3[ebp]
+	xor	edx, edx
+	mov	esi, 2
+	div	esi
+	mov	eax, DWORD PTR __Block$2[ebp]
+	mov	ecx, DWORD PTR [ecx+eax*4]
+	lea	edx, DWORD PTR [ecx+edx*8]
+	push	edx
+	call	??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z ; std::_Unfancy<Keyboard::Event>
+	add	esp, 4
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	push	eax
+	call	??$destroy@VEvent@Keyboard@@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@@Z ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::destroy<Keyboard::Event>
+	add	esp, 8
+; Line 1134
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+	mov	DWORD PTR tv141[ebp], eax
+	mov	eax, DWORD PTR tv141[ebp]
+	mov	ecx, DWORD PTR [eax]
+	sub	ecx, 1
+	mov	edx, DWORD PTR tv141[ebp]
+	mov	DWORD PTR [edx], ecx
+	mov	eax, DWORD PTR tv141[ebp]
+	cmp	DWORD PTR [eax], 0
+	jne	SHORT $LN8@pop_back
+; Line 1135
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+	mov	DWORD PTR [eax], 0
+$LN8@pop_back:
+; Line 1147
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 244				; 000000f4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-248]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::pop_back
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ
+_TEXT	SEGMENT
+tv67 = -220						; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::empty, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 1008
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 208				; 000000d0H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 1009
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+	cmp	DWORD PTR [eax], 0
+	jne	SHORT $LN3@empty
+	mov	DWORD PTR tv67[ebp], 1
+	jmp	SHORT $LN4@empty
+$LN3@empty:
+	mov	DWORD PTR tv67[ebp], 0
+$LN4@empty:
+	mov	al, BYTE PTR tv67[ebp]
+; Line 1010
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 220				; 000000dcH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-224]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::empty
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+$T2 = -240						; size = 4
+__Proxy_allocator$ = -33				; size = 1
+_this$ = -24						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::~deque<Keyboard::Event,std::allocator<Keyboard::Event> >, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 868
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 232				; 000000e8H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 869
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Tidy
+; Line 870
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	push	eax
+	lea	ecx, DWORD PTR __Proxy_allocator$[ebp]
+	call	??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><Keyboard::Event>
+; Line 871
+	mov	DWORD PTR $T2[ebp], 0
+	lea	eax, DWORD PTR $T2[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	push	eax
+	call	??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z ; std::exchange<std::_Container_proxy *,std::nullptr_t>
+	add	esp, 8
+	push	eax
+	lea	ecx, DWORD PTR __Proxy_allocator$[ebp]
+	push	ecx
+	call	??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
+	add	esp, 8
+; Line 872
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN6@deque
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 244				; 000000f4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	npad	3
+$LN6@deque:
+	DD	1
+	DD	$LN5@deque
+$LN5@deque:
+	DD	-33					; ffffffdfH
+	DD	1
+	DD	$LN3@deque
+$LN3@deque:
+	DB	95					; 0000005fH
+	DB	80					; 00000050H
+	DB	114					; 00000072H
+	DB	111					; 0000006fH
+	DB	120					; 00000078H
+	DB	121					; 00000079H
+	DB	95					; 0000005fH
+	DB	97					; 00000061H
+	DB	108					; 0000006cH
+	DB	108					; 0000006cH
+	DB	111					; 0000006fH
+	DB	99					; 00000063H
+	DB	97					; 00000061H
+	DB	116					; 00000074H
+	DB	111					; 0000006fH
+	DB	114					; 00000072H
+	DB	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-248]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::~deque<Keyboard::Event,std::allocator<Keyboard::Event> >
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ
+_TEXT	SEGMENT
+$T1 = -221						; size = 1
+$T2 = -209						; size = 1
+_this$ = -8						; size = 4
+??0?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ PROC ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::deque<Keyboard::Event,std::allocator<Keyboard::Event> >, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 595
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 228				; 000000e4H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-228]
+	mov	ecx, 57					; 00000039H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __0657B1E2_deque
+	call	@__CheckForDebuggerJustMyCode@4
+	movzx	eax, BYTE PTR $T2[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1><>
+; Line 596
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	push	eax
+	lea	ecx, DWORD PTR $T1[ebp]
+	call	??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><Keyboard::Event>
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	mov	ecx, eax
+	call	??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
+; Line 597
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 228				; 000000e4H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??0?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ ENDP ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::deque<Keyboard::Event,std::allocator<Keyboard::Event> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?deallocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEXQAPAVEvent@Keyboard@@I@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+__Ptr$ = 8						; size = 4
+__Count$ = 12						; size = 4
+?deallocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEXQAPAVEvent@Keyboard@@I@Z PROC ; std::allocator<Keyboard::Event *>::deallocate, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 801
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 803
+	mov	eax, DWORD PTR __Count$[ebp]
+	shl	eax, 2
+	push	eax
+	mov	ecx, DWORD PTR __Ptr$[ebp]
+	push	ecx
+	call	??$_Deallocate@$07$0A@@std@@YAXPAXI@Z	; std::_Deallocate<8,0>
+	add	esp, 8
+; Line 804
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+?deallocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEXQAPAVEvent@Keyboard@@I@Z ENDP ; std::allocator<Keyboard::Event *>::deallocate
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?deallocate@?$allocator@VEvent@Keyboard@@@std@@QAEXQAVEvent@Keyboard@@I@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+__Ptr$ = 8						; size = 4
+__Count$ = 12						; size = 4
+?deallocate@?$allocator@VEvent@Keyboard@@@std@@QAEXQAVEvent@Keyboard@@I@Z PROC ; std::allocator<Keyboard::Event>::deallocate, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 801
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 803
+	mov	eax, DWORD PTR __Count$[ebp]
+	shl	eax, 3
+	push	eax
+	mov	ecx, DWORD PTR __Ptr$[ebp]
+	push	ecx
+	call	??$_Deallocate@$07$0A@@std@@YAXPAXI@Z	; std::_Deallocate<8,0>
+	add	esp, 8
+; Line 804
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+?deallocate@?$allocator@VEvent@Keyboard@@@std@@QAEXQAVEvent@Keyboard@@I@Z ENDP ; std::allocator<Keyboard::Event>::deallocate
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ PROC	; std::allocator<Keyboard::Event>::allocator<Keyboard::Event>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 795
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ ENDP	; std::allocator<Keyboard::Event>::allocator<Keyboard::Event>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$bitset@$0BAA@@std@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??0?$bitset@$0BAA@@std@@QAE@XZ PROC			; std::bitset<256>::bitset<256>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\bitset
+; Line 96
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0?$bitset@$0BAA@@std@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __3990E35C_bitset
+	call	@__CheckForDebuggerJustMyCode@4
+	xor	eax, eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [ecx], eax
+	mov	DWORD PTR [ecx+4], eax
+	mov	DWORD PTR [ecx+8], eax
+	mov	DWORD PTR [ecx+12], eax
+	mov	DWORD PTR [ecx+16], eax
+	mov	DWORD PTR [ecx+20], eax
+	mov	DWORD PTR [ecx+24], eax
+	mov	DWORD PTR [ecx+28], eax
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??0?$bitset@$0BAA@@std@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0?$bitset@$0BAA@@std@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0?$bitset@$0BAA@@std@@QAE@XZ ENDP			; std::bitset<256>::bitset<256>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0Keyboard@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??0Keyboard@@QAE@XZ PROC				; Keyboard::Keyboard, COMDAT
+; _this$ = ecx
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 53
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0Keyboard@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __EA726F75_Window@cpp
+	call	@__CheckForDebuggerJustMyCode@4
+; File F:\WindowSandbox\WindowSandbox\src\Keyboard.h
+; Line 67
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	BYTE PTR [eax], 0
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 53
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 8
+	call	??0?$bitset@$0BAA@@std@@QAE@XZ		; std::bitset<256>::bitset<256>
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 40					; 00000028H
+	call	??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 60					; 0000003cH
+	call	??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ ; std::queue<char,std::deque<char,std::allocator<char> > >::queue<char,std::deque<char,std::allocator<char> > >
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??0Keyboard@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0Keyboard@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0Keyboard@@QAE@XZ ENDP				; Keyboard::Keyboard
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??_GException@@UAEPAXI@Z
 _TEXT	SEGMENT
@@ -15844,7 +21665,7 @@ ___formal$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ?__empty_global_delete@@YAXPAXI@Z PROC			; __empty_global_delete, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 137
+; Line 151
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 192				; 000000c0H
@@ -15874,7 +21695,7 @@ _TEXT	SEGMENT
 ___formal$ = 8						; size = 4
 ?__empty_global_delete@@YAXPAX@Z PROC			; __empty_global_delete, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 137
+; Line 151
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 192				; 000000c0H
