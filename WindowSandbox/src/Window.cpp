@@ -1,11 +1,10 @@
 #include"Window.h"
+#include"resource.h"
+#include<sstream>
 
 Window::WindowClass Window::WindowClass::wndClass;
 
-Window::WindowClass::WindowClass() noexcept
-	:
-	hInst(GetModuleHandle(nullptr))
-{
+Window::WindowClass::WindowClass() noexcept : hInst(GetModuleHandle(nullptr)){
 	WNDCLASSEX wc = { 0 };
 	wc.cbSize = sizeof(wc);
 	wc.style = CS_OWNDC;
@@ -13,7 +12,7 @@ Window::WindowClass::WindowClass() noexcept
 	wc.cbClsExtra = 0;
 	wc.cbWndExtra = 0;
 	wc.hInstance = GetInstance();
-	wc.hIcon = nullptr;
+	wc.hIcon = nullptr; //IDI_ICON1;
 	wc.hCursor = nullptr;
 	wc.hbrBackground = nullptr;
 	wc.lpszMenuName = nullptr;
@@ -36,13 +35,12 @@ HINSTANCE Window::WindowClass::GetInstance() noexcept{
 
 
 // Window Stuff
-Window::Window(int width, int height, const char* name) noexcept
-{
+Window::Window(int width, int height, const char* name) noexcept : width(width), height(height) {
 	// create window & get hWnd
 	hWnd = CreateWindow(
 		WindowClass::GetName(), name,
 		WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,
-		CW_USEDEFAULT, CW_USEDEFAULT, 512, 256,
+		CW_USEDEFAULT, CW_USEDEFAULT, width, height,
 		nullptr, nullptr, WindowClass::GetInstance(), this
 	);
 	// show window
@@ -81,10 +79,8 @@ LRESULT CALLBACK Window::HandleMsgThunk(HWND hWnd, UINT msg, WPARAM wParam, LPAR
 	return pWnd->HandleMsg(hWnd, msg, wParam, lParam);
 }
 
-LRESULT Window::HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept
-{
-	switch (msg)
-	{
+LRESULT Window::HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept{
+	switch (msg){
 		// we don't want the DefProc to handle this message because
 		// we want our destructor to destroy the window, so return 0 instead of break
 	case WM_CLOSE:
@@ -93,4 +89,43 @@ LRESULT Window::HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noe
 	}
 
 	return DefWindowProc(hWnd, msg, wParam, lParam);
+}
+
+Window::WindowException::WindowException(int line, const char* file, HRESULT hr) : Exception(line, file), hr(hr){}
+
+const char* Window::WindowException::what() const noexcept{
+	std::ostringstream oss;
+	oss << GetType() << std::endl
+		<< "[Error Code]" << GetErrorCode() << std::endl
+		<< "[Description]" << GetErrorString() << std::endl
+		<< GetOriginString();
+
+	whatBuffer = oss.str();
+	return whatBuffer.c_str();
+}
+
+const char* Window::WindowException::GetType() const noexcept{
+	return "Window Exception";
+}
+
+std::string Window::WindowException::TranslateErrorCode(HRESULT hr) noexcept {
+	char* pMsgBuf = nullptr;
+	DWORD nMsgLen = FormatMessage(
+		FORMAT_MESSAGE_ALLOCATE_BUFFER | FORMAT_MESSAGE_FROM_SYSTEM | FORMAT_MESSAGE_IGNORE_INSERTS,
+		nullptr, hr, MAKELANGID(LANG_NEUTRAL, SUBLANG_DEFAULT),
+		reinterpret_cast<LPSTR>(&pMsgBuf), 0, nullptr);
+	if (nMsgLen == 0) {
+		return "Undefined Error Code";
+	}
+	std::string errorString = pMsgBuf;
+	LocalFree(pMsgBuf);
+	return errorString;
+}
+
+HRESULT Window::WindowException::GetErrorCode() const noexcept {
+	return hr;
+}
+
+std::string Window::WindowException::GetErrorString() const noexcept {
+	return TranslateErrorCode(hr);
 }

@@ -6,7 +6,7 @@
 	include listing.inc
 	.model	flat
 
-INCLUDELIB LIBCMT
+INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
 msvcjmc	SEGMENT
@@ -28,15 +28,43 @@ __24E9E95F_stdlib@h DB 01H
 __2CCBBE23_propidl@h DB 01H
 __AD360DAF_oleauto@h DB 01H
 __0396F1A5_stralign@h DB 01H
+__8906660C_vcruntime_new@h DB 01H
+__09340588_corecrt_math@h DB 01H
+__F8119FB4_cstdlib DB 01H
+__85A9AA98_type_traits DB 01H
+__B0C4CEA9_malloc@h DB 01H
+__E75714E4_vcruntime_exception@h DB 01H
+__E4152856_exception DB 01H
+__F66CEB67_corecrt_stdio_config@h DB 01H
+__101834BA_corecrt_wstdio@h DB 01H
+__AD6A91B7_stdio@h DB 01H
+__5467428D_corecrt_wconio@h DB 01H
+__4442441F_corecrt_wio@h DB 01H
+__45F4AF76_corecrt_wtime@h DB 01H
+__186FF47F_stat@h DB 01H
+__534C724A_wchar@h DB 01H
+__F2870A2C_limits DB 01H
+__4324C6B3_xutility DB 01H
+__A58979FC_xmemory DB 01H
+__D15AFF60_xstring DB 01H
+__3AFA803E_string DB 01H
 __2C02DA40_EntryPoint@cpp DB 01H
+__CF1C1A3F_utility DB 01H
+__38038D2D_xstddef DB 01H
 msvcjmc	ENDS
 PUBLIC	_WinMain@16
 PUBLIC	?__autoclassinit2@Window@@QAEXI@Z		; Window::__autoclassinit2
 PUBLIC	__JustMyCode_Default
+PUBLIC	??_R0?AVexception@std@@@8			; std::exception `RTTI Type Descriptor'
 PUBLIC	??_C@_07HLLGMCO@Sandbox@			; `string'
+PUBLIC	??_R0?AVException@@@8				; Exception `RTTI Type Descriptor'
+PUBLIC	??_C@_0BD@BEPCMMME@Standard?5Exception@		; `string'
+PUBLIC	??_C@_0BC@BLOAIJL@Unknown?5Exception@		; `string'
+PUBLIC	??_C@_0BF@KKBOEDFD@No?5Details?5Available@	; `string'
 EXTRN	__imp__GetMessageA@16:PROC
 EXTRN	__imp__TranslateMessage@4:PROC
 EXTRN	__imp__DispatchMessageA@4:PROC
+EXTRN	__imp__MessageBoxA@16:PROC
 EXTRN	??0Window@@QAE@HHPBD@Z:PROC			; Window::Window
 EXTRN	??1Window@@QAE@XZ:PROC				; Window::~Window
 EXTRN	@_RTC_CheckStackVars@8:PROC
@@ -45,7 +73,9 @@ EXTRN	@__security_check_cookie@4:PROC
 EXTRN	__RTC_CheckEsp:PROC
 EXTRN	__RTC_InitBase:PROC
 EXTRN	__RTC_Shutdown:PROC
+EXTRN	___CxxFrameHandler3:PROC
 EXTRN	_memset:PROC
+EXTRN	??_7type_info@@6B@:QWORD			; type_info::`vftable'
 EXTRN	___security_cookie:DWORD
 ;	COMDAT rtc$TMZ
 rtc$TMZ	SEGMENT
@@ -55,10 +85,66 @@ rtc$TMZ	ENDS
 rtc$IMZ	SEGMENT
 __RTC_InitBase.rtc$IMZ DD FLAT:__RTC_InitBase
 rtc$IMZ	ENDS
+;	COMDAT ??_C@_0BF@KKBOEDFD@No?5Details?5Available@
+CONST	SEGMENT
+??_C@_0BF@KKBOEDFD@No?5Details?5Available@ DB 'No Details Available', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0BC@BLOAIJL@Unknown?5Exception@
+CONST	SEGMENT
+??_C@_0BC@BLOAIJL@Unknown?5Exception@ DB 'Unknown Exception', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_C@_0BD@BEPCMMME@Standard?5Exception@
+CONST	SEGMENT
+??_C@_0BD@BEPCMMME@Standard?5Exception@ DB 'Standard Exception', 00H ; `string'
+CONST	ENDS
+;	COMDAT ??_R0?AVException@@@8
+data$r	SEGMENT
+??_R0?AVException@@@8 DD FLAT:??_7type_info@@6B@	; Exception `RTTI Type Descriptor'
+	DD	00H
+	DB	'.?AVException@@', 00H
+data$r	ENDS
 ;	COMDAT ??_C@_07HLLGMCO@Sandbox@
 CONST	SEGMENT
 ??_C@_07HLLGMCO@Sandbox@ DB 'Sandbox', 00H		; `string'
 CONST	ENDS
+;	COMDAT ??_R0?AVexception@std@@@8
+data$r	SEGMENT
+??_R0?AVexception@std@@@8 DD FLAT:??_7type_info@@6B@	; std::exception `RTTI Type Descriptor'
+	DD	00H
+	DB	'.?AVexception@std@@', 00H
+data$r	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__unwindtable$_WinMain@16 DD 0ffffffffH
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+__tryblocktable$_WinMain@16 DD 00H
+	DD	00H
+	DD	01H
+	DD	03H
+	DD	FLAT:__catchsym$_WinMain@16$5
+__ehfuncinfo$_WinMain@16 DD 019930522H
+	DD	02H
+	DD	FLAT:__unwindtable$_WinMain@16
+	DD	01H
+	DD	FLAT:__tryblocktable$_WinMain@16
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+__catchsym$_WinMain@16$5 DD 09H
+	DD	FLAT:??_R0?AVException@@@8
+	DD	0ffffffa0H
+	DD	FLAT:__catch$_WinMain@16$0
+	DD	09H
+	DD	FLAT:??_R0?AVexception@std@@@8
+	DD	0ffffff94H
+	DD	FLAT:__catch$_WinMain@16$1
+	DD	040H
+	DD	00H
+	DD	00H
+	DD	FLAT:__catch$_WinMain@16$2
+xdata$x	ENDS
 ; Function compile flags: /Odt
 ;	COMDAT __JustMyCode_Default
 _TEXT	SEGMENT
@@ -110,13 +196,15 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT _WinMain@16
 _TEXT	SEGMENT
-$T1 = -296						; size = 4
-$T2 = -284						; size = 4
-$T3 = -272						; size = 4
-_gResult$ = -68						; size = 4
-_msg$ = -56						; size = 28
-_window$ = -20						; size = 12
-__$ArrayPad$ = -4					; size = 4
+$T2 = -324						; size = 4
+$T3 = -312						; size = 4
+_ex$4 = -108						; size = 4
+_ex$5 = -96						; size = 4
+_gResult$6 = -84					; size = 4
+_msg$7 = -72						; size = 28
+_window$8 = -36						; size = 12
+__$ArrayPad$ = -20					; size = 4
+__$EHRec$ = -16						; size = 16
 _hInstance$ = 8						; size = 4
 _hPrevInstance$ = 12					; size = 4
 _pCmdLine$ = 16						; size = 4
@@ -126,119 +214,219 @@ _WinMain@16 PROC					; COMDAT
 ; Line 8
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 300				; 0000012cH
+	push	-1
+	push	__ehhandler$_WinMain@16
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	push	ecx
+	sub	esp, 312				; 00000138H
 	push	ebx
 	push	esi
 	push	edi
-	lea	edi, DWORD PTR [ebp-300]
-	mov	ecx, 75					; 0000004bH
+	lea	edi, DWORD PTR [ebp-328]
+	mov	ecx, 78					; 0000004eH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	mov	eax, DWORD PTR ___security_cookie
 	xor	eax, ebp
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp+4]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR __$EHRec$[ebp], esp
 	mov	ecx, OFFSET __2C02DA40_EntryPoint@cpp
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 10
+	mov	DWORD PTR __$EHRec$[ebp+12], 0
+; Line 11
 	push	12					; 0000000cH
-	lea	ecx, DWORD PTR _window$[ebp]
+	lea	ecx, DWORD PTR _window$8[ebp]
 	call	?__autoclassinit2@Window@@QAEXI@Z
 	push	OFFSET ??_C@_07HLLGMCO@Sandbox@
-	push	256					; 00000100H
 	push	512					; 00000200H
-	lea	ecx, DWORD PTR _window$[ebp]
+	push	512					; 00000200H
+	lea	ecx, DWORD PTR _window$8[ebp]
 	call	??0Window@@QAE@HHPBD@Z			; Window::Window
 $LN2@WinMain:
-; Line 14
+; Line 15
 	mov	esi, esp
 	push	0
 	push	0
 	push	0
-	lea	eax, DWORD PTR _msg$[ebp]
+	lea	eax, DWORD PTR _msg$7[ebp]
 	push	eax
 	call	DWORD PTR __imp__GetMessageA@16
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-	mov	DWORD PTR _gResult$[ebp], eax
-	cmp	DWORD PTR _gResult$[ebp], 0
+	mov	DWORD PTR _gResult$6[ebp], eax
+	cmp	DWORD PTR _gResult$6[ebp], 0
 	jle	SHORT $LN3@WinMain
-; Line 17
+; Line 18
 	mov	esi, esp
-	lea	eax, DWORD PTR _msg$[ebp]
+	lea	eax, DWORD PTR _msg$7[ebp]
 	push	eax
 	call	DWORD PTR __imp__TranslateMessage@4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 18
+; Line 19
 	mov	esi, esp
-	lea	eax, DWORD PTR _msg$[ebp]
+	lea	eax, DWORD PTR _msg$7[ebp]
 	push	eax
 	call	DWORD PTR __imp__DispatchMessageA@4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 19
+; Line 20
 	jmp	SHORT $LN2@WinMain
 $LN3@WinMain:
-; Line 22
-	cmp	DWORD PTR _gResult$[ebp], -1
-	jne	SHORT $LN4@WinMain
-; Line 24
+; Line 23
+	cmp	DWORD PTR _gResult$6[ebp], -1
+	jne	SHORT $LN5@WinMain
+; Line 25
 	mov	DWORD PTR $T3[ebp], -1
-	lea	ecx, DWORD PTR _window$[ebp]
+	lea	ecx, DWORD PTR _window$8[ebp]
 	call	??1Window@@QAE@XZ			; Window::~Window
 	mov	eax, DWORD PTR $T3[ebp]
-	jmp	SHORT $LN1@WinMain
-$LN4@WinMain:
-; Line 28
-	mov	eax, DWORD PTR _msg$[ebp+8]
+	jmp	$LN1@WinMain
+$LN5@WinMain:
+; Line 29
+	mov	eax, DWORD PTR _msg$7[ebp+8]
 	mov	DWORD PTR $T2[ebp], eax
-	lea	ecx, DWORD PTR _window$[ebp]
+	lea	ecx, DWORD PTR _window$8[ebp]
 	call	??1Window@@QAE@XZ			; Window::~Window
 	mov	eax, DWORD PTR $T2[ebp]
+	jmp	$LN1@WinMain
+__catch$_WinMain@16$0:
+; Line 32
+	mov	esi, esp
+	push	16					; 00000010H
+	mov	eax, DWORD PTR _ex$5[ebp]
+	mov	edx, DWORD PTR [eax]
+	mov	edi, esp
+	mov	ecx, DWORD PTR _ex$5[ebp]
+	mov	eax, DWORD PTR [edx+8]
+	call	eax
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	push	eax
+	mov	ecx, DWORD PTR _ex$5[ebp]
+	mov	edx, DWORD PTR [ecx]
+	mov	edi, esp
+	mov	ecx, DWORD PTR _ex$5[ebp]
+	mov	eax, DWORD PTR [edx+4]
+	call	eax
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	push	eax
+	push	0
+	call	DWORD PTR __imp__MessageBoxA@16
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 33
+	mov	eax, $LN13@WinMain
+	ret	0
+__catch$_WinMain@16$1:
+; Line 35
+	mov	esi, esp
+	push	16					; 00000010H
+	push	OFFSET ??_C@_0BD@BEPCMMME@Standard?5Exception@
+	mov	eax, DWORD PTR _ex$4[ebp]
+	mov	edx, DWORD PTR [eax]
+	mov	edi, esp
+	mov	ecx, DWORD PTR _ex$4[ebp]
+	mov	eax, DWORD PTR [edx+4]
+	call	eax
+	cmp	edi, esp
+	call	__RTC_CheckEsp
+	push	eax
+	push	0
+	call	DWORD PTR __imp__MessageBoxA@16
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 36
+	mov	eax, $LN15@WinMain
+	ret	0
+__catch$_WinMain@16$2:
+; Line 38
+	mov	esi, esp
+	push	16					; 00000010H
+	push	OFFSET ??_C@_0BC@BLOAIJL@Unknown?5Exception@
+	push	OFFSET ??_C@_0BF@KKBOEDFD@No?5Details?5Available@
+	push	0
+	call	DWORD PTR __imp__MessageBoxA@16
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+; Line 39
+	mov	eax, $LN17@WinMain
+	ret	0
+	mov	DWORD PTR __$EHRec$[ebp+12], -1
+	jmp	SHORT $LN16@WinMain
+$LN17@WinMain:
+	mov	DWORD PTR __$EHRec$[ebp+12], -1
 	jmp	SHORT $LN1@WinMain
-; Line 30
-	mov	DWORD PTR $T1[ebp], 0
-	lea	ecx, DWORD PTR _window$[ebp]
-	call	??1Window@@QAE@XZ			; Window::~Window
-	mov	eax, DWORD PTR $T1[ebp]
+$LN16@WinMain:
+	jmp	SHORT $LN14@WinMain
+$LN15@WinMain:
+	mov	DWORD PTR __$EHRec$[ebp+12], -1
+; Line 36
+	jmp	SHORT $LN1@WinMain
+$LN14@WinMain:
+	jmp	SHORT $LN1@WinMain
+$LN13@WinMain:
+	mov	DWORD PTR __$EHRec$[ebp+12], -1
 $LN1@WinMain:
-; Line 31
+; Line 40
 	push	edx
 	mov	ecx, ebp
 	push	eax
-	lea	edx, DWORD PTR $LN9@WinMain
+	lea	edx, DWORD PTR $LN24@WinMain
 	call	@_RTC_CheckStackVars@8
 	pop	eax
 	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp+4]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
 	pop	edi
 	pop	esi
 	pop	ebx
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
-	add	esp, 300				; 0000012cH
+	add	esp, 328				; 00000148H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	16					; 00000010H
-	npad	1
-$LN9@WinMain:
-	DD	2
-	DD	$LN8@WinMain
-$LN8@WinMain:
-	DD	-20					; ffffffecH
+$LN24@WinMain:
+	DD	4
+	DD	$LN23@WinMain
+$LN23@WinMain:
+	DD	-36					; ffffffdcH
 	DD	12					; 0000000cH
-	DD	$LN6@WinMain
-	DD	-56					; ffffffc8H
+	DD	$LN18@WinMain
+	DD	-72					; ffffffb8H
 	DD	28					; 0000001cH
-	DD	$LN7@WinMain
-$LN7@WinMain:
+	DD	$LN19@WinMain
+	DD	-96					; ffffffa0H
+	DD	4
+	DD	$LN20@WinMain
+	DD	-108					; ffffff94H
+	DD	4
+	DD	$LN21@WinMain
+$LN21@WinMain:
+	DB	101					; 00000065H
+	DB	120					; 00000078H
+	DB	0
+$LN20@WinMain:
+	DB	101					; 00000065H
+	DB	120					; 00000078H
+	DB	0
+$LN19@WinMain:
 	DB	109					; 0000006dH
 	DB	115					; 00000073H
 	DB	103					; 00000067H
 	DB	0
-$LN6@WinMain:
+$LN18@WinMain:
 	DB	119					; 00000077H
 	DB	105					; 00000069H
 	DB	110					; 0000006eH
@@ -246,6 +434,27 @@ $LN6@WinMain:
 	DB	111					; 0000006fH
 	DB	119					; 00000077H
 	DB	0
-_WinMain@16 ENDP
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
 _TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$_WinMain@16:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-332]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-8]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$_WinMain@16
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+_WinMain@16 ENDP
 END
