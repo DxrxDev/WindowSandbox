@@ -169,11 +169,14 @@
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="res\Logo.bmp" />
-    <Image Include="res\Logo.ico" />
+    <ResourceCompile Include="res\WindowSandbox.rc" />
   </ItemGroup>
   <ItemGroup>
-    <ResourceCompile Include="res\WindowSandbox.rc" />
+    <None Include="res\WindowSandbox.aps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Logo.ico" />
+    <Image Include="res\Logo.ico" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

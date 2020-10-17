@@ -299,18 +299,18 @@ __catch$_WinMain@16$0:
 ; Line 32
 	mov	esi, esp
 	push	16					; 00000010H
+	mov	edi, esp
 	mov	eax, DWORD PTR _ex$5[ebp]
 	mov	edx, DWORD PTR [eax]
-	mov	edi, esp
 	mov	ecx, DWORD PTR _ex$5[ebp]
 	mov	eax, DWORD PTR [edx+8]
 	call	eax
 	cmp	edi, esp
 	call	__RTC_CheckEsp
 	push	eax
+	mov	edi, esp
 	mov	ecx, DWORD PTR _ex$5[ebp]
 	mov	edx, DWORD PTR [ecx]
-	mov	edi, esp
 	mov	ecx, DWORD PTR _ex$5[ebp]
 	mov	eax, DWORD PTR [edx+4]
 	call	eax
@@ -329,9 +329,9 @@ __catch$_WinMain@16$1:
 	mov	esi, esp
 	push	16					; 00000010H
 	push	OFFSET ??_C@_0BD@BEPCMMME@Standard?5Exception@
+	mov	edi, esp
 	mov	eax, DWORD PTR _ex$4[ebp]
 	mov	edx, DWORD PTR [eax]
-	mov	edi, esp
 	mov	ecx, DWORD PTR _ex$4[ebp]
 	mov	eax, DWORD PTR [edx+4]
 	call	eax
@@ -362,19 +362,22 @@ __catch$_WinMain@16$2:
 	jmp	SHORT $LN16@WinMain
 $LN17@WinMain:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
-	jmp	SHORT $LN1@WinMain
+	jmp	SHORT __tryend$_WinMain@16$3
 $LN16@WinMain:
 	jmp	SHORT $LN14@WinMain
 $LN15@WinMain:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
 ; Line 36
-	jmp	SHORT $LN1@WinMain
+	jmp	SHORT __tryend$_WinMain@16$3
 $LN14@WinMain:
-	jmp	SHORT $LN1@WinMain
+	jmp	SHORT __tryend$_WinMain@16$3
 $LN13@WinMain:
 	mov	DWORD PTR __$EHRec$[ebp+12], -1
-$LN1@WinMain:
+__tryend$_WinMain@16$3:
 ; Line 40
+	or	eax, -1
+$LN1@WinMain:
+; Line 41
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -397,6 +400,7 @@ $LN1@WinMain:
 	mov	esp, ebp
 	pop	ebp
 	ret	16					; 00000010H
+	npad	1
 $LN24@WinMain:
 	DD	4
 	DD	$LN23@WinMain

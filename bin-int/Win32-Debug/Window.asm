@@ -117,6 +117,7 @@ PUBLIC	??0?$allocator@D@std@@QAE@XZ			; std::allocator<char>::allocator<char>
 PUBLIC	?deallocate@?$allocator@D@std@@QAEXQADI@Z	; std::allocator<char>::deallocate
 PUBLIC	?allocate@?$allocator@D@std@@QAEPADI@Z		; std::allocator<char>::allocate
 PUBLIC	?max_size@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::_Default_allocator_traits<std::allocator<char> >::max_size
+PUBLIC	?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z ; std::_Default_allocator_traits<std::allocator<char> >::select_on_container_copy_construction
 PUBLIC	??0?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ ; std::_String_val<std::_Simple_types<char> >::_String_val<std::_Simple_types<char> >
 PUBLIC	?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QAEPADXZ ; std::_String_val<std::_Simple_types<char> >::_Myptr
 PUBLIC	?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QBEPBDXZ ; std::_String_val<std::_Simple_types<char> >::_Myptr
@@ -124,6 +125,7 @@ PUBLIC	?_Large_string_engaged@?$_String_val@U?$_Simple_types@D@std@@@std@@QBE_NX
 PUBLIC	??0_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ ; std::_String_val<std::_Simple_types<char> >::_Bxty::_Bxty
 PUBLIC	??1_Bxty@?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ ; std::_String_val<std::_Simple_types<char> >::_Bxty::~_Bxty
 PUBLIC	??1?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ ; std::_String_val<std::_Simple_types<char> >::~_String_val<std::_Simple_types<char> >
+PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV?$allocator@D@1@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@$$QAV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -131,6 +133,7 @@ PUBLIC	?_Move_assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std
 PUBLIC	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@$$QAV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 PUBLIC	?_Memcpy_val_from@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXABV12@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Memcpy_val_from
 PUBLIC	?_Take_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXAAV12@U?$integral_constant@_N$00@2@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Take_contents
+PUBLIC	?_Construct_lv_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXABV12@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct_lv_contents
 PUBLIC	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@QBDI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign
 PUBLIC	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign
@@ -149,6 +152,8 @@ PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Sim
 PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QBEABV?$allocator@D@2@XZ ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Get_first
 PUBLIC	??1?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@XZ ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::~_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>
 PUBLIC	??1Exception@@UAE@XZ				; Exception::~Exception
+PUBLIC	??0Exception@@QAE@ABV0@@Z			; Exception::Exception
+PUBLIC	??_GException@@UAEPAXI@Z			; Exception::`scalar deleting destructor'
 PUBLIC	??0WindowException@Window@@QAE@HPBDJ@Z		; Window::WindowException::WindowException
 PUBLIC	?what@WindowException@Window@@UBEPBDXZ		; Window::WindowException::what
 PUBLIC	?GetType@WindowException@Window@@UBEPBDXZ	; Window::WindowException::GetType
@@ -156,6 +161,7 @@ PUBLIC	?TranslateErrorCode@WindowException@Window@@SA?AV?$basic_string@DU?$char_
 PUBLIC	?GetErrorCode@WindowException@Window@@QBEJXZ	; Window::WindowException::GetErrorCode
 PUBLIC	?GetErrorString@WindowException@Window@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ ; Window::WindowException::GetErrorString
 PUBLIC	??1WindowException@Window@@UAE@XZ		; Window::WindowException::~WindowException
+PUBLIC	??0WindowException@Window@@QAE@ABV01@@Z		; Window::WindowException::WindowException
 PUBLIC	??_GWindowException@Window@@UAEPAXI@Z		; Window::WindowException::`scalar deleting destructor'
 PUBLIC	?GetName@WindowClass@Window@@SAPBDXZ		; Window::WindowClass::GetName
 PUBLIC	?GetInstance@WindowClass@Window@@SAPAUHINSTANCE__@@XZ ; Window::WindowClass::GetInstance
@@ -257,10 +263,19 @@ PUBLIC	??_C@_1NA@FEEOBALC@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$
 PUBLIC	??_C@_1EK@NIFDJFDG@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAA?$AAd?$AAj?$AAu?$AAs?$AAt?$AA_?$AAm?$AAa@ ; `string'
 PUBLIC	??_C@_1CG@JNLFBNGN@?$AA?$CC?$AAi?$AAn?$AAv?$AAa?$AAl?$AAi?$AAd?$AA?5?$AAa?$AAr?$AAg?$AAu?$AAm?$AAe@ ; `string'
 PUBLIC	??_C@_0BA@JFNIOLAK@string?5too?5long@		; `string'
+PUBLIC	??_7Exception@@6B@				; Exception::`vftable'
 PUBLIC	??_7WindowException@Window@@6B@			; Window::WindowException::`vftable'
 PUBLIC	?wndClassName@WindowClass@Window@@0QBDB		; Window::WindowClass::wndClassName
 PUBLIC	??_C@_07KHIJMDBA@SandBox@			; `string'
 PUBLIC	?wndClass@WindowClass@Window@@0V12@A		; Window::WindowClass::wndClass
+PUBLIC	?__LINE__Var@?0???0Window@@QAE@HHPBD@Z@4JA	; `Window::Window'::`1'::__LINE__Var
+PUBLIC	__TI3?AVWindowException@Window@@
+PUBLIC	__CTA3?AVWindowException@Window@@
+PUBLIC	??_R0?AVWindowException@Window@@@8		; Window::WindowException `RTTI Type Descriptor'
+PUBLIC	__CT??_R0?AVWindowException@Window@@@8??0WindowException@Window@@QAE@ABV01@@Z76
+PUBLIC	??_R0?AVException@@@8				; Exception `RTTI Type Descriptor'
+PUBLIC	__CT??_R0?AVException@@@8??0Exception@@QAE@ABV0@@Z72
+PUBLIC	??_C@_0CO@NMAFAAMI@F?3?2WindowSandbox?2WindowSandbox?2@ ; `string'
 PUBLIC	??_7?$basic_stringbuf@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@6B@ ; std::basic_stringbuf<char,std::char_traits<char>,std::allocator<char> >::`vftable'
 PUBLIC	??_7?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@6B@ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::`vftable'
 PUBLIC	??_8?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@7B@ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::`vbtable'
@@ -315,15 +330,14 @@ PUBLIC	??_R2?$_Iosb@H@std@@8				; std::_Iosb<int>::`RTTI Base Class Array'
 PUBLIC	??_R1A@?0A@EA@?$_Iosb@H@std@@8			; std::_Iosb<int>::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	??_R1A@A@3EA@ios_base@std@@8			; std::ios_base::`RTTI Base Class Descriptor at (0,0,4,64)'
 PUBLIC	??_R17A@3EA@?$_Iosb@H@std@@8			; std::_Iosb<int>::`RTTI Base Class Descriptor at (8,0,4,64)'
+PUBLIC	??_R4Exception@@6B@				; Exception::`RTTI Complete Object Locator'
+PUBLIC	??_R3Exception@@8				; Exception::`RTTI Class Hierarchy Descriptor'
+PUBLIC	??_R2Exception@@8				; Exception::`RTTI Base Class Array'
+PUBLIC	??_R1A@?0A@EA@Exception@@8			; Exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	??_R4WindowException@Window@@6B@		; Window::WindowException::`RTTI Complete Object Locator'
-PUBLIC	??_R0?AVWindowException@Window@@@8		; Window::WindowException `RTTI Type Descriptor'
 PUBLIC	??_R3WindowException@Window@@8			; Window::WindowException::`RTTI Class Hierarchy Descriptor'
 PUBLIC	??_R2WindowException@Window@@8			; Window::WindowException::`RTTI Base Class Array'
 PUBLIC	??_R1A@?0A@EA@WindowException@Window@@8		; Window::WindowException::`RTTI Base Class Descriptor at (0,-1,0,64)'
-PUBLIC	??_R1A@?0A@EA@Exception@@8			; Exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
-PUBLIC	??_R0?AVException@@@8				; Exception `RTTI Type Descriptor'
-PUBLIC	??_R3Exception@@8				; Exception::`RTTI Class Hierarchy Descriptor'
-PUBLIC	??_R2Exception@@8				; Exception::`RTTI Base Class Array'
 EXTRN	??2@YAPAXI@Z:PROC				; operator new
 EXTRN	??3@YAXPAXI@Z:PROC				; operator delete
 EXTRN	_atexit:PROC
@@ -331,6 +345,7 @@ EXTRN	__imp___invalid_parameter:PROC
 EXTRN	_memcpy:PROC
 EXTRN	_memmove:PROC
 EXTRN	_strlen:PROC
+EXTRN	__imp__GetLastError@0:PROC
 EXTRN	__imp__GetModuleHandleA@4:PROC
 EXTRN	__imp__LocalFree@4:PROC
 EXTRN	__imp__FormatMessageA@28:PROC
@@ -343,6 +358,7 @@ EXTRN	__imp__DestroyWindow@4:PROC
 EXTRN	__imp__ShowWindow@8:PROC
 EXTRN	__imp__GetWindowLongA@8:PROC
 EXTRN	__imp__SetWindowLongA@12:PROC
+EXTRN	__imp__LoadImageA@24:PROC
 EXTRN	__imp___CrtDbgReport:PROC
 EXTRN	__imp_??0_Lockit@std@@QAE@H@Z:PROC
 EXTRN	__imp_??1_Lockit@std@@QAE@XZ:PROC
@@ -354,7 +370,10 @@ EXTRN	??_Ebad_alloc@std@@UAEPAXI@Z:PROC		; std::bad_alloc::`vector deleting dest
 EXTRN	??_Ebad_array_new_length@std@@UAEPAXI@Z:PROC	; std::bad_array_new_length::`vector deleting destructor'
 EXTRN	?_Xlength_error@std@@YAXPBD@Z:PROC		; std::_Xlength_error
 EXTRN	??0Exception@@QAE@IPBD@Z:PROC			; Exception::Exception
+EXTRN	?what@Exception@@UBEPBDXZ:PROC			; Exception::what
+EXTRN	?GetType@Exception@@UBEPBDXZ:PROC		; Exception::GetType
 EXTRN	?GetOriginString@Exception@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ:PROC ; Exception::GetOriginString
+EXTRN	??_EException@@UAEPAXI@Z:PROC			; Exception::`vector deleting destructor'
 EXTRN	??_EWindowException@Window@@UAEPAXI@Z:PROC	; Window::WindowException::`vector deleting destructor'
 EXTRN	__imp_?good@ios_base@std@@QBE_NXZ:PROC
 EXTRN	__imp_?flags@ios_base@std@@QBEHXZ:PROC
@@ -425,34 +444,6 @@ rtc$TMZ	ENDS
 rtc$IMZ	SEGMENT
 __RTC_InitBase.rtc$IMZ DD FLAT:__RTC_InitBase
 rtc$IMZ	ENDS
-;	COMDAT ??_R2Exception@@8
-rdata$r	SEGMENT
-??_R2Exception@@8 DD FLAT:??_R1A@?0A@EA@Exception@@8	; Exception::`RTTI Base Class Array'
-	DD	FLAT:??_R1A@?0A@EA@exception@std@@8
-rdata$r	ENDS
-;	COMDAT ??_R3Exception@@8
-rdata$r	SEGMENT
-??_R3Exception@@8 DD 00H				; Exception::`RTTI Class Hierarchy Descriptor'
-	DD	00H
-	DD	02H
-	DD	FLAT:??_R2Exception@@8
-rdata$r	ENDS
-;	COMDAT ??_R0?AVException@@@8
-data$r	SEGMENT
-??_R0?AVException@@@8 DD FLAT:??_7type_info@@6B@	; Exception `RTTI Type Descriptor'
-	DD	00H
-	DB	'.?AVException@@', 00H
-data$r	ENDS
-;	COMDAT ??_R1A@?0A@EA@Exception@@8
-rdata$r	SEGMENT
-??_R1A@?0A@EA@Exception@@8 DD FLAT:??_R0?AVException@@@8 ; Exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
-	DD	01H
-	DD	00H
-	DD	0ffffffffH
-	DD	00H
-	DD	040H
-	DD	FLAT:??_R3Exception@@8
-rdata$r	ENDS
 ;	COMDAT ??_R1A@?0A@EA@WindowException@Window@@8
 rdata$r	SEGMENT
 ??_R1A@?0A@EA@WindowException@Window@@8 DD FLAT:??_R0?AVWindowException@Window@@@8 ; Window::WindowException::`RTTI Base Class Descriptor at (0,-1,0,64)'
@@ -476,12 +467,6 @@ rdata$r	SEGMENT
 	DD	03H
 	DD	FLAT:??_R2WindowException@Window@@8
 rdata$r	ENDS
-;	COMDAT ??_R0?AVWindowException@Window@@@8
-data$r	SEGMENT
-??_R0?AVWindowException@Window@@@8 DD FLAT:??_7type_info@@6B@ ; Window::WindowException `RTTI Type Descriptor'
-	DD	00H
-	DB	'.?AVWindowException@Window@@', 00H
-data$r	ENDS
 ;	COMDAT ??_R4WindowException@Window@@6B@
 rdata$r	SEGMENT
 ??_R4WindowException@Window@@6B@ DD 00H			; Window::WindowException::`RTTI Complete Object Locator'
@@ -489,6 +474,36 @@ rdata$r	SEGMENT
 	DD	00H
 	DD	FLAT:??_R0?AVWindowException@Window@@@8
 	DD	FLAT:??_R3WindowException@Window@@8
+rdata$r	ENDS
+;	COMDAT ??_R1A@?0A@EA@Exception@@8
+rdata$r	SEGMENT
+??_R1A@?0A@EA@Exception@@8 DD FLAT:??_R0?AVException@@@8 ; Exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
+	DD	01H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	040H
+	DD	FLAT:??_R3Exception@@8
+rdata$r	ENDS
+;	COMDAT ??_R2Exception@@8
+rdata$r	SEGMENT
+??_R2Exception@@8 DD FLAT:??_R1A@?0A@EA@Exception@@8	; Exception::`RTTI Base Class Array'
+	DD	FLAT:??_R1A@?0A@EA@exception@std@@8
+rdata$r	ENDS
+;	COMDAT ??_R3Exception@@8
+rdata$r	SEGMENT
+??_R3Exception@@8 DD 00H				; Exception::`RTTI Class Hierarchy Descriptor'
+	DD	00H
+	DD	02H
+	DD	FLAT:??_R2Exception@@8
+rdata$r	ENDS
+;	COMDAT ??_R4Exception@@6B@
+rdata$r	SEGMENT
+??_R4Exception@@6B@ DD 00H				; Exception::`RTTI Complete Object Locator'
+	DD	00H
+	DD	00H
+	DD	FLAT:??_R0?AVException@@@8
+	DD	FLAT:??_R3Exception@@8
 rdata$r	ENDS
 ;	COMDAT ??_R17A@3EA@?$_Iosb@H@std@@8
 rdata$r	SEGMENT
@@ -893,6 +908,61 @@ CONST	SEGMENT
 	DD	FLAT:?sync@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEHXZ
 	DD	FLAT:?imbue@?$basic_streambuf@DU?$char_traits@D@std@@@std@@MAEXABVlocale@2@@Z
 CONST	ENDS
+;	COMDAT ??_C@_0CO@NMAFAAMI@F?3?2WindowSandbox?2WindowSandbox?2@
+CONST	SEGMENT
+??_C@_0CO@NMAFAAMI@F?3?2WindowSandbox?2WindowSandbox?2@ DB 'F:\WindowSand'
+	DB	'box\WindowSandbox\src\Window.cpp', 00H	; `string'
+CONST	ENDS
+;	COMDAT __CT??_R0?AVException@@@8??0Exception@@QAE@ABV0@@Z72
+xdata$x	SEGMENT
+__CT??_R0?AVException@@@8??0Exception@@QAE@ABV0@@Z72 DD 00H
+	DD	FLAT:??_R0?AVException@@@8
+	DD	00H
+	DD	0ffffffffH
+	ORG $+4
+	DD	048H
+	DD	FLAT:??0Exception@@QAE@ABV0@@Z
+xdata$x	ENDS
+;	COMDAT ??_R0?AVException@@@8
+data$r	SEGMENT
+??_R0?AVException@@@8 DD FLAT:??_7type_info@@6B@	; Exception `RTTI Type Descriptor'
+	DD	00H
+	DB	'.?AVException@@', 00H
+data$r	ENDS
+;	COMDAT __CT??_R0?AVWindowException@Window@@@8??0WindowException@Window@@QAE@ABV01@@Z76
+xdata$x	SEGMENT
+__CT??_R0?AVWindowException@Window@@@8??0WindowException@Window@@QAE@ABV01@@Z76 DD 00H
+	DD	FLAT:??_R0?AVWindowException@Window@@@8
+	DD	00H
+	DD	0ffffffffH
+	ORG $+4
+	DD	04cH
+	DD	FLAT:??0WindowException@Window@@QAE@ABV01@@Z
+xdata$x	ENDS
+;	COMDAT ??_R0?AVWindowException@Window@@@8
+data$r	SEGMENT
+??_R0?AVWindowException@Window@@@8 DD FLAT:??_7type_info@@6B@ ; Window::WindowException `RTTI Type Descriptor'
+	DD	00H
+	DB	'.?AVWindowException@Window@@', 00H
+data$r	ENDS
+;	COMDAT __CTA3?AVWindowException@Window@@
+xdata$x	SEGMENT
+__CTA3?AVWindowException@Window@@ DD 03H
+	DD	FLAT:__CT??_R0?AVWindowException@Window@@@8??0WindowException@Window@@QAE@ABV01@@Z76
+	DD	FLAT:__CT??_R0?AVException@@@8??0Exception@@QAE@ABV0@@Z72
+	DD	FLAT:__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12
+xdata$x	ENDS
+;	COMDAT __TI3?AVWindowException@Window@@
+xdata$x	SEGMENT
+__TI3?AVWindowException@Window@@ DD 00H
+	DD	FLAT:??1WindowException@Window@@UAE@XZ
+	DD	00H
+	DD	FLAT:__CTA3?AVWindowException@Window@@
+xdata$x	ENDS
+;	COMDAT ?__LINE__Var@?0???0Window@@QAE@HHPBD@Z@4JA
+_DATA	SEGMENT
+?__LINE__Var@?0???0Window@@QAE@HHPBD@Z@4JA DD 026H	; `Window::Window'::`1'::__LINE__Var
+_DATA	ENDS
 ;	COMDAT ??_C@_07KHIJMDBA@SandBox@
 CONST	SEGMENT
 ??_C@_07KHIJMDBA@SandBox@ DB 'SandBox', 00H		; `string'
@@ -907,6 +977,13 @@ CONST	SEGMENT
 	DD	FLAT:??_EWindowException@Window@@UAEPAXI@Z
 	DD	FLAT:?what@WindowException@Window@@UBEPBDXZ
 	DD	FLAT:?GetType@WindowException@Window@@UBEPBDXZ
+CONST	ENDS
+;	COMDAT ??_7Exception@@6B@
+CONST	SEGMENT
+??_7Exception@@6B@ DD FLAT:??_R4Exception@@6B@		; Exception::`vftable'
+	DD	FLAT:??_EException@@UAEPAXI@Z
+	DD	FLAT:?what@Exception@@UBEPBDXZ
+	DD	FLAT:?GetType@Exception@@UBEPBDXZ
 CONST	ENDS
 ;	COMDAT ??_C@_0BA@JFNIOLAK@string?5too?5long@
 CONST	SEGMENT
@@ -1509,16 +1586,6 @@ __ehfuncinfo$??1Window@@QAE@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
-__ehfuncinfo$??0Window@@QAE@HHPBD@Z DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
 __ehfuncinfo$??1WindowClass@Window@@AAE@XZ DD 019930522H
 	DD	00H
 	DD	00H
@@ -1606,6 +1673,20 @@ __ehfuncinfo$?what@WindowException@Window@@UBEPBDXZ DD 019930522H
 	DD	2 DUP(00H)
 	DD	00H
 	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__unwindtable$??0Exception@@QAE@ABV0@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??0Exception@@QAE@ABV0@@Z$0
+	DD	00H
+	DD	FLAT:__unwindfunclet$??0Exception@@QAE@ABV0@@Z$1
+__ehfuncinfo$??0Exception@@QAE@ABV0@@Z DD 019930522H
+	DD	02H
+	DD	FLAT:__unwindtable$??0Exception@@QAE@ABV0@@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
@@ -1810,6 +1891,20 @@ __ehfuncinfo$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE
 	DD	2 DUP(00H)
 	DD	00H
 	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__unwindtable$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z$0
+	DD	00H
+	DD	FLAT:__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z$1
+__ehfuncinfo$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z DD 019930522H
+	DD	02H
+	DD	FLAT:__unwindtable$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
@@ -8370,7 +8465,7 @@ _lParam$ = 20						; size = 4
 ?HandleMsg@Window@@AAEJPAUHWND__@@IIJ@Z PROC		; Window::HandleMsg, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 82
+; Line 87
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -8395,24 +8490,24 @@ _lParam$ = 20						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 83
+; Line 88
 	mov	eax, DWORD PTR _msg$[ebp]
 	mov	DWORD PTR tv64[ebp], eax
 	cmp	DWORD PTR tv64[ebp], 16			; 00000010H
 	je	SHORT $LN4@HandleMsg
 	jmp	SHORT $LN2@HandleMsg
 $LN4@HandleMsg:
-; Line 87
+; Line 92
 	mov	esi, esp
 	push	0
 	call	DWORD PTR __imp__PostQuitMessage@4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 88
+; Line 93
 	xor	eax, eax
 	jmp	SHORT $LN5@HandleMsg
 $LN2@HandleMsg:
-; Line 91
+; Line 96
 	mov	esi, esp
 	mov	eax, DWORD PTR _lParam$[ebp]
 	push	eax
@@ -8426,7 +8521,7 @@ $LN2@HandleMsg:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 $LN5@HandleMsg:
-; Line 92
+; Line 97
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -8470,7 +8565,7 @@ _wParam$ = 16						; size = 4
 _lParam$ = 20						; size = 4
 ?HandleMsgThunk@Window@@CGJPAUHWND__@@IIJ@Z PROC	; Window::HandleMsgThunk, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 75
+; Line 80
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -8492,7 +8587,7 @@ _lParam$ = 20						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 77
+; Line 82
 	mov	esi, esp
 	push	-21					; ffffffebH
 	mov	eax, DWORD PTR _hWnd$[ebp]
@@ -8501,7 +8596,7 @@ _lParam$ = 20						; size = 4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _pWnd$[ebp], eax
-; Line 79
+; Line 84
 	mov	eax, DWORD PTR _lParam$[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _wParam$[ebp]
@@ -8512,7 +8607,7 @@ _lParam$ = 20						; size = 4
 	push	eax
 	mov	ecx, DWORD PTR _pWnd$[ebp]
 	call	?HandleMsg@Window@@AAEJPAUHWND__@@IIJ@Z	; Window::HandleMsg
-; Line 80
+; Line 85
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -8557,7 +8652,7 @@ _wParam$ = 16						; size = 4
 _lParam$ = 20						; size = 4
 ?HandleMsgSetup@Window@@CGJPAUHWND__@@IIJ@Z PROC	; Window::HandleMsgSetup, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 56
+; Line 61
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -8579,17 +8674,17 @@ _lParam$ = 20						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 58
+; Line 63
 	cmp	DWORD PTR _msg$[ebp], 129		; 00000081H
 	jne	SHORT $LN2@HandleMsgS
-; Line 61
+; Line 66
 	mov	eax, DWORD PTR _lParam$[ebp]
 	mov	DWORD PTR _pCreate$3[ebp], eax
-; Line 62
+; Line 67
 	mov	eax, DWORD PTR _pCreate$3[ebp]
 	mov	ecx, DWORD PTR [eax]
 	mov	DWORD PTR _pWnd$2[ebp], ecx
-; Line 64
+; Line 69
 	mov	esi, esp
 	mov	eax, DWORD PTR _pWnd$2[ebp]
 	push	eax
@@ -8599,7 +8694,7 @@ _lParam$ = 20						; size = 4
 	call	DWORD PTR __imp__SetWindowLongA@12
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 66
+; Line 71
 	mov	esi, esp
 	push	OFFSET ?HandleMsgThunk@Window@@CGJPAUHWND__@@IIJ@Z ; Window::HandleMsgThunk
 	push	-4					; fffffffcH
@@ -8608,7 +8703,7 @@ _lParam$ = 20						; size = 4
 	call	DWORD PTR __imp__SetWindowLongA@12
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 68
+; Line 73
 	mov	eax, DWORD PTR _lParam$[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _wParam$[ebp]
@@ -8621,7 +8716,7 @@ _lParam$ = 20						; size = 4
 	call	?HandleMsg@Window@@AAEJPAUHWND__@@IIJ@Z	; Window::HandleMsg
 	jmp	SHORT $LN3@HandleMsgS
 $LN2@HandleMsgS:
-; Line 71
+; Line 76
 	mov	esi, esp
 	mov	eax, DWORD PTR _lParam$[ebp]
 	push	eax
@@ -8635,7 +8730,7 @@ $LN2@HandleMsgS:
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 $LN3@HandleMsgS:
-; Line 72
+; Line 77
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -8676,7 +8771,7 @@ __$EHRec$ = -12						; size = 12
 ??1Window@@QAE@XZ PROC					; Window::~Window, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 51
+; Line 56
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -8701,7 +8796,7 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 52
+; Line 57
 	mov	esi, esp
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+8]
@@ -8709,7 +8804,7 @@ __$EHRec$ = -12						; size = 12
 	call	DWORD PTR __imp__DestroyWindow@4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 53
+; Line 58
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -8745,8 +8840,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??0Window@@QAE@HHPBD@Z
 _TEXT	SEGMENT
-_this$ = -20						; size = 4
-__$EHRec$ = -12						; size = 12
+$T1 = -284						; size = 76
+_this$ = -8						; size = 4
 _width$ = 8						; size = 4
 _height$ = 12						; size = 4
 _name$ = 16						; size = 4
@@ -8756,25 +8851,16 @@ _name$ = 16						; size = 4
 ; Line 38
 	push	ebp
 	mov	ebp, esp
-	push	-1
-	push	__ehhandler$??0Window@@QAE@HHPBD@Z
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 288				; 00000120H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-288]
+	mov	ecx, 72					; 00000048H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
@@ -8810,6 +8896,27 @@ _name$ = 16						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+8], eax
 ; Line 47
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+8], 0
+	jne	SHORT $LN2@Window
+; Line 48
+	mov	esi, esp
+	call	DWORD PTR __imp__GetLastError@0
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	push	eax
+	push	OFFSET ??_C@_0CO@NMAFAAMI@F?3?2WindowSandbox?2WindowSandbox?2@
+	mov	eax, DWORD PTR ?__LINE__Var@?0???0Window@@QAE@HHPBD@Z@4JA
+	add	eax, 10					; 0000000aH
+	push	eax
+	lea	ecx, DWORD PTR $T1[ebp]
+	call	??0WindowException@Window@@QAE@HPBDJ@Z	; Window::WindowException::WindowException
+	push	OFFSET __TI3?AVWindowException@Window@@
+	lea	ecx, DWORD PTR $T1[ebp]
+	push	ecx
+	call	__CxxThrowException@8
+$LN2@Window:
+; Line 52
 	mov	esi, esp
 	push	10					; 0000000aH
 	mov	eax, DWORD PTR _this$[ebp]
@@ -8818,40 +8925,20 @@ _name$ = 16						; size = 4
 	call	DWORD PTR __imp__ShowWindow@8
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 48
+; Line 53
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
+$LN3@Window:
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 288				; 00000120H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	12					; 0000000cH
-	int	3
-	int	3
-	int	3
-	int	3
-	int	3
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??0Window@@QAE@HHPBD@Z:
-	npad	1
-	npad	1
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??0Window@@QAE@HHPBD@Z
-	jmp	___CxxFrameHandler3
-text$x	ENDS
 ??0Window@@QAE@HHPBD@Z ENDP				; Window::Window
+_TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?__autoclassinit2@WindowClass@Window@@QAEXI@Z
 _TEXT	SEGMENT
@@ -9029,7 +9116,19 @@ __$EHRec$ = -12						; size = 12
 	call	?GetInstance@WindowClass@Window@@SAPAUHINSTANCE__@@XZ ; Window::WindowClass::GetInstance
 	mov	DWORD PTR _wc$[ebp+20], eax
 ; Line 15
-	mov	DWORD PTR _wc$[ebp+24], 0
+	mov	esi, esp
+	push	0
+	push	32					; 00000020H
+	push	32					; 00000020H
+	push	1
+	push	101					; 00000065H
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	push	ecx
+	call	DWORD PTR __imp__LoadImageA@24
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	mov	DWORD PTR _wc$[ebp+24], eax
 ; Line 16
 	mov	DWORD PTR _wc$[ebp+28], 0
 ; Line 17
@@ -9072,7 +9171,7 @@ __$EHRec$ = -12						; size = 12
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	1
+	npad	2
 $LN6@WindowClas:
 	DD	1
 	DD	$LN5@WindowClas
@@ -9277,6 +9376,48 @@ $LN2@scalar:
 ??_GWindowException@Window@@UAEPAXI@Z ENDP		; Window::WindowException::`scalar deleting destructor'
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0WindowException@Window@@QAE@ABV01@@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+___that$ = 8						; size = 4
+??0WindowException@Window@@QAE@ABV01@@Z PROC		; Window::WindowException::WindowException, COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR ___that$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0Exception@@QAE@ABV0@@Z
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax], OFFSET ??_7WindowException@Window@@6B@
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR ___that$[ebp]
+	mov	edx, DWORD PTR [ecx+72]
+	mov	DWORD PTR [eax+72], edx
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??0WindowException@Window@@QAE@ABV01@@Z ENDP		; Window::WindowException::WindowException
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1WindowException@Window@@UAE@XZ
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
@@ -9317,7 +9458,7 @@ ___$ReturnUdt$ = 8					; size = 4
 ?GetErrorString@WindowException@Window@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ PROC ; Window::WindowException::GetErrorString, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 129
+; Line 134
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9342,7 +9483,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 130
+; Line 135
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+72]
 	push	ecx
@@ -9351,7 +9492,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	call	?TranslateErrorCode@WindowException@Window@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@J@Z ; Window::WindowException::TranslateErrorCode
 	add	esp, 8
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
-; Line 131
+; Line 136
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -9392,7 +9533,7 @@ __$EHRec$ = -12						; size = 12
 ?GetErrorCode@WindowException@Window@@QBEJXZ PROC	; Window::WindowException::GetErrorCode, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 125
+; Line 130
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9417,10 +9558,10 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 126
+; Line 131
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	eax, DWORD PTR [eax+72]
-; Line 127
+; Line 132
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -9465,7 +9606,7 @@ ___$ReturnUdt$ = 8					; size = 4
 _hr$ = 12						; size = 4
 ?TranslateErrorCode@WindowException@Window@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@J@Z PROC ; Window::WindowException::TranslateErrorCode, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 111
+; Line 116
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9488,9 +9629,9 @@ _hr$ = 12						; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 112
+; Line 117
 	mov	DWORD PTR _pMsgBuf$[ebp], 0
-; Line 113
+; Line 118
 	mov	esi, esp
 	push	0
 	push	0
@@ -9505,29 +9646,29 @@ _hr$ = 12						; size = 4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 	mov	DWORD PTR _nMsgLen$[ebp], eax
-; Line 117
+; Line 122
 	cmp	DWORD PTR _nMsgLen$[ebp], 0
 	jne	SHORT $LN2@TranslateE
-; Line 118
+; Line 123
 	push	OFFSET ??_C@_0BF@KPHDJHEI@Undefined?5Error?5Code@
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
 	jmp	SHORT $LN3@TranslateE
 $LN2@TranslateE:
-; Line 120
+; Line 125
 	mov	eax, DWORD PTR _pMsgBuf$[ebp]
 	push	eax
 	lea	ecx, DWORD PTR _errorString$[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@QBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
-; Line 121
+; Line 126
 	mov	esi, esp
 	mov	eax, DWORD PTR _pMsgBuf$[ebp]
 	push	eax
 	call	DWORD PTR __imp__LocalFree@4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-; Line 122
+; Line 127
 	lea	eax, DWORD PTR _errorString$[ebp]
 	push	eax
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
@@ -9536,7 +9677,7 @@ $LN2@TranslateE:
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
 $LN3@TranslateE:
-; Line 123
+; Line 128
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -9623,7 +9764,7 @@ __$EHRec$ = -12						; size = 12
 ?GetType@WindowException@Window@@UBEPBDXZ PROC		; Window::WindowException::GetType, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 107
+; Line 112
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9648,9 +9789,9 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 108
+; Line 113
 	mov	eax, OFFSET ??_C@_0BB@DAPHOIPK@Window?5Exception@
-; Line 109
+; Line 114
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -9699,7 +9840,7 @@ __$EHRec$ = -12						; size = 12
 ?what@WindowException@Window@@UBEPBDXZ PROC		; Window::WindowException::what, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 96
+; Line 101
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -9725,14 +9866,14 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __EA726F75_Window@cpp
 	call	@__CheckForDebuggerJustMyCode@4
-; Line 97
+; Line 102
 	push	152					; 00000098H
 	lea	ecx, DWORD PTR _oss$[ebp]
 	call	?__autoclassinit2@?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z
 	push	1
 	lea	ecx, DWORD PTR _oss$[ebp]
 	call	??0?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >::basic_ostringstream<char,std::char_traits<char>,std::allocator<char> >
-; Line 98
+; Line 103
 	lea	eax, DWORD PTR $T5[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -9804,7 +9945,7 @@ __$EHRec$ = -12						; size = 12
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 	lea	ecx, DWORD PTR $T5[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
-; Line 103
+; Line 108
 	lea	eax, DWORD PTR $T3[ebp]
 	push	eax
 	lea	ecx, DWORD PTR _oss$[ebp]
@@ -9815,7 +9956,7 @@ __$EHRec$ = -12						; size = 12
 	call	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@$$QAV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
-; Line 104
+; Line 109
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 44					; 0000002cH
 	call	?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPBDXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::c_str
@@ -9823,7 +9964,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR _oss$[ebp]
 	call	??_D?$basic_ostringstream@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXXZ
 	mov	eax, DWORD PTR $T2[ebp]
-; Line 105
+; Line 110
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -9892,7 +10033,7 @@ _hr$ = 16						; size = 4
 ??0WindowException@Window@@QAE@HPBDJ@Z PROC		; Window::WindowException::WindowException, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 94
+; Line 99
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 204				; 000000ccH
@@ -9931,6 +10072,144 @@ _hr$ = 16						; size = 4
 	ret	12					; 0000000cH
 ??0WindowException@Window@@QAE@HPBDJ@Z ENDP		; Window::WindowException::WindowException
 _TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??_GException@@UAEPAXI@Z
+_TEXT	SEGMENT
+_this$ = -8						; size = 4
+___flags$ = 8						; size = 4
+??_GException@@UAEPAXI@Z PROC				; Exception::`scalar deleting destructor', COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-204]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1Exception@@UAE@XZ
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN2@scalar
+	push	72					; 00000048H
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	call	??3@YAXPAXI@Z				; operator delete
+	add	esp, 8
+$LN2@scalar:
+	mov	eax, DWORD PTR _this$[ebp]
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 204				; 000000ccH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??_GException@@UAEPAXI@Z ENDP				; Exception::`scalar deleting destructor'
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0Exception@@QAE@ABV0@@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+___that$ = 8						; size = 4
+??0Exception@@QAE@ABV0@@Z PROC				; Exception::Exception, COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0Exception@@QAE@ABV0@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR ___that$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0exception@std@@QAE@ABV01@@Z		; std::exception::exception
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax], OFFSET ??_7Exception@@6B@
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR ___that$[ebp]
+	mov	edx, DWORD PTR [ecx+12]
+	mov	DWORD PTR [eax+12], edx
+	mov	eax, DWORD PTR ___that$[ebp]
+	add	eax, 16					; 00000010H
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 16					; 00000010H
+	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+	mov	BYTE PTR __$EHRec$[ebp+8], 1
+	mov	eax, DWORD PTR ___that$[ebp]
+	add	eax, 44					; 0000002cH
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 44					; 0000002cH
+	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??0Exception@@QAE@ABV0@@Z$0:
+	mov	ecx, DWORD PTR _this$[ebp]
+	jmp	??1exception@std@@UAE@XZ		; std::exception::~exception
+__unwindfunclet$??0Exception@@QAE@ABV0@@Z$1:
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 16					; 00000010H
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+__ehhandler$??0Exception@@QAE@ABV0@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0Exception@@QAE@ABV0@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0Exception@@QAE@ABV0@@Z ENDP				; Exception::Exception
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1Exception@@UAE@XZ
 _TEXT	SEGMENT
@@ -11335,6 +11614,177 @@ __ehhandler$??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@
 text$x	ENDS
 ??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 ; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?_Construct_lv_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXABV12@@Z
+_TEXT	SEGMENT
+$T1 = -312						; size = 4
+$T2 = -300						; size = 4
+__New_array$ = -96					; size = 4
+__New_capacity$ = -84					; size = 4
+__Al$ = -72						; size = 4
+__My_data$ = -60					; size = 4
+__Right_ptr$ = -48					; size = 4
+__Right_size$ = -36					; size = 4
+__Right_data$ = -24					; size = 4
+_this$ = -12						; size = 4
+__$ArrayPad$ = -4					; size = 4
+__Right$ = 8						; size = 4
+?_Construct_lv_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXABV12@@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct_lv_contents, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring
+; Line 2650
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 316				; 0000013cH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-316]
+	mov	ecx, 79					; 0000004fH
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __D15AFF60_xstring
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 2655
+	mov	eax, DWORD PTR __Right$[ebp]
+	mov	DWORD PTR __Right_data$[ebp], eax
+; Line 2656
+	mov	eax, DWORD PTR __Right_data$[ebp]
+	mov	ecx, DWORD PTR [eax+20]
+	mov	DWORD PTR __Right_size$[ebp], ecx
+; Line 2657
+	mov	ecx, DWORD PTR __Right_data$[ebp]
+	call	?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QBEPBDXZ ; std::_String_val<std::_Simple_types<char> >::_Myptr
+	mov	DWORD PTR __Right_ptr$[ebp], eax
+; Line 2658
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR __My_data$[ebp], eax
+; Line 2659
+	cmp	DWORD PTR __Right_size$[ebp], 16	; 00000010H
+	jae	SHORT $LN2@Construct_
+; Line 2660
+	push	16					; 00000010H
+	mov	eax, DWORD PTR __Right_ptr$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR __My_data$[ebp]
+	add	ecx, 4
+	push	ecx
+	call	?copy@?$_Narrow_char_traits@DH@std@@SAPADQADQBDI@Z ; std::_Narrow_char_traits<char,int>::copy
+	add	esp, 12					; 0000000cH
+; Line 2661
+	mov	eax, DWORD PTR __My_data$[ebp]
+	mov	ecx, DWORD PTR __Right_size$[ebp]
+	mov	DWORD PTR [eax+20], ecx
+; Line 2662
+	mov	eax, DWORD PTR __My_data$[ebp]
+	mov	DWORD PTR [eax+24], 15			; 0000000fH
+; Line 2663
+	jmp	$LN1@Construct_
+$LN2@Construct_:
+; Line 2666
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEAAV?$allocator@D@2@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Getal
+	mov	DWORD PTR __Al$[ebp], eax
+; Line 2667
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::max_size
+	mov	DWORD PTR $T2[ebp], eax
+	mov	eax, DWORD PTR __Right_size$[ebp]
+	or	eax, 15					; 0000000fH
+	mov	DWORD PTR $T1[ebp], eax
+	lea	ecx, DWORD PTR $T2[ebp]
+	push	ecx
+	lea	edx, DWORD PTR $T1[ebp]
+	push	edx
+	call	??$min@I@std@@YAABIABI0@Z		; std::min<unsigned int>
+	add	esp, 8
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR __New_capacity$[ebp], eax
+; Line 2668
+	mov	eax, DWORD PTR __New_capacity$[ebp]
+	add	eax, 1
+	push	eax
+	mov	ecx, DWORD PTR __Al$[ebp]
+	call	?allocate@?$allocator@D@std@@QAEPADI@Z	; std::allocator<char>::allocate
+	mov	DWORD PTR __New_array$[ebp], eax
+; Line 2669
+	lea	eax, DWORD PTR __New_array$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR __My_data$[ebp]
+	add	ecx, 4
+	push	ecx
+	call	??$_Construct_in_place@PADABQAD@std@@YAXAAPADABQAD@Z ; std::_Construct_in_place<char *,char * const &>
+	add	esp, 8
+; Line 2670
+	mov	eax, DWORD PTR __Right_size$[ebp]
+	add	eax, 1
+	push	eax
+	mov	ecx, DWORD PTR __Right_ptr$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR __New_array$[ebp]
+	push	edx
+	call	??$_Unfancy@D@std@@YAPADPAD@Z		; std::_Unfancy<char>
+	add	esp, 4
+	push	eax
+	call	?copy@?$_Narrow_char_traits@DH@std@@SAPADQADQBDI@Z ; std::_Narrow_char_traits<char,int>::copy
+	add	esp, 12					; 0000000cH
+; Line 2671
+	mov	eax, DWORD PTR __My_data$[ebp]
+	mov	ecx, DWORD PTR __Right_size$[ebp]
+	mov	DWORD PTR [eax+20], ecx
+; Line 2672
+	mov	eax, DWORD PTR __My_data$[ebp]
+	mov	ecx, DWORD PTR __New_capacity$[ebp]
+	mov	DWORD PTR [eax+24], ecx
+$LN1@Construct_:
+; Line 2673
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN6@Construct_
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 316				; 0000013cH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	npad	2
+$LN6@Construct_:
+	DD	1
+	DD	$LN5@Construct_
+$LN5@Construct_:
+	DD	-96					; ffffffa0H
+	DD	4
+	DD	$LN4@Construct_
+$LN4@Construct_:
+	DB	95					; 0000005fH
+	DB	78					; 0000004eH
+	DB	101					; 00000065H
+	DB	119					; 00000077H
+	DB	95					; 0000005fH
+	DB	97					; 00000061H
+	DB	114					; 00000072H
+	DB	114					; 00000072H
+	DB	97					; 00000061H
+	DB	121					; 00000079H
+	DB	0
+?_Construct_lv_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXABV12@@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct_lv_contents
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Take_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXAAV12@U?$integral_constant@_N$00@2@@Z
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
@@ -12038,6 +12488,165 @@ __ehhandler$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@
 text$x	ENDS
 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV?$allocator@D@1@@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 ; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT
+$T2 = -277						; size = 1
+$T3 = -265						; size = 1
+__Proxy$ = -64						; size = 8
+_$S12$ = -45						; size = 1
+__Alproxy$ = -36					; size = 4
+_this$ = -24						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+__Right$ = 8						; size = 4
+??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xstring
+; Line 2273
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 272				; 00000110H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-284]
+	mov	ecx, 68					; 00000044H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __D15AFF60_xstring
+	call	@__CheckForDebuggerJustMyCode@4
+	mov	ecx, DWORD PTR __Right$[ebp]
+	call	?_Getal@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABEABV?$allocator@D@2@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Getal
+	push	eax
+	lea	eax, DWORD PTR $T3[ebp]
+	push	eax
+	call	?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z ; std::_Default_allocator_traits<std::allocator<char> >::select_on_container_copy_construction
+	add	esp, 8
+	push	eax
+	movzx	ecx, BYTE PTR $T2[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??$?0V?$allocator@D@std@@$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@U_One_then_variadic_args_t@1@$$QAV?$allocator@D@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_String_val<std::_Simple_types<char> >,1><std::allocator<char> >
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+; Line 2274
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEAAV?$allocator@D@2@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Getal
+	push	eax
+	lea	ecx, DWORD PTR _$S12$[ebp]
+	call	??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
+	lea	eax, DWORD PTR _$S12$[ebp]
+	mov	DWORD PTR __Alproxy$[ebp], eax
+; Line 2275
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR __Alproxy$[ebp]
+	push	ecx
+	lea	ecx, DWORD PTR __Proxy$[ebp]
+	call	??0?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@std@@@std@@QAE@AAV?$allocator@U_Container_proxy@std@@@1@AAU_Container_base12@1@@Z ; std::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >
+	mov	BYTE PTR __$EHRec$[ebp+8], 1
+; Line 2276
+	mov	eax, DWORD PTR __Right$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Construct_lv_contents@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@AAEXABV12@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Construct_lv_contents
+; Line 2277
+	lea	ecx, DWORD PTR __Proxy$[ebp]
+	call	?_Release@_Basic_container_proxy_ptr12@std@@QAEXXZ ; std::_Basic_container_proxy_ptr12::_Release
+; Line 2278
+	mov	BYTE PTR __$EHRec$[ebp+8], 0
+	lea	ecx, DWORD PTR __Proxy$[ebp]
+	call	??1?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@std@@@std@@QAE@XZ ; std::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >::~_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR _this$[ebp]
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN9@basic_stri
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 284				; 0000011cH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+$LN9@basic_stri:
+	DD	2
+	DD	$LN8@basic_stri
+$LN8@basic_stri:
+	DD	-45					; ffffffd3H
+	DD	1
+	DD	$LN5@basic_stri
+	DD	-64					; ffffffc0H
+	DD	8
+	DD	$LN6@basic_stri
+$LN6@basic_stri:
+	DB	95					; 0000005fH
+	DB	80					; 00000050H
+	DB	114					; 00000072H
+	DB	111					; 0000006fH
+	DB	120					; 00000078H
+	DB	121					; 00000079H
+	DB	0
+$LN5@basic_stri:
+	DB	36					; 00000024H
+	DB	83					; 00000053H
+	DB	49					; 00000031H
+	DB	50					; 00000032H
+	DB	0
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z$0:
+	mov	ecx, DWORD PTR _this$[ebp]
+	jmp	??1?$_Compressed_pair@V?$allocator@D@std@@V?$_String_val@U?$_Simple_types@D@std@@@2@$00@std@@QAE@XZ
+__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z$1:
+	lea	ecx, DWORD PTR __Proxy$[ebp]
+	jmp	??1?$_Container_proxy_ptr12@V?$allocator@U_Container_proxy@std@@@std@@@std@@QAE@XZ ; std::_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >::~_Container_proxy_ptr12<std::allocator<std::_Container_proxy> >
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+__ehhandler$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-288]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??1?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -8						; size = 4
@@ -12464,6 +13073,40 @@ _this$ = -8						; size = 4
 	pop	ebp
 	ret	0
 ??0?$_String_val@U?$_Simple_types@D@std@@@std@@QAE@XZ ENDP ; std::_String_val<std::_Simple_types<char> >::_String_val<std::_Simple_types<char> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z
+_TEXT	SEGMENT
+___$ReturnUdt$ = 8					; size = 4
+__Al$ = 12						; size = 4
+?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z PROC ; std::_Default_allocator_traits<std::allocator<char> >::select_on_container_copy_construction, COMDAT
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 706
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 192				; 000000c0H
+	push	ebx
+	push	esi
+	push	edi
+	lea	edi, DWORD PTR [ebp-192]
+	mov	ecx, 48					; 00000030H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	mov	ecx, OFFSET __A58979FC_xmemory
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 707
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+; Line 708
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 192				; 000000c0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?select_on_container_copy_construction@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z ENDP ; std::_Default_allocator_traits<std::allocator<char> >::select_on_container_copy_construction
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?max_size@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z
@@ -15201,7 +15844,7 @@ ___formal$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ?__empty_global_delete@@YAXPAXI@Z PROC			; __empty_global_delete, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 132
+; Line 137
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 192				; 000000c0H
@@ -15231,7 +15874,7 @@ _TEXT	SEGMENT
 ___formal$ = 8						; size = 4
 ?__empty_global_delete@@YAXPAX@Z PROC			; __empty_global_delete, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 132
+; Line 137
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 192				; 000000c0H

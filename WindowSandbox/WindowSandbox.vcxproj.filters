@@ -29,24 +29,27 @@
     <ClInclude Include="src\Window.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="res\resource.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="src\Exception.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="res\Logo.bmp">
-      <Filter>Resource Files</Filter>
-    </Image>
-    <Image Include="res\Logo.ico">
-      <Filter>Resource Files</Filter>
-    </Image>
+    <ClInclude Include="res\resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="res\WindowSandbox.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="res\WindowSandbox.aps" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Logo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\Logo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
 </Project>

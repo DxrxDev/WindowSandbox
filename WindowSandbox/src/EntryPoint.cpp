@@ -37,4 +37,5 @@ INT CALLBACK WinMain(
 	catch (...) {
 		MessageBoxA(nullptr, "No Details Available", "Unknown Exception", MB_OK | MB_ICONERROR);
 	}
+	return -1;
 }

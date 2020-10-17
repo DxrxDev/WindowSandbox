@@ -12,12 +12,12 @@ Window::WindowClass::WindowClass() noexcept : hInst(GetModuleHandle(nullptr)){
 	wc.cbClsExtra = 0;
 	wc.cbWndExtra = 0;
 	wc.hInstance = GetInstance();
-	wc.hIcon = nullptr; //IDI_ICON1;
+	wc.hIcon = static_cast<HICON>(LoadImage(hInst, MAKEINTRESOURCE(IDI_ICON1), IMAGE_ICON, 32, 32, 0));
 	wc.hCursor = nullptr;
 	wc.hbrBackground = nullptr;
 	wc.lpszMenuName = nullptr;
 	wc.lpszClassName = GetName();
-	wc.hIconSm = nullptr;
+	wc.hIconSm = static_cast<HICON>(LoadImage(hInst, MAKEINTRESOURCE(IDI_ICON1), IMAGE_ICON, 16, 16, 0));
 	RegisterClassEx(&wc);
 }
 
@@ -35,7 +35,7 @@ HINSTANCE Window::WindowClass::GetInstance() noexcept{
 
 
 // Window Stuff
-Window::Window(int width, int height, const char* name) noexcept : width(width), height(height) {
+Window::Window(int width, int height, const char* name) : width(width), height(height) {
 	// create window & get hWnd
 	hWnd = CreateWindow(
 		WindowClass::GetName(), name,
@@ -43,6 +43,11 @@ Window::Window(int width, int height, const char* name) noexcept : width(width),
 		CW_USEDEFAULT, CW_USEDEFAULT, width, height,
 		nullptr, nullptr, WindowClass::GetInstance(), this
 	);
+	
+	if (hWnd == nullptr) {
+		throw WND_LAST_EXCEPT();
+	}
+
 	// show window
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
 }
