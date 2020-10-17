@@ -37,10 +37,20 @@ HINSTANCE Window::WindowClass::GetInstance() noexcept{
 // Window Stuff
 Window::Window(int width, int height, const char* name) : width(width), height(height) {
 	// create window & get hWnd
+	RECT wr;
+	wr.left = 100;
+	wr.right = width + wr.left;
+	wr.top = 100;
+	wr.bottom = height + wr.top;
+	if (FAILED(AdjustWindowRect(&wr, WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU, FALSE)))
+	{
+		throw WND_LAST_EXCEPT();
+	};
+
 	hWnd = CreateWindow(
 		WindowClass::GetName(), name,
 		WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,
-		CW_USEDEFAULT, CW_USEDEFAULT, width, height,
+		CW_USEDEFAULT, CW_USEDEFAULT, wr.right - wr.left, wr.bottom - wr.top,
 		nullptr, nullptr, WindowClass::GetInstance(), this
 	);
 	
@@ -55,6 +65,10 @@ Window::Window(int width, int height, const char* name) : width(width), height(h
 Window::~Window()
 {
 	DestroyWindow(hWnd);
+}
+
+void Window::ChangeTitle(const char* str) noexcept {
+	SetWindowText(hWnd, str);
 }
 
 LRESULT CALLBACK Window::HandleMsgSetup(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept
@@ -85,28 +99,82 @@ LRESULT CALLBACK Window::HandleMsgThunk(HWND hWnd, UINT msg, WPARAM wParam, LPAR
 }
 
 LRESULT Window::HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept{
-	switch (msg){
+	switch (msg) {
 		// we don't want the DefProc to handle this message because
 		// we want our destructor to destroy the window, so return 0 instead of break
 	case WM_CLOSE:
 		PostQuitMessage(0);
 		return 0;
+
 	case WM_KILLFOCUS:
 		kbd.ClearState();
 		break;
+
+		//---------------[KEYBOARD]---------------//
 	case WM_KEYDOWN:
 	case WM_SYSKEYDOWN:
 		if (!(lParam & 0x40000000) || kbd.AutorepeatIsEnabled()) {
 			kbd.OnKeyPressed(static_cast<unsigned char>(wParam));
 		}
 		break;
+
 	case WM_KEYUP:
 	case WM_SYSKEYUP:
 		kbd.OnKeyReleased(static_cast<unsigned char>(wParam));
 		break;
+
 	case WM_CHAR:
 		kbd.OnChar(static_cast<unsigned char>(wParam));
 		break;
+
+		//---------------[MOUSE]---------------//
+	case WM_LBUTTONDOWN: {
+		const POINTS pt = MAKEPOINTS(lParam);
+		mouse.OnLeftPressed(pt.x, pt.y);
+		break;
+	}
+	case WM_LBUTTONUP:{
+		const POINTS pt = MAKEPOINTS(lParam);
+		mouse.OnLeftReleased(pt.x, pt.y);
+		break;
+	}
+
+	case WM_RBUTTONDOWN:{
+		const POINTS pt = MAKEPOINTS(lParam);
+		mouse.OnRightPressed(pt.x, pt.y);
+		break;
+	}
+	case WM_RBUTTONUP:{
+		const POINTS pt = MAKEPOINTS(lParam);
+		mouse.OnRightReleased(pt.x, pt.y);
+		break;
+	}
+
+	case WM_MBUTTONDOWN:{
+		const POINTS pt = MAKEPOINTS(lParam);
+		mouse.OnMiddlePressed(pt.x, pt.y);
+		break;
+	}
+	case WM_MBUTTONUP:{
+		const POINTS pt = MAKEPOINTS(lParam);
+		mouse.OnMiddleReleased(pt.x, pt.y);
+		break;
+	}
+
+	case WM_MOUSEWHEEL: {
+		const POINTS pt = MAKEPOINTS(lParam);
+		if (GET_WHEEL_DELTA_WPARAM(wParam) > 0) {
+			mouse.OnWheelUp(pt.x, pt.y);
+		}
+		else if (GET_WHEEL_DELTA_WPARAM(wParam) < 0) {
+			mouse.OnWheelDown(pt.x, pt.y);
+		}
+	}
+	case WM_MOUSEMOVE: {
+		POINTS pt = MAKEPOINTS(lParam);
+		mouse.OnMouseMove(pt.x, pt.y);
+		break;
+	}
 	}
 
 	return DefWindowProc(hWnd, msg, wParam, lParam);

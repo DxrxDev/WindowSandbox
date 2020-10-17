@@ -1,5 +1,6 @@
 #include<Windows.h>
 #include"Window.h"
+#include<sstream>
 
 INT CALLBACK WinMain(
 	HINSTANCE hInstance,
@@ -18,8 +19,13 @@ INT CALLBACK WinMain(
 			TranslateMessage(&msg);
 			DispatchMessage(&msg);
 
-			if (window.kbd.KeyIsPressed(VK_SPACE)) {
-				MessageBoxA(nullptr, "SHITS GOIN DOWN", "YOOOO", MB_OK | MB_ICONINFORMATION);
+			while (!window.mouse.IsEmpty()) {
+				const auto e = window.mouse.Read();
+				if (e.GetType() == Mouse::Event::Type::Move) {
+					std::ostringstream oss;
+					oss << "x: " << e.GetX() << " y: " << e.GetY();
+					window.ChangeTitle(oss.str().c_str());
+				}
 			}
 		}
 
