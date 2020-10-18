@@ -1,4 +1,4 @@
-#include<Windows.h>
+#include"tools/WinInclude.h"
 #include<sstream>
 #include"Game.h"
 

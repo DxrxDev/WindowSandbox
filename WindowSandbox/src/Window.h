@@ -1,9 +1,11 @@
 #pragma once
-#include<Windows.h>
-#include<optional>
+#include"tools/WinInclude.h"
 #include"tools/Exception.h"
 #include"Keyboard.h"
 #include"Mouse.h"
+#include"Graphics.h"
+#include<optional>
+#include<memory>
 
 class Window{
 private:
@@ -39,6 +41,7 @@ public:
 	Window(const Window&) = delete;
 	Window& operator=(const Window&) = delete;
 
+	Graphics& Gfx() { if (!pGfx) { std::exception("Graphics = nullptr"); } return *pGfx; }
 	static std::optional<int> ProcessMessages();
 	void ChangeTitle(const char* str);
 private:
@@ -48,10 +51,12 @@ private:
 public:
 	Keyboard kbd;
 	Mouse mouse;
+	//Graphics& gfx = *pGfx;
 private:
 	int width;
 	int height;
 	HWND hWnd;
+	std::unique_ptr<Graphics> pGfx;
 };
 
 #define WND_EXCEPT(hr) Window::WindowException(__LINE__, __FILE__, hr)

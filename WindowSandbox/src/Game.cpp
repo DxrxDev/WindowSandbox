@@ -3,9 +3,7 @@
 
 Game::Game() : window(512, 512, "Default Window") {}
 
-Game::Game(int width, int height, const char* name) : window(width, height, name) {
-
-}
+Game::Game(int width, int height, const char* name) : window(width, height, name) {}
 
 int Game::Go() {
 	while (true){
@@ -14,12 +12,13 @@ int Game::Go() {
 		}
 		DoFrame();
 		timer.Wait(16);
+
+		
 	}
 }
 
 void Game::DoFrame() {
-	const float t = timer.Peek();
-	std::ostringstream oss;
-	oss << "Time Passed: " << t;
-	window.ChangeTitle(oss.str().c_str());
+	const float colour = sin(timer.Peek()) / 2.0f + 0.5f;
+	window.Gfx().ClearBuffer(colour, 1.0f, 1.0f);
+	window.Gfx().EndFrame();
 }
