@@ -24,6 +24,7 @@ __DC9673E3_corecrt_wstring@h DB 01H
 __45F4AF76_corecrt_wtime@h DB 01H
 __186FF47F_stat@h DB 01H
 __534C724A_wchar@h DB 01H
+__5DDA4519_cstddef DB 01H
 __F2870A2C_limits DB 01H
 __85A9AA98_type_traits DB 01H
 __B0C4CEA9_malloc@h DB 01H
@@ -31,9 +32,12 @@ __E75714E4_vcruntime_exception@h DB 01H
 __E4152856_exception DB 01H
 __35D7DDB3_corecrt_memory@h DB 01H
 __A29A7DFB_string@h DB 01H
+__0104A505_compare DB 01H
 __4324C6B3_xutility DB 01H
 __A58979FC_xmemory DB 01H
 __0ED96A82_algorithm DB 01H
+__AC6CB2D0_tuple DB 01H
+__E0552A5D_xpolymorphic_allocator@h DB 01H
 __833FA886_Mouse@h DB 01H
 __E561F523_queue DB 01H
 __C6BB7003_Mouse@cpp DB 01H
@@ -3290,8 +3294,15 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$_Emplace_back_internal@VEvent@Mouse@@@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEX$$QAVEvent@Mouse@@@Z
 _TEXT	SEGMENT
-tv161 = -232						; size = 4
-tv84 = -232						; size = 4
+tv168 = -240						; size = 4
+tv86 = -240						; size = 4
+tv170 = -236						; size = 4
+tv150 = -236						; size = 4
+tv84 = -236						; size = 4
+tv175 = -232						; size = 4
+tv172 = -232						; size = 4
+tv147 = -232						; size = 4
+tv88 = -232						; size = 4
 __Block$ = -32						; size = 4
 __Newoff$ = -20						; size = 4
 _this$ = -8						; size = 4
@@ -3302,13 +3313,13 @@ _<_Vals_0>$ = 8						; size = 4
 ; Line 1113
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 232				; 000000e8H
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-232]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-240]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -3343,16 +3354,20 @@ _<_Vals_0>$ = 8						; size = 4
 	call	?_Growmap@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEXI@Z ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Growmap
 $LN2@Emplace_ba:
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Myoff@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Myoff
-	mov	DWORD PTR tv84[ebp], eax
-	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
 	sub	eax, 1
+	mov	DWORD PTR tv88[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Myoff
+	mov	DWORD PTR tv84[ebp], eax
 	mov	ecx, DWORD PTR tv84[ebp]
-	and	eax, DWORD PTR [ecx]
-	mov	edx, DWORD PTR tv84[ebp]
-	mov	DWORD PTR [edx], eax
+	mov	edx, DWORD PTR [ecx]
+	mov	DWORD PTR tv86[ebp], edx
+	mov	eax, DWORD PTR tv86[ebp]
+	and	eax, DWORD PTR tv88[ebp]
+	mov	ecx, DWORD PTR tv84[ebp]
+	mov	DWORD PTR [ecx], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Myoff
 	mov	esi, eax
@@ -3372,24 +3387,26 @@ $LN2@Emplace_ba:
 	mov	ecx, DWORD PTR __Block$[ebp]
 	cmp	DWORD PTR [eax+ecx*4], 0
 	jne	SHORT $LN3@Emplace_ba
-	push	1
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
-	mov	ecx, eax
+	mov	DWORD PTR tv147[ebp], eax
+	push	1
+	mov	ecx, DWORD PTR tv147[ebp]
 	call	?allocate@?$allocator@VEvent@Mouse@@@std@@QAEPAVEvent@Mouse@@I@Z ; std::allocator<Mouse::Event>::allocate
-	mov	esi, eax
+	mov	DWORD PTR tv150[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Block$[ebp]
-	mov	DWORD PTR [eax+ecx*4], esi
+	mov	edx, DWORD PTR tv150[ebp]
+	mov	DWORD PTR [eax+ecx*4], edx
 $LN3@Emplace_ba:
 ; Line 1115
 	mov	eax, DWORD PTR _<_Vals_0>$[ebp]
 	push	eax
 	call	??$forward@VEvent@Mouse@@@std@@YA$$QAVEvent@Mouse@@AAV12@@Z ; std::forward<Mouse::Event>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv172[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
 	mov	ecx, DWORD PTR [eax]
@@ -3403,26 +3420,32 @@ $LN3@Emplace_ba:
 	push	edx
 	call	??$_Unfancy@VEvent@Mouse@@@std@@YAPAVEvent@Mouse@@PAV12@@Z ; std::_Unfancy<Mouse::Event>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv170[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
+	mov	DWORD PTR tv168[ebp], eax
+	mov	ecx, DWORD PTR tv172[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv170[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv168[ebp]
 	push	eax
 	call	??$construct@VEvent@Mouse@@V12@@?$_Default_allocator_traits@V?$allocator@VEvent@Mouse@@@std@@@std@@SAXAAV?$allocator@VEvent@Mouse@@@1@QAVEvent@Mouse@@$$QAV34@@Z ; std::_Default_allocator_traits<std::allocator<Mouse::Event> >::construct<Mouse::Event,Mouse::Event>
 	add	esp, 12					; 0000000cH
 ; Line 1116
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Mysize
-	mov	DWORD PTR tv161[ebp], eax
-	mov	eax, DWORD PTR tv161[ebp]
+	mov	DWORD PTR tv175[ebp], eax
+	mov	eax, DWORD PTR tv175[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, 1
-	mov	edx, DWORD PTR tv161[ebp]
+	mov	edx, DWORD PTR tv175[ebp]
 	mov	DWORD PTR [edx], ecx
 ; Line 1117
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 232				; 000000e8H
+	add	esp, 240				; 000000f0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -3510,6 +3533,7 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??D?$_Deque_unchecked_const_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@std@@@std@@QBEABVEvent@Mouse@@XZ
 _TEXT	SEGMENT
+tv70 = -232						; size = 4
 __Off$ = -32						; size = 4
 __Block$ = -20						; size = 4
 _this$ = -8						; size = 4
@@ -3519,13 +3543,13 @@ _this$ = -8						; size = 4
 ; Line 54
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-228]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-232]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -3534,10 +3558,12 @@ _this$ = -8						; size = 4
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 55
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+4]
-	push	ecx
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR tv70[ebp], ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [edx]
+	mov	eax, DWORD PTR [edx+4]
+	push	eax
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<Mouse::Event> >::_Getblock
 	mov	DWORD PTR __Block$[ebp], eax
 ; Line 56
@@ -3559,7 +3585,7 @@ _this$ = -8						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 228				; 000000e4H
+	add	esp, 232				; 000000e8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -4600,6 +4626,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z
 _TEXT	SEGMENT
+tv70 = -208						; size = 4
 _this$ = -8						; size = 4
 __Val$ = 8						; size = 4
 ?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z PROC ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push, COMDAT
@@ -4608,13 +4635,13 @@ __Val$ = 8						; size = 4
 ; Line 123
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-204]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-208]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -4622,18 +4649,20 @@ __Val$ = 8						; size = 4
 	mov	ecx, OFFSET __E561F523_queue
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 124
-	mov	eax, DWORD PTR __Val$[ebp]
-	push	eax
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR tv70[ebp], eax
+	mov	ecx, DWORD PTR __Val$[ebp]
+	push	ecx
 	call	??$move@AAVEvent@Mouse@@@std@@YA$$QAVEvent@Mouse@@AAV12@@Z ; std::move<Mouse::Event &>
 	add	esp, 4
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	?push_back@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::push_back
 ; Line 125
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 204				; 000000ccH
+	add	esp, 208				; 000000d0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -5903,6 +5932,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Getblock@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@ABEII@Z
 _TEXT	SEGMENT
+tv70 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Off$ = 8						; size = 4
@@ -5916,13 +5946,13 @@ __Off$ = 8						; size = 4
 	push	__ehhandler$?_Getblock@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@ABEII@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -5935,11 +5965,12 @@ __Off$ = 8						; size = 4
 	mov	ecx, OFFSET __0657B1E2_deque
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 1509
-	mov	eax, DWORD PTR __Off$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Get_data@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Get_data
-	mov	ecx, eax
+	mov	DWORD PTR tv70[ebp], eax
+	mov	eax, DWORD PTR __Off$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<Mouse::Event> >::_Getblock
 ; Line 1510
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -5948,7 +5979,7 @@ __Off$ = 8						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 220				; 000000dcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -5967,7 +5998,7 @@ __ehhandler$?_Getblock@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@s
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-224]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Getblock@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@ABEII@Z
@@ -6166,6 +6197,10 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Tidy@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEXXZ
 _TEXT	SEGMENT
+tv144 = -252						; size = 4
+tv93 = -252						; size = 4
+tv146 = -248						; size = 4
+tv95 = -248						; size = 4
 __Block$2 = -48						; size = 4
 __Almap$ = -33						; size = 1
 _this$ = -24						; size = 4
@@ -6181,13 +6216,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?_Tidy@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 232				; 000000e8H
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-244]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-252]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -6241,16 +6276,19 @@ $LN6@Tidy:
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	SHORT $LN7@Tidy
 ; Line 1474
-	push	1
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
+	mov	DWORD PTR tv95[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Block$2[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
-	push	edx
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
-	mov	ecx, eax
+	mov	DWORD PTR tv93[ebp], edx
+	push	1
+	mov	eax, DWORD PTR tv93[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv95[ebp]
 	call	?deallocate@?$allocator@VEvent@Mouse@@@std@@QAEXQAVEvent@Mouse@@I@Z ; std::allocator<Mouse::Event>::deallocate
 ; Line 1475
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -6274,11 +6312,15 @@ $LN5@Tidy:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv146[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
 	mov	ecx, DWORD PTR [eax]
-	push	ecx
+	mov	DWORD PTR tv144[ebp], ecx
+	mov	edx, DWORD PTR tv146[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv144[ebp]
+	push	eax
 	lea	ecx, DWORD PTR __Almap$[ebp]
 	call	?deallocate@?$allocator@PAVEvent@Mouse@@@std@@QAEXQAPAVEvent@Mouse@@I@Z ; std::allocator<Mouse::Event *>::deallocate
 $LN8@Tidy:
@@ -6307,13 +6349,12 @@ $LN8@Tidy:
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
-	add	esp, 244				; 000000f4H
+	add	esp, 252				; 000000fcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	2
 $LN13@Tidy:
 	DD	1
 	DD	$LN12@Tidy
@@ -6342,7 +6383,7 @@ __ehhandler$?_Tidy@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-248]
+	mov	ecx, DWORD PTR [edx-256]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	ecx, DWORD PTR [edx-4]
@@ -6355,7 +6396,19 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Growmap@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEXI@Z
 _TEXT	SEGMENT
-tv212 = -272						; size = 4
+tv229 = -276						; size = 4
+tv215 = -276						; size = 4
+tv197 = -276						; size = 4
+tv182 = -276						; size = 4
+tv163 = -276						; size = 4
+tv148 = -276						; size = 4
+tv236 = -272						; size = 4
+tv231 = -272						; size = 4
+tv217 = -272						; size = 4
+tv199 = -272						; size = 4
+tv184 = -272						; size = 4
+tv165 = -272						; size = 4
+tv150 = -272						; size = 4
 tv73 = -272						; size = 4
 __Myptr$ = -72						; size = 4
 __Newmap$ = -60						; size = 4
@@ -6371,13 +6424,13 @@ __Count$ = 8						; size = 4
 ; Line 1425
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 272				; 00000110H
+	sub	esp, 276				; 00000114H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-272]
-	mov	ecx, 68					; 00000044H
+	lea	edi, DWORD PTR [ebp-276]
+	mov	ecx, 69					; 00000045H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -6462,23 +6515,27 @@ $LN3@Growmap:
 	lea	edx, DWORD PTR [ecx+eax*4]
 	mov	DWORD PTR __Myptr$[ebp], edx
 ; Line 1444
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
 	mov	esi, eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Mapsize
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR [esi]
-	lea	eax, DWORD PTR [edx+ecx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR [esi]
+	lea	edx, DWORD PTR [ecx+eax*4]
+	mov	DWORD PTR tv150[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv148[ebp], edx
+	mov	eax, DWORD PTR __Myptr$[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv150[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv148[ebp]
+	push	edx
 	call	??$uninitialized_copy@PAPAVEvent@Mouse@@PAPAV12@@std@@YAPAPAVEvent@Mouse@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Mouse::Event * *,Mouse::Event * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -6487,18 +6544,22 @@ $LN3@Growmap:
 	cmp	eax, DWORD PTR __Count$[ebp]
 	ja	SHORT $LN6@Growmap
 ; Line 1446
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv165[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR tv163[ebp], eax
+	mov	ecx, DWORD PTR __Myptr$[ebp]
 	push	ecx
+	mov	edx, DWORD PTR tv165[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv163[ebp]
+	push	eax
 	call	??$uninitialized_copy@PAPAVEvent@Mouse@@PAPAV12@@std@@YAPAPAVEvent@Mouse@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Mouse::Event * *,Mouse::Event * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -6518,38 +6579,46 @@ $LN3@Growmap:
 	call	??$_Uninitialized_value_construct_n_unchecked1@PAPAVEvent@Mouse@@I@std@@YAPAPAVEvent@Mouse@@PAPAV12@I@Z ; std::_Uninitialized_value_construct_n_unchecked1<Mouse::Event * *,unsigned int>
 	add	esp, 8
 ; Line 1449
-	jmp	SHORT $LN7@Growmap
+	jmp	$LN7@Growmap
 $LN6@Growmap:
 ; Line 1450
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Count$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Count$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv184[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR tv182[ebp], eax
+	mov	ecx, DWORD PTR __Myptr$[ebp]
 	push	ecx
+	mov	edx, DWORD PTR tv184[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv182[ebp]
+	push	eax
 	call	??$uninitialized_copy@PAPAVEvent@Mouse@@PAPAV12@@std@@YAPAPAVEvent@Mouse@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Mouse::Event * *,Mouse::Event * *>
 	add	esp, 12					; 0000000cH
 ; Line 1451
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv199[ebp], edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Count$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv197[ebp], edx
 	mov	eax, DWORD PTR __Newmap$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Count$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	ecx, DWORD PTR tv199[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv197[ebp]
+	push	edx
 	call	??$uninitialized_copy@PAPAVEvent@Mouse@@PAPAV12@@std@@YAPAPAVEvent@Mouse@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Mouse::Event * *,Mouse::Event * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -6570,13 +6639,17 @@ $LN7@Growmap:
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR [esi]
 	lea	edx, DWORD PTR [ecx+eax*4]
-	push	edx
+	mov	DWORD PTR tv217[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Myboff$[ebp]
 	lea	edx, DWORD PTR [eax+ecx*4]
-	push	edx
+	mov	DWORD PTR tv215[ebp], edx
+	mov	eax, DWORD PTR tv217[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv215[ebp]
+	push	ecx
 	call	??$_Destroy_range@PAPAVEvent@Mouse@@@std@@YAXPAPAVEvent@Mouse@@QAPAV12@@Z ; std::_Destroy_range<Mouse::Event * *>
 	add	esp, 8
 ; Line 1456
@@ -6588,11 +6661,15 @@ $LN7@Growmap:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv231[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAPAPAVEvent@Mouse@@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Map
 	mov	ecx, DWORD PTR [eax]
-	push	ecx
+	mov	DWORD PTR tv229[ebp], ecx
+	mov	edx, DWORD PTR tv231[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv229[ebp]
+	push	eax
 	lea	ecx, DWORD PTR __Almap$[ebp]
 	call	?deallocate@?$allocator@PAVEvent@Mouse@@@std@@QAEXQAPAVEvent@Mouse@@I@Z ; std::allocator<Mouse::Event *>::deallocate
 $LN8@Growmap:
@@ -6604,11 +6681,11 @@ $LN8@Growmap:
 ; Line 1461
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Mapsize
-	mov	DWORD PTR tv212[ebp], eax
-	mov	eax, DWORD PTR tv212[ebp]
+	mov	DWORD PTR tv236[ebp], eax
+	mov	eax, DWORD PTR tv236[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, DWORD PTR __Count$[ebp]
-	mov	edx, DWORD PTR tv212[ebp]
+	mov	edx, DWORD PTR tv236[ebp]
 	mov	DWORD PTR [edx], ecx
 $LN9@Growmap:
 ; Line 1462
@@ -6625,13 +6702,13 @@ $LN9@Growmap:
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
-	add	esp, 272				; 00000110H
+	add	esp, 276				; 00000114H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-	npad	2
+	npad	3
 $LN14@Growmap:
 	DD	1
 	DD	$LN13@Growmap
@@ -6691,7 +6768,9 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?pop_back@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-tv141 = -244						; size = 4
+tv140 = -248						; size = 4
+tv145 = -244						; size = 4
+tv142 = -244						; size = 4
 __Block$2 = -44						; size = 4
 __Newoff$3 = -32					; size = 4
 _this$ = -20						; size = 4
@@ -6706,13 +6785,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?pop_back@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 232				; 000000e8H
+	sub	esp, 236				; 000000ecH
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-244]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-248]
+	mov	ecx, 59					; 0000003bH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -6797,22 +6876,26 @@ $LN5@pop_back:
 	push	edx
 	call	??$_Unfancy@VEvent@Mouse@@@std@@YAPAVEvent@Mouse@@PAV12@@Z ; std::_Unfancy<Mouse::Event>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv142[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
-	push	eax
+	mov	DWORD PTR tv140[ebp], eax
+	mov	ecx, DWORD PTR tv142[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv140[ebp]
+	push	edx
 	call	??$destroy@VEvent@Mouse@@@?$_Default_allocator_traits@V?$allocator@VEvent@Mouse@@@std@@@std@@SAXAAV?$allocator@VEvent@Mouse@@@1@QAVEvent@Mouse@@@Z ; std::_Default_allocator_traits<std::allocator<Mouse::Event> >::destroy<Mouse::Event>
 	add	esp, 8
 ; Line 1134
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Mysize
-	mov	DWORD PTR tv141[ebp], eax
-	mov	eax, DWORD PTR tv141[ebp]
+	mov	DWORD PTR tv145[ebp], eax
+	mov	eax, DWORD PTR tv145[ebp]
 	mov	ecx, DWORD PTR [eax]
 	sub	ecx, 1
-	mov	edx, DWORD PTR tv141[ebp]
+	mov	edx, DWORD PTR tv145[ebp]
 	mov	DWORD PTR [edx], ecx
-	mov	eax, DWORD PTR tv141[ebp]
+	mov	eax, DWORD PTR tv145[ebp]
 	cmp	DWORD PTR [eax], 0
 	jne	SHORT $LN8@pop_back
 ; Line 1135
@@ -6827,7 +6910,7 @@ $LN8@pop_back:
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 244				; 000000f4H
+	add	esp, 248				; 000000f8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -6846,7 +6929,7 @@ __ehhandler$?pop_back@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@st
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-248]
+	mov	ecx, DWORD PTR [edx-252]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?pop_back@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAEXXZ
@@ -6856,8 +6939,10 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?pop_front@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-tv148 = -232						; size = 4
-tv141 = -232						; size = 4
+tv140 = -236						; size = 4
+tv152 = -232						; size = 4
+tv145 = -232						; size = 4
+tv142 = -232						; size = 4
 __Block$2 = -32						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -6871,13 +6956,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?pop_front@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 220				; 000000dcH
+	sub	esp, 224				; 000000e0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-232]
-	mov	ecx, 55					; 00000037H
+	lea	edi, DWORD PTR [ebp-236]
+	mov	ecx, 56					; 00000038H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -6958,22 +7043,26 @@ $LN5@pop_front:
 	push	edx
 	call	??$_Unfancy@VEvent@Mouse@@@std@@YAPAVEvent@Mouse@@PAV12@@Z ; std::_Unfancy<Mouse::Event>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv142[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
-	push	eax
+	mov	DWORD PTR tv140[ebp], eax
+	mov	ecx, DWORD PTR tv142[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv140[ebp]
+	push	edx
 	call	??$destroy@VEvent@Mouse@@@?$_Default_allocator_traits@V?$allocator@VEvent@Mouse@@@std@@@std@@SAXAAV?$allocator@VEvent@Mouse@@@1@QAVEvent@Mouse@@@Z ; std::_Default_allocator_traits<std::allocator<Mouse::Event> >::destroy<Mouse::Event>
 	add	esp, 8
 ; Line 1093
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Mysize
-	mov	DWORD PTR tv141[ebp], eax
-	mov	eax, DWORD PTR tv141[ebp]
+	mov	DWORD PTR tv145[ebp], eax
+	mov	eax, DWORD PTR tv145[ebp]
 	mov	ecx, DWORD PTR [eax]
 	sub	ecx, 1
-	mov	edx, DWORD PTR tv141[ebp]
+	mov	edx, DWORD PTR tv145[ebp]
 	mov	DWORD PTR [edx], ecx
-	mov	eax, DWORD PTR tv141[ebp]
+	mov	eax, DWORD PTR tv145[ebp]
 	cmp	DWORD PTR [eax], 0
 	jne	SHORT $LN7@pop_front
 ; Line 1094
@@ -6986,11 +7075,11 @@ $LN7@pop_front:
 ; Line 1096
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Myoff
-	mov	DWORD PTR tv148[ebp], eax
-	mov	eax, DWORD PTR tv148[ebp]
+	mov	DWORD PTR tv152[ebp], eax
+	mov	eax, DWORD PTR tv152[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, 1
-	mov	edx, DWORD PTR tv148[ebp]
+	mov	edx, DWORD PTR tv152[ebp]
 	mov	DWORD PTR [edx], ecx
 $LN9@pop_front:
 ; Line 1109
@@ -7000,7 +7089,7 @@ $LN9@pop_front:
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 232				; 000000e8H
+	add	esp, 236				; 000000ecH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -7019,7 +7108,7 @@ __ehhandler$?pop_front@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@s
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-236]
+	mov	ecx, DWORD PTR [edx-240]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?pop_front@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAEXXZ
@@ -7374,6 +7463,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Unchecked_begin@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@std@@@2@XZ
 _TEXT	SEGMENT
+tv79 = -224						; size = 4
+tv81 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -7387,13 +7478,13 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	__ehhandler$?_Unchecked_begin@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@std@@@2@XZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 212				; 000000d4H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-224]
+	mov	ecx, 53					; 00000035H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -7411,11 +7502,15 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	eax
 	call	??$addressof@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@std@@@std@@YAPAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@0@AAV10@@Z ; std::addressof<std::_Deque_val<std::_Deque_simple_types<Mouse::Event> > >
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv81[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAIXZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Myoff
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv79[ebp], eax
+	mov	ecx, DWORD PTR tv81[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv79[ebp]
+	push	edx
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
 	call	??0?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@std@@@std@@QAE@IPBU_Container_base12@1@@Z
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
@@ -7426,7 +7521,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 224				; 000000e0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -7445,7 +7540,7 @@ __ehhandler$?_Unchecked_begin@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-228]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Unchecked_begin@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@std@@@2@XZ
@@ -7835,6 +7930,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Move_assign@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
 _TEXT	SEGMENT
+tv72 = -224						; size = 4
+tv74 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Right$ = 8						; size = 4
@@ -7849,13 +7946,13 @@ ___formal$ = 12						; size = 1
 	push	__ehhandler$?_Move_assign@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 212				; 000000d4H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-224]
+	mov	ecx, 53					; 00000035H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -7873,10 +7970,14 @@ ___formal$ = 12						; size = 1
 ; Line 730
 	mov	ecx, DWORD PTR __Right$[ebp]
 	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
-	push	eax
+	mov	DWORD PTR tv74[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
+	mov	DWORD PTR tv72[ebp], eax
+	mov	eax, DWORD PTR tv74[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv72[ebp]
+	push	ecx
 	call	??$_Pocma@V?$allocator@VEvent@Mouse@@@std@@@std@@YAXAAV?$allocator@VEvent@Mouse@@@0@0@Z ; std::_Pocma<std::allocator<Mouse::Event> >
 	add	esp, 8
 ; Line 731
@@ -7891,7 +7992,7 @@ ___formal$ = 12						; size = 1
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 224				; 000000e0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -7910,7 +8011,7 @@ __ehhandler$?_Move_assign@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-228]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Move_assign@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
@@ -7920,6 +8021,9 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??0?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
+tv83 = -236						; size = 4
+tv85 = -232						; size = 4
+tv69 = -232						; size = 4
 $T1 = -221						; size = 1
 $T2 = -209						; size = 1
 _this$ = -8						; size = 4
@@ -7929,40 +8033,45 @@ _this$ = -8						; size = 4
 ; Line 595
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 228				; 000000e4H
+	sub	esp, 236				; 000000ecH
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-228]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-236]
+	mov	ecx, 59					; 0000003bH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __0657B1E2_deque
 	call	@__CheckForDebuggerJustMyCode@4
-	movzx	eax, BYTE PTR $T2[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR tv69[ebp], eax
+	movzx	ecx, BYTE PTR $T2[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR tv69[ebp]
 	call	??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Mouse@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<Mouse::Event>,std::_Deque_val<std::_Deque_simple_types<Mouse::Event> >,1>::_Compressed_pair<std::allocator<Mouse::Event>,std::_Deque_val<std::_Deque_simple_types<Mouse::Event> >,1><>
 ; Line 596
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Get_data
+	mov	DWORD PTR tv85[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$allocator@VEvent@Mouse@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Getal
 	push	eax
 	lea	ecx, DWORD PTR $T1[ebp]
 	call	??$?0VEvent@Mouse@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Mouse@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><Mouse::Event>
+	mov	DWORD PTR tv83[ebp], eax
+	mov	eax, DWORD PTR tv83[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Get_data@?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Mouse@@@std@@@2@XZ ; std::deque<Mouse::Event,std::allocator<Mouse::Event> >::_Get_data
-	mov	ecx, eax
+	mov	ecx, DWORD PTR tv85[ebp]
 	call	??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
 ; Line 597
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 228				; 000000e4H
+	add	esp, 236				; 000000ecH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8361,6 +8470,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnWheelDown@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv72 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -8376,13 +8486,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnWheelDown@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8396,13 +8506,15 @@ _y$ = 12						; size = 4
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 89
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv72[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	7
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv72[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 90
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -8414,7 +8526,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8433,7 +8545,7 @@ __ehhandler$?OnWheelDown@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnWheelDown@Mouse@@AAEXHH@Z
@@ -8443,6 +8555,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnWheelUp@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv72 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -8458,13 +8571,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnWheelUp@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8478,13 +8591,15 @@ _y$ = 12						; size = 4
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 84
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv72[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	6
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv72[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 85
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -8496,7 +8611,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8515,7 +8630,7 @@ __ehhandler$?OnWheelUp@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnWheelUp@Mouse@@AAEXHH@Z
@@ -8525,6 +8640,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnMouseMove@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv74 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -8540,13 +8656,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnMouseMove@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8568,13 +8684,15 @@ _y$ = 12						; size = 4
 	mov	DWORD PTR [eax+8], ecx
 ; Line 79
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv74[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	8
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv74[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 80
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -8586,7 +8704,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8605,7 +8723,7 @@ __ehhandler$?OnMouseMove@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnMouseMove@Mouse@@AAEXHH@Z
@@ -8615,6 +8733,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnMiddleReleased@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv73 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -8630,13 +8749,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnMiddleReleased@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8653,13 +8772,15 @@ _y$ = 12						; size = 4
 	mov	BYTE PTR [eax+2], 0
 ; Line 72
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv73[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	5
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv73[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 73
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -8671,7 +8792,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8690,7 +8811,7 @@ __ehhandler$?OnMiddleReleased@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnMiddleReleased@Mouse@@AAEXHH@Z
@@ -8700,6 +8821,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnMiddlePressed@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv73 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -8715,13 +8837,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnMiddlePressed@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8738,13 +8860,15 @@ _y$ = 12						; size = 4
 	mov	BYTE PTR [eax+2], 1
 ; Line 66
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv73[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	4
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv73[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 67
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -8756,7 +8880,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8775,7 +8899,7 @@ __ehhandler$?OnMiddlePressed@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnMiddlePressed@Mouse@@AAEXHH@Z
@@ -8785,6 +8909,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnRightReleased@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv73 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -8800,13 +8925,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnRightReleased@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8823,13 +8948,15 @@ _y$ = 12						; size = 4
 	mov	BYTE PTR [eax+1], 0
 ; Line 60
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv73[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	3
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv73[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 61
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -8841,7 +8968,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8860,7 +8987,7 @@ __ehhandler$?OnRightReleased@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnRightReleased@Mouse@@AAEXHH@Z
@@ -8870,6 +8997,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnRightPressed@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv73 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -8885,13 +9013,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnRightPressed@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8908,13 +9036,15 @@ _y$ = 12						; size = 4
 	mov	BYTE PTR [eax+1], 1
 ; Line 54
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv73[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	0
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv73[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 55
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -8926,7 +9056,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8945,7 +9075,7 @@ __ehhandler$?OnRightPressed@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnRightPressed@Mouse@@AAEXHH@Z
@@ -8955,6 +9085,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnLeftReleased@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv73 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -8970,13 +9101,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnLeftReleased@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8993,13 +9124,15 @@ _y$ = 12						; size = 4
 	mov	BYTE PTR [eax], 0
 ; Line 48
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv73[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	1
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv73[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 49
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -9011,7 +9144,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -9030,7 +9163,7 @@ __ehhandler$?OnLeftReleased@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnLeftReleased@Mouse@@AAEXHH@Z
@@ -9040,6 +9173,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnLeftPressed@Mouse@@AAEXHH@Z
 _TEXT	SEGMENT
+tv73 = -244						; size = 4
 $T2 = -236						; size = 16
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -9055,13 +9189,13 @@ _y$ = 12						; size = 4
 	push	__ehhandler$?OnLeftPressed@Mouse@@AAEXHH@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-240]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-244]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -9078,13 +9212,15 @@ _y$ = 12						; size = 4
 	mov	BYTE PTR [eax], 1
 ; Line 42
 	mov	eax, DWORD PTR _this$[ebp]
-	push	eax
+	add	eax, 12					; 0000000cH
+	mov	DWORD PTR tv73[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	push	ecx
 	push	0
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Mouse@@QAE@W4Type@01@ABV1@@Z	; Mouse::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 12					; 0000000cH
+	mov	ecx, DWORD PTR tv73[ebp]
 	call	?push@?$queue@VEvent@Mouse@@V?$deque@VEvent@Mouse@@V?$allocator@VEvent@Mouse@@@std@@@std@@@std@@QAEX$$QAVEvent@Mouse@@@Z ; std::queue<Mouse::Event,std::deque<Mouse::Event,std::allocator<Mouse::Event> > >::push
 ; Line 43
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -9096,7 +9232,7 @@ _y$ = 12						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 240				; 000000f0H
+	add	esp, 244				; 000000f4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -9115,7 +9251,7 @@ __ehhandler$?OnLeftPressed@Mouse@@AAEXHH@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-244]
+	mov	ecx, DWORD PTR [edx-248]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnLeftPressed@Mouse@@AAEXHH@Z
@@ -9932,6 +10068,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z
 _TEXT	SEGMENT
+tv78 = -220						; size = 4
 $T2 = -212						; size = 4
 __$EHRec$ = -12						; size = 12
 __Obj$ = 8						; size = 4
@@ -9945,12 +10082,12 @@ _<_Args_0>$ = 12					; size = 4
 	push	__ehhandler$??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	mov	eax, DWORD PTR ___security_cookie
@@ -9974,7 +10111,9 @@ _<_Args_0>$ = 12					; size = 4
 	call	??$forward@PAU_Container_base12@std@@@std@@YA$$QAPAU_Container_base12@0@AAPAU10@@Z ; std::forward<std::_Container_base12 *>
 	add	esp, 4
 	mov	edx, DWORD PTR [eax]
-	push	edx
+	mov	DWORD PTR tv78[ebp], edx
+	mov	eax, DWORD PTR tv78[ebp]
+	push	eax
 	mov	ecx, DWORD PTR $T2[ebp]
 	call	??0_Container_proxy@std@@QAE@PAU_Container_base12@1@@Z ; std::_Container_proxy::_Container_proxy
 ; Line 231
@@ -9984,7 +10123,7 @@ _<_Args_0>$ = 12					; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 220				; 000000dcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -10003,7 +10142,7 @@ __ehhandler$??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-224]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z

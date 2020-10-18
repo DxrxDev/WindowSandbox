@@ -66,8 +66,23 @@ Window::~Window()
 	DestroyWindow(hWnd);
 }
 
-void Window::ChangeTitle(const char* str) noexcept {
-	SetWindowText(hWnd, str);
+std::optional<int> Window::ProcessMessages() {
+	MSG msg;
+	while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)){
+		if (msg.message == WM_QUIT){
+			return (int)msg.wParam;
+		}
+		TranslateMessage(&msg);
+		DispatchMessage(&msg);
+	}
+	return {};
+}
+
+
+void Window::ChangeTitle(const char* str) {
+	if (SetWindowText(hWnd, str) == 0) {
+		throw WND_LAST_EXCEPT();
+	}
 }
 
 LRESULT CALLBACK Window::HandleMsgSetup(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept

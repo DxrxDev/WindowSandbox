@@ -1,6 +1,6 @@
 #include<Windows.h>
-#include"Window.h"
 #include<sstream>
+#include"Game.h"
 
 INT CALLBACK WinMain(
 	HINSTANCE hInstance,
@@ -9,34 +9,8 @@ INT CALLBACK WinMain(
 	int pCmdShow) {
 
 	try {
-		Window window(512, 512, "Sandbox");
-
-		MSG msg;
-		BOOL gResult;
-		while ((gResult = GetMessage(&msg, nullptr, 0, 0)) > 0)
-		{
-			// TranslateMessage will post auxilliary WM_CHAR messages from key msgs
-			TranslateMessage(&msg);
-			DispatchMessage(&msg);
-
-			while (!window.mouse.IsEmpty()) {
-				const auto e = window.mouse.Read();
-				if (e.GetType() == Mouse::Event::Type::Move) {
-					std::ostringstream oss;
-					oss << "x: " << e.GetX() << " y: " << e.GetY();
-					window.ChangeTitle(oss.str().c_str());
-				}
-			}
-		}
-
-		// check if GetMessage call itself borked
-		if (gResult == -1)
-		{
-			return -1;
-		}
-
-		// wParam here is the value passed to PostQuitMessage
-		return msg.wParam;
+		Game sandbox(512, 512, "Sandbox");
+		sandbox.Go();
 	}
 	catch (const Exception& ex) {
 		MessageBoxA(nullptr, ex.what(), ex.GetType(), MB_OK | MB_ICONERROR);

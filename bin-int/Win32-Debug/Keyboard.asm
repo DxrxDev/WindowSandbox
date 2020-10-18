@@ -24,6 +24,7 @@ __DC9673E3_corecrt_wstring@h DB 01H
 __45F4AF76_corecrt_wtime@h DB 01H
 __186FF47F_stat@h DB 01H
 __534C724A_wchar@h DB 01H
+__5DDA4519_cstddef DB 01H
 __F2870A2C_limits DB 01H
 __85A9AA98_type_traits DB 01H
 __B0C4CEA9_malloc@h DB 01H
@@ -31,9 +32,12 @@ __E75714E4_vcruntime_exception@h DB 01H
 __E4152856_exception DB 01H
 __35D7DDB3_corecrt_memory@h DB 01H
 __A29A7DFB_string@h DB 01H
+__0104A505_compare DB 01H
 __4324C6B3_xutility DB 01H
 __A58979FC_xmemory DB 01H
 __0ED96A82_algorithm DB 01H
+__AC6CB2D0_tuple DB 01H
+__E0552A5D_xpolymorphic_allocator@h DB 01H
 __D15AFF60_xstring DB 01H
 __781ADC3E_Keyboard@h DB 01H
 __E561F523_queue DB 01H
@@ -4786,8 +4790,15 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$_Emplace_back_internal@VEvent@Keyboard@@@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEX$$QAVEvent@Keyboard@@@Z
 _TEXT	SEGMENT
-tv163 = -232						; size = 4
-tv86 = -232						; size = 4
+tv170 = -240						; size = 4
+tv88 = -240						; size = 4
+tv172 = -236						; size = 4
+tv152 = -236						; size = 4
+tv86 = -236						; size = 4
+tv177 = -232						; size = 4
+tv174 = -232						; size = 4
+tv149 = -232						; size = 4
+tv90 = -232						; size = 4
 __Block$ = -32						; size = 4
 __Newoff$ = -20						; size = 4
 _this$ = -8						; size = 4
@@ -4798,13 +4809,13 @@ _<_Vals_0>$ = 8						; size = 4
 ; Line 1113
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 232				; 000000e8H
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-232]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-240]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -4840,16 +4851,20 @@ _<_Vals_0>$ = 8						; size = 4
 	call	?_Growmap@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXI@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Growmap
 $LN2@Emplace_ba:
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
-	mov	DWORD PTR tv86[ebp], eax
-	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
 	lea	ecx, DWORD PTR [eax+eax-1]
+	mov	DWORD PTR tv90[ebp], ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+	mov	DWORD PTR tv86[ebp], eax
 	mov	edx, DWORD PTR tv86[ebp]
-	and	ecx, DWORD PTR [edx]
-	mov	eax, DWORD PTR tv86[ebp]
-	mov	DWORD PTR [eax], ecx
+	mov	eax, DWORD PTR [edx]
+	mov	DWORD PTR tv88[ebp], eax
+	mov	ecx, DWORD PTR tv88[ebp]
+	and	ecx, DWORD PTR tv90[ebp]
+	mov	edx, DWORD PTR tv86[ebp]
+	mov	DWORD PTR [edx], ecx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
 	mov	esi, eax
@@ -4869,24 +4884,26 @@ $LN2@Emplace_ba:
 	mov	ecx, DWORD PTR __Block$[ebp]
 	cmp	DWORD PTR [eax+ecx*4], 0
 	jne	SHORT $LN3@Emplace_ba
-	push	2
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
-	mov	ecx, eax
+	mov	DWORD PTR tv149[ebp], eax
+	push	2
+	mov	ecx, DWORD PTR tv149[ebp]
 	call	?allocate@?$allocator@VEvent@Keyboard@@@std@@QAEPAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event>::allocate
-	mov	esi, eax
+	mov	DWORD PTR tv152[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Block$[ebp]
-	mov	DWORD PTR [eax+ecx*4], esi
+	mov	edx, DWORD PTR tv152[ebp]
+	mov	DWORD PTR [eax+ecx*4], edx
 $LN3@Emplace_ba:
 ; Line 1115
 	mov	eax, DWORD PTR _<_Vals_0>$[ebp]
 	push	eax
 	call	??$forward@VEvent@Keyboard@@@std@@YA$$QAVEvent@Keyboard@@AAV12@@Z ; std::forward<Keyboard::Event>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv174[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
 	mov	ecx, DWORD PTR [eax]
@@ -4900,26 +4917,32 @@ $LN3@Emplace_ba:
 	push	edx
 	call	??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z ; std::_Unfancy<Keyboard::Event>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv172[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	mov	DWORD PTR tv170[ebp], eax
+	mov	eax, DWORD PTR tv174[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv172[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv170[ebp]
+	push	edx
 	call	??$construct@VEvent@Keyboard@@V12@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@$$QAV34@@Z ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::construct<Keyboard::Event,Keyboard::Event>
 	add	esp, 12					; 0000000cH
 ; Line 1116
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
-	mov	DWORD PTR tv163[ebp], eax
-	mov	eax, DWORD PTR tv163[ebp]
+	mov	DWORD PTR tv177[ebp], eax
+	mov	eax, DWORD PTR tv177[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, 1
-	mov	edx, DWORD PTR tv163[ebp]
+	mov	edx, DWORD PTR tv177[ebp]
 	mov	DWORD PTR [edx], ecx
 ; Line 1117
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 232				; 000000e8H
+	add	esp, 240				; 000000f0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -5007,6 +5030,7 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??D?$_Deque_unchecked_const_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@@std@@QBEABVEvent@Keyboard@@XZ
 _TEXT	SEGMENT
+tv70 = -232						; size = 4
 __Off$ = -32						; size = 4
 __Block$ = -20						; size = 4
 _this$ = -8						; size = 4
@@ -5016,13 +5040,13 @@ _this$ = -8						; size = 4
 ; Line 54
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-228]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-232]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -5031,10 +5055,12 @@ _this$ = -8						; size = 4
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 55
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+4]
-	push	ecx
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR tv70[ebp], ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [edx]
+	mov	eax, DWORD PTR [edx+4]
+	push	eax
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Getblock
 	mov	DWORD PTR __Block$[ebp], eax
 ; Line 56
@@ -5056,7 +5082,7 @@ _this$ = -8						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 228				; 000000e4H
+	add	esp, 232				; 000000e8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -5511,6 +5537,7 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??D?$_Deque_unchecked_const_iterator@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@@std@@QBEABDXZ
 _TEXT	SEGMENT
+tv70 = -232						; size = 4
 __Off$ = -32						; size = 4
 __Block$ = -20						; size = 4
 _this$ = -8						; size = 4
@@ -5520,13 +5547,13 @@ _this$ = -8						; size = 4
 ; Line 54
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 228				; 000000e4H
+	sub	esp, 232				; 000000e8H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-228]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-232]
+	mov	ecx, 58					; 0000003aH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -5535,10 +5562,12 @@ _this$ = -8						; size = 4
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 55
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [eax+4]
-	push	ecx
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR tv70[ebp], ecx
 	mov	edx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [edx]
+	mov	eax, DWORD PTR [edx+4]
+	push	eax
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<char> >::_Getblock
 	mov	DWORD PTR __Block$[ebp], eax
 ; Line 56
@@ -5559,7 +5588,7 @@ _this$ = -8						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 228				; 000000e4H
+	add	esp, 232				; 000000e8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -5740,8 +5769,15 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$_Emplace_back_internal@ABD@?$deque@DV?$allocator@D@std@@@std@@AAEXABD@Z
 _TEXT	SEGMENT
-tv162 = -232						; size = 4
-tv86 = -232						; size = 4
+tv169 = -240						; size = 4
+tv88 = -240						; size = 4
+tv171 = -236						; size = 4
+tv152 = -236						; size = 4
+tv86 = -236						; size = 4
+tv176 = -232						; size = 4
+tv173 = -232						; size = 4
+tv149 = -232						; size = 4
+tv90 = -232						; size = 4
 __Block$ = -32						; size = 4
 __Newoff$ = -20						; size = 4
 _this$ = -8						; size = 4
@@ -5752,13 +5788,13 @@ _<_Vals_0>$ = 8						; size = 4
 ; Line 1113
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 232				; 000000e8H
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-232]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-240]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -5794,17 +5830,21 @@ _<_Vals_0>$ = 8						; size = 4
 	call	?_Growmap@?$deque@DV?$allocator@D@std@@@std@@AAEXI@Z ; std::deque<char,std::allocator<char> >::_Growmap
 $LN2@Emplace_ba:
 	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
-	mov	DWORD PTR tv86[ebp], eax
-	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
 	shl	eax, 4
 	sub	eax, 1
+	mov	DWORD PTR tv90[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
+	mov	DWORD PTR tv86[ebp], eax
 	mov	ecx, DWORD PTR tv86[ebp]
-	and	eax, DWORD PTR [ecx]
-	mov	edx, DWORD PTR tv86[ebp]
-	mov	DWORD PTR [edx], eax
+	mov	edx, DWORD PTR [ecx]
+	mov	DWORD PTR tv88[ebp], edx
+	mov	eax, DWORD PTR tv88[ebp]
+	and	eax, DWORD PTR tv90[ebp]
+	mov	ecx, DWORD PTR tv86[ebp]
+	mov	DWORD PTR [ecx], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
 	mov	esi, eax
@@ -5824,24 +5864,26 @@ $LN2@Emplace_ba:
 	mov	ecx, DWORD PTR __Block$[ebp]
 	cmp	DWORD PTR [eax+ecx*4], 0
 	jne	SHORT $LN3@Emplace_ba
-	push	16					; 00000010H
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
-	mov	ecx, eax
+	mov	DWORD PTR tv149[ebp], eax
+	push	16					; 00000010H
+	mov	ecx, DWORD PTR tv149[ebp]
 	call	?allocate@?$allocator@D@std@@QAEPADI@Z	; std::allocator<char>::allocate
-	mov	esi, eax
+	mov	DWORD PTR tv152[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Block$[ebp]
-	mov	DWORD PTR [eax+ecx*4], esi
+	mov	edx, DWORD PTR tv152[ebp]
+	mov	DWORD PTR [eax+ecx*4], edx
 $LN3@Emplace_ba:
 ; Line 1115
 	mov	eax, DWORD PTR _<_Vals_0>$[ebp]
 	push	eax
 	call	??$forward@ABD@std@@YAABDABD@Z		; std::forward<char const &>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv173[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
 	mov	ecx, DWORD PTR [eax]
@@ -5854,26 +5896,32 @@ $LN3@Emplace_ba:
 	push	edx
 	call	??$_Unfancy@D@std@@YAPADPAD@Z		; std::_Unfancy<char>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv171[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+	mov	DWORD PTR tv169[ebp], eax
+	mov	ecx, DWORD PTR tv173[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv171[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv169[ebp]
 	push	eax
 	call	??$construct@DABD@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QADABD@Z ; std::_Default_allocator_traits<std::allocator<char> >::construct<char,char const &>
 	add	esp, 12					; 0000000cH
 ; Line 1116
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mysize
-	mov	DWORD PTR tv162[ebp], eax
-	mov	eax, DWORD PTR tv162[ebp]
+	mov	DWORD PTR tv176[ebp], eax
+	mov	eax, DWORD PTR tv176[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, 1
-	mov	edx, DWORD PTR tv162[ebp]
+	mov	edx, DWORD PTR tv176[ebp]
 	mov	DWORD PTR [edx], ecx
 ; Line 1117
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 232				; 000000e8H
+	add	esp, 240				; 000000f0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -6988,6 +7036,7 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??4reference@?$bitset@$0BAA@@std@@QAEAAV012@_N@Z
 _TEXT	SEGMENT
+tv71 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Val$ = 8						; size = 1
@@ -7001,13 +7050,13 @@ __Val$ = 8						; size = 1
 	push	__ehhandler$??4reference@?$bitset@$0BAA@@std@@QAEAAV012@_N@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -7020,13 +7069,15 @@ __Val$ = 8						; size = 1
 	mov	ecx, OFFSET __3990E35C_bitset
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 39
-	movzx	eax, BYTE PTR __Val$[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
-	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR tv71[ebp], ecx
+	movzx	edx, BYTE PTR __Val$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+4]
+	push	ecx
+	mov	ecx, DWORD PTR tv71[ebp]
 	call	?_Set_unchecked@?$bitset@$0BAA@@std@@AAEAAV12@I_N@Z ; std::bitset<256>::_Set_unchecked
 ; Line 40
 	mov	eax, DWORD PTR _this$[ebp]
@@ -7037,7 +7088,7 @@ __Val$ = 8						; size = 1
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 220				; 000000dcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -7056,7 +7107,7 @@ __ehhandler$??4reference@?$bitset@$0BAA@@std@@QAEAAV012@_N@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-224]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$??4reference@?$bitset@$0BAA@@std@@QAEAAV012@_N@Z
@@ -7268,6 +7319,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?push@?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAEXABD@Z
 _TEXT	SEGMENT
+tv68 = -208						; size = 4
 _this$ = -8						; size = 4
 __Val$ = 8						; size = 4
 ?push@?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAEXABD@Z PROC ; std::queue<char,std::deque<char,std::allocator<char> > >::push, COMDAT
@@ -7276,13 +7328,13 @@ __Val$ = 8						; size = 4
 ; Line 119
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-204]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-208]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -7290,15 +7342,17 @@ __Val$ = 8						; size = 4
 	mov	ecx, OFFSET __E561F523_queue
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 120
-	mov	eax, DWORD PTR __Val$[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR tv68[ebp], eax
+	mov	ecx, DWORD PTR __Val$[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR tv68[ebp]
 	call	?push_back@?$deque@DV?$allocator@D@std@@@std@@QAEXABD@Z ; std::deque<char,std::allocator<char> >::push_back
 ; Line 121
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 204				; 000000ccH
+	add	esp, 208				; 000000d0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8639,6 +8693,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z
 _TEXT	SEGMENT
+tv70 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Off$ = 8						; size = 4
@@ -8652,13 +8707,13 @@ __Off$ = 8						; size = 4
 	push	__ehhandler$?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8671,11 +8726,12 @@ __Off$ = 8						; size = 4
 	mov	ecx, OFFSET __0657B1E2_deque
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 1509
-	mov	eax, DWORD PTR __Off$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
-	mov	ecx, eax
+	mov	DWORD PTR tv70[ebp], eax
+	mov	eax, DWORD PTR __Off$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<char> >::_Getblock
 ; Line 1510
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -8684,7 +8740,7 @@ __Off$ = 8						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 220				; 000000dcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -8703,7 +8759,7 @@ __ehhandler$?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-224]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z
@@ -8902,6 +8958,10 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ
 _TEXT	SEGMENT
+tv144 = -252						; size = 4
+tv93 = -252						; size = 4
+tv146 = -248						; size = 4
+tv95 = -248						; size = 4
 __Block$2 = -48						; size = 4
 __Almap$ = -33						; size = 1
 _this$ = -24						; size = 4
@@ -8917,13 +8977,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 232				; 000000e8H
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-244]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-252]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -8977,16 +9037,19 @@ $LN6@Tidy:
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	SHORT $LN7@Tidy
 ; Line 1474
-	push	16					; 00000010H
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+	mov	DWORD PTR tv95[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Block$2[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
-	push	edx
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
-	mov	ecx, eax
+	mov	DWORD PTR tv93[ebp], edx
+	push	16					; 00000010H
+	mov	eax, DWORD PTR tv93[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv95[ebp]
 	call	?deallocate@?$allocator@D@std@@QAEXQADI@Z ; std::allocator<char>::deallocate
 ; Line 1475
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -9010,11 +9073,15 @@ $LN5@Tidy:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv146[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
 	mov	ecx, DWORD PTR [eax]
-	push	ecx
+	mov	DWORD PTR tv144[ebp], ecx
+	mov	edx, DWORD PTR tv146[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv144[ebp]
+	push	eax
 	lea	ecx, DWORD PTR __Almap$[ebp]
 	call	?deallocate@?$allocator@PAD@std@@QAEXQAPADI@Z ; std::allocator<char *>::deallocate
 $LN8@Tidy:
@@ -9043,13 +9110,12 @@ $LN8@Tidy:
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
-	add	esp, 244				; 000000f4H
+	add	esp, 252				; 000000fcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	2
 $LN13@Tidy:
 	DD	1
 	DD	$LN12@Tidy
@@ -9078,7 +9144,7 @@ __ehhandler$?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-248]
+	mov	ecx, DWORD PTR [edx-256]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	ecx, DWORD PTR [edx-4]
@@ -9091,7 +9157,19 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Growmap@?$deque@DV?$allocator@D@std@@@std@@AAEXI@Z
 _TEXT	SEGMENT
-tv214 = -272						; size = 4
+tv231 = -276						; size = 4
+tv217 = -276						; size = 4
+tv199 = -276						; size = 4
+tv184 = -276						; size = 4
+tv165 = -276						; size = 4
+tv150 = -276						; size = 4
+tv238 = -272						; size = 4
+tv233 = -272						; size = 4
+tv219 = -272						; size = 4
+tv201 = -272						; size = 4
+tv186 = -272						; size = 4
+tv167 = -272						; size = 4
+tv152 = -272						; size = 4
 tv73 = -272						; size = 4
 __Myptr$ = -72						; size = 4
 __Newmap$ = -60						; size = 4
@@ -9107,13 +9185,13 @@ __Count$ = 8						; size = 4
 ; Line 1425
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 272				; 00000110H
+	sub	esp, 276				; 00000114H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-272]
-	mov	ecx, 68					; 00000044H
+	lea	edi, DWORD PTR [ebp-276]
+	mov	ecx, 69					; 00000045H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -9200,23 +9278,27 @@ $LN3@Growmap:
 	lea	edx, DWORD PTR [ecx+eax*4]
 	mov	DWORD PTR __Myptr$[ebp], edx
 ; Line 1444
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
 	mov	esi, eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR [esi]
-	lea	eax, DWORD PTR [edx+ecx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR [esi]
+	lea	edx, DWORD PTR [ecx+eax*4]
+	mov	DWORD PTR tv152[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv150[ebp], edx
+	mov	eax, DWORD PTR __Myptr$[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv152[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv150[ebp]
+	push	edx
 	call	??$uninitialized_copy@PAPADPAPAD@std@@YAPAPADQAPAD0PAPAD@Z ; std::uninitialized_copy<char * *,char * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -9225,18 +9307,22 @@ $LN3@Growmap:
 	cmp	eax, DWORD PTR __Count$[ebp]
 	ja	SHORT $LN6@Growmap
 ; Line 1446
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv167[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
-	mov	ecx, DWORD PTR [eax]
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR tv165[ebp], eax
+	mov	ecx, DWORD PTR __Myptr$[ebp]
 	push	ecx
+	mov	edx, DWORD PTR tv167[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv165[ebp]
+	push	eax
 	call	??$uninitialized_copy@PAPADPAPAD@std@@YAPAPADQAPAD0PAPAD@Z ; std::uninitialized_copy<char * *,char * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -9256,38 +9342,46 @@ $LN3@Growmap:
 	call	??$_Uninitialized_value_construct_n_unchecked1@PAPADI@std@@YAPAPADPAPADI@Z ; std::_Uninitialized_value_construct_n_unchecked1<char * *,unsigned int>
 	add	esp, 8
 ; Line 1449
-	jmp	SHORT $LN7@Growmap
+	jmp	$LN7@Growmap
 $LN6@Growmap:
 ; Line 1450
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Count$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Count$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv186[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
-	mov	ecx, DWORD PTR [eax]
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR tv184[ebp], eax
+	mov	ecx, DWORD PTR __Myptr$[ebp]
 	push	ecx
+	mov	edx, DWORD PTR tv186[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv184[ebp]
+	push	eax
 	call	??$uninitialized_copy@PAPADPAPAD@std@@YAPAPADQAPAD0PAPAD@Z ; std::uninitialized_copy<char * *,char * *>
 	add	esp, 12					; 0000000cH
 ; Line 1451
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv201[ebp], edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Count$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv199[ebp], edx
 	mov	eax, DWORD PTR __Newmap$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Count$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	ecx, DWORD PTR tv201[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv199[ebp]
+	push	edx
 	call	??$uninitialized_copy@PAPADPAPAD@std@@YAPAPADQAPAD0PAPAD@Z ; std::uninitialized_copy<char * *,char * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -9308,13 +9402,17 @@ $LN7@Growmap:
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR [esi]
 	lea	edx, DWORD PTR [ecx+eax*4]
-	push	edx
+	mov	DWORD PTR tv219[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Myboff$[ebp]
 	lea	edx, DWORD PTR [eax+ecx*4]
-	push	edx
+	mov	DWORD PTR tv217[ebp], edx
+	mov	eax, DWORD PTR tv219[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv217[ebp]
+	push	ecx
 	call	??$_Destroy_range@PAPAD@std@@YAXPAPADQAPAD@Z ; std::_Destroy_range<char * *>
 	add	esp, 8
 ; Line 1456
@@ -9326,11 +9424,15 @@ $LN7@Growmap:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv233[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
 	mov	ecx, DWORD PTR [eax]
-	push	ecx
+	mov	DWORD PTR tv231[ebp], ecx
+	mov	edx, DWORD PTR tv233[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv231[ebp]
+	push	eax
 	lea	ecx, DWORD PTR __Almap$[ebp]
 	call	?deallocate@?$allocator@PAD@std@@QAEXQAPADI@Z ; std::allocator<char *>::deallocate
 $LN8@Growmap:
@@ -9342,11 +9444,11 @@ $LN8@Growmap:
 ; Line 1461
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
-	mov	DWORD PTR tv214[ebp], eax
-	mov	eax, DWORD PTR tv214[ebp]
+	mov	DWORD PTR tv238[ebp], eax
+	mov	eax, DWORD PTR tv238[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, DWORD PTR __Count$[ebp]
-	mov	edx, DWORD PTR tv214[ebp]
+	mov	edx, DWORD PTR tv238[ebp]
 	mov	DWORD PTR [edx], ecx
 $LN9@Growmap:
 ; Line 1462
@@ -9363,12 +9465,13 @@ $LN9@Growmap:
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
-	add	esp, 272				; 00000110H
+	add	esp, 276				; 00000114H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	4
+	npad	1
 $LN14@Growmap:
 	DD	1
 	DD	$LN13@Growmap
@@ -9428,7 +9531,9 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-tv140 = -244						; size = 4
+tv139 = -248						; size = 4
+tv144 = -244						; size = 4
+tv141 = -244						; size = 4
 __Block$2 = -44						; size = 4
 __Newoff$3 = -32					; size = 4
 _this$ = -20						; size = 4
@@ -9443,13 +9548,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 232				; 000000e8H
+	sub	esp, 236				; 000000ecH
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-244]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-248]
+	mov	ecx, 59					; 0000003bH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -9533,22 +9638,26 @@ $LN5@pop_back:
 	push	edx
 	call	??$_Unfancy@D@std@@YAPADPAD@Z		; std::_Unfancy<char>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv141[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
-	push	eax
+	mov	DWORD PTR tv139[ebp], eax
+	mov	ecx, DWORD PTR tv141[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv139[ebp]
+	push	edx
 	call	??$destroy@D@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QAD@Z ; std::_Default_allocator_traits<std::allocator<char> >::destroy<char>
 	add	esp, 8
 ; Line 1134
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mysize
-	mov	DWORD PTR tv140[ebp], eax
-	mov	eax, DWORD PTR tv140[ebp]
+	mov	DWORD PTR tv144[ebp], eax
+	mov	eax, DWORD PTR tv144[ebp]
 	mov	ecx, DWORD PTR [eax]
 	sub	ecx, 1
-	mov	edx, DWORD PTR tv140[ebp]
+	mov	edx, DWORD PTR tv144[ebp]
 	mov	DWORD PTR [edx], ecx
-	mov	eax, DWORD PTR tv140[ebp]
+	mov	eax, DWORD PTR tv144[ebp]
 	cmp	DWORD PTR [eax], 0
 	jne	SHORT $LN8@pop_back
 ; Line 1135
@@ -9563,7 +9672,7 @@ $LN8@pop_back:
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 244				; 000000f4H
+	add	esp, 248				; 000000f8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -9582,7 +9691,7 @@ __ehhandler$?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-248]
+	mov	ecx, DWORD PTR [edx-252]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
@@ -9636,8 +9745,10 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?pop_front@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-tv147 = -232						; size = 4
-tv140 = -232						; size = 4
+tv139 = -236						; size = 4
+tv151 = -232						; size = 4
+tv144 = -232						; size = 4
+tv141 = -232						; size = 4
 __Block$2 = -32						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -9651,13 +9762,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?pop_front@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 220				; 000000dcH
+	sub	esp, 224				; 000000e0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-232]
-	mov	ecx, 55					; 00000037H
+	lea	edi, DWORD PTR [ebp-236]
+	mov	ecx, 56					; 00000038H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -9737,22 +9848,26 @@ $LN5@pop_front:
 	push	edx
 	call	??$_Unfancy@D@std@@YAPADPAD@Z		; std::_Unfancy<char>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv141[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
-	push	eax
+	mov	DWORD PTR tv139[ebp], eax
+	mov	ecx, DWORD PTR tv141[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv139[ebp]
+	push	edx
 	call	??$destroy@D@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QAD@Z ; std::_Default_allocator_traits<std::allocator<char> >::destroy<char>
 	add	esp, 8
 ; Line 1093
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mysize
-	mov	DWORD PTR tv140[ebp], eax
-	mov	eax, DWORD PTR tv140[ebp]
+	mov	DWORD PTR tv144[ebp], eax
+	mov	eax, DWORD PTR tv144[ebp]
 	mov	ecx, DWORD PTR [eax]
 	sub	ecx, 1
-	mov	edx, DWORD PTR tv140[ebp]
+	mov	edx, DWORD PTR tv144[ebp]
 	mov	DWORD PTR [edx], ecx
-	mov	eax, DWORD PTR tv140[ebp]
+	mov	eax, DWORD PTR tv144[ebp]
 	cmp	DWORD PTR [eax], 0
 	jne	SHORT $LN7@pop_front
 ; Line 1094
@@ -9765,11 +9880,11 @@ $LN7@pop_front:
 ; Line 1096
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
-	mov	DWORD PTR tv147[ebp], eax
-	mov	eax, DWORD PTR tv147[ebp]
+	mov	DWORD PTR tv151[ebp], eax
+	mov	eax, DWORD PTR tv151[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, 1
-	mov	edx, DWORD PTR tv147[ebp]
+	mov	edx, DWORD PTR tv151[ebp]
 	mov	DWORD PTR [edx], ecx
 $LN9@pop_front:
 ; Line 1109
@@ -9779,7 +9894,7 @@ $LN9@pop_front:
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 232				; 000000e8H
+	add	esp, 236				; 000000ecH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -9798,7 +9913,7 @@ __ehhandler$?pop_front@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-236]
+	mov	ecx, DWORD PTR [edx-240]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?pop_front@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ
@@ -10153,6 +10268,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Unchecked_begin@?$deque@DV?$allocator@D@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@@2@XZ
 _TEXT	SEGMENT
+tv79 = -224						; size = 4
+tv81 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -10166,13 +10283,13 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	__ehhandler$?_Unchecked_begin@?$deque@DV?$allocator@D@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@@2@XZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 212				; 000000d4H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-224]
+	mov	ecx, 53					; 00000035H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -10190,11 +10307,15 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	eax
 	call	??$addressof@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@@std@@YAPAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@0@AAV10@@Z ; std::addressof<std::_Deque_val<std::_Deque_simple_types<char> > >
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv81[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv79[ebp], eax
+	mov	ecx, DWORD PTR tv81[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv79[ebp]
+	push	edx
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
 	call	??0?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@@std@@QAE@IPBU_Container_base12@1@@Z
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
@@ -10205,7 +10326,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 224				; 000000e0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -10224,7 +10345,7 @@ __ehhandler$?_Unchecked_begin@?$deque@DV?$allocator@D@std@@@std@@QAE?AV?$_Deque_
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-228]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Unchecked_begin@?$deque@DV?$allocator@D@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@@2@XZ
@@ -10567,6 +10688,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Move_assign@?$deque@DV?$allocator@D@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
 _TEXT	SEGMENT
+tv72 = -224						; size = 4
+tv74 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Right$ = 8						; size = 4
@@ -10581,13 +10704,13 @@ ___formal$ = 12						; size = 1
 	push	__ehhandler$?_Move_assign@?$deque@DV?$allocator@D@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 212				; 000000d4H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-224]
+	mov	ecx, 53					; 00000035H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -10605,10 +10728,14 @@ ___formal$ = 12						; size = 1
 ; Line 730
 	mov	ecx, DWORD PTR __Right$[ebp]
 	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
-	push	eax
+	mov	DWORD PTR tv74[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+	mov	DWORD PTR tv72[ebp], eax
+	mov	eax, DWORD PTR tv74[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv72[ebp]
+	push	ecx
 	call	??$_Pocma@V?$allocator@D@std@@@std@@YAXAAV?$allocator@D@0@0@Z ; std::_Pocma<std::allocator<char> >
 	add	esp, 8
 ; Line 731
@@ -10623,7 +10750,7 @@ ___formal$ = 12						; size = 1
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 224				; 000000e0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -10642,7 +10769,7 @@ __ehhandler$?_Move_assign@?$deque@DV?$allocator@D@std@@@std@@AAEXAAV12@U_Equal_a
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-228]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Move_assign@?$deque@DV?$allocator@D@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
@@ -10652,6 +10779,9 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??0?$deque@DV?$allocator@D@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
+tv83 = -236						; size = 4
+tv85 = -232						; size = 4
+tv69 = -232						; size = 4
 $T1 = -221						; size = 1
 $T2 = -209						; size = 1
 _this$ = -8						; size = 4
@@ -10661,40 +10791,45 @@ _this$ = -8						; size = 4
 ; Line 595
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 228				; 000000e4H
+	sub	esp, 236				; 000000ecH
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-228]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-236]
+	mov	ecx, 59					; 0000003bH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __0657B1E2_deque
 	call	@__CheckForDebuggerJustMyCode@4
-	movzx	eax, BYTE PTR $T2[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR tv69[ebp], eax
+	movzx	ecx, BYTE PTR $T2[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR tv69[ebp]
 	call	??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1><>
 ; Line 596
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+	mov	DWORD PTR tv85[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
 	push	eax
 	lea	ecx, DWORD PTR $T1[ebp]
 	call	??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
+	mov	DWORD PTR tv83[ebp], eax
+	mov	eax, DWORD PTR tv83[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
-	mov	ecx, eax
+	mov	ecx, DWORD PTR tv85[ebp]
 	call	??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
 ; Line 597
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 228				; 000000e4H
+	add	esp, 236				; 000000ecH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -10931,6 +11066,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?push@?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAEX$$QAVEvent@Keyboard@@@Z
 _TEXT	SEGMENT
+tv70 = -208						; size = 4
 _this$ = -8						; size = 4
 __Val$ = 8						; size = 4
 ?push@?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAEX$$QAVEvent@Keyboard@@@Z PROC ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::push, COMDAT
@@ -10939,13 +11075,13 @@ __Val$ = 8						; size = 4
 ; Line 123
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-204]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-208]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -10953,18 +11089,20 @@ __Val$ = 8						; size = 4
 	mov	ecx, OFFSET __E561F523_queue
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 124
-	mov	eax, DWORD PTR __Val$[ebp]
-	push	eax
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR tv70[ebp], eax
+	mov	ecx, DWORD PTR __Val$[ebp]
+	push	ecx
 	call	??$move@AAVEvent@Keyboard@@@std@@YA$$QAVEvent@Keyboard@@AAV12@@Z ; std::move<Keyboard::Event &>
 	add	esp, 4
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	?push_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEX$$QAVEvent@Keyboard@@@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::push_back
 ; Line 125
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 204				; 000000ccH
+	add	esp, 208				; 000000d0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -12305,6 +12443,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z
 _TEXT	SEGMENT
+tv70 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Off$ = 8						; size = 4
@@ -12318,13 +12457,13 @@ __Off$ = 8						; size = 4
 	push	__ehhandler$?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -12337,11 +12476,12 @@ __Off$ = 8						; size = 4
 	mov	ecx, OFFSET __0657B1E2_deque
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 1509
-	mov	eax, DWORD PTR __Off$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
-	mov	ecx, eax
+	mov	DWORD PTR tv70[ebp], eax
+	mov	eax, DWORD PTR __Off$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Getblock
 ; Line 1510
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -12350,7 +12490,7 @@ __Off$ = 8						; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 220				; 000000dcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -12369,7 +12509,7 @@ __ehhandler$?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@s
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-224]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z
@@ -12568,6 +12708,10 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ
 _TEXT	SEGMENT
+tv144 = -252						; size = 4
+tv93 = -252						; size = 4
+tv146 = -248						; size = 4
+tv95 = -248						; size = 4
 __Block$2 = -48						; size = 4
 __Almap$ = -33						; size = 1
 _this$ = -24						; size = 4
@@ -12583,13 +12727,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 232				; 000000e8H
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-244]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-252]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -12643,16 +12787,19 @@ $LN6@Tidy:
 	cmp	DWORD PTR [ecx+edx*4], 0
 	je	SHORT $LN7@Tidy
 ; Line 1474
-	push	2
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	mov	DWORD PTR tv95[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Block$2[ebp]
 	mov	edx, DWORD PTR [eax+ecx*4]
-	push	edx
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
-	mov	ecx, eax
+	mov	DWORD PTR tv93[ebp], edx
+	push	2
+	mov	eax, DWORD PTR tv93[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv95[ebp]
 	call	?deallocate@?$allocator@VEvent@Keyboard@@@std@@QAEXQAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event>::deallocate
 ; Line 1475
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -12676,11 +12823,15 @@ $LN5@Tidy:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv146[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
 	mov	ecx, DWORD PTR [eax]
-	push	ecx
+	mov	DWORD PTR tv144[ebp], ecx
+	mov	edx, DWORD PTR tv146[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv144[ebp]
+	push	eax
 	lea	ecx, DWORD PTR __Almap$[ebp]
 	call	?deallocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEXQAPAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event *>::deallocate
 $LN8@Tidy:
@@ -12709,13 +12860,12 @@ $LN8@Tidy:
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
-	add	esp, 244				; 000000f4H
+	add	esp, 252				; 000000fcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-	npad	2
 $LN13@Tidy:
 	DD	1
 	DD	$LN12@Tidy
@@ -12744,7 +12894,7 @@ __ehhandler$?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-248]
+	mov	ecx, DWORD PTR [edx-256]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	ecx, DWORD PTR [edx-4]
@@ -12757,7 +12907,19 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Growmap@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXI@Z
 _TEXT	SEGMENT
-tv214 = -272						; size = 4
+tv231 = -276						; size = 4
+tv217 = -276						; size = 4
+tv199 = -276						; size = 4
+tv184 = -276						; size = 4
+tv165 = -276						; size = 4
+tv150 = -276						; size = 4
+tv238 = -272						; size = 4
+tv233 = -272						; size = 4
+tv219 = -272						; size = 4
+tv201 = -272						; size = 4
+tv186 = -272						; size = 4
+tv167 = -272						; size = 4
+tv152 = -272						; size = 4
 tv73 = -272						; size = 4
 __Myptr$ = -72						; size = 4
 __Newmap$ = -60						; size = 4
@@ -12773,13 +12935,13 @@ __Count$ = 8						; size = 4
 ; Line 1425
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 272				; 00000110H
+	sub	esp, 276				; 00000114H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-272]
-	mov	ecx, 68					; 00000044H
+	lea	edi, DWORD PTR [ebp-276]
+	mov	ecx, 69					; 00000045H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -12866,23 +13028,27 @@ $LN3@Growmap:
 	lea	edx, DWORD PTR [ecx+eax*4]
 	mov	DWORD PTR __Myptr$[ebp], edx
 ; Line 1444
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
 	mov	esi, eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR [esi]
-	lea	eax, DWORD PTR [edx+ecx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR [esi]
+	lea	edx, DWORD PTR [ecx+eax*4]
+	mov	DWORD PTR tv152[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv150[ebp], edx
+	mov	eax, DWORD PTR __Myptr$[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv152[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv150[ebp]
+	push	edx
 	call	??$uninitialized_copy@PAPAVEvent@Keyboard@@PAPAV12@@std@@YAPAPAVEvent@Keyboard@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Keyboard::Event * *,Keyboard::Event * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -12891,18 +13057,22 @@ $LN3@Growmap:
 	cmp	eax, DWORD PTR __Count$[ebp]
 	ja	SHORT $LN6@Growmap
 ; Line 1446
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv167[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR tv165[ebp], eax
+	mov	ecx, DWORD PTR __Myptr$[ebp]
 	push	ecx
+	mov	edx, DWORD PTR tv167[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv165[ebp]
+	push	eax
 	call	??$uninitialized_copy@PAPAVEvent@Keyboard@@PAPAV12@@std@@YAPAPAVEvent@Keyboard@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Keyboard::Event * *,Keyboard::Event * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -12922,38 +13092,46 @@ $LN3@Growmap:
 	call	??$_Uninitialized_value_construct_n_unchecked1@PAPAVEvent@Keyboard@@I@std@@YAPAPAVEvent@Keyboard@@PAPAV12@I@Z ; std::_Uninitialized_value_construct_n_unchecked1<Keyboard::Event * *,unsigned int>
 	add	esp, 8
 ; Line 1449
-	jmp	SHORT $LN7@Growmap
+	jmp	$LN7@Growmap
 $LN6@Growmap:
 ; Line 1450
-	mov	eax, DWORD PTR __Myptr$[ebp]
-	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Count$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Count$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv186[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
+	mov	eax, DWORD PTR [eax]
+	mov	DWORD PTR tv184[ebp], eax
+	mov	ecx, DWORD PTR __Myptr$[ebp]
 	push	ecx
+	mov	edx, DWORD PTR tv186[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv184[ebp]
+	push	eax
 	call	??$uninitialized_copy@PAPAVEvent@Keyboard@@PAPAV12@@std@@YAPAPAVEvent@Keyboard@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Keyboard::Event * *,Keyboard::Event * *>
 	add	esp, 12					; 0000000cH
 ; Line 1451
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Myboff$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv201[ebp], edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+	mov	eax, DWORD PTR [eax]
+	mov	ecx, DWORD PTR __Count$[ebp]
+	lea	edx, DWORD PTR [eax+ecx*4]
+	mov	DWORD PTR tv199[ebp], edx
 	mov	eax, DWORD PTR __Newmap$[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Myboff$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
-	mov	ecx, DWORD PTR [eax]
-	mov	edx, DWORD PTR __Count$[ebp]
-	lea	eax, DWORD PTR [ecx+edx*4]
-	push	eax
+	mov	ecx, DWORD PTR tv201[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv199[ebp]
+	push	edx
 	call	??$uninitialized_copy@PAPAVEvent@Keyboard@@PAPAV12@@std@@YAPAPAVEvent@Keyboard@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Keyboard::Event * *,Keyboard::Event * *>
 	add	esp, 12					; 0000000cH
 	mov	DWORD PTR __Myptr$[ebp], eax
@@ -12974,13 +13152,17 @@ $LN7@Growmap:
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR [esi]
 	lea	edx, DWORD PTR [ecx+eax*4]
-	push	edx
+	mov	DWORD PTR tv219[ebp], edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
 	mov	eax, DWORD PTR [eax]
 	mov	ecx, DWORD PTR __Myboff$[ebp]
 	lea	edx, DWORD PTR [eax+ecx*4]
-	push	edx
+	mov	DWORD PTR tv217[ebp], edx
+	mov	eax, DWORD PTR tv219[ebp]
+	push	eax
+	mov	ecx, DWORD PTR tv217[ebp]
+	push	ecx
 	call	??$_Destroy_range@PAPAVEvent@Keyboard@@@std@@YAXPAPAVEvent@Keyboard@@QAPAV12@@Z ; std::_Destroy_range<Keyboard::Event * *>
 	add	esp, 8
 ; Line 1456
@@ -12992,11 +13174,15 @@ $LN7@Growmap:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv233[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
 	mov	ecx, DWORD PTR [eax]
-	push	ecx
+	mov	DWORD PTR tv231[ebp], ecx
+	mov	edx, DWORD PTR tv233[ebp]
+	push	edx
+	mov	eax, DWORD PTR tv231[ebp]
+	push	eax
 	lea	ecx, DWORD PTR __Almap$[ebp]
 	call	?deallocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEXQAPAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event *>::deallocate
 $LN8@Growmap:
@@ -13008,11 +13194,11 @@ $LN8@Growmap:
 ; Line 1461
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
-	mov	DWORD PTR tv214[ebp], eax
-	mov	eax, DWORD PTR tv214[ebp]
+	mov	DWORD PTR tv238[ebp], eax
+	mov	eax, DWORD PTR tv238[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, DWORD PTR __Count$[ebp]
-	mov	edx, DWORD PTR tv214[ebp]
+	mov	edx, DWORD PTR tv238[ebp]
 	mov	DWORD PTR [edx], ecx
 $LN9@Growmap:
 ; Line 1462
@@ -13029,13 +13215,13 @@ $LN9@Growmap:
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
-	add	esp, 272				; 00000110H
+	add	esp, 276				; 00000114H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-	npad	2
+	npad	3
 $LN14@Growmap:
 	DD	1
 	DD	$LN13@Growmap
@@ -13095,7 +13281,9 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-tv141 = -244						; size = 4
+tv140 = -248						; size = 4
+tv145 = -244						; size = 4
+tv142 = -244						; size = 4
 __Block$2 = -44						; size = 4
 __Newoff$3 = -32					; size = 4
 _this$ = -20						; size = 4
@@ -13110,13 +13298,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 232				; 000000e8H
+	sub	esp, 236				; 000000ecH
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-244]
-	mov	ecx, 58					; 0000003aH
+	lea	edi, DWORD PTR [ebp-248]
+	mov	ecx, 59					; 0000003bH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -13201,22 +13389,26 @@ $LN5@pop_back:
 	push	edx
 	call	??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z ; std::_Unfancy<Keyboard::Event>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv142[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	mov	DWORD PTR tv140[ebp], eax
+	mov	eax, DWORD PTR tv142[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv140[ebp]
+	push	ecx
 	call	??$destroy@VEvent@Keyboard@@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@@Z ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::destroy<Keyboard::Event>
 	add	esp, 8
 ; Line 1134
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
-	mov	DWORD PTR tv141[ebp], eax
-	mov	eax, DWORD PTR tv141[ebp]
+	mov	DWORD PTR tv145[ebp], eax
+	mov	eax, DWORD PTR tv145[ebp]
 	mov	ecx, DWORD PTR [eax]
 	sub	ecx, 1
-	mov	edx, DWORD PTR tv141[ebp]
+	mov	edx, DWORD PTR tv145[ebp]
 	mov	DWORD PTR [edx], ecx
-	mov	eax, DWORD PTR tv141[ebp]
+	mov	eax, DWORD PTR tv145[ebp]
 	cmp	DWORD PTR [eax], 0
 	jne	SHORT $LN8@pop_back
 ; Line 1135
@@ -13231,7 +13423,7 @@ $LN8@pop_back:
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 244				; 000000f4H
+	add	esp, 248				; 000000f8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -13250,7 +13442,7 @@ __ehhandler$?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@st
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-248]
+	mov	ecx, DWORD PTR [edx-252]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
@@ -13260,8 +13452,10 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?pop_front@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
 _TEXT	SEGMENT
-tv148 = -232						; size = 4
-tv141 = -232						; size = 4
+tv140 = -236						; size = 4
+tv152 = -232						; size = 4
+tv145 = -232						; size = 4
+tv142 = -232						; size = 4
 __Block$2 = -32						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
@@ -13275,13 +13469,13 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?pop_front@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 220				; 000000dcH
+	sub	esp, 224				; 000000e0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-232]
-	mov	ecx, 55					; 00000037H
+	lea	edi, DWORD PTR [ebp-236]
+	mov	ecx, 56					; 00000038H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -13362,22 +13556,26 @@ $LN5@pop_front:
 	push	edx
 	call	??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z ; std::_Unfancy<Keyboard::Event>
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv142[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	mov	DWORD PTR tv140[ebp], eax
+	mov	eax, DWORD PTR tv142[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv140[ebp]
+	push	ecx
 	call	??$destroy@VEvent@Keyboard@@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@@Z ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::destroy<Keyboard::Event>
 	add	esp, 8
 ; Line 1093
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
-	mov	DWORD PTR tv141[ebp], eax
-	mov	eax, DWORD PTR tv141[ebp]
+	mov	DWORD PTR tv145[ebp], eax
+	mov	eax, DWORD PTR tv145[ebp]
 	mov	ecx, DWORD PTR [eax]
 	sub	ecx, 1
-	mov	edx, DWORD PTR tv141[ebp]
+	mov	edx, DWORD PTR tv145[ebp]
 	mov	DWORD PTR [edx], ecx
-	mov	eax, DWORD PTR tv141[ebp]
+	mov	eax, DWORD PTR tv145[ebp]
 	cmp	DWORD PTR [eax], 0
 	jne	SHORT $LN7@pop_front
 ; Line 1094
@@ -13390,11 +13588,11 @@ $LN7@pop_front:
 ; Line 1096
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
-	mov	DWORD PTR tv148[ebp], eax
-	mov	eax, DWORD PTR tv148[ebp]
+	mov	DWORD PTR tv152[ebp], eax
+	mov	eax, DWORD PTR tv152[ebp]
 	mov	ecx, DWORD PTR [eax]
 	add	ecx, 1
-	mov	edx, DWORD PTR tv148[ebp]
+	mov	edx, DWORD PTR tv152[ebp]
 	mov	DWORD PTR [edx], ecx
 $LN9@pop_front:
 ; Line 1109
@@ -13404,7 +13602,7 @@ $LN9@pop_front:
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 232				; 000000e8H
+	add	esp, 236				; 000000ecH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -13423,7 +13621,7 @@ __ehhandler$?pop_front@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@s
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-236]
+	mov	ecx, DWORD PTR [edx-240]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?pop_front@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ
@@ -13778,6 +13976,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Unchecked_begin@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@@2@XZ
 _TEXT	SEGMENT
+tv79 = -224						; size = 4
+tv81 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 ___$ReturnUdt$ = 8					; size = 4
@@ -13791,13 +13991,13 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	__ehhandler$?_Unchecked_begin@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@@2@XZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 212				; 000000d4H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-224]
+	mov	ecx, 53					; 00000035H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -13815,11 +14015,15 @@ ___$ReturnUdt$ = 8					; size = 4
 	push	eax
 	call	??$addressof@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@@std@@YAPAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@0@AAV10@@Z ; std::addressof<std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> > >
 	add	esp, 4
-	push	eax
+	mov	DWORD PTR tv81[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
 	mov	eax, DWORD PTR [eax]
-	push	eax
+	mov	DWORD PTR tv79[ebp], eax
+	mov	ecx, DWORD PTR tv81[ebp]
+	push	ecx
+	mov	edx, DWORD PTR tv79[ebp]
+	push	edx
 	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
 	call	??0?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@@std@@QAE@IPBU_Container_base12@1@@Z
 	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
@@ -13830,7 +14034,7 @@ ___$ReturnUdt$ = 8					; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 224				; 000000e0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -13849,7 +14053,7 @@ __ehhandler$?_Unchecked_begin@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keybo
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-228]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Unchecked_begin@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE?AV?$_Deque_unchecked_iterator@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@@2@XZ
@@ -14239,6 +14443,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?_Move_assign@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
 _TEXT	SEGMENT
+tv72 = -224						; size = 4
+tv74 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 __Right$ = 8						; size = 4
@@ -14253,13 +14459,13 @@ ___formal$ = 12						; size = 1
 	push	__ehhandler$?_Move_assign@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 212				; 000000d4H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-224]
+	mov	ecx, 53					; 00000035H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -14277,10 +14483,14 @@ ___formal$ = 12						; size = 1
 ; Line 730
 	mov	ecx, DWORD PTR __Right$[ebp]
 	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
-	push	eax
+	mov	DWORD PTR tv74[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+	mov	DWORD PTR tv72[ebp], eax
+	mov	eax, DWORD PTR tv74[ebp]
 	push	eax
+	mov	ecx, DWORD PTR tv72[ebp]
+	push	ecx
 	call	??$_Pocma@V?$allocator@VEvent@Keyboard@@@std@@@std@@YAXAAV?$allocator@VEvent@Keyboard@@@0@0@Z ; std::_Pocma<std::allocator<Keyboard::Event> >
 	add	esp, 8
 ; Line 731
@@ -14295,7 +14505,7 @@ ___formal$ = 12						; size = 1
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 224				; 000000e0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -14314,7 +14524,7 @@ __ehhandler$?_Move_assign@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-228]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?_Move_assign@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXAAV12@U_Equal_allocators@2@@Z
@@ -14324,6 +14534,9 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??0?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
+tv83 = -236						; size = 4
+tv85 = -232						; size = 4
+tv69 = -232						; size = 4
 $T1 = -221						; size = 1
 $T2 = -209						; size = 1
 _this$ = -8						; size = 4
@@ -14333,40 +14546,45 @@ _this$ = -8						; size = 4
 ; Line 595
 	push	ebp
 	mov	ebp, esp
-	sub	esp, 228				; 000000e4H
+	sub	esp, 236				; 000000ecH
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-228]
-	mov	ecx, 57					; 00000039H
+	lea	edi, DWORD PTR [ebp-236]
+	mov	ecx, 59					; 0000003bH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __0657B1E2_deque
 	call	@__CheckForDebuggerJustMyCode@4
-	movzx	eax, BYTE PTR $T2[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR tv69[ebp], eax
+	movzx	ecx, BYTE PTR $T2[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR tv69[ebp]
 	call	??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1><>
 ; Line 596
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+	mov	DWORD PTR tv85[ebp], eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
 	push	eax
 	lea	ecx, DWORD PTR $T1[ebp]
 	call	??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><Keyboard::Event>
+	mov	DWORD PTR tv83[ebp], eax
+	mov	eax, DWORD PTR tv83[ebp]
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
-	mov	ecx, eax
+	mov	ecx, DWORD PTR tv85[ebp]
 	call	??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
 ; Line 597
 	mov	eax, DWORD PTR _this$[ebp]
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 228				; 000000e4H
+	add	esp, 236				; 000000ecH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -15186,6 +15404,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnChar@Keyboard@@AAEXD@Z
 _TEXT	SEGMENT
+tv68 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 _character$ = 8						; size = 1
@@ -15199,13 +15418,13 @@ _character$ = 8						; size = 1
 	push	__ehhandler$?OnChar@Keyboard@@AAEXD@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -15218,10 +15437,12 @@ _character$ = 8						; size = 1
 	mov	ecx, OFFSET __BDCF1AB3_Keyboard@cpp
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 71
-	lea	eax, DWORD PTR _character$[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 60					; 0000003cH
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 60					; 0000003cH
+	mov	DWORD PTR tv68[ebp], eax
+	lea	ecx, DWORD PTR _character$[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR tv68[ebp]
 	call	?push@?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAEXABD@Z ; std::queue<char,std::deque<char,std::allocator<char> > >::push
 ; Line 72
 	mov	eax, DWORD PTR _this$[ebp]
@@ -15236,7 +15457,7 @@ _character$ = 8						; size = 1
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 220				; 000000dcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -15255,7 +15476,7 @@ __ehhandler$?OnChar@Keyboard@@AAEXD@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-224]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnChar@Keyboard@@AAEXD@Z
@@ -15265,6 +15486,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnKeyReleased@Keyboard@@AAEXE@Z
 _TEXT	SEGMENT
+tv84 = -252						; size = 4
+tv71 = -252						; size = 4
 $T2 = -244						; size = 8
 $T3 = -228						; size = 8
 _this$ = -20						; size = 4
@@ -15280,13 +15503,13 @@ _kc$ = 8						; size = 1
 	push	__ehhandler$?OnKeyReleased@Keyboard@@AAEXE@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 236				; 000000ecH
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-248]
-	mov	ecx, 59					; 0000003bH
+	lea	edi, DWORD PTR [ebp-252]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -15299,27 +15522,31 @@ _kc$ = 8						; size = 1
 	mov	ecx, OFFSET __BDCF1AB3_Keyboard@cpp
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 65
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 8
+	mov	DWORD PTR tv71[ebp], eax
 	push	0
-	movzx	eax, BYTE PTR _kc$[ebp]
-	push	eax
-	lea	ecx, DWORD PTR $T3[ebp]
+	movzx	ecx, BYTE PTR _kc$[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 8
+	lea	edx, DWORD PTR $T3[ebp]
+	push	edx
+	mov	ecx, DWORD PTR tv71[ebp]
 	call	??A?$bitset@$0BAA@@std@@QAE?AVreference@01@I@Z ; std::bitset<256>::operator[]
 	mov	ecx, eax
 	call	??4reference@?$bitset@$0BAA@@std@@QAEAAV012@_N@Z ; std::bitset<256>::reference::operator=
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??1reference@?$bitset@$0BAA@@std@@QAE@XZ ; std::bitset<256>::reference::~reference
 ; Line 66
-	movzx	eax, BYTE PTR _kc$[ebp]
-	push	eax
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 40					; 00000028H
+	mov	DWORD PTR tv84[ebp], eax
+	movzx	ecx, BYTE PTR _kc$[ebp]
+	push	ecx
 	push	1
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Keyboard@@QAE@W4Type@01@E@Z	; Keyboard::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 40					; 00000028H
+	mov	ecx, DWORD PTR tv84[ebp]
 	call	?push@?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAEX$$QAVEvent@Keyboard@@@Z ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::push
 ; Line 67
 	mov	eax, DWORD PTR _this$[ebp]
@@ -15334,7 +15561,7 @@ _kc$ = 8						; size = 1
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 248				; 000000f8H
+	add	esp, 252				; 000000fcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -15353,7 +15580,7 @@ __ehhandler$?OnKeyReleased@Keyboard@@AAEXE@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-252]
+	mov	ecx, DWORD PTR [edx-256]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnKeyReleased@Keyboard@@AAEXE@Z
@@ -15363,6 +15590,8 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?OnKeyPressed@Keyboard@@AAEXE@Z
 _TEXT	SEGMENT
+tv84 = -252						; size = 4
+tv71 = -252						; size = 4
 $T2 = -244						; size = 8
 $T3 = -228						; size = 8
 _this$ = -20						; size = 4
@@ -15378,13 +15607,13 @@ _kc$ = 8						; size = 1
 	push	__ehhandler$?OnKeyPressed@Keyboard@@AAEXE@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 236				; 000000ecH
+	sub	esp, 240				; 000000f0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-248]
-	mov	ecx, 59					; 0000003bH
+	lea	edi, DWORD PTR [ebp-252]
+	mov	ecx, 60					; 0000003cH
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -15397,27 +15626,31 @@ _kc$ = 8						; size = 1
 	mov	ecx, OFFSET __BDCF1AB3_Keyboard@cpp
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 59
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 8
+	mov	DWORD PTR tv71[ebp], eax
 	push	1
-	movzx	eax, BYTE PTR _kc$[ebp]
-	push	eax
-	lea	ecx, DWORD PTR $T3[ebp]
+	movzx	ecx, BYTE PTR _kc$[ebp]
 	push	ecx
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 8
+	lea	edx, DWORD PTR $T3[ebp]
+	push	edx
+	mov	ecx, DWORD PTR tv71[ebp]
 	call	??A?$bitset@$0BAA@@std@@QAE?AVreference@01@I@Z ; std::bitset<256>::operator[]
 	mov	ecx, eax
 	call	??4reference@?$bitset@$0BAA@@std@@QAEAAV012@_N@Z ; std::bitset<256>::reference::operator=
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??1reference@?$bitset@$0BAA@@std@@QAE@XZ ; std::bitset<256>::reference::~reference
 ; Line 60
-	movzx	eax, BYTE PTR _kc$[ebp]
-	push	eax
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 40					; 00000028H
+	mov	DWORD PTR tv84[ebp], eax
+	movzx	ecx, BYTE PTR _kc$[ebp]
+	push	ecx
 	push	0
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0Event@Keyboard@@QAE@W4Type@01@E@Z	; Keyboard::Event::Event
 	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 40					; 00000028H
+	mov	ecx, DWORD PTR tv84[ebp]
 	call	?push@?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAEX$$QAVEvent@Keyboard@@@Z ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::push
 ; Line 61
 	mov	eax, DWORD PTR _this$[ebp]
@@ -15432,7 +15665,7 @@ _kc$ = 8						; size = 1
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 248				; 000000f8H
+	add	esp, 252				; 000000fcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -15451,7 +15684,7 @@ __ehhandler$?OnKeyPressed@Keyboard@@AAEXE@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-252]
+	mov	ecx, DWORD PTR [edx-256]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?OnKeyPressed@Keyboard@@AAEXE@Z
@@ -16260,6 +16493,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?KeyIsPressed@Keyboard@@QBE_NE@Z
 _TEXT	SEGMENT
+tv70 = -220						; size = 4
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
 _kc$ = 8						; size = 1
@@ -16273,13 +16507,13 @@ _kc$ = 8						; size = 1
 	push	__ehhandler$?KeyIsPressed@Keyboard@@QBE_NE@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -16292,10 +16526,12 @@ _kc$ = 8						; size = 1
 	mov	ecx, OFFSET __BDCF1AB3_Keyboard@cpp
 	call	@__CheckForDebuggerJustMyCode@4
 ; Line 4
-	movzx	eax, BYTE PTR _kc$[ebp]
-	push	eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 8
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 8
+	mov	DWORD PTR tv70[ebp], eax
+	movzx	ecx, BYTE PTR _kc$[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR tv70[ebp]
 	call	??A?$bitset@$0BAA@@std@@QBE_NI@Z	; std::bitset<256>::operator[]
 ; Line 5
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
@@ -16304,7 +16540,7 @@ _kc$ = 8						; size = 1
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 220				; 000000dcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -16323,7 +16559,7 @@ __ehhandler$?KeyIsPressed@Keyboard@@QBE_NE@Z:
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-224]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$?KeyIsPressed@Keyboard@@QBE_NE@Z
@@ -16664,6 +16900,7 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z
 _TEXT	SEGMENT
+tv78 = -220						; size = 4
 $T2 = -212						; size = 4
 __$EHRec$ = -12						; size = 12
 __Obj$ = 8						; size = 4
@@ -16677,12 +16914,12 @@ _<_Args_0>$ = 12					; size = 4
 	push	__ehhandler$??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 204				; 000000ccH
+	sub	esp, 208				; 000000d0H
 	push	ebx
 	push	esi
 	push	edi
-	lea	edi, DWORD PTR [ebp-216]
-	mov	ecx, 51					; 00000033H
+	lea	edi, DWORD PTR [ebp-220]
+	mov	ecx, 52					; 00000034H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	mov	eax, DWORD PTR ___security_cookie
@@ -16706,7 +16943,9 @@ _<_Args_0>$ = 12					; size = 4
 	call	??$forward@PAU_Container_base12@std@@@std@@YA$$QAPAU_Container_base12@0@AAPAU10@@Z ; std::forward<std::_Container_base12 *>
 	add	esp, 4
 	mov	edx, DWORD PTR [eax]
-	push	edx
+	mov	DWORD PTR tv78[ebp], edx
+	mov	eax, DWORD PTR tv78[ebp]
+	push	eax
 	mov	ecx, DWORD PTR $T2[ebp]
 	call	??0_Container_proxy@std@@QAE@PAU_Container_base12@1@@Z ; std::_Container_proxy::_Container_proxy
 ; Line 231
@@ -16716,7 +16955,7 @@ _<_Args_0>$ = 12					; size = 4
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 216				; 000000d8H
+	add	esp, 220				; 000000dcH
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -16735,7 +16974,7 @@ __ehhandler$??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
+	mov	ecx, DWORD PTR [edx-224]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	eax, OFFSET __ehfuncinfo$??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z
