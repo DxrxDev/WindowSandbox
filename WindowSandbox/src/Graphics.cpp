@@ -1,16 +1,10 @@
 #include"Graphics.h"
+#include"tools/GfxExcMacros.h"
 #include<memory>
 #include<DirectXMath.h>
 
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"D3DCompiler.lib")
-
-
-#define GFX_EXCEPT() Graphics::GraphicsException(__LINE__, __FILE__, hr)
-#define GFX_EXCEPT_THROW(code) if(FAILED(hr = code)){throw GFX_EXCEPT();}
-#define GFX_LAST_EXCEPT() Graphics::GraphicsException(__LINE__, __FILE__, GetLastError())
-#define GFX_LAST_EXCEPT_THROW(code) if(FAILED(code)){throw GFX_LAST_EXCEPT();}
-
 
 Graphics::Graphics(HWND hWnd) {
 	HRESULT hr;
@@ -96,7 +90,7 @@ void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
 	struct Vertex {
 		float x, y, z;
 	};
-
+	
 	const Vertex vertices[] = {
 		{  1.0f,  1.0f, -1.0f},//0 RUF
 		{ -1.0f,  1.0f, -1.0f},//1 LUF
@@ -206,8 +200,8 @@ void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
 				DirectX::XMMatrixRotationY(angle) *
 				DirectX::XMMatrixRotationX(angle/2) *
 				DirectX::XMMatrixTranslation(0, 0, 5) *
-				DirectX::XMMatrixPerspectiveLH(1.0, 1.0, 0.5, 10.0) *
-				DirectX::XMMatrixTranslation(mouseX, mouseY, 0.0)
+				DirectX::XMMatrixTranslation(mouseX, 0.0, mouseY) *
+				DirectX::XMMatrixPerspectiveLH(1.0, 1.0, 0.5, 10.0) 
 			)
 		}
 	};

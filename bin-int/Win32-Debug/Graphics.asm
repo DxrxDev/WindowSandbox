@@ -21973,8 +21973,8 @@ $LN5@DrawTriang:
 	lea	esi, DWORD PTR $T12[ebp]
 	lea	edi, DWORD PTR $T26[ebp]
 	rep movsd
-	xorps	xmm2, xmm2
-	movss	xmm1, DWORD PTR _mouseY$[ebx]
+	movss	xmm2, DWORD PTR _mouseY$[ebx]
+	xorps	xmm1, xmm1
 	movss	xmm0, DWORD PTR _mouseX$[ebx]
 	call	?XMMatrixTranslation@DirectX@@YQ?AUXMMATRIX@1@MMM@Z ; DirectX::XMMatrixTranslation
 	movaps	XMMWORD PTR $T9[ebp+48], xmm3

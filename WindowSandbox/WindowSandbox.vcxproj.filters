@@ -68,6 +68,12 @@
     <ClInclude Include="src\tools\WinInclude.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\tools\WndExcMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="src\tools\GfxExcMacros.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="res\WindowSandbox.rc">

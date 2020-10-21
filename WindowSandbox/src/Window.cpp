@@ -1,5 +1,6 @@
 #include"Window.h"
 #include"resource.h"
+#include"tools/WndExcMacros.h"
 #include<sstream>
 
 Window::WindowClass Window::WindowClass::wndClass;

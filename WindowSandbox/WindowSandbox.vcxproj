@@ -194,8 +194,10 @@
     <ClInclude Include="src\Game.h" />
     <ClInclude Include="src\Keyboard.h" />
     <ClInclude Include="src\Mouse.h" />
+    <ClInclude Include="src\tools\GfxExcMacros.h" />
     <ClInclude Include="src\tools\Timer.h" />
     <ClInclude Include="src\tools\WinInclude.h" />
+    <ClInclude Include="src\tools\WndExcMacros.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <ItemGroup>
