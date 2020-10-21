@@ -68,6 +68,13 @@ Window::~Window()
 	DestroyWindow(hWnd);
 }
 
+Graphics& Window::Gfx() { 
+	if (!pGfx) { 
+		throw std::exception("Graphics = nullptr"); 
+	} 
+	return *pGfx; 
+}
+
 std::optional<int> Window::ProcessMessages() {
 	MSG msg;
 	while (PeekMessageA(&msg, nullptr, 0, 0, PM_REMOVE)){

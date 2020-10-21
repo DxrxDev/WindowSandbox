@@ -8,4 +8,184 @@
 
 INCLUDELIB OLDNAMES
 
+PUBLIC	??_C@_0BC@KBDMBKEH@deque?$DMT?$DO?5too?5long@	; `string'
+;	COMDAT ??_C@_0BC@KBDMBKEH@deque?$DMT?$DO?5too?5long@
+CONST	SEGMENT
+??_C@_0BC@KBDMBKEH@deque?$DMT?$DO?5too?5long@ DB 'deque<T> too long', 00H ; `string'
+PUBLIC	??$_Zero_range@PAPAVEvent@Keyboard@@@std@@YAPAPAVEvent@Keyboard@@QAPAV12@0@Z ; std::_Zero_range<Keyboard::Event * *>
+PUBLIC	??$_Seek_wrapped@PAPAVEvent@Keyboard@@AAPAPAV12@@std@@YAXAAPAPAVEvent@Keyboard@@0@Z ; std::_Seek_wrapped<Keyboard::Event * *,Keyboard::Event * * &>
+PUBLIC	??$_Copy_memmove@PAPAVEvent@Keyboard@@PAPAV12@@std@@YAPAPAVEvent@Keyboard@@PAPAV12@00@Z ; std::_Copy_memmove<Keyboard::Event * *,Keyboard::Event * *>
+PUBLIC	??$_Adl_verify_range@PAPAVEvent@Keyboard@@PAPAV12@@std@@YAXABQAPAVEvent@Keyboard@@0@Z ; std::_Adl_verify_range<Keyboard::Event * *,Keyboard::Event * *>
+PUBLIC	??$_Zero_range@PAPAD@std@@YAPAPADQAPAD0@Z	; std::_Zero_range<char * *>
+PUBLIC	??$_Seek_wrapped@PAPADAAPAPAD@std@@YAXAAPAPAD0@Z ; std::_Seek_wrapped<char * *,char * * &>
+PUBLIC	??$_Copy_memmove@PAPADPAPAD@std@@YAPAPADPAPAD00@Z ; std::_Copy_memmove<char * *,char * *>
+PUBLIC	??$_Adl_verify_range@PAPADPAPAD@std@@YAXABQAPAD0@Z ; std::_Adl_verify_range<char * *,char * *>
+PUBLIC	??$forward@PAU_Container_base12@std@@@std@@YA$$QAPAU_Container_base12@0@AAPAU10@@Z ; std::forward<std::_Container_base12 *>
+PUBLIC	??$addressof@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@AAU10@@Z ; std::addressof<std::_Container_proxy>
+PUBLIC	?deallocate@?$_Default_allocator_traits@V?$allocator@U_Container_proxy@std@@@std@@@std@@SAXAAV?$allocator@U_Container_proxy@std@@@2@QAU_Container_proxy@2@I@Z ; std::_Default_allocator_traits<std::allocator<std::_Container_proxy> >::deallocate
+PUBLIC	??$_Get_size_of_n@$03@std@@YAII@Z		; std::_Get_size_of_n<4>
+PUBLIC	??$_Destroy_range@PAPAVEvent@Keyboard@@@std@@YAXPAPAVEvent@Keyboard@@QAPAV12@@Z ; std::_Destroy_range<Keyboard::Event * *>
+PUBLIC	??$_Uninitialized_value_construct_n_unchecked1@PAPAVEvent@Keyboard@@I@std@@YAPAPAVEvent@Keyboard@@PAPAV12@I@Z ; std::_Uninitialized_value_construct_n_unchecked1<Keyboard::Event * *,unsigned int>
+PUBLIC	??$_Get_unwrapped_n@AAPAPAVEvent@Keyboard@@H@std@@YAPAPAVEvent@Keyboard@@AAPAPAV12@H@Z ; std::_Get_unwrapped_n<Keyboard::Event * * &,int>
+PUBLIC	??$_Idl_distance@PAPAVEvent@Keyboard@@PAPAV12@@std@@YAHABQAPAVEvent@Keyboard@@0@Z ; std::_Idl_distance<Keyboard::Event * *,Keyboard::Event * *>
+PUBLIC	??$_Get_unwrapped@ABQAPAVEvent@Keyboard@@@std@@YAPAPAVEvent@Keyboard@@ABQAPAV12@@Z ; std::_Get_unwrapped<Keyboard::Event * * const &>
+PUBLIC	??$uninitialized_copy@PAPAVEvent@Keyboard@@PAPAV12@@std@@YAPAPAVEvent@Keyboard@@QAPAV12@0PAPAV12@@Z ; std::uninitialized_copy<Keyboard::Event * *,Keyboard::Event * *>
+PUBLIC	??$_Destroy_range@PAPAD@std@@YAXPAPADQAPAD@Z	; std::_Destroy_range<char * *>
+PUBLIC	??$_Uninitialized_value_construct_n_unchecked1@PAPADI@std@@YAPAPADPAPADI@Z ; std::_Uninitialized_value_construct_n_unchecked1<char * *,unsigned int>
+PUBLIC	??$_Get_unwrapped_n@AAPAPADH@std@@YAPAPADAAPAPADH@Z ; std::_Get_unwrapped_n<char * * &,int>
+PUBLIC	??$_Idl_distance@PAPADPAPAD@std@@YAHABQAPAD0@Z	; std::_Idl_distance<char * *,char * *>
+PUBLIC	??$_Get_unwrapped@ABQAPAD@std@@YAPAPADABQAPAD@Z	; std::_Get_unwrapped<char * * const &>
+PUBLIC	??$uninitialized_copy@PAPADPAPAD@std@@YAPAPADQAPAD0PAPAD@Z ; std::uninitialized_copy<char * *,char * *>
+PUBLIC	??$_Get_size_of_n@$07@std@@YAII@Z		; std::_Get_size_of_n<8>
+PUBLIC	??$construct@VEvent@Keyboard@@V12@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@$$QAV34@@Z ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::construct<Keyboard::Event,Keyboard::Event>
+PUBLIC	??$forward@VEvent@Keyboard@@@std@@YA$$QAVEvent@Keyboard@@AAV12@@Z ; std::forward<Keyboard::Event>
+PUBLIC	??$construct@DABD@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QADABD@Z ; std::_Default_allocator_traits<std::allocator<char> >::construct<char,char const &>
+PUBLIC	??$forward@ABD@std@@YAABDABD@Z			; std::forward<char const &>
+PUBLIC	??$_Unfancy@U_Container_proxy@std@@@std@@YAPAU_Container_proxy@0@PAU10@@Z ; std::_Unfancy<std::_Container_proxy>
+PUBLIC	??$_Deallocate_plain@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z ; std::_Deallocate_plain<std::allocator<std::_Container_proxy> >
+PUBLIC	??$_Construct_in_place@U_Container_proxy@std@@PAU_Container_base12@2@@std@@YAXAAU_Container_proxy@0@$$QAPAU_Container_base12@0@@Z ; std::_Construct_in_place<std::_Container_proxy,std::_Container_base12 *>
+PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QBEABV?$allocator@VEvent@Keyboard@@@2@XZ ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Get_first
+PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QBEABV?$allocator@D@2@XZ ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Get_first
+PUBLIC	?max_size@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAIABV?$allocator@VEvent@Keyboard@@@2@@Z ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::max_size
+PUBLIC	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+PUBLIC	?_Getal@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+PUBLIC	?allocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEPAPAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event *>::allocate
+PUBLIC	?max_size@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBEIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::max_size
+PUBLIC	?_Xlen@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Xlen
+PUBLIC	?allocate@?$allocator@PAD@std@@QAEPAPADI@Z	; std::allocator<char *>::allocate
+PUBLIC	?max_size@?$deque@DV?$allocator@D@std@@@std@@QBEIXZ ; std::deque<char,std::allocator<char> >::max_size
+PUBLIC	?_Xlen@?$deque@DV?$allocator@D@std@@@std@@ABEXXZ ; std::deque<char,std::allocator<char> >::_Xlen
+PUBLIC	??0?$allocator@VEvent@Keyboard@@@std@@QAE@XZ	; std::allocator<Keyboard::Event>::allocator<Keyboard::Event>
+PUBLIC	?allocate@?$allocator@VEvent@Keyboard@@@std@@QAEPAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event>::allocate
+PUBLIC	?_Growmap@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXI@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Growmap
+PUBLIC	??0?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >
+PUBLIC	?_Growmap@?$deque@DV?$allocator@D@std@@@std@@AAEXI@Z ; std::deque<char,std::allocator<char> >::_Growmap
+PUBLIC	??0?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QAE@XZ ; std::_Deque_val<std::_Deque_simple_types<char> >::_Deque_val<std::_Deque_simple_types<char> >
+PUBLIC	?allocate@?$allocator@U_Container_proxy@std@@@std@@QAEPAU_Container_proxy@2@I@Z ; std::allocator<std::_Container_proxy>::allocate
+PUBLIC	??$_Emplace_back_internal@VEvent@Keyboard@@@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEX$$QAVEvent@Keyboard@@@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Emplace_back_internal<Keyboard::Event>
+PUBLIC	??$destroy@VEvent@Keyboard@@@?$_Default_allocator_traits@V?$allocator@VEvent@Keyboard@@@std@@@std@@SAXAAV?$allocator@VEvent@Keyboard@@@1@QAVEvent@Keyboard@@@Z ; std::_Default_allocator_traits<std::allocator<Keyboard::Event> >::destroy<Keyboard::Event>
+PUBLIC	??$_Unfancy@VEvent@Keyboard@@@std@@YAPAVEvent@Keyboard@@PAV12@@Z ; std::_Unfancy<Keyboard::Event>
+PUBLIC	??$_Destroy_in_place@PAVEvent@Keyboard@@@std@@YAXAAPAVEvent@Keyboard@@@Z ; std::_Destroy_in_place<Keyboard::Event *>
+PUBLIC	??$?0VEvent@Keyboard@@@?$allocator@PAVEvent@Keyboard@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ; std::allocator<Keyboard::Event *>::allocator<Keyboard::Event *><Keyboard::Event>
+PUBLIC	??$destroy@D@?$_Default_allocator_traits@V?$allocator@D@std@@@std@@SAXAAV?$allocator@D@1@QAD@Z ; std::_Default_allocator_traits<std::allocator<char> >::destroy<char>
+PUBLIC	??$_Emplace_back_internal@ABD@?$deque@DV?$allocator@D@std@@@std@@AAEXABD@Z ; std::deque<char,std::allocator<char> >::_Emplace_back_internal<char const &>
+PUBLIC	??$?0D@?$allocator@PAD@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<char *>::allocator<char *><char>
+PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1><>
+PUBLIC	??$?0VEvent@Keyboard@@@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@VEvent@Keyboard@@@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><Keyboard::Event>
+PUBLIC	??$move@AAVEvent@Keyboard@@@std@@YA$$QAVEvent@Keyboard@@AAV12@@Z ; std::move<Keyboard::Event &>
+PUBLIC	??$_Alloc_proxy@V?$allocator@U_Container_proxy@std@@@std@@@_Container_base12@std@@QAEX$$QAV?$allocator@U_Container_proxy@std@@@1@@Z ; std::_Container_base12::_Alloc_proxy<std::allocator<std::_Container_proxy> >
+PUBLIC	??$?0$$V@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1><>
+PUBLIC	??$_Delete_plain_internal@V?$allocator@U_Container_proxy@std@@@std@@@std@@YAXAAV?$allocator@U_Container_proxy@std@@@0@QAU_Container_proxy@0@@Z ; std::_Delete_plain_internal<std::allocator<std::_Container_proxy> >
+PUBLIC	??$exchange@PAU_Container_proxy@std@@$$T@std@@YAPAU_Container_proxy@0@AAPAU10@$$QA$$T@Z ; std::exchange<std::_Container_proxy *,std::nullptr_t>
+PUBLIC	??$?0D@?$allocator@U_Container_proxy@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::allocator<std::_Container_proxy>::allocator<std::_Container_proxy><char>
+PUBLIC	??$TrimBuffer@D@Keyboard@@CAXAAV?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@@Z ; Keyboard::TrimBuffer<char>
+PUBLIC	??$TrimBuffer@VEvent@Keyboard@@@Keyboard@@CAXAAV?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@@Z ; Keyboard::TrimBuffer<Keyboard::Event>
+PUBLIC	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+PUBLIC	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >::_Getblock
+PUBLIC	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@ABEABV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+PUBLIC	?_Getblock@?$_Deque_val@U?$_Deque_simple_types@D@std@@@std@@QBEII@Z ; std::_Deque_val<std::_Deque_simple_types<char> >::_Getblock
+PUBLIC	?deallocate@?$allocator@VEvent@Keyboard@@@std@@QAEXQAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event>::deallocate
+PUBLIC	?deallocate@?$allocator@PAVEvent@Keyboard@@@std@@QAEXQAPAVEvent@Keyboard@@I@Z ; std::allocator<Keyboard::Event *>::deallocate
+PUBLIC	?pop_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::pop_back
+PUBLIC	?_Getblock@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEII@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getblock
+PUBLIC	?_Orphan_all@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Orphan_all
+PUBLIC	?_Map@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAPAPAVEvent@Keyboard@@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Map
+PUBLIC	?_Mapsize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mapsize
+PUBLIC	?_Myoff@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Myoff
+PUBLIC	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+PUBLIC	?_Mysize@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@ABEABIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Mysize
+PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@VEvent@Keyboard@@@std@@V?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@$00@std@@QAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::_Compressed_pair<std::allocator<Keyboard::Event>,std::_Deque_val<std::_Deque_simple_types<Keyboard::Event> >,1>::_Get_first
+PUBLIC	?deallocate@?$allocator@PAD@std@@QAEXQAPADI@Z	; std::allocator<char *>::deallocate
+PUBLIC	?pop_back@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ ; std::deque<char,std::allocator<char> >::pop_back
+PUBLIC	?_Getblock@?$deque@DV?$allocator@D@std@@@std@@ABEII@Z ; std::deque<char,std::allocator<char> >::_Getblock
+PUBLIC	?_Orphan_all@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ ; std::deque<char,std::allocator<char> >::_Orphan_all
+PUBLIC	?_Map@?$deque@DV?$allocator@D@std@@@std@@AAEAAPAPADXZ ; std::deque<char,std::allocator<char> >::_Map
+PUBLIC	?_Mapsize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mapsize
+PUBLIC	?_Myoff@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Myoff
+PUBLIC	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@AAEAAIXZ ; std::deque<char,std::allocator<char> >::_Mysize
+PUBLIC	?_Mysize@?$deque@DV?$allocator@D@std@@@std@@ABEABIXZ ; std::deque<char,std::allocator<char> >::_Mysize
+PUBLIC	?_Get_first@?$_Compressed_pair@V?$allocator@D@std@@V?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@$00@std@@QAEAAV?$allocator@D@2@XZ ; std::_Compressed_pair<std::allocator<char>,std::_Deque_val<std::_Deque_simple_types<char> >,1>::_Get_first
+PUBLIC	?_Validate@?$bitset@$0BAA@@std@@SAXI@Z		; std::bitset<256>::_Validate
+PUBLIC	?_Set_unchecked@?$bitset@$0BAA@@std@@AAEAAV12@I_N@Z ; std::bitset<256>::_Set_unchecked
+PUBLIC	?push_back@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEX$$QAVEvent@Keyboard@@@Z ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::push_back
+PUBLIC	?size@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBEIXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::size
+PUBLIC	?empty@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QBE_NXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::empty
+PUBLIC	?pop_front@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::pop_front
+PUBLIC	?_Tidy@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEXXZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Tidy
+PUBLIC	?_Getal@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$allocator@VEvent@Keyboard@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Getal
+PUBLIC	?_Get_data@?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@VEvent@Keyboard@@@std@@@2@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::_Get_data
+PUBLIC	?size@?$deque@DV?$allocator@D@std@@@std@@QBEIXZ	; std::deque<char,std::allocator<char> >::size
+PUBLIC	?empty@?$deque@DV?$allocator@D@std@@@std@@QBE_NXZ ; std::deque<char,std::allocator<char> >::empty
+PUBLIC	?pop_front@?$deque@DV?$allocator@D@std@@@std@@QAEXXZ ; std::deque<char,std::allocator<char> >::pop_front
+PUBLIC	?push_back@?$deque@DV?$allocator@D@std@@@std@@QAEXABD@Z ; std::deque<char,std::allocator<char> >::push_back
+PUBLIC	?_Tidy@?$deque@DV?$allocator@D@std@@@std@@AAEXXZ ; std::deque<char,std::allocator<char> >::_Tidy
+PUBLIC	?_Getal@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$allocator@D@2@XZ ; std::deque<char,std::allocator<char> >::_Getal
+PUBLIC	?_Get_data@?$deque@DV?$allocator@D@std@@@std@@AAEAAV?$_Deque_val@U?$_Deque_simple_types@D@std@@@2@XZ ; std::deque<char,std::allocator<char> >::_Get_data
+PUBLIC	??0reference@?$bitset@$0BAA@@std@@AAE@AAV12@I@Z	; std::bitset<256>::reference::reference
+PUBLIC	??A?$bitset@$0BAA@@std@@QAE?AVreference@01@I@Z	; std::bitset<256>::operator[]
+PUBLIC	?reset@?$bitset@$0BAA@@std@@QAEAAV12@XZ		; std::bitset<256>::reset
+PUBLIC	??0?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::deque<Keyboard::Event,std::allocator<Keyboard::Event> >
+PUBLIC	??1?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@QAE@XZ ; std::deque<Keyboard::Event,std::allocator<Keyboard::Event> >::~deque<Keyboard::Event,std::allocator<Keyboard::Event> >
+PUBLIC	?size@?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QBEIXZ ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::size
+PUBLIC	?push@?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAEX$$QAVEvent@Keyboard@@@Z ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::push
+PUBLIC	?pop@?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAEXXZ ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::pop
+PUBLIC	??0?$deque@DV?$allocator@D@std@@@std@@QAE@XZ	; std::deque<char,std::allocator<char> >::deque<char,std::allocator<char> >
+PUBLIC	??1?$deque@DV?$allocator@D@std@@@std@@QAE@XZ	; std::deque<char,std::allocator<char> >::~deque<char,std::allocator<char> >
+PUBLIC	?size@?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QBEIXZ ; std::queue<char,std::deque<char,std::allocator<char> > >::size
+PUBLIC	?push@?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAEXABD@Z ; std::queue<char,std::deque<char,std::allocator<char> > >::push
+PUBLIC	?pop@?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAEXXZ ; std::queue<char,std::deque<char,std::allocator<char> > >::pop
+PUBLIC	??1reference@?$bitset@$0BAA@@std@@QAE@XZ	; std::bitset<256>::reference::~reference
+PUBLIC	??4reference@?$bitset@$0BAA@@std@@QAEAAV012@_N@Z ; std::bitset<256>::reference::operator=
+PUBLIC	?ClearState@Keyboard@@AAEXXZ			; Keyboard::ClearState
+PUBLIC	?OnChar@Keyboard@@AAEXD@Z			; Keyboard::OnChar
+PUBLIC	?OnKeyReleased@Keyboard@@AAEXE@Z		; Keyboard::OnKeyReleased
+PUBLIC	?OnKeyPressed@Keyboard@@AAEXE@Z			; Keyboard::OnKeyPressed
+PUBLIC	?AutorepeatIsEnabled@Keyboard@@QBE_NXZ		; Keyboard::AutorepeatIsEnabled
+PUBLIC	??1?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ ; std::queue<char,std::deque<char,std::allocator<char> > >::~queue<char,std::deque<char,std::allocator<char> > >
+PUBLIC	??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ ; std::queue<char,std::deque<char,std::allocator<char> > >::queue<char,std::deque<char,std::allocator<char> > >
+PUBLIC	??1?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::~queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >
+PUBLIC	??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ ; std::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >::queue<Keyboard::Event,std::deque<Keyboard::Event,std::allocator<Keyboard::Event> > >
+PUBLIC	??0Event@Keyboard@@QAE@W4Type@01@E@Z		; Keyboard::Event::Event
+PUBLIC	?_Orphan_all@_Container_base12@std@@QAEXXZ	; std::_Container_base12::_Orphan_all
+PUBLIC	??0_Container_base12@std@@QAE@XZ		; std::_Container_base12::_Container_base12
+PUBLIC	??0_Container_proxy@std@@QAE@PAU_Container_base12@1@@Z ; std::_Container_proxy::_Container_proxy
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$queue@VEvent@Keyboard@@V?$deque@VEvent@Keyboard@@V?$allocator@VEvent@Keyboard@@@std@@@std@@@std@@QAE@XZ DQ 00000000019930522r ; 2.11987e-315
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0?$queue@DV?$deque@DV?$allocator@D@std@@@std@@@std@@QAE@XZ DQ 00000000019930522r ; 2.11987e-315
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?OnKeyPressed@Keyboard@@AAEXE@Z DQ 00000000019930522r ; 2.11987e-315
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?OnKeyReleased@Keyboard@@AAEXE@Z DQ 00000000019930522r ; 2.11987e-315
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?OnChar@Keyboard@@AAEXD@Z DQ 00000000019930522r ; 2.11987e-315
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DD	05H
 END

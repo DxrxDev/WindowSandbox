@@ -41,7 +41,7 @@ public:
 	Window(const Window&) = delete;
 	Window& operator=(const Window&) = delete;
 
-	Graphics& Gfx() { if (!pGfx) { std::exception("Graphics = nullptr"); } return *pGfx; }
+	Graphics& Gfx();
 	static std::optional<int> ProcessMessages();
 	void ChangeTitle(const char* str);
 private:
@@ -51,7 +51,6 @@ private:
 public:
 	Keyboard kbd;
 	Mouse mouse;
-	//Graphics& gfx = *pGfx;
 private:
 	int width;
 	int height;

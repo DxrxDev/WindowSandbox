@@ -9,33 +9,69 @@
 INCLUDELIB OLDNAMES
 
 PUBLIC	??_C@_07KHIJMDBA@SandBox@			; `string'
-PUBLIC	??_C@_0O@BLDOFIJ@?$FLDescription?$FN@		; `string'
-PUBLIC	??_C@_0N@CHALHMAE@?$FLError?5Code?$FN@		; `string'
+PUBLIC	??_C@_0CO@NMAFAAMI@F?3?2WindowSandbox?2WindowSandbox?2@ ; `string'
+PUBLIC	??_C@_0BD@GOOCPKAF@Graphics?5?$DN?5nullptr@	; `string'
 PUBLIC	??_C@_0BB@DAPHOIPK@Window?5Exception@		; `string'
-PUBLIC	??_C@_0BF@KPHDJHEI@Undefined?5Error?5Code@	; `string'
 PUBLIC	??_R0?AVWindowException@Window@@@8		; Window::WindowException `RTTI Type Descriptor'
 PUBLIC	??_R1A@?0A@EA@WindowException@Window@@8		; Window::WindowException::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	??_7WindowException@Window@@6B@			; Window::WindowException::`vftable'
 PUBLIC	??_R4WindowException@Window@@6B@		; Window::WindowException::`RTTI Complete Object Locator'
 PUBLIC	??_R2WindowException@Window@@8			; Window::WindowException::`RTTI Base Class Array'
+PUBLIC	__TI1?AVexception@std@@
+PUBLIC	__TI3?AVWindowException@Window@@
 PUBLIC	??_R3WindowException@Window@@8			; Window::WindowException::`RTTI Class Hierarchy Descriptor'
+PUBLIC	?in_place@std@@3Uin_place_t@1@B			; std::in_place
+PUBLIC	__CTA1?AVexception@std@@
 PUBLIC	?wndClassName@WindowClass@Window@@0QBDB		; Window::WindowClass::wndClassName
-EXTRN	__imp__FormatMessageA@28:PROC
+PUBLIC	__CTA3?AVWindowException@Window@@
+PUBLIC	__CT??_R0?AVWindowException@Window@@@8??0WindowException@Window@@QAE@ABV01@@Z68
+EXTRN	__imp__LoadImageA@24:PROC
+EXTRN	__imp__DispatchMessageA@4:PROC
 EXTRN	__imp__DestroyWindow@4:PROC
-EXTRN	__imp__LocalFree@4:PROC
 EXTRN	__imp__ShowWindow@8:PROC
 EXTRN	__imp__SetWindowLongA@12:PROC
 EXTRN	__imp__GetWindowLongA@8:PROC
+EXTRN	__imp__GetLastError@0:PROC
+EXTRN	__imp__SetWindowTextA@8:PROC
 EXTRN	_atexit:PROC
 EXTRN	__imp__GetModuleHandleA@4:PROC
+EXTRN	__imp__AdjustWindowRect@12:PROC
 EXTRN	__imp__DefWindowProcA@16:PROC
 EXTRN	__imp__CreateWindowExA@48:PROC
+EXTRN	__imp__TranslateMessage@4:PROC
+EXTRN	__imp__PeekMessageA@20:PROC
 EXTRN	__imp__UnregisterClassA@8:PROC
 EXTRN	__imp__PostQuitMessage@4:PROC
 EXTRN	__imp__RegisterClassExA@4:PROC
+;	COMDAT __CT??_R0?AVWindowException@Window@@@8??0WindowException@Window@@QAE@ABV01@@Z68
+xdata$x	SEGMENT
+__CT??_R0?AVWindowException@Window@@@8??0WindowException@Window@@QAE@ABV01@@Z68 DD 00H
+	DD	FLAT:??_R0?AVWindowException@Window@@@8
+	DD	00H
+	DD	0ffffffffH
+	ORG $+4
+	DD	044H
+	DD	FLAT:??0WindowException@Window@@QAE@ABV01@@Z
+xdata$x	ENDS
+;	COMDAT __CTA3?AVWindowException@Window@@
+xdata$x	SEGMENT
+__CTA3?AVWindowException@Window@@ DD 03H
+	DD	FLAT:__CT??_R0?AVWindowException@Window@@@8??0WindowException@Window@@QAE@ABV01@@Z68
+	DD	FLAT:__CT??_R0?AVException@@@8??0Exception@@QAE@ABV0@@Z64
+	DD	FLAT:__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12
+xdata$x	ENDS
 ;	COMDAT ?wndClassName@WindowClass@Window@@0QBDB
 CONST	SEGMENT
 ?wndClassName@WindowClass@Window@@0QBDB DD FLAT:??_C@_07KHIJMDBA@SandBox@ ; Window::WindowClass::wndClassName
+CONST	ENDS
+;	COMDAT __CTA1?AVexception@std@@
+xdata$x	SEGMENT
+__CTA1?AVexception@std@@ DD 01H
+	DD	FLAT:__CT??_R0?AVexception@std@@@8??0exception@std@@QAE@ABV01@@Z12
+xdata$x	ENDS
+;	COMDAT ?in_place@std@@3Uin_place_t@1@B
+CONST	SEGMENT
+?in_place@std@@3Uin_place_t@1@B	ORG $+1			; std::in_place
 CONST	ENDS
 ;	COMDAT ??_R3WindowException@Window@@8
 rdata$r	SEGMENT
@@ -44,6 +80,20 @@ rdata$r	SEGMENT
 	DD	03H
 	DD	FLAT:??_R2WindowException@Window@@8
 rdata$r	ENDS
+;	COMDAT __TI3?AVWindowException@Window@@
+xdata$x	SEGMENT
+__TI3?AVWindowException@Window@@ DD 00H
+	DD	FLAT:??1WindowException@Window@@UAE@XZ
+	DD	00H
+	DD	FLAT:__CTA3?AVWindowException@Window@@
+xdata$x	ENDS
+;	COMDAT __TI1?AVexception@std@@
+xdata$x	SEGMENT
+__TI1?AVexception@std@@ DD 00H
+	DD	FLAT:??1exception@std@@UAE@XZ
+	DD	00H
+	DD	FLAT:__CTA1?AVexception@std@@
+xdata$x	ENDS
 ;	COMDAT ??_R2WindowException@Window@@8
 rdata$r	SEGMENT
 ??_R2WindowException@Window@@8 DD FLAT:??_R1A@?0A@EA@WindowException@Window@@8 ; Window::WindowException::`RTTI Base Class Array'
@@ -81,130 +131,652 @@ data$r	SEGMENT
 	DD	00H
 	DB	'.?AVWindowException@Window@@', 00H
 data$r	ENDS
-;	COMDAT ??_C@_0BF@KPHDJHEI@Undefined?5Error?5Code@
-CONST	SEGMENT
-??_C@_0BF@KPHDJHEI@Undefined?5Error?5Code@ DB 'Undefined Error Code', 00H ; `string'
-CONST	ENDS
 ;	COMDAT ??_C@_0BB@DAPHOIPK@Window?5Exception@
 CONST	SEGMENT
 ??_C@_0BB@DAPHOIPK@Window?5Exception@ DB 'Window Exception', 00H ; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0N@CHALHMAE@?$FLError?5Code?$FN@
+;	COMDAT ??_C@_0BD@GOOCPKAF@Graphics?5?$DN?5nullptr@
 CONST	SEGMENT
-??_C@_0N@CHALHMAE@?$FLError?5Code?$FN@ DB '[Error Code]', 00H ; `string'
+??_C@_0BD@GOOCPKAF@Graphics?5?$DN?5nullptr@ DB 'Graphics = nullptr', 00H ; `string'
 CONST	ENDS
-;	COMDAT ??_C@_0O@BLDOFIJ@?$FLDescription?$FN@
+;	COMDAT ??_C@_0CO@NMAFAAMI@F?3?2WindowSandbox?2WindowSandbox?2@
 CONST	SEGMENT
-??_C@_0O@BLDOFIJ@?$FLDescription?$FN@ DB '[Description]', 00H ; `string'
+??_C@_0CO@NMAFAAMI@F?3?2WindowSandbox?2WindowSandbox?2@ DB 'F:\WindowSand'
+	DB	'box\WindowSandbox\src\Window.cpp', 00H	; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_07KHIJMDBA@SandBox@
 CONST	SEGMENT
 ??_C@_07KHIJMDBA@SandBox@ DB 'SandBox', 00H		; `string'
-PUBLIC	??1WindowException@Window@@UAE@XZ		; Window::WindowException::~WindowException
-PUBLIC	??_GWindowException@Window@@UAEPAXI@Z		; Window::WindowException::`scalar deleting destructor'
+PUBLIC	??$forward@AAPAVGraphics@@@std@@YAAAPAVGraphics@@AAPAV1@@Z ; std::forward<Graphics * &>
+PUBLIC	??$?0AAPAVGraphics@@@?$_Compressed_pair@U?$default_delete@VGraphics@@@std@@PAVGraphics@@$00@std@@QAE@U_Zero_then_variadic_args_t@1@AAPAVGraphics@@@Z ; std::_Compressed_pair<std::default_delete<Graphics>,Graphics *,1>::_Compressed_pair<std::default_delete<Graphics>,Graphics *,1><Graphics * &>
+PUBLIC	??$?0H@?$_Optional_destruct_base@H$00@std@@QAE@Uin_place_t@1@$$QAH@Z ; std::_Optional_destruct_base<int,1>::_Optional_destruct_base<int,1><int>
+PUBLIC	??$exchange@PAVGraphics@@PAV1@@std@@YAPAVGraphics@@AAPAV1@$$QAPAV1@@Z ; std::exchange<Graphics *,Graphics *>
+PUBLIC	??$exchange@PAVGraphics@@AAPAV1@@std@@YAPAVGraphics@@AAPAV1@0@Z ; std::exchange<Graphics *,Graphics * &>
+PUBLIC	??$?0H@?$_Optional_construct_base@H@std@@QAE@Uin_place_t@1@$$QAH@Z ; std::_Optional_construct_base<int>::_Optional_construct_base<int><int>
+PUBLIC	??$forward@H@std@@YA$$QAHAAH@Z			; std::forward<int>
+PUBLIC	??$forward@U?$default_delete@VGraphics@@@std@@@std@@YA$$QAU?$default_delete@VGraphics@@@0@AAU10@@Z ; std::forward<std::default_delete<Graphics> >
+PUBLIC	??$addressof@V?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@@std@@YAPAV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAV10@@Z ; std::addressof<std::unique_ptr<Graphics,std::default_delete<Graphics> > >
+PUBLIC	??$?0U?$default_delete@VGraphics@@@std@@$0A@@?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QAE@PAVGraphics@@@Z ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::unique_ptr<Graphics,std::default_delete<Graphics> ><std::default_delete<Graphics>,0>
+PUBLIC	??$forward@AAPAUHWND__@@@std@@YAAAPAUHWND__@@AAPAU1@@Z ; std::forward<HWND__ * &>
+PUBLIC	??$?0$$V@?$_Compressed_pair@U?$default_delete@VGraphics@@@std@@PAVGraphics@@$00@std@@QAE@U_Zero_then_variadic_args_t@1@@Z ; std::_Compressed_pair<std::default_delete<Graphics>,Graphics *,1>::_Compressed_pair<std::default_delete<Graphics>,Graphics *,1><>
+PUBLIC	?release@?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QAEPAVGraphics@@XZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::release
+PUBLIC	?reset@?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QAEXPAVGraphics@@@Z ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::reset
+PUBLIC	?__autoclassinit2@Graphics@@QAEXI@Z		; Graphics::__autoclassinit2
+PUBLIC	??$?0H$0A@@?$optional@H@std@@QAE@$$QAH@Z	; std::optional<int>::optional<int><int,0>
+PUBLIC	??$?4U?$default_delete@VGraphics@@@std@@$0A@@?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QAEAAV01@$$QAV01@@Z ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator=<std::default_delete<Graphics>,0>
+PUBLIC	??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z ; std::make_unique<Graphics,HWND__ * &,0>
+PUBLIC	??$?0U?$default_delete@VGraphics@@@std@@$0A@@?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QAE@XZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::unique_ptr<Graphics,std::default_delete<Graphics> ><std::default_delete<Graphics>,0>
+PUBLIC	??1Graphics@@QAE@XZ				; Graphics::~Graphics
+PUBLIC	??_GGraphics@@QAEPAXI@Z				; Graphics::`scalar deleting destructor'
+PUBLIC	??R?$default_delete@VGraphics@@@std@@QBEXPAVGraphics@@@Z ; std::default_delete<Graphics>::operator()
+PUBLIC	?_Get_first@?$_Compressed_pair@U?$default_delete@VGraphics@@@std@@PAVGraphics@@$00@std@@QAEAAU?$default_delete@VGraphics@@@2@XZ ; std::_Compressed_pair<std::default_delete<Graphics>,Graphics *,1>::_Get_first
+PUBLIC	??0?$_Optional_destruct_base@H$00@std@@QAE@XZ	; std::_Optional_destruct_base<int,1>::_Optional_destruct_base<int,1>
+PUBLIC	??0?$bitset@$0BAA@@std@@QAE@XZ			; std::bitset<256>::bitset<256>
+PUBLIC	??1?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QAE@XZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::~unique_ptr<Graphics,std::default_delete<Graphics> >
+PUBLIC	??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator*
+PUBLIC	??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator bool
+PUBLIC	??0?$_Optional_construct_base@H@std@@QAE@XZ	; std::_Optional_construct_base<int>::_Optional_construct_base<int>
+PUBLIC	??0?$optional@H@std@@QAE@XZ			; std::optional<int>::optional<int>
+PUBLIC	?GetErrorString@WindowException@Window@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ ; Window::WindowException::GetErrorString
+PUBLIC	?GetErrorCode@WindowException@Window@@QBEJXZ	; Window::WindowException::GetErrorCode
+PUBLIC	?TranslateErrorCode@WindowException@Window@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@J@Z ; Window::WindowException::TranslateErrorCode
+PUBLIC	?GetType@WindowException@Window@@UBEPBDXZ	; Window::WindowException::GetType
+PUBLIC	?what@WindowException@Window@@UBEPBDXZ		; Window::WindowException::what
+PUBLIC	??0WindowException@Window@@QAE@HPBDJ@Z		; Window::WindowException::WindowException
 PUBLIC	?HandleMsg@Window@@AAEJPAUHWND__@@IIJ@Z		; Window::HandleMsg
 PUBLIC	?HandleMsgThunk@Window@@CGJPAUHWND__@@IIJ@Z	; Window::HandleMsgThunk
 PUBLIC	?HandleMsgSetup@Window@@CGJPAUHWND__@@IIJ@Z	; Window::HandleMsgSetup
+PUBLIC	??_GWindowException@Window@@UAEPAXI@Z		; Window::WindowException::`scalar deleting destructor'
+PUBLIC	??0WindowException@Window@@QAE@ABV01@@Z		; Window::WindowException::WindowException
+PUBLIC	??1WindowException@Window@@UAE@XZ		; Window::WindowException::~WindowException
+PUBLIC	??1Mouse@@QAE@XZ				; Mouse::~Mouse
+PUBLIC	??0Mouse@@QAE@XZ				; Mouse::Mouse
+PUBLIC	??1Keyboard@@QAE@XZ				; Keyboard::~Keyboard
+PUBLIC	??0Keyboard@@QAE@XZ				; Keyboard::Keyboard
 PUBLIC	?GetInstance@WindowClass@Window@@SAPAUHINSTANCE__@@XZ ; Window::WindowClass::GetInstance
 PUBLIC	?GetName@WindowClass@Window@@SAPBDXZ		; Window::WindowClass::GetName
 PUBLIC	??1WindowClass@Window@@AAE@XZ			; Window::WindowClass::~WindowClass
 PUBLIC	??0WindowClass@Window@@AAE@XZ			; Window::WindowClass::WindowClass
 PUBLIC	?__autoclassinit2@WindowClass@Window@@QAEXI@Z	; Window::WindowClass::__autoclassinit2
-PUBLIC	??1Window@@QAE@XZ				; Window::~Window
+PUBLIC	?ProcessMessages@Window@@SA?AV?$optional@H@std@@XZ ; Window::ProcessMessages
+PUBLIC	?Gfx@Window@@QAEAAVGraphics@@XZ			; Window::Gfx
 PUBLIC	??0Window@@QAE@HHPBD@Z				; Window::Window
+PUBLIC	??1Window@@QAE@XZ				; Window::~Window
 PUBLIC	?wndClass@WindowClass@Window@@0V12@A		; Window::WindowClass::wndClass
 EXTRN	??_EWindowException@Window@@UAEPAXI@Z:PROC	; Window::WindowException::`vector deleting destructor'
 ?wndClass@WindowClass@Window@@0V12@A DD 01H DUP (?)	; Window::WindowClass::wndClass
 _BSS	ENDS
 ??wndClass$initializer$@WindowClass@Window@@0P6AXXZA@@3P6AXXZA DD FLAT:??__E?wndClass@WindowClass@Window@@0V12@A@@YAXXZ ; ??wndClass$initializer$@WindowClass@Window@@0P6AXXZA@@3P6AXXZA
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0Window@@QAE@HHPBD@Z DD 019930522H
+	DD	07H
+	DD	FLAT:__unwindtable$??0Window@@QAE@HHPBD@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+__unwindtable$??0Window@@QAE@HHPBD@Z DD 0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$??0Window@@QAE@HHPBD@Z$0
+	DD	02H
+	DD	FLAT:___std_terminate
+	DD	02H
+	DD	FLAT:__unwindfunclet$??0Window@@QAE@HHPBD@Z$1
+	DD	04H
+	DD	FLAT:__unwindfunclet$??0Window@@QAE@HHPBD@Z$2
+	DD	05H
+	DD	FLAT:__unwindfunclet$??0Window@@QAE@HHPBD@Z$9
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0Keyboard@@QAE@XZ DQ 00000000219930522r ; 4.45598e-314
+	DD	FLAT:__unwindtable$??0Keyboard@@QAE@XZ
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000500000000r		; 1.061e-313
+__unwindtable$??0Keyboard@@QAE@XZ DD 0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0Mouse@@QAE@XZ DQ 00000000119930522r ; 2.33398e-314
+	DD	FLAT:__unwindtable$??0Mouse@@QAE@XZ
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000500000000r		; 1.061e-313
+__unwindtable$??0Mouse@@QAE@XZ DD 0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0WindowException@Window@@QAE@ABV01@@Z DQ 00000000219930522r ; 4.45598e-314
+	DD	FLAT:__unwindtable$??0WindowException@Window@@QAE@ABV01@@Z
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000100000000r		; 2.122e-314
+__unwindtable$??0WindowException@Window@@QAE@ABV01@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??0WindowException@Window@@QAE@ABV01@@Z$1
+	DD	00H
+	DD	FLAT:__unwindfunclet$??0WindowException@Window@@QAE@ABV01@@Z$2
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?HandleMsg@Window@@AAEJPAUHWND__@@IIJ@Z DQ 00000000c19930522r ; 2.56759e-313
+	DD	FLAT:__unwindtable$?HandleMsg@Window@@AAEJPAUHWND__@@IIJ@Z
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000500000000r		; 1.061e-313
+	ORG $+4
+__unwindtable$?HandleMsg@Window@@AAEJPAUHWND__@@IIJ@Z DD 0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??0WindowException@Window@@QAE@HPBDJ@Z DQ 00000000119930522r ; 2.33398e-314
+	DD	FLAT:__unwindtable$??0WindowException@Window@@QAE@HPBDJ@Z
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000100000000r		; 2.122e-314
+__unwindtable$??0WindowException@Window@@QAE@HPBDJ@Z DD 0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?what@WindowException@Window@@UBEPBDXZ DQ 00000000219930522r ; 4.45598e-314
+	DD	FLAT:__unwindtable$?what@WindowException@Window@@UBEPBDXZ
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000500000000r		; 1.061e-313
+__unwindtable$?what@WindowException@Window@@UBEPBDXZ DD 0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?TranslateErrorCode@WindowException@Window@@SA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@J@Z DQ 00000000019930522r ; 2.11987e-315
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?GetErrorString@WindowException@Window@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ DQ 00000000119930522r ; 2.33398e-314
+	DD	FLAT:__unwindtable$?GetErrorString@WindowException@Window@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000500000000r		; 1.061e-313
+__unwindtable$?GetErrorString@WindowException@Window@@QBE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ DD 0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??R?$default_delete@VGraphics@@@std@@QBEXPAVGraphics@@@Z DQ 00000000419930522r ; 8.69997e-314
+	DD	FLAT:__unwindtable$??R?$default_delete@VGraphics@@@std@@QBEXPAVGraphics@@@Z
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000500000000r		; 1.061e-313
+__unwindtable$??R?$default_delete@VGraphics@@@std@@QBEXPAVGraphics@@@Z DD 0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??_GGraphics@@QAEPAXI@Z DQ 00000000419930522r ; 8.69997e-314
+	DD	FLAT:__unwindtable$??_GGraphics@@QAEPAXI@Z
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000500000000r		; 1.061e-313
+__unwindtable$??_GGraphics@@QAEPAXI@Z DD 0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??1Graphics@@QAE@XZ DQ 00000000419930522r ; 8.69997e-314
+	DD	FLAT:__unwindtable$??1Graphics@@QAE@XZ
+	DQ	00000000000000000r		; 0
+	DQ	00000000000000000r		; 0
+	DQ	00000000500000000r		; 1.061e-313
+__unwindtable$??1Graphics@@QAE@XZ DD 0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+	DD	0ffffffffH
+	DD	FLAT:___std_terminate
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z DD 019930522H
+	DD	01H
+	DD	FLAT:__unwindtable$??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+__unwindtable$??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z$0
 ; Function compile flags: /Ogtp
-;	COMDAT ??__E?wndClass@WindowClass@Window@@0V12@A@@YAXXZ
-text$di	SEGMENT
-_wc$1 = -52						; size = 48
-__$ArrayPad$ = -4					; size = 4
-??__E?wndClass@WindowClass@Window@@0V12@A@@YAXXZ PROC	; `dynamic initializer for 'Window::WindowClass::wndClass'', COMDAT
+;	COMDAT ??0Window@@QAE@HHPBD@Z
+_TEXT	SEGMENT
+$T35 = -120						; size = 68
+_this$GSCopy$ = -44					; size = 4
+$T40 = -44						; size = 4
+$T38 = -40						; size = 4
+_this$ = -40						; size = 4
+_wr$ = -36						; size = 16
+__$ArrayPad$ = -20					; size = 4
+__$EHRec$ = -12						; size = 12
+_width$dead$ = 8					; size = 4
+_height$dead$ = 12					; size = 4
+_name$dead$ = 16					; size = 4
+??0Window@@QAE@HHPBD@Z PROC				; Window::Window, COMDAT
+; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 5
-	push	ebp
-	mov	ebp, esp
+; Line 38
+	push	ebx
+	mov	ebx, esp
+	sub	esp, 8
 	and	esp, -8					; fffffff8H
-	sub	esp, 56					; 00000038H
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, esp
-	mov	DWORD PTR __$ArrayPad$[esp+56], eax
-; Line 7
-	push	0
-	call	DWORD PTR __imp__GetModuleHandleA@4
-	mov	DWORD PTR ?wndClass@WindowClass@Window@@0V12@A, eax ; Window::WindowClass::wndClass
-	xorps	xmm0, xmm0
-; Line 33
-	mov	DWORD PTR _wc$1[esp+76], eax
-; Line 21
-	lea	eax, DWORD PTR _wc$1[esp+56]
-	push	eax
-	mov	DWORD PTR _wc$1[esp+60], 48		; 00000030H
-	mov	DWORD PTR _wc$1[esp+64], 32		; 00000020H
-	mov	DWORD PTR _wc$1[esp+68], OFFSET ?HandleMsgSetup@Window@@CGJPAUHWND__@@IIJ@Z ; Window::HandleMsgSetup
-	mov	DWORD PTR _wc$1[esp+72], 0
-	mov	DWORD PTR _wc$1[esp+76], 0
-	movups	XMMWORD PTR _wc$1[esp+84], xmm0
-	mov	DWORD PTR _wc$1[esp+100], OFFSET ??_C@_07KHIJMDBA@SandBox@
-	mov	DWORD PTR _wc$1[esp+104], 0
-	call	DWORD PTR __imp__RegisterClassExA@4
-; Line 5
-	push	OFFSET ??__F?wndClass@WindowClass@Window@@0V12@A@@YAXXZ ; `dynamic atexit destructor for 'Window::WindowClass::wndClass''
-	call	_atexit
-	mov	ecx, DWORD PTR __$ArrayPad$[esp+60]
 	add	esp, 4
-	xor	ecx, esp
+	push	ebp
+	mov	ebp, DWORD PTR [ebx+4]
+	mov	DWORD PTR [esp+4], ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0Window@@QAE@HHPBD@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	push	ebx
+	sub	esp, 104				; 00000068H
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	esi
+	push	edi
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	edi, ecx
+	mov	DWORD PTR _this$[ebp], edi
+	mov	DWORD PTR _this$GSCopy$[ebp], edi
+; Line 64
+	lea	esi, DWORD PTR [edi+40]
+	xorps	xmm0, xmm0
+; File F:\WindowSandbox\WindowSandbox\src\Keyboard.h
+; Line 67
+	mov	BYTE PTR [edi], 0
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\bitset
+; Line 96
+	movups	XMMWORD PTR [edi+8], xmm0
+	movups	XMMWORD PTR [edi+24], xmm0
+; File F:\WindowSandbox\WindowSandbox\src\Keyboard.cpp
+; Line 22
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 77
+	push	8
+; Line 1092
+	mov	DWORD PTR [esi], 0
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 543
+	mov	DWORD PTR [esi+4], 0
+	mov	DWORD PTR [esi+8], 0
+	mov	DWORD PTR [esi+12], 0
+	mov	DWORD PTR [esi+16], 0
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 77
+	call	??2@YAPAXI@Z				; operator new
+; Line 1084
+	mov	DWORD PTR [eax+4], 0
+; Line 1104
+	mov	DWORD PTR [esi], eax
+; Line 1105
+	mov	DWORD PTR [eax], esi
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 64
+	lea	esi, DWORD PTR [edi+60]
+; File F:\WindowSandbox\WindowSandbox\src\Keyboard.cpp
+; Line 39
+	mov	DWORD PTR __$EHRec$[ebp+8], 1
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 77
+	push	8
+; Line 1092
+	mov	DWORD PTR [esi], 0
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 543
+	mov	DWORD PTR [esi+4], 0
+	mov	DWORD PTR [esi+8], 0
+	mov	DWORD PTR [esi+12], 0
+	mov	DWORD PTR [esi+16], 0
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 77
+	call	??2@YAPAXI@Z				; operator new
+; Line 1084
+	mov	DWORD PTR [eax+4], 0
+; Line 1104
+	mov	DWORD PTR [esi], eax
+; Line 1105
+	mov	DWORD PTR [eax], esi
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 38
+	mov	DWORD PTR __$EHRec$[ebp+8], 2
+; Line 64
+	lea	esi, DWORD PTR [edi+92]
+	mov	WORD PTR [edi+80], 0
+	mov	BYTE PTR [edi+82], 0
+; File F:\WindowSandbox\WindowSandbox\src\Mouse.cpp
+; Line 38
+	mov	BYTE PTR __$EHRec$[ebp+8], 3
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 77
+	push	8
+; Line 1092
+	mov	DWORD PTR [esi], 0
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\deque
+; Line 543
+	mov	DWORD PTR [esi+4], 0
+	mov	DWORD PTR [esi+8], 0
+	mov	DWORD PTR [esi+12], 0
+	mov	DWORD PTR [esi+16], 0
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 77
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 12					; 0000000cH
+; Line 1084
+	mov	DWORD PTR [eax+4], 0
+; Line 1104
+	mov	DWORD PTR [esi], eax
+; Line 1105
+	mov	DWORD PTR [eax], esi
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 38
+	lea	esi, DWORD PTR [edi+124]
+	mov	DWORD PTR [edi+112], 512		; 00000200H
+	mov	DWORD PTR [edi+116], 512		; 00000200H
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 1336
+	mov	DWORD PTR [esi], 0
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 45
+	push	0
+	mov	BYTE PTR __$EHRec$[ebp+8], 5
+	lea	eax, DWORD PTR _wr$[ebp]
+	push	13238272				; 00ca0000H
+	push	eax
+	mov	DWORD PTR _wr$[ebp], 100		; 00000064H
+	mov	DWORD PTR _wr$[ebp+8], 612		; 00000264H
+	mov	DWORD PTR _wr$[ebp+4], 100		; 00000064H
+	mov	DWORD PTR _wr$[ebp+12], 612		; 00000264H
+	call	DWORD PTR __imp__AdjustWindowRect@12
+	test	eax, eax
+	je	$LN200@Window
+; Line 49
+	mov	eax, DWORD PTR _wr$[ebp+12]
+	sub	eax, DWORD PTR _wr$[ebp+4]
+	push	edi
+	push	DWORD PTR ?wndClass@WindowClass@Window@@0V12@A ; Window::WindowClass::wndClass
+	push	0
+	push	0
+	push	eax
+	mov	eax, DWORD PTR _wr$[ebp+8]
+	sub	eax, DWORD PTR _wr$[ebp]
+	push	eax
+	push	-2147483648				; 80000000H
+	push	-2147483648				; 80000000H
+	push	13238272				; 00ca0000H
+	push	OFFSET ??_C@_07HLLGMCO@Sandbox@
+	push	OFFSET ??_C@_07KHIJMDBA@SandBox@
+	push	0
+	call	DWORD PTR __imp__CreateWindowExA@48
+	mov	DWORD PTR [edi+120], eax
+; Line 56
+	test	eax, eax
+	jne	SHORT $LN3@Window
+; Line 57
+	call	DWORD PTR __imp__GetLastError@0
+	push	eax
+	push	ecx
+	push	57					; 00000039H
+	jmp	SHORT $LN198@Window
+$LN3@Window:
+; Line 61
+	push	10					; 0000000aH
+	push	eax
+	call	DWORD PTR __imp__ShowWindow@8
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
+; Line 2698
+	push	16					; 00000010H
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T38[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 6
+	xorps	xmm0, xmm0
+	movups	XMMWORD PTR [eax], xmm0
+	mov	ecx, eax
+	push	DWORD PTR [edi+120]
+	call	??0Graphics@@QAE@PAUHWND__@@@Z		; Graphics::Graphics
+; Line 2498
+	lea	ecx, DWORD PTR $T40[ebp]
+	cmp	esi, ecx
+	je	SHORT $LN185@Window
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\utility
+; Line 599
+	mov	ecx, DWORD PTR [esi]
+; Line 600
+	mov	DWORD PTR [esi], eax
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
+; Line 2546
+	test	ecx, ecx
+	je	SHORT $LN190@Window
+; Line 2547
+	push	ecx
+; Line 2511
+	jmp	SHORT $LN197@Window
+$LN185@Window:
+	test	eax, eax
+	je	SHORT $LN190@Window
+; Line 2512
+	push	eax
+$LN197@Window:
+; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
+; Line 64
+	call	??R?$default_delete@VGraphics@@@std@@QBEXPAVGraphics@@@Z ; std::default_delete<Graphics>::operator()
+$LN190@Window:
+	mov	eax, edi
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
 	call	@__security_check_cookie@4
 	mov	esp, ebp
 	pop	ebp
-	ret	0
-??__E?wndClass@WindowClass@Window@@0V12@A@@YAXXZ ENDP	; `dynamic initializer for 'Window::WindowClass::wndClass''
-text$di	ENDS
-; Function compile flags: /Ogtp
-;	COMDAT ??__F?wndClass@WindowClass@Window@@0V12@A@@YAXXZ
-text$yd	SEGMENT
-??__F?wndClass@WindowClass@Window@@0V12@A@@YAXXZ PROC	; `dynamic atexit destructor for 'Window::WindowClass::wndClass'', COMDAT
-; File F:\WindowSandbox\WindowSandbox\src\Window.cpp
-; Line 25
-	push	DWORD PTR ?wndClass@WindowClass@Window@@0V12@A ; Window::WindowClass::wndClass
-	push	OFFSET ??_C@_07KHIJMDBA@SandBox@
-	call	DWORD PTR __imp__UnregisterClassA@8
-	ret	0
-??__F?wndClass@WindowClass@Window@@0V12@A@@YAXXZ ENDP	; `dynamic atexit destructor for 'Window::WindowClass::wndClass''
-text$yd	ENDS
-; Function compile flags: /Ogtp
-;	COMDAT ??_GWindowException@Window@@UAEPAXI@Z
-_TEXT	SEGMENT
-___flags$ = 8						; size = 4
-??_GWindowException@Window@@UAEPAXI@Z PROC		; Window::WindowException::`scalar deleting destructor', COMDAT
-; _this$ = ecx
-	push	ebp
-	mov	ebp, esp
-	push	esi
-	mov	esi, ecx
-	call	??1Exception@@UAE@XZ
-	test	BYTE PTR ___flags$[ebp], 1
-	je	SHORT $LN7@scalar
-	push	68					; 00000044H
-	push	esi
+	mov	esp, ebx
+	pop	ebx
+	ret	12					; 0000000cH
+$LN200@Window:
+; Line 46
+	call	DWORD PTR __imp__GetLastError@0
+	push	eax
+	push	ecx
+	push	46					; 0000002eH
+$LN198@Window:
+; Line 64
+	lea	ecx, DWORD PTR $T35[ebp]
+	call	??0WindowException@Window@@QAE@HPBDJ@Z	; Window::WindowException::WindowException
+	push	OFFSET __TI3?AVWindowException@Window@@
+	lea	eax, DWORD PTR $T35[ebp]
+	push	eax
+	call	__CxxThrowException@8
+$LN196@Window:
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??0Window@@QAE@HHPBD@Z$0:
+	mov	ecx, DWORD PTR _this$GSCopy$[ebp]
+	jmp	??1Keyboard@@QAE@XZ
+__unwindfunclet$??0Window@@QAE@HHPBD@Z$1:
+	mov	ecx, DWORD PTR _this$GSCopy$[ebp]
+	add	ecx, 80					; 00000050H
+	jmp	??1Mouse@@QAE@XZ
+__unwindfunclet$??0Window@@QAE@HHPBD@Z$2:
+	mov	ecx, DWORD PTR _this$GSCopy$[ebp]
+	add	ecx, 124				; 0000007cH
+	jmp	??1?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QAE@XZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::~unique_ptr<Graphics,std::default_delete<Graphics> >
+__unwindfunclet$??0Window@@QAE@HHPBD@Z$9:
+	push	16					; 00000010H
+	mov	eax, DWORD PTR $T38[ebp]
+	push	eax
 	call	??3@YAXPAXI@Z				; operator delete
 	add	esp, 8
-$LN7@scalar:
-	mov	eax, esi
-	pop	esi
-	pop	ebp
-	ret	4
-??_GWindowException@Window@@UAEPAXI@Z ENDP		; Window::WindowException::`scalar deleting destructor'
-_TEXT	ENDS
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+__ehhandler$??0Window@@QAE@HHPBD@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-120]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-8]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0Window@@QAE@HHPBD@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0Window@@QAE@HHPBD@Z ENDP				; Window::Window
 ; Function compile flags: /Ogtp
-;	COMDAT ??1WindowException@Window@@UAE@XZ
+;	COMDAT ??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z
 _TEXT	SEGMENT
-??1WindowException@Window@@UAE@XZ PROC			; Window::WindowException::~WindowException, COMDAT
-; _this$ = ecx
-	jmp	??1Exception@@UAE@XZ
-??1WindowException@Window@@UAE@XZ ENDP			; Window::WindowException::~WindowException
+___$ReturnUdt$GSCopy$ = -16				; size = 4
+$T2 = -16						; size = 4
+___$ReturnUdt$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z PROC ; std::make_unique<Graphics,HWND__ * &,0>, COMDAT
+; ___$ReturnUdt$ = ecx
+; _<_Args_0>$ = edx
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
+; Line 2697
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	push	ecx
+	push	esi
+	push	edi
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	esi, edx
+	mov	edi, ecx
+	mov	DWORD PTR ___$ReturnUdt$[ebp], edi
+; Line 2698
+	push	16					; 00000010H
+	mov	DWORD PTR ___$ReturnUdt$GSCopy$[ebp], edi
+	call	??2@YAPAXI@Z				; operator new
+	add	esp, 4
+	mov	DWORD PTR $T2[ebp], eax
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	xorps	xmm0, xmm0
+	movups	XMMWORD PTR [eax], xmm0
+	mov	ecx, eax
+	push	DWORD PTR [esi]
+	call	??0Graphics@@QAE@PAUHWND__@@@Z		; Graphics::Graphics
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\xmemory
+; Line 1336
+	mov	DWORD PTR [edi], eax
+; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
+; Line 2698
+	mov	eax, edi
+; Line 2699
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	mov	esp, ebp
+	pop	ebp
+	ret	0
 _TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z$0:
+	push	16					; 00000010H
+	mov	eax, DWORD PTR $T2[ebp]
+	push	eax
+	call	??3@YAXPAXI@Z				; operator delete
+	add	esp, 8
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+__ehhandler$??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-16]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??$make_unique@VGraphics@@AAPAUHWND__@@$0A@@std@@YA?AV?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@0@AAPAUHWND__@@@Z ENDP ; std::make_unique<Graphics,HWND__ * &,0>
 END

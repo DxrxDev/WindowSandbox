@@ -9,6 +9,10 @@
 INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
+PUBLIC	___pobjectentryfirst
+PUBLIC	___pobjectentrymid
+PUBLIC	___pobjectentrylast
+PUBLIC	?DefaultDelegateCheckMode@WRL@Microsoft@@3W4DelegateCheckMode@12@B ; Microsoft::WRL::DefaultDelegateCheckMode
 msvcjmc	SEGMENT
 __7242C389_ctype@h DB 01H
 __90A1F774_basetsd@h DB 01H
@@ -71,8 +75,17 @@ __AD360DAF_oleauto@h DB 01H
 __F57271C6_d3d11sdklayers@h DB 01H
 __FA3A9F83_d3d10@h DB 01H
 __FBF8F5B4_d3d11@h DB 01H
+__CECC34C3_roapi@h DB 01H
+__7B118BD6_internal@h DB 01H
+__687F9F38_client@h DB 01H
+__AF08451A_xmmintrin@h DB 01H
+__9AC87C20_roerrorapi@h DB 01H
+__CBC843C8_implements@h DB 01H
+__15F97165_intsafe@h DB 01H
+__EF1EFFE3_corewrappers@h DB 01H
+__278E1207_module@h DB 01H
+__BF1AC9A0_event@h DB 01H
 __2AF06AB2_optional DB 01H
-__D8B84C1C_Window@h DB 01H
 __66FC323F_ratio DB 01H
 __8AA3BE86_time@h DB 01H
 __966A0CA6_chrono DB 01H
@@ -88,11 +101,30 @@ __528871F3_iterator DB 01H
 __38038D2D_xstddef DB 01H
 __EE19A480_xatomic@h DB 01H
 msvcjmc	ENDS
+;	COMDAT ?DefaultDelegateCheckMode@WRL@Microsoft@@3W4DelegateCheckMode@12@B
+CONST	SEGMENT
+?DefaultDelegateCheckMode@WRL@Microsoft@@3W4DelegateCheckMode@12@B DD 01H ; Microsoft::WRL::DefaultDelegateCheckMode
+CONST	ENDS
+;	COMDAT ___pobjectentrylast
+minATL$__z	SEGMENT
+___pobjectentrylast DD 00H
+minATL$__z	ENDS
+;	COMDAT ___pobjectentrymid
+minATL$__m	SEGMENT
+___pobjectentrymid DD 00H
+minATL$__m	ENDS
+;	COMDAT ___pobjectentryfirst
+minATL$__a	SEGMENT
+___pobjectentryfirst DD 00H
+minATL$__a	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXW4align_val_t@std@@@Z ; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXIW4align_val_t@std@@@Z ; __empty_global_delete
 PUBLIC	_WinMain@16
+PUBLIC	?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ ; Microsoft::WRL::ComPtr<IUnknown>::InternalRelease
+PUBLIC	??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ	; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>
+PUBLIC	??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z ; Microsoft::WRL::ComPtr<IUnknown>::`vector deleting destructor'
 PUBLIC	??1Game@@QAE@XZ					; Game::~Game
 PUBLIC	?__autoclassinit2@Game@@QAEXI@Z			; Game::__autoclassinit2
 PUBLIC	__JustMyCode_Default
@@ -102,6 +134,9 @@ PUBLIC	??_R0?AVException@@@8				; Exception `RTTI Type Descriptor'
 PUBLIC	??_C@_0BD@BEPCMMME@Standard?5Exception@		; `string'
 PUBLIC	??_C@_0BC@BLOAIJL@Unknown?5Exception@		; `string'
 PUBLIC	??_C@_0BF@KKBOEDFD@No?5Details?5Available@	; `string'
+EXTRN	??_M@YGXPAXIIP6EX0@Z@Z:PROC			; `eh vector destructor iterator'
+EXTRN	??3@YAXPAXI@Z:PROC				; operator delete
+EXTRN	??_V@YAXPAXI@Z:PROC				; operator delete[]
 EXTRN	__imp__MessageBoxA@16:PROC
 EXTRN	??1Window@@QAE@XZ:PROC				; Window::~Window
 EXTRN	??0Game@@QAE@HHPBD@Z:PROC			; Game::Game
@@ -152,6 +187,36 @@ data$r	SEGMENT
 	DD	00H
 	DB	'.?AVexception@std@@', 00H
 data$r	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__ehfuncinfo$?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ DD 019930522H
+	DD	00H
+	DD	00H
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	05H
+xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
 __tryblocktable$_WinMain@16 DD 00H
@@ -306,6 +371,272 @@ _this$ = -8						; size = 4
 	ret	0
 ??1Game@@QAE@XZ ENDP					; Game::~Game
 _TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+___flags$ = 8						; size = 4
+??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z PROC	; Microsoft::WRL::ComPtr<IUnknown>::`vector deleting destructor', COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 2
+	je	SHORT $LN2@vector
+	push	OFFSET ??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ ; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax-4]
+	push	ecx
+	push	4
+	mov	edx, DWORD PTR _this$[ebp]
+	push	edx
+	call	??_M@YGXPAXIIP6EX0@Z@Z
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN3@vector
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax-4]
+	lea	edx, DWORD PTR [ecx*4+4]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	sub	eax, 4
+	push	eax
+	call	??_V@YAXPAXI@Z				; operator delete[]
+	add	esp, 8
+$LN3@vector:
+	mov	eax, DWORD PTR _this$[ebp]
+	sub	eax, 4
+	jmp	SHORT $LN5@vector
+$LN2@vector:
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ ; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN4@vector
+	push	4
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	call	??3@YAXPAXI@Z				; operator delete
+	add	esp, 8
+$LN4@vector:
+	mov	eax, DWORD PTR _this$[ebp]
+$LN5@vector:
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z ENDP	; Microsoft::WRL::ComPtr<IUnknown>::`vector deleting destructor'
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ PROC	; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt\wrl\client.h
+; Line 230
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __687F9F38_client@h
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 231
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ ; Microsoft::WRL::ComPtr<IUnknown>::InternalRelease
+; Line 232
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ ENDP	; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>
+; Function compile flags: /Odtp /RTCsu /ZI
+;	COMDAT ?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ
+_TEXT	SEGMENT
+_temp$ = -44						; size = 4
+_ref$ = -32						; size = 4
+_this$ = -20						; size = 4
+__$EHRec$ = -12						; size = 12
+?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ PROC ; Microsoft::WRL::ComPtr<IUnknown>::InternalRelease, COMDAT
+; _this$ = ecx
+; File C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt\wrl\client.h
+; Line 169
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 228				; 000000e4H
+	push	ebx
+	push	esi
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-240]
+	mov	ecx, 57					; 00000039H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	ecx, OFFSET __687F9F38_client@h
+	call	@__CheckForDebuggerJustMyCode@4
+; Line 170
+	mov	DWORD PTR _ref$[ebp], 0
+; Line 171
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR _temp$[ebp], ecx
+; Line 173
+	cmp	DWORD PTR _temp$[ebp], 0
+	je	SHORT $LN2@InternalRe
+; Line 175
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax], 0
+; Line 176
+	mov	eax, DWORD PTR _temp$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	esi, esp
+	mov	edx, DWORD PTR _temp$[ebp]
+	push	edx
+	mov	eax, DWORD PTR [ecx+8]
+	call	eax
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	mov	DWORD PTR _ref$[ebp], eax
+$LN2@InternalRe:
+; Line 179
+	mov	eax, DWORD PTR _ref$[ebp]
+; Line 180
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	pop	esi
+	pop	ebx
+	add	esp, 240				; 000000f0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-244]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ ENDP ; Microsoft::WRL::ComPtr<IUnknown>::InternalRelease
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT _WinMain@16
 _TEXT	SEGMENT

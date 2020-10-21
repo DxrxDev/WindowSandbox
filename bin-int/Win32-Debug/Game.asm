@@ -9,6 +9,10 @@
 INCLUDELIB MSVCRTD
 INCLUDELIB OLDNAMES
 
+PUBLIC	___pobjectentryfirst
+PUBLIC	___pobjectentrymid
+PUBLIC	___pobjectentrylast
+PUBLIC	?DefaultDelegateCheckMode@WRL@Microsoft@@3W4DelegateCheckMode@12@B ; Microsoft::WRL::DefaultDelegateCheckMode
 msvcjmc	SEGMENT
 __8906660C_vcruntime_new@h DB 01H
 __09340588_corecrt_math@h DB 01H
@@ -71,8 +75,17 @@ __AD360DAF_oleauto@h DB 01H
 __F57271C6_d3d11sdklayers@h DB 01H
 __FA3A9F83_d3d10@h DB 01H
 __FBF8F5B4_d3d11@h DB 01H
+__CECC34C3_roapi@h DB 01H
+__7B118BD6_internal@h DB 01H
+__687F9F38_client@h DB 01H
+__AF08451A_xmmintrin@h DB 01H
+__9AC87C20_roerrorapi@h DB 01H
+__CBC843C8_implements@h DB 01H
+__15F97165_intsafe@h DB 01H
+__EF1EFFE3_corewrappers@h DB 01H
+__278E1207_module@h DB 01H
+__BF1AC9A0_event@h DB 01H
 __2AF06AB2_optional DB 01H
-__D8B84C1C_Window@h DB 01H
 __66FC323F_ratio DB 01H
 __8AA3BE86_time@h DB 01H
 __966A0CA6_chrono DB 01H
@@ -88,19 +101,29 @@ __528871F3_iterator DB 01H
 __38038D2D_xstddef DB 01H
 __EE19A480_xatomic@h DB 01H
 msvcjmc	ENDS
+;	COMDAT ?DefaultDelegateCheckMode@WRL@Microsoft@@3W4DelegateCheckMode@12@B
+CONST	SEGMENT
+?DefaultDelegateCheckMode@WRL@Microsoft@@3W4DelegateCheckMode@12@B DD 01H ; Microsoft::WRL::DefaultDelegateCheckMode
+CONST	ENDS
+;	COMDAT ___pobjectentrylast
+minATL$__z	SEGMENT
+___pobjectentrylast DD 00H
+minATL$__z	ENDS
+;	COMDAT ___pobjectentrymid
+minATL$__m	SEGMENT
+___pobjectentrymid DD 00H
+minATL$__m	ENDS
+;	COMDAT ___pobjectentryfirst
+minATL$__a	SEGMENT
+___pobjectentryfirst DD 00H
+minATL$__a	ENDS
 PUBLIC	?__empty_global_delete@@YAXPAX@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXI@Z		; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXW4align_val_t@std@@@Z ; __empty_global_delete
 PUBLIC	?__empty_global_delete@@YAXPAXIW4align_val_t@std@@@Z ; __empty_global_delete
-PUBLIC	_sinf
-PUBLIC	?sin@@YAMM@Z					; sin
-PUBLIC	??0exception@std@@QAE@QBD@Z			; std::exception::exception
-PUBLIC	??1exception@std@@UAE@XZ			; std::exception::~exception
-PUBLIC	?what@exception@std@@UBEPBDXZ			; std::exception::what
-PUBLIC	??_Gexception@std@@UAEPAXI@Z			; std::exception::`scalar deleting destructor'
-PUBLIC	?Gfx@Window@@QAEAAVGraphics@@XZ			; Window::Gfx
-PUBLIC	??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator*
-PUBLIC	??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator bool
+PUBLIC	?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ ; Microsoft::WRL::ComPtr<IUnknown>::InternalRelease
+PUBLIC	??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ	; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>
+PUBLIC	??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z ; Microsoft::WRL::ComPtr<IUnknown>::`vector deleting destructor'
 PUBLIC	??0Game@@QAE@XZ					; Game::Game
 PUBLIC	??0Game@@QAE@HHPBD@Z				; Game::Game
 PUBLIC	?Go@Game@@QAEHXZ				; Game::Go
@@ -108,27 +131,22 @@ PUBLIC	?DoFrame@Game@@AAEXXZ				; Game::DoFrame
 PUBLIC	??D?$optional@H@std@@QGBEABHXZ			; std::optional<int>::operator*
 PUBLIC	??B?$optional@H@std@@QBE_NXZ			; std::optional<int>::operator bool
 PUBLIC	__JustMyCode_Default
-PUBLIC	??_7exception@std@@6B@				; std::exception::`vftable'
-PUBLIC	??_C@_0BC@EOODALEL@Unknown?5exception@		; `string'
-PUBLIC	??_R0?AVexception@std@@@8			; std::exception `RTTI Type Descriptor'
-PUBLIC	??_C@_0BD@GOOCPKAF@Graphics?5?$DN?5nullptr@	; `string'
 PUBLIC	??_C@_0P@BFJJIPJJ@Default?5Window@		; `string'
-PUBLIC	??_R4exception@std@@6B@				; std::exception::`RTTI Complete Object Locator'
-PUBLIC	??_R3exception@std@@8				; std::exception::`RTTI Class Hierarchy Descriptor'
-PUBLIC	??_R2exception@std@@8				; std::exception::`RTTI Base Class Array'
-PUBLIC	??_R1A@?0A@EA@exception@std@@8			; std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	__real@3f000000
 PUBLIC	__real@3f800000
-PUBLIC	__real@40000000
+PUBLIC	__real@43800000
+PUBLIC	__xmm@80000000800000008000000080000000
+EXTRN	??_M@YGXPAXIIP6EX0@Z@Z:PROC			; `eh vector destructor iterator'
 EXTRN	??3@YAXPAXI@Z:PROC				; operator delete
-EXTRN	_sin:PROC
-EXTRN	___std_exception_copy:PROC
-EXTRN	___std_exception_destroy:PROC
-EXTRN	??_Eexception@std@@UAEPAXI@Z:PROC		; std::exception::`vector deleting destructor'
+EXTRN	??_V@YAXPAXI@Z:PROC				; operator delete[]
+EXTRN	?GetX@Mouse@@QBEHXZ:PROC			; Mouse::GetX
+EXTRN	?GetY@Mouse@@QBEHXZ:PROC			; Mouse::GetY
 EXTRN	?EndFrame@Graphics@@QAEXXZ:PROC			; Graphics::EndFrame
 EXTRN	?ClearBuffer@Graphics@@QAEXMMM@Z:PROC		; Graphics::ClearBuffer
+EXTRN	?DrawTriangle@Graphics@@QAEXMMM@Z:PROC		; Graphics::DrawTriangle
 EXTRN	??0Window@@QAE@HHPBD@Z:PROC			; Window::Window
 EXTRN	??1Window@@QAE@XZ:PROC				; Window::~Window
+EXTRN	?Gfx@Window@@QAEAAVGraphics@@XZ:PROC		; Window::Gfx
 EXTRN	?ProcessMessages@Window@@SA?AV?$optional@H@std@@XZ:PROC ; Window::ProcessMessages
 EXTRN	??0Timer@@QAE@XZ:PROC				; Timer::Timer
 EXTRN	?Peek@Timer@@QBEMXZ:PROC			; Timer::Peek
@@ -140,12 +158,16 @@ EXTRN	__RTC_CheckEsp:PROC
 EXTRN	__RTC_InitBase:PROC
 EXTRN	__RTC_Shutdown:PROC
 EXTRN	___CxxFrameHandler3:PROC
-EXTRN	??_7type_info@@6B@:QWORD			; type_info::`vftable'
 EXTRN	___security_cookie:DWORD
 EXTRN	__fltused:DWORD
-;	COMDAT __real@40000000
+;	COMDAT __xmm@80000000800000008000000080000000
 CONST	SEGMENT
-__real@40000000 DD 040000000r			; 2
+__xmm@80000000800000008000000080000000 DB 00H, 00H, 00H, 080H, 00H, 00H, 00H
+	DB	080H, 00H, 00H, 00H, 080H, 00H, 00H, 00H, 080H
+CONST	ENDS
+;	COMDAT __real@43800000
+CONST	SEGMENT
+__real@43800000 DD 043800000r			; 256
 CONST	ENDS
 ;	COMDAT __real@3f800000
 CONST	SEGMENT
@@ -163,58 +185,9 @@ rtc$TMZ	ENDS
 rtc$IMZ	SEGMENT
 __RTC_InitBase.rtc$IMZ DD FLAT:__RTC_InitBase
 rtc$IMZ	ENDS
-;	COMDAT ??_R1A@?0A@EA@exception@std@@8
-rdata$r	SEGMENT
-??_R1A@?0A@EA@exception@std@@8 DD FLAT:??_R0?AVexception@std@@@8 ; std::exception::`RTTI Base Class Descriptor at (0,-1,0,64)'
-	DD	00H
-	DD	00H
-	DD	0ffffffffH
-	DD	00H
-	DD	040H
-	DD	FLAT:??_R3exception@std@@8
-rdata$r	ENDS
-;	COMDAT ??_R2exception@std@@8
-rdata$r	SEGMENT
-??_R2exception@std@@8 DD FLAT:??_R1A@?0A@EA@exception@std@@8 ; std::exception::`RTTI Base Class Array'
-rdata$r	ENDS
-;	COMDAT ??_R3exception@std@@8
-rdata$r	SEGMENT
-??_R3exception@std@@8 DD 00H				; std::exception::`RTTI Class Hierarchy Descriptor'
-	DD	00H
-	DD	01H
-	DD	FLAT:??_R2exception@std@@8
-rdata$r	ENDS
-;	COMDAT ??_R4exception@std@@6B@
-rdata$r	SEGMENT
-??_R4exception@std@@6B@ DD 00H				; std::exception::`RTTI Complete Object Locator'
-	DD	00H
-	DD	00H
-	DD	FLAT:??_R0?AVexception@std@@@8
-	DD	FLAT:??_R3exception@std@@8
-rdata$r	ENDS
 ;	COMDAT ??_C@_0P@BFJJIPJJ@Default?5Window@
 CONST	SEGMENT
 ??_C@_0P@BFJJIPJJ@Default?5Window@ DB 'Default Window', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_C@_0BD@GOOCPKAF@Graphics?5?$DN?5nullptr@
-CONST	SEGMENT
-??_C@_0BD@GOOCPKAF@Graphics?5?$DN?5nullptr@ DB 'Graphics = nullptr', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_R0?AVexception@std@@@8
-data$r	SEGMENT
-??_R0?AVexception@std@@@8 DD FLAT:??_7type_info@@6B@	; std::exception `RTTI Type Descriptor'
-	DD	00H
-	DB	'.?AVexception@std@@', 00H
-data$r	ENDS
-;	COMDAT ??_C@_0BC@EOODALEL@Unknown?5exception@
-CONST	SEGMENT
-??_C@_0BC@EOODALEL@Unknown?5exception@ DB 'Unknown exception', 00H ; `string'
-CONST	ENDS
-;	COMDAT ??_7exception@std@@6B@
-CONST	SEGMENT
-??_7exception@std@@6B@ DD FLAT:??_R4exception@std@@6B@	; std::exception::`vftable'
-	DD	FLAT:??_Eexception@std@@UAEPAXI@Z
-	DD	FLAT:?what@exception@std@@UBEPBDXZ
 CONST	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
@@ -252,7 +225,7 @@ __ehfuncinfo$??0Game@@QAE@XZ DD 019930522H
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
-__ehfuncinfo$??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ DD 019930522H
+__ehfuncinfo$??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -262,7 +235,7 @@ __ehfuncinfo$??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
-__ehfuncinfo$??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ DD 019930522H
+__ehfuncinfo$??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -272,27 +245,7 @@ __ehfuncinfo$??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@
 xdata$x	ENDS
 ;	COMDAT xdata$x
 xdata$x	SEGMENT
-__ehfuncinfo$??1exception@std@@UAE@XZ DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$??0exception@std@@QAE@QBD@Z DD 019930522H
-	DD	00H
-	DD	00H
-	DD	2 DUP(00H)
-	DD	2 DUP(00H)
-	DD	00H
-	DD	05H
-xdata$x	ENDS
-;	COMDAT xdata$x
-xdata$x	SEGMENT
-__ehfuncinfo$?sin@@YAMM@Z DD 019930522H
+__ehfuncinfo$?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ DD 019930522H
 	DD	00H
 	DD	00H
 	DD	2 DUP(00H)
@@ -459,14 +412,19 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?DoFrame@Game@@AAEXXZ
 _TEXT	SEGMENT
-tv93 = -220						; size = 4
-tv79 = -220						; size = 4
-_colour$ = -20						; size = 4
+tv131 = -220						; size = 4
+tv150 = -216						; size = 4
+tv133 = -216						; size = 4
+tv188 = -212						; size = 4
+tv135 = -212						; size = 4
+tv152 = -208						; size = 4
+tv137 = -208						; size = 4
+tv72 = -208						; size = 4
 _this$ = -8						; size = 4
 ?DoFrame@Game@@AAEXXZ PROC				; Game::DoFrame, COMDAT
 ; _this$ = ecx
 ; File F:\WindowSandbox\WindowSandbox\src\Game.cpp
-; Line 20
+; Line 18
 	push	ebp
 	mov	ebp, esp
 	sub	esp, 220				; 000000dcH
@@ -482,40 +440,83 @@ _this$ = -8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	ecx, OFFSET __23CBB436_Game@cpp
 	call	@__CheckForDebuggerJustMyCode@4
+; Line 19
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?Gfx@Window@@QAEAAVGraphics@@XZ		; Window::Gfx
+	mov	DWORD PTR tv72[ebp], eax
+	push	ecx
+	movss	xmm0, DWORD PTR __real@3f000000
+	movss	DWORD PTR [esp], xmm0
+	push	ecx
+	movss	xmm0, DWORD PTR __real@3f000000
+	movss	DWORD PTR [esp], xmm0
+	push	ecx
+	movss	xmm0, DWORD PTR __real@3f000000
+	movss	DWORD PTR [esp], xmm0
+	mov	ecx, DWORD PTR tv72[ebp]
+	call	?ClearBuffer@Graphics@@QAEXMMM@Z	; Graphics::ClearBuffer
 ; Line 21
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?Gfx@Window@@QAEAAVGraphics@@XZ		; Window::Gfx
+	mov	DWORD PTR tv137[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 80					; 00000050H
+	call	?GetY@Mouse@@QBEHXZ			; Mouse::GetY
+	neg	eax
+	cvtsi2ss xmm0, eax
+	divss	xmm0, DWORD PTR __real@43800000
+	addss	xmm0, DWORD PTR __real@3f800000
+	movss	DWORD PTR tv135[ebp], xmm0
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 80					; 00000050H
+	call	?GetX@Mouse@@QBEHXZ			; Mouse::GetX
+	cvtsi2ss xmm0, eax
+	divss	xmm0, DWORD PTR __real@43800000
+	subss	xmm0, DWORD PTR __real@3f800000
+	movss	DWORD PTR tv133[ebp], xmm0
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 128				; 00000080H
 	call	?Peek@Timer@@QBEMXZ			; Timer::Peek
+	fstp	DWORD PTR tv131[ebp]
 	push	ecx
-	fstp	DWORD PTR [esp]
-	call	?sin@@YAMM@Z				; sin
-	add	esp, 4
-	fstp	DWORD PTR tv93[ebp]
-	movss	xmm0, DWORD PTR tv93[ebp]
-	divss	xmm0, DWORD PTR __real@40000000
-	addss	xmm0, DWORD PTR __real@3f000000
-	movss	DWORD PTR _colour$[ebp], xmm0
-; Line 22
+	movss	xmm0, DWORD PTR tv135[ebp]
+	movss	DWORD PTR [esp], xmm0
+	push	ecx
+	movss	xmm0, DWORD PTR tv133[ebp]
+	movss	DWORD PTR [esp], xmm0
+	push	ecx
+	movss	xmm0, DWORD PTR tv131[ebp]
+	movss	DWORD PTR [esp], xmm0
+	mov	ecx, DWORD PTR tv137[ebp]
+	call	?DrawTriangle@Graphics@@QAEXMMM@Z	; Graphics::DrawTriangle
+; Line 27
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?Gfx@Window@@QAEAAVGraphics@@XZ		; Window::Gfx
-	mov	DWORD PTR tv79[ebp], eax
+	mov	DWORD PTR tv152[ebp], eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 128				; 00000080H
+	call	?Peek@Timer@@QBEMXZ			; Timer::Peek
+	fstp	DWORD PTR tv188[ebp]
+	movss	xmm0, DWORD PTR tv188[ebp]
+	xorps	xmm0, DWORD PTR __xmm@80000000800000008000000080000000
+	movss	DWORD PTR tv150[ebp], xmm0
 	push	ecx
-	movss	xmm0, DWORD PTR __real@3f800000
+	xorps	xmm0, xmm0
 	movss	DWORD PTR [esp], xmm0
 	push	ecx
-	movss	xmm0, DWORD PTR __real@3f800000
+	xorps	xmm0, xmm0
 	movss	DWORD PTR [esp], xmm0
 	push	ecx
-	movss	xmm0, DWORD PTR _colour$[ebp]
+	movss	xmm0, DWORD PTR tv150[ebp]
 	movss	DWORD PTR [esp], xmm0
-	mov	ecx, DWORD PTR tv79[ebp]
-	call	?ClearBuffer@Graphics@@QAEXMMM@Z	; Graphics::ClearBuffer
-; Line 23
+	mov	ecx, DWORD PTR tv152[ebp]
+	call	?DrawTriangle@Graphics@@QAEXMMM@Z	; Graphics::DrawTriangle
+; Line 32
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?Gfx@Window@@QAEAAVGraphics@@XZ		; Window::Gfx
 	mov	ecx, eax
 	call	?EndFrame@Graphics@@QAEXXZ		; Graphics::EndFrame
-; Line 24
+; Line 33
 	pop	edi
 	pop	esi
 	pop	ebx
@@ -584,13 +585,13 @@ $LN4@Go:
 	mov	eax, DWORD PTR _this$[ebp]
 	add	eax, 128				; 00000080H
 	mov	DWORD PTR tv77[ebp], eax
-	push	16					; 00000010H
+	push	50					; 00000032H
 	mov	ecx, DWORD PTR tv77[ebp]
 	call	?Wait@Timer@@QBEXH@Z			; Timer::Wait
-; Line 17
+; Line 15
 	jmp	SHORT $LN2@Go
 $LN1@Go:
-; Line 18
+; Line 16
 	push	edx
 	mov	ecx, ebp
 	push	eax
@@ -798,95 +799,17 @@ __ehhandler$??0Game@@QAE@XZ:
 text$x	ENDS
 ??0Game@@QAE@XZ ENDP					; Game::Game
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ
-_TEXT	SEGMENT
-tv67 = -217						; size = 1
-_this$ = -20						; size = 4
-__$EHRec$ = -12						; size = 12
-??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ PROC ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator bool, COMDAT
-; _this$ = ecx
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
-; Line 2536
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	sub	esp, 208				; 000000d0H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-220]
-	mov	ecx, 52					; 00000034H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, OFFSET __4E2906A2_memory
-	call	@__CheckForDebuggerJustMyCode@4
-; Line 2537
-	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax], 0
-	je	SHORT $LN3@operator
-	mov	BYTE PTR tv67[ebp], 1
-	jmp	SHORT $LN4@operator
-$LN3@operator:
-	mov	BYTE PTR tv67[ebp], 0
-$LN4@operator:
-	mov	al, BYTE PTR tv67[ebp]
-; Line 2538
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 220				; 000000dcH
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-	int	3
-	int	3
-	int	3
-	int	3
-	int	3
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ:
-	npad	1
-	npad	1
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-224]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ ENDP ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator bool
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ
+;	COMDAT ??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
-??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ PROC ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator*, COMDAT
+___flags$ = 8						; size = 4
+??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z PROC	; Microsoft::WRL::ComPtr<IUnknown>::`vector deleting destructor', COMDAT
 ; _this$ = ecx
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\memory
-; Line 2524
 	push	ebp
 	mov	ebp, esp
 	push	-1
-	push	__ehhandler$??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ
+	push	__ehhandler$??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z
 	mov	eax, DWORD PTR fs:0
 	push	eax
 	sub	esp, 204				; 000000ccH
@@ -905,198 +828,92 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, OFFSET __4E2906A2_memory
-	call	@__CheckForDebuggerJustMyCode@4
-; Line 2525
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 2
+	je	SHORT $LN2@vector
+	push	OFFSET ??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ ; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax]
-; Line 2526
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 216				; 000000d8H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-	int	3
-	int	3
-	int	3
-	int	3
-	int	3
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ:
-	npad	1
-	npad	1
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-220]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ ENDP ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator*
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?Gfx@Window@@QAEAAVGraphics@@XZ
-_TEXT	SEGMENT
-$T1 = -220						; size = 12
-_this$ = -8						; size = 4
-?Gfx@Window@@QAEAAVGraphics@@XZ PROC			; Window::Gfx, COMDAT
-; _this$ = ecx
-; File F:\WindowSandbox\WindowSandbox\src\Window.h
-; Line 44
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 224				; 000000e0H
-	push	ebx
-	push	esi
-	push	edi
+	mov	ecx, DWORD PTR [eax-4]
 	push	ecx
-	lea	edi, DWORD PTR [ebp-224]
-	mov	ecx, 56					; 00000038H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, OFFSET __D8B84C1C_Window@h
-	call	@__CheckForDebuggerJustMyCode@4
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 124				; 0000007cH
-	call	??B?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBE_NXZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator bool
-	movzx	eax, al
-	test	eax, eax
-	jne	SHORT $LN2@Gfx
-	push	OFFSET ??_C@_0BD@GOOCPKAF@Graphics?5?$DN?5nullptr@
-	lea	ecx, DWORD PTR $T1[ebp]
-	call	??0exception@std@@QAE@QBD@Z		; std::exception::exception
-	lea	ecx, DWORD PTR $T1[ebp]
-	call	??1exception@std@@UAE@XZ		; std::exception::~exception
-$LN2@Gfx:
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 124				; 0000007cH
-	call	??D?$unique_ptr@VGraphics@@U?$default_delete@VGraphics@@@std@@@std@@QBEAAVGraphics@@XZ ; std::unique_ptr<Graphics,std::default_delete<Graphics> >::operator*
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 224				; 000000e0H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?Gfx@Window@@QAEAAVGraphics@@XZ ENDP			; Window::Gfx
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??_Gexception@std@@UAEPAXI@Z
-_TEXT	SEGMENT
-_this$ = -8						; size = 4
-___flags$ = 8						; size = 4
-??_Gexception@std@@UAEPAXI@Z PROC			; std::exception::`scalar deleting destructor', COMDAT
-; _this$ = ecx
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 204				; 000000ccH
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-204]
-	mov	ecx, 51					; 00000033H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	??1exception@std@@UAE@XZ		; std::exception::~exception
+	push	4
+	mov	edx, DWORD PTR _this$[ebp]
+	push	edx
+	call	??_M@YGXPAXIIP6EX0@Z@Z
 	mov	eax, DWORD PTR ___flags$[ebp]
 	and	eax, 1
-	je	SHORT $LN2@scalar
-	push	12					; 0000000cH
+	je	SHORT $LN3@vector
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax-4]
+	lea	edx, DWORD PTR [ecx*4+4]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	sub	eax, 4
+	push	eax
+	call	??_V@YAXPAXI@Z				; operator delete[]
+	add	esp, 8
+$LN3@vector:
+	mov	eax, DWORD PTR _this$[ebp]
+	sub	eax, 4
+	jmp	SHORT $LN5@vector
+$LN2@vector:
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ ; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN4@vector
+	push	4
 	mov	eax, DWORD PTR _this$[ebp]
 	push	eax
 	call	??3@YAXPAXI@Z				; operator delete
 	add	esp, 8
-$LN2@scalar:
+$LN4@vector:
 	mov	eax, DWORD PTR _this$[ebp]
+$LN5@vector:
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 204				; 000000ccH
+	add	esp, 216				; 000000d8H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-??_Gexception@std@@UAEPAXI@Z ENDP			; std::exception::`scalar deleting destructor'
+	int	3
+	int	3
+	int	3
+	int	3
+	int	3
 _TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__ehhandler$??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z:
+	npad	1
+	npad	1
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-220]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??_E?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAEPAXI@Z ENDP	; Microsoft::WRL::ComPtr<IUnknown>::`vector deleting destructor'
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?what@exception@std@@UBEPBDXZ
-_TEXT	SEGMENT
-tv69 = -208						; size = 4
-_this$ = -8						; size = 4
-?what@exception@std@@UBEPBDXZ PROC			; std::exception::what, COMDAT
-; _this$ = ecx
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_exception.h
-; Line 94
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 208				; 000000d0H
-	push	ebx
-	push	esi
-	push	edi
-	push	ecx
-	lea	edi, DWORD PTR [ebp-208]
-	mov	ecx, 52					; 00000034H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	pop	ecx
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, OFFSET __E75714E4_vcruntime_exception@h
-	call	@__CheckForDebuggerJustMyCode@4
-; Line 95
-	mov	eax, DWORD PTR _this$[ebp]
-	cmp	DWORD PTR [eax+4], 0
-	je	SHORT $LN3@what
-	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+4]
-	mov	DWORD PTR tv69[ebp], edx
-	jmp	SHORT $LN4@what
-$LN3@what:
-	mov	DWORD PTR tv69[ebp], OFFSET ??_C@_0BC@EOODALEL@Unknown?5exception@
-$LN4@what:
-	mov	eax, DWORD PTR tv69[ebp]
-; Line 96
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 208				; 000000d0H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?what@exception@std@@UBEPBDXZ ENDP			; std::exception::what
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??1exception@std@@UAE@XZ
+;	COMDAT ??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
-??1exception@std@@UAE@XZ PROC				; std::exception::~exception, COMDAT
+??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ PROC	; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>, COMDAT
 ; _this$ = ecx
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_exception.h
-; Line 89
+; File C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt\wrl\client.h
+; Line 230
 	push	ebp
 	mov	ebp, esp
 	push	-1
-	push	__ehhandler$??1exception@std@@UAE@XZ
+	push	__ehhandler$??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
 	sub	esp, 204				; 000000ccH
@@ -1115,17 +932,12 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, OFFSET __E75714E4_vcruntime_exception@h
+	mov	ecx, OFFSET __687F9F38_client@h
 	call	@__CheckForDebuggerJustMyCode@4
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax], OFFSET ??_7exception@std@@6B@
-; Line 90
-	mov	eax, DWORD PTR _this$[ebp]
-	add	eax, 4
-	push	eax
-	call	___std_exception_destroy
-	add	esp, 4
-; Line 91
+; Line 231
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ ; Microsoft::WRL::ComPtr<IUnknown>::InternalRelease
+; Line 232
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
@@ -1146,7 +958,7 @@ __$EHRec$ = -12						; size = 12
 _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
-__ehhandler$??1exception@std@@UAE@XZ:
+__ehhandler$??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ:
 	npad	1
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
@@ -1154,176 +966,79 @@ __ehhandler$??1exception@std@@UAE@XZ:
 	mov	ecx, DWORD PTR [edx-220]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??1exception@std@@UAE@XZ
+	mov	eax, OFFSET __ehfuncinfo$??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ
 	jmp	___CxxFrameHandler3
 text$x	ENDS
-??1exception@std@@UAE@XZ ENDP				; std::exception::~exception
+??1?$ComPtr@UIUnknown@@@WRL@Microsoft@@QAE@XZ ENDP	; Microsoft::WRL::ComPtr<IUnknown>::~ComPtr<IUnknown>
 ; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ??0exception@std@@QAE@QBD@Z
+;	COMDAT ?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ
 _TEXT	SEGMENT
-__InitData$ = -40					; size = 8
-_this$ = -24						; size = 4
-__$ArrayPad$ = -16					; size = 4
+_temp$ = -44						; size = 4
+_ref$ = -32						; size = 4
+_this$ = -20						; size = 4
 __$EHRec$ = -12						; size = 12
-__Message$ = 8						; size = 4
-??0exception@std@@QAE@QBD@Z PROC			; std::exception::exception, COMDAT
+?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ PROC ; Microsoft::WRL::ComPtr<IUnknown>::InternalRelease, COMDAT
 ; _this$ = ecx
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\vcruntime_exception.h
-; Line 59
+; File C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\winrt\wrl\client.h
+; Line 169
 	push	ebp
 	mov	ebp, esp
 	push	-1
-	push	__ehhandler$??0exception@std@@QAE@QBD@Z
+	push	__ehhandler$?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 224				; 000000e0H
+	sub	esp, 228				; 000000e4H
 	push	ebx
 	push	esi
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-236]
-	mov	ecx, 56					; 00000038H
+	lea	edi, DWORD PTR [ebp-240]
+	mov	ecx, 57					; 00000039H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
 	mov	eax, DWORD PTR ___security_cookie
 	xor	eax, ebp
-	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	push	eax
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, OFFSET __E75714E4_vcruntime_exception@h
+	mov	ecx, OFFSET __687F9F38_client@h
 	call	@__CheckForDebuggerJustMyCode@4
+; Line 170
+	mov	DWORD PTR _ref$[ebp], 0
+; Line 171
 	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax], OFFSET ??_7exception@std@@6B@
-; Line 58
-	xor	eax, eax
-	mov	ecx, DWORD PTR _this$[ebp]
-	add	ecx, 4
-	mov	DWORD PTR [ecx], eax
-	mov	DWORD PTR [ecx+4], eax
-; Line 60
-	mov	eax, DWORD PTR __Message$[ebp]
-	mov	DWORD PTR __InitData$[ebp], eax
-	mov	BYTE PTR __InitData$[ebp+4], 1
-; Line 61
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR _temp$[ebp], ecx
+; Line 173
+	cmp	DWORD PTR _temp$[ebp], 0
+	je	SHORT $LN2@InternalRe
+; Line 175
 	mov	eax, DWORD PTR _this$[ebp]
-	add	eax, 4
-	push	eax
-	lea	ecx, DWORD PTR __InitData$[ebp]
-	push	ecx
-	call	___std_exception_copy
-	add	esp, 8
-; Line 62
-	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax], 0
+; Line 176
+	mov	eax, DWORD PTR _temp$[ebp]
+	mov	ecx, DWORD PTR [eax]
+	mov	esi, esp
+	mov	edx, DWORD PTR _temp$[ebp]
 	push	edx
-	mov	ecx, ebp
-	push	eax
-	lea	edx, DWORD PTR $LN6@exception
-	call	@_RTC_CheckStackVars@8
-	pop	eax
-	pop	edx
-	mov	ecx, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, ecx
-	pop	ecx
-	pop	edi
-	pop	esi
-	pop	ebx
-	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
-	xor	ecx, ebp
-	call	@__security_check_cookie@4
-	add	esp, 236				; 000000ecH
-	cmp	ebp, esp
+	mov	eax, DWORD PTR [ecx+8]
+	call	eax
+	cmp	esi, esp
 	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-	npad	3
-$LN6@exception:
-	DD	1
-	DD	$LN5@exception
-$LN5@exception:
-	DD	-40					; ffffffd8H
-	DD	8
-	DD	$LN3@exception
-$LN3@exception:
-	DB	95					; 0000005fH
-	DB	73					; 00000049H
-	DB	110					; 0000006eH
-	DB	105					; 00000069H
-	DB	116					; 00000074H
-	DB	68					; 00000044H
-	DB	97					; 00000061H
-	DB	116					; 00000074H
-	DB	97					; 00000061H
-	DB	0
-	int	3
-	int	3
-	int	3
-	int	3
-	int	3
-_TEXT	ENDS
-;	COMDAT text$x
-text$x	SEGMENT
-__ehhandler$??0exception@std@@QAE@QBD@Z:
-	npad	1
-	npad	1
-	mov	edx, DWORD PTR [esp+8]
-	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-240]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	ecx, DWORD PTR [edx-4]
-	xor	ecx, eax
-	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$??0exception@std@@QAE@QBD@Z
-	jmp	___CxxFrameHandler3
-text$x	ENDS
-??0exception@std@@QAE@QBD@Z ENDP			; std::exception::exception
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT ?sin@@YAMM@Z
-_TEXT	SEGMENT
-__$EHRec$ = -12						; size = 12
-__Xx$ = 8						; size = 4
-?sin@@YAMM@Z PROC					; sin, COMDAT
-; File C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include\cmath
-; Line 234
-	push	ebp
-	mov	ebp, esp
-	push	-1
-	push	__ehhandler$?sin@@YAMM@Z
-	mov	eax, DWORD PTR fs:0
-	push	eax
-	sub	esp, 192				; 000000c0H
-	push	ebx
-	push	esi
-	push	edi
-	lea	edi, DWORD PTR [ebp-204]
-	mov	ecx, 48					; 00000030H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	mov	eax, DWORD PTR ___security_cookie
-	xor	eax, ebp
-	push	eax
-	lea	eax, DWORD PTR __$EHRec$[ebp]
-	mov	DWORD PTR fs:0, eax
-	mov	ecx, OFFSET __0A4FAB91_cmath
-	call	@__CheckForDebuggerJustMyCode@4
-; Line 235
-	push	ecx
-	movss	xmm0, DWORD PTR __Xx$[ebp]
-	movss	DWORD PTR [esp], xmm0
-	call	_sinf
-	add	esp, 4
-; Line 236
+	mov	DWORD PTR _ref$[ebp], eax
+$LN2@InternalRe:
+; Line 179
+	mov	eax, DWORD PTR _ref$[ebp]
+; Line 180
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
 	pop	ecx
 	pop	edi
 	pop	esi
 	pop	ebx
-	add	esp, 204				; 000000ccH
+	add	esp, 240				; 000000f0H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -1337,58 +1052,18 @@ __Xx$ = 8						; size = 4
 _TEXT	ENDS
 ;	COMDAT text$x
 text$x	SEGMENT
-__ehhandler$?sin@@YAMM@Z:
+__ehhandler$?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ:
 	npad	1
 	npad	1
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-208]
+	mov	ecx, DWORD PTR [edx-244]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
-	mov	eax, OFFSET __ehfuncinfo$?sin@@YAMM@Z
+	mov	eax, OFFSET __ehfuncinfo$?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ
 	jmp	___CxxFrameHandler3
 text$x	ENDS
-?sin@@YAMM@Z ENDP					; sin
-; Function compile flags: /Odtp /RTCsu /ZI
-;	COMDAT _sinf
-_TEXT	SEGMENT
-tv72 = -196						; size = 4
-__X$ = 8						; size = 4
-_sinf	PROC						; COMDAT
-; File C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0\ucrt\corecrt_math.h
-; Line 749
-	push	ebp
-	mov	ebp, esp
-	sub	esp, 196				; 000000c4H
-	push	ebx
-	push	esi
-	push	edi
-	lea	edi, DWORD PTR [ebp-196]
-	mov	ecx, 49					; 00000031H
-	mov	eax, -858993460				; ccccccccH
-	rep stosd
-	mov	ecx, OFFSET __09340588_corecrt_math@h
-	call	@__CheckForDebuggerJustMyCode@4
-; Line 750
-	cvtss2sd xmm0, DWORD PTR __X$[ebp]
-	sub	esp, 8
-	movsd	QWORD PTR [esp], xmm0
-	call	_sin
-	add	esp, 8
-	fstp	DWORD PTR tv72[ebp]
-	fld	DWORD PTR tv72[ebp]
-; Line 751
-	pop	edi
-	pop	esi
-	pop	ebx
-	add	esp, 196				; 000000c4H
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-_sinf	ENDP
-_TEXT	ENDS
+?InternalRelease@?$ComPtr@UIUnknown@@@WRL@Microsoft@@IAEKXZ ENDP ; Microsoft::WRL::ComPtr<IUnknown>::InternalRelease
 ; Function compile flags: /Odtp /RTCsu /ZI
 ;	COMDAT ?__empty_global_delete@@YAXPAXIW4align_val_t@std@@@Z
 _TEXT	SEGMENT
@@ -1398,7 +1073,7 @@ ___formal$ = 12						; size = 4
 ___formal$ = 16						; size = 4
 ?__empty_global_delete@@YAXPAXIW4align_val_t@std@@@Z PROC ; __empty_global_delete, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Game.cpp
-; Line 25
+; Line 34
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -1460,7 +1135,7 @@ ___formal$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ?__empty_global_delete@@YAXPAXW4align_val_t@std@@@Z PROC ; __empty_global_delete, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Game.cpp
-; Line 25
+; Line 34
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -1522,7 +1197,7 @@ ___formal$ = 8						; size = 4
 ___formal$ = 12						; size = 4
 ?__empty_global_delete@@YAXPAXI@Z PROC			; __empty_global_delete, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Game.cpp
-; Line 25
+; Line 34
 	push	ebp
 	mov	ebp, esp
 	push	-1
@@ -1583,7 +1258,7 @@ __$EHRec$ = -12						; size = 12
 ___formal$ = 8						; size = 4
 ?__empty_global_delete@@YAXPAX@Z PROC			; __empty_global_delete, COMDAT
 ; File F:\WindowSandbox\WindowSandbox\src\Game.cpp
-; Line 25
+; Line 34
 	push	ebp
 	mov	ebp, esp
 	push	-1
