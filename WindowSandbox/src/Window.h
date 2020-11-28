@@ -51,9 +51,9 @@ private:
 public:
 	Keyboard kbd;
 	Mouse mouse;
-private:
 	int width;
 	int height;
+private:
 	HWND hWnd;
 	std::unique_ptr<Graphics> pGfx;
 };

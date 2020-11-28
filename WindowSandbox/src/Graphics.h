@@ -5,6 +5,8 @@
 #include<d3dcompiler.h>
 #include<wrl.h>
 #include<sstream>
+#include<DirectXMath.h>
+#include<vector>
 
 class Graphics {
 private:
@@ -27,10 +29,18 @@ public:
 	Graphics(Graphics&&) = delete;
 	Graphics& operator=(Graphics&&) = delete;
 
+	Graphics& GetSelf();
+	void DrawTriangle();
 	void EndFrame();
 	void ClearBuffer(float r, float g, float b);
+	void DrawIndexed(size_t size);
 
-	void DrawTriangle(float angle, float mouseX, float mouseY);
+	ID3D11Device* GetDevice();
+	ID3D11DeviceContext* GetContext();
+private:
+	void CreateSwapChain(HWND hWnd);
+	void CreateRenderTargetView();
+	void CreateDepthStencil();
 private:
 	Microsoft::WRL::ComPtr<ID3D11Device> pDevice;
 	Microsoft::WRL::ComPtr<IDXGISwapChain> pSwap;

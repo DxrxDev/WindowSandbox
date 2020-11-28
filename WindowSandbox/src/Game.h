@@ -1,6 +1,7 @@
 #pragma once
 #include"Window.h"
 #include"tools/Timer.h"
+#include"Triangle.h"
 
 class Game {
 public:
@@ -12,4 +13,5 @@ private:
 private:
 	Window window;
 	Timer timer;
+	Triangle tri;
 };

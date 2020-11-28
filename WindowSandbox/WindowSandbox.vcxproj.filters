@@ -39,6 +39,9 @@
     <ClCompile Include="src\Graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Triangle.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Window.h">
@@ -74,6 +77,9 @@
     <ClInclude Include="src\tools\GfxExcMacros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="src\Triangle.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="res\WindowSandbox.rc">
@@ -85,6 +91,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\Logo.ico">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="res\MissTex.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

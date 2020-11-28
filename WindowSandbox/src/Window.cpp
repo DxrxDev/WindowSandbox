@@ -49,7 +49,7 @@ Window::Window(int width, int height, const char* name) : width(width), height(h
 
 	hWnd = CreateWindow(
 		WindowClass::GetName(), name,
-		WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU,
+		WS_CAPTION | WS_MINIMIZEBOX | WS_SYSMENU | WS_SIZEBOX,
 		CW_USEDEFAULT, CW_USEDEFAULT, wr.right - wr.left, wr.bottom - wr.top,
 		nullptr, nullptr, WindowClass::GetInstance(), this
 	);
@@ -123,12 +123,14 @@ LRESULT CALLBACK Window::HandleMsgThunk(HWND hWnd, UINT msg, WPARAM wParam, LPAR
 }
 
 LRESULT Window::HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noexcept{
+	POINTS pt = MAKEPOINTS(lParam);
 	switch (msg) {
 		// we don't want the DefProc to handle this message because
 		// we want our destructor to destroy the window, so return 0 instead of break
 	case WM_CLOSE:
 		PostQuitMessage(0);
 		return 0;
+		break;
 
 	case WM_KILLFOCUS:
 		kbd.ClearState();
@@ -152,53 +154,53 @@ LRESULT Window::HandleMsg(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam) noe
 		break;
 
 		//---------------[MOUSE]---------------//
-	case WM_LBUTTONDOWN: {
-		const POINTS pt = MAKEPOINTS(lParam);
+	case WM_LBUTTONDOWN: 
 		mouse.OnLeftPressed(pt.x, pt.y);
 		break;
-	}
-	case WM_LBUTTONUP:{
-		const POINTS pt = MAKEPOINTS(lParam);
+	
+	case WM_LBUTTONUP:
+		// POINTS pt = MAKEPOINTS(lParam);
 		mouse.OnLeftReleased(pt.x, pt.y);
 		break;
-	}
-
-	case WM_RBUTTONDOWN:{
-		const POINTS pt = MAKEPOINTS(lParam);
+	
+	case WM_RBUTTONDOWN:
+		// POINTS pt = MAKEPOINTS(lParam);
 		mouse.OnRightPressed(pt.x, pt.y);
 		break;
-	}
-	case WM_RBUTTONUP:{
-		const POINTS pt = MAKEPOINTS(lParam);
+	
+	case WM_RBUTTONUP:
+		// POINTS pt = MAKEPOINTS(lParam);
 		mouse.OnRightReleased(pt.x, pt.y);
 		break;
-	}
-
-	case WM_MBUTTONDOWN:{
-		const POINTS pt = MAKEPOINTS(lParam);
+	
+	case WM_MBUTTONDOWN:
+		// POINTS pt = MAKEPOINTS(lParam);
 		mouse.OnMiddlePressed(pt.x, pt.y);
 		break;
-	}
-	case WM_MBUTTONUP:{
-		const POINTS pt = MAKEPOINTS(lParam);
+	
+	case WM_MBUTTONUP:
+		// POINTS pt = MAKEPOINTS(lParam);
 		mouse.OnMiddleReleased(pt.x, pt.y);
 		break;
-	}
 
-	case WM_MOUSEWHEEL: {
-		const POINTS pt = MAKEPOINTS(lParam);
+	case WM_MOUSEWHEEL: 
+		// POINTS pt = MAKEPOINTS(lParam);
 		if (GET_WHEEL_DELTA_WPARAM(wParam) > 0) {
 			mouse.OnWheelUp(pt.x, pt.y);
 		}
 		else if (GET_WHEEL_DELTA_WPARAM(wParam) < 0) {
 			mouse.OnWheelDown(pt.x, pt.y);
 		}
-	}
-	case WM_MOUSEMOVE: {
-		POINTS pt = MAKEPOINTS(lParam);
+		break;
+	
+	case WM_MOUSEMOVE: 
 		mouse.OnMouseMove(pt.x, pt.y);
 		break;
-	}
+	
+	case WM_SIZE:
+		this->width = pt.x;
+		this->height = pt.y;
+		break;
 	}
 
 	return DefWindowProc(hWnd, msg, wParam, lParam);

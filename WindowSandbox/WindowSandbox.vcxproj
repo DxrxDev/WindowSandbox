@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -185,6 +185,7 @@
     <ClCompile Include="src\Keyboard.cpp" />
     <ClCompile Include="src\Mouse.cpp" />
     <ClCompile Include="src\tools\Timer.cpp" />
+    <ClCompile Include="src\Triangle.cpp" />
     <ClCompile Include="src\Window.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -198,6 +199,7 @@
     <ClInclude Include="src\tools\Timer.h" />
     <ClInclude Include="src\tools\WinInclude.h" />
     <ClInclude Include="src\tools\WndExcMacros.h" />
+    <ClInclude Include="src\Triangle.h" />
     <ClInclude Include="src\Window.h" />
   </ItemGroup>
   <ItemGroup>
@@ -208,6 +210,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\Logo.ico" />
+    <Image Include="res\MissTex.bmp" />
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="res\PixelShader.hlsl">

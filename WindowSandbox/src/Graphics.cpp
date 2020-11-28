@@ -1,12 +1,17 @@
 #include"Graphics.h"
 #include"tools/GfxExcMacros.h"
 #include<memory>
-#include<DirectXMath.h>
 
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"D3DCompiler.lib")
 
 Graphics::Graphics(HWND hWnd) {
+	CreateSwapChain(hWnd);
+	CreateRenderTargetView();
+	CreateDepthStencil();
+}
+
+void Graphics::CreateSwapChain(HWND hWnd) {
 	HRESULT hr;
 
 #ifdef _DEBUG
@@ -33,24 +38,32 @@ Graphics::Graphics(HWND hWnd) {
 	sd.Flags = 0;
 
 	GFX_EXCEPT_THROW(
-	D3D11CreateDeviceAndSwapChain(
-		nullptr,
-		D3D_DRIVER_TYPE_HARDWARE,
-		nullptr,
-		layer,
-		nullptr,
-		0,
-		D3D11_SDK_VERSION,
-		&sd,
-		&pSwap,
-		&pDevice,
-		nullptr,
-		&pContext
-	));
+		D3D11CreateDeviceAndSwapChain(
+			nullptr,
+			D3D_DRIVER_TYPE_HARDWARE,
+			nullptr,
+			layer,
+			nullptr,
+			0,
+			D3D11_SDK_VERSION,
+			&sd,
+			&pSwap,
+			&pDevice,
+			nullptr,
+			&pContext
+		));
+}
+
+void Graphics::CreateRenderTargetView() {
+	HRESULT hr;
 
 	Microsoft::WRL::ComPtr<ID3D11Resource>pBackBuf;
 	GFX_EXCEPT_THROW(pSwap->GetBuffer(0, __uuidof(ID3D11Resource), &pBackBuf));
 	GFX_EXCEPT_THROW(pDevice->CreateRenderTargetView(pBackBuf.Get(), nullptr, &pTarget));
+}
+
+void Graphics::CreateDepthStencil() {
+	HRESULT hr;
 
 	D3D11_DEPTH_STENCIL_DESC dsd = {};
 	dsd.DepthEnable = TRUE;
@@ -84,24 +97,18 @@ Graphics::Graphics(HWND hWnd) {
 	pContext->OMSetRenderTargets(1u, pTarget.GetAddressOf(), pDSV.Get());
 }
 
-void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
+void Graphics::DrawTriangle() {
 	HRESULT hr;
 
 	struct Vertex {
-		float x, y, z;
+		float x, y;
+	};
+	const Vertex vertices[] = {
+		{-0.5f, -0.5f },//0 
+		{ 0.0f,  0.5f },//1 
+		{ 0.5f, -0.5f },//2 
 	};
 	
-	const Vertex vertices[] = {
-		{  1.0f,  1.0f, -1.0f},//0 RUF
-		{ -1.0f,  1.0f, -1.0f},//1 LUF
-		{  1.0f, -1.0f, -1.0f},//2 RDF
-		{ -1.0f, -1.0f, -1.0f},//3 LDF
-		{  1.0f,  1.0f,  1.0f},//4 RUB
-		{ -1.0f,  1.0f,  1.0f},//5 LUB
-		{  1.0f, -1.0f,  1.0f},//6 RDB
-		{ -1.0f, -1.0f,  1.0f},//7 LDB
-	};
-
 	Microsoft::WRL::ComPtr<ID3D11Buffer>pVBuff;
 	D3D11_BUFFER_DESC vbd = {};
 	vbd.BindFlags = D3D11_BIND_VERTEX_BUFFER;
@@ -115,23 +122,7 @@ void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
 	GFX_EXCEPT_THROW(pDevice->CreateBuffer(&vbd, &vsd, &pVBuff));
 
 	const unsigned short index[] = {
-		3, 2, 7,
-		6, 7, 2,
-
-		7, 5, 3,
-		1, 3, 5,
-
-		3, 1, 2,
-		0, 2, 1,
-
-		2, 0, 4,
-		4, 6, 2,
-
-		6, 4, 7,
-		7, 4, 5,
-
-		5, 0, 1,
-		0, 5, 4, 
+		0, 1, 2,
 	};
 
 	//create index buffer
@@ -153,6 +144,8 @@ void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
 	pContext->IASetVertexBuffers(0u, 1u, pVBuff.GetAddressOf(), &stride, &offset);
 	pContext->IASetIndexBuffer(pIBuff.Get(), DXGI_FORMAT_R16_UINT, 0u);
 
+	/*
+	
 	struct ConstantBuffer2 {
 		struct{
 			float r, g, b, a;
@@ -182,7 +175,7 @@ void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
 	GFX_EXCEPT_THROW(pDevice->CreateBuffer(&cb2d, &c2sd, &pC2Buff));
 
 	pContext->PSSetConstantBuffers(0u, 1u, pC2Buff.GetAddressOf());
-
+	*/
 	//create PS then bind
 	Microsoft::WRL::ComPtr<ID3D11PixelShader> pPixelShader;
 	Microsoft::WRL::ComPtr<ID3DBlob> pBlob;
@@ -190,36 +183,6 @@ void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
 	GFX_EXCEPT_THROW(pDevice->CreatePixelShader(pBlob->GetBufferPointer(), pBlob->GetBufferSize(), nullptr, &pPixelShader));
 
 	pContext->PSSetShader(pPixelShader.Get(), nullptr, 0u);
-
-	struct ConstantBuffer {
-		DirectX::XMMATRIX transform;
-	};
-
-	const ConstantBuffer cb = { {
-			DirectX::XMMatrixTranspose(
-				DirectX::XMMatrixRotationY(angle) *
-				DirectX::XMMatrixRotationX(angle/2) *
-				DirectX::XMMatrixTranslation(0, 0, 5) *
-				DirectX::XMMatrixTranslation(mouseX, 0.0, mouseY) *
-				DirectX::XMMatrixPerspectiveLH(1.0, 1.0, 0.5, 10.0) 
-			)
-		}
-	};
-
-	Microsoft::WRL::ComPtr<ID3D11Buffer> pCBuff;
-	D3D11_BUFFER_DESC cbd = {};
-	cbd.BindFlags = D3D11_BIND_CONSTANT_BUFFER;
-	cbd.Usage = D3D11_USAGE_DYNAMIC;
-	cbd.CPUAccessFlags = D3D11_CPU_ACCESS_WRITE;
-	cbd.MiscFlags = 0u;
-	cbd.ByteWidth = sizeof(cb);
-	cbd.StructureByteStride = sizeof(ConstantBuffer);
-	D3D11_SUBRESOURCE_DATA csd = {};
-	csd.pSysMem = &cb;
-	GFX_EXCEPT_THROW(pDevice->CreateBuffer(&cbd, &csd, &pCBuff));
-
-	pContext->VSSetConstantBuffers(0u, 1u, pCBuff.GetAddressOf());
-
 
 	//create VS then bind
 	Microsoft::WRL::ComPtr<ID3D11VertexShader> pVS;
@@ -231,7 +194,7 @@ void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
 	//input VL (2d pos)
 	Microsoft::WRL::ComPtr<ID3D11InputLayout> pIL;
 	const D3D11_INPUT_ELEMENT_DESC ied[] = {
-		{"Position", 0, DXGI_FORMAT_R32G32B32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0},
+		{"Position", 0, DXGI_FORMAT_R32G32_FLOAT, 0, 0, D3D11_INPUT_PER_VERTEX_DATA, 0},
 	};
 	GFX_EXCEPT_THROW(pDevice->CreateInputLayout(ied, (UINT)std::size(ied), pBlob->GetBufferPointer(), pBlob->GetBufferSize(), &pIL));
 
@@ -241,23 +204,33 @@ void Graphics::DrawTriangle(float angle, float mouseX, float mouseY) {
 	//set primitive topology to triangle list (groups of 3 vertices)
 	pContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY::D3D10_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
 
-	//config vp
 	D3D11_VIEWPORT vp;
-	vp.Width = 512;
-	vp.Height = 512;
-	vp.MinDepth = 0;
-	vp.MaxDepth = 1;
 	vp.TopLeftX = 0;
 	vp.TopLeftY = 0;
+	vp.Width = 512;
+	vp.Height = 512;
+	vp.MaxDepth = 1;
+	vp.MinDepth = 0;
+
 	pContext->RSSetViewports(1u, &vp);
 
+	DrawIndexed((UINT)std::size(index));
+}
 
-	pContext->DrawIndexed((UINT)std::size(index), 0u, 0u);
+Graphics& Graphics::GetSelf(){
+	return *this;
 }
 
 void Graphics::EndFrame() {
 	HRESULT hr;
 	GFX_EXCEPT_THROW(pSwap->Present(1u, 0u));
+}
+
+ID3D11Device* Graphics::GetDevice(){
+	return pDevice.Get();
+}
+ID3D11DeviceContext* Graphics::GetContext() {
+	return pContext.Get();
 }
 
 void Graphics::ClearBuffer(float r, float g, float b) {
@@ -266,6 +239,9 @@ void Graphics::ClearBuffer(float r, float g, float b) {
 	pContext->ClearDepthStencilView(pDSV.Get(), D3D11_CLEAR_DEPTH, 1.0, 0u);
 }
 
+void Graphics::DrawIndexed(size_t size) {
+	pContext->DrawIndexed(size, 0u, 0);
+}
 
 //---------------[GRAPHICS EXCEPTION]---------------//
 Graphics::GraphicsException::GraphicsException(int line, const char* file, HRESULT hr) : Exception(line, file), hr(hr) {}

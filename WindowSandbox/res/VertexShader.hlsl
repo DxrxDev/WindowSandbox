@@ -1,7 +1,11 @@
-cbuffer cBuf{
-    matrix transform;
-}
+struct ReturnStruct {
+    float3 c : Colour;
+    float4 p : SV_POSITION;
+};
 
-float4 main(float3 pos : Position) : SV_POSITION{
-    return mul(float4(pos, 1.0f), transform);
+ReturnStruct main(float2 pos : Position, float3 colour : Colour){
+    ReturnStruct RS;
+    RS.c = colour;
+    RS.p = float4(pos, 0.0f, 1.0f);
+    return RS;
 }
