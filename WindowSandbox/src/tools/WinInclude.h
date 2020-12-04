@@ -1,4 +1,5 @@
 #pragma once
+/*
 #define WIN32_LEAN_AND_MEAN
 #define NOGDICAPMASKS
 #define NOSYSMETRICS
@@ -15,7 +16,6 @@
 #define NOKERNEL
 #define NONLS
 #define NOMEMMGR
-#define NOMETAFILE
 #define NOMINMAX
 #define NOOPENFILE
 #define NOSCROLL
@@ -35,5 +35,6 @@
 #define NOTAPE
 
 #define STRICT
+*/
 
 #include <Windows.h>

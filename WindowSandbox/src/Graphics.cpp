@@ -243,6 +243,16 @@ void Graphics::DrawIndexed(size_t size) {
 	pContext->DrawIndexed(size, 0u, 0);
 }
 
+void Graphics::CreateBindViewPort(int TLX, int TLY, int x, int y) {
+	viewPort.TopLeftX = TLX;
+	viewPort.TopLeftY = TLY;
+	viewPort.Width = x;
+	viewPort.Height = y;
+	viewPort.MaxDepth = 1;
+
+	pContext->RSSetViewports(1u, &viewPort);
+}
+
 //---------------[GRAPHICS EXCEPTION]---------------//
 Graphics::GraphicsException::GraphicsException(int line, const char* file, HRESULT hr) : Exception(line, file), hr(hr) {}
 

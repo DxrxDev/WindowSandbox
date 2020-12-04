@@ -39,7 +39,7 @@
     <ClCompile Include="src\Graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Triangle.cpp">
+    <ClCompile Include="src\Shape.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -77,7 +77,7 @@
     <ClInclude Include="src\tools\GfxExcMacros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Triangle.h">
+    <ClInclude Include="src\Shape.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
@@ -94,6 +94,12 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="res\MissTex.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="MissTex.bmp">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="src\MissTex.bmp">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

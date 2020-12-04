@@ -8,6 +8,13 @@
 #include<DirectXMath.h>
 #include<vector>
 
+namespace Gdiplus {
+	using std::min;
+	using std::max;
+}
+#include<gdiplus.h>
+#pragma comment( lib,"gdiplus.lib" )
+
 class Graphics {
 private:
 	class GraphicsException : public Exception {
@@ -34,6 +41,7 @@ public:
 	void EndFrame();
 	void ClearBuffer(float r, float g, float b);
 	void DrawIndexed(size_t size);
+	void CreateBindViewPort(int TLX, int TLY, int x, int y);
 
 	ID3D11Device* GetDevice();
 	ID3D11DeviceContext* GetContext();
@@ -47,4 +55,5 @@ private:
 	Microsoft::WRL::ComPtr<ID3D11DeviceContext> pContext;
 	Microsoft::WRL::ComPtr<ID3D11RenderTargetView> pTarget;
 	Microsoft::WRL::ComPtr<ID3D11DepthStencilView> pDSV;
+	D3D11_VIEWPORT viewPort = { 0 };
 };

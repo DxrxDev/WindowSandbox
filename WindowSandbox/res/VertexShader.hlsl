@@ -1,11 +1,20 @@
-struct ReturnStruct {
-    float3 c : Colour;
-    float4 p : SV_POSITION;
+struct InputStruct {
+    float2 inTexCoord : texCoord;
+    float3 inPos : Position;
 };
 
-ReturnStruct main(float2 pos : Position, float3 colour : Colour){
+struct ReturnStruct {
+    float2 outTexCoord : TexCoord;
+    float4 outPos : SV_POSITION;
+};
+
+cbuffer CBuff {
+    matrix trans;
+};
+
+ReturnStruct main(InputStruct input){
     ReturnStruct RS;
-    RS.c = colour;
-    RS.p = float4(pos, 0.0f, 1.0f);
+    RS.outTexCoord = input.inTexCoord;
+    RS.outPos = mul(float4(input.inPos, 1.0f), trans);
     return RS;
 }
