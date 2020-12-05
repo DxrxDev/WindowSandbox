@@ -1,7 +1,13 @@
 #pragma once
+#include<queue>
 #include"Window.h"
 #include"tools/Timer.h"
 #include"Shape.h"
+#include"Prefabs.h"
+
+enum EventType {
+	EventUpdatePhysics
+};
 
 class Game {
 public:
@@ -11,9 +17,9 @@ public:
 public:
 private:
 	void DoFrame();
+	void UpdatePhysics();
 private:
-	float size[3] = { 1.0, 1.0, 1.0 };
-	std::vector<Shape*> shapes;
+	std::vector<Prefab*> prefabs;
 
 	Window window;
 	Timer timer;

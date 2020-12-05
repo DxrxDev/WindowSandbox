@@ -1,31 +1,37 @@
 #include"Shape.h"
 
-void Shape::UpdatePosition(float* position) {
-	pos[0] = *position;
-	pos[1] = *(position + 1);
-	pos[2] = *(position + 2);
+void Shape::UpdatePosition(FVec3 position) {
+	trans.Position.x = position.x;
+	trans.Position.y = position.y;
+	trans.Position.z = position.z;
 }
-
-void Shape::UpdateRotation(float* rotation) {
-	rot[0] = *rotation;
-	rot[1] = *(rotation + 1);
-	rot[2] = *(rotation + 2);
+void Shape::UpdateRotation(FVec3 rotation) {
+	trans.Rotation.x = rotation.x;
+	trans.Rotation.y = rotation.y;
+	trans.Rotation.z = rotation.z;
 }
-
-void Shape::UpdateScaling(float* scaling) {
-	scal[0] = *scaling;
-	scal[1] = *(scaling + 1);
-	scal[2] = *(scaling + 2);
+void Shape::UpdateScaling(FVec3 scaling) {
+	trans.Scaling.x = scaling.x;
+	trans.Scaling.y = scaling.y;
+	trans.Scaling.z = scaling.z;
 }
-
+FVec3 Shape::GetPosition(){
+	return trans.Position;
+}
+FVec3 Shape::GetRotation(){
+	return trans.Rotation;
+}
+FVec3 Shape::GetScaling(){
+	return trans.Scaling;
+}
 void Shape::UpdateTranslation(Graphics& gfx) {
 	VertexConstBuffer vcb = { {
 			DirectX::XMMatrixTranspose(
-				DirectX::XMMatrixScaling(scal[0], scal[1], scal[2]) *
-				DirectX::XMMatrixRotationX(rot[0]) *
-				DirectX::XMMatrixRotationY(rot[1]) *
-				DirectX::XMMatrixRotationZ(rot[2]) *
-				DirectX::XMMatrixTranslation(pos[0], pos[1], pos[2]) *
+				DirectX::XMMatrixScaling(trans.Scaling.x, trans.Scaling.y, trans.Scaling.z) *
+				DirectX::XMMatrixRotationX(trans.Rotation.x) *
+				DirectX::XMMatrixRotationY(trans.Rotation.y) *
+				DirectX::XMMatrixRotationZ(trans.Rotation.z) *
+				DirectX::XMMatrixTranslation(trans.Position.x, trans.Position.y, trans.Position.z) *
 				DirectX::XMMatrixPerspectiveLH(1.0, 1.0, 0.5, 10.0)
 			)
 		}
@@ -44,6 +50,9 @@ Texture::Texture(Graphics& gfx, UsingTexture usingTex) {
 		break;
 	case UsingTexture::Player:
 		fileName = (wchar_t*)L"Player.bmp";
+		break;
+	case UsingTexture::FireBall:
+		fileName = (wchar_t*)L"FireBall.bmp";
 		break;
 	}
 	FillPixels(fileName);
@@ -124,51 +133,102 @@ void Texture::CreateTexResView(Graphics& gfx) {
 	gfx.GetDevice()->CreateShaderResourceView(pTexture.Get(), &srvDesc, &pResView);
 }
 
-Cuboid::Cuboid(Graphics& gfx, float* sizeXYZ, UsingTexture ut) : tex(gfx, ut){
+Cuboid::Cuboid(Graphics& gfx, FVec3 sizeXYZ, bool isWrapped, UsingTexture ut) : isWrapped(isWrapped), tex(gfx, ut){
 	UpdateScaling(sizeXYZ);
 	CreateBuffers(gfx);
 	CreateShadersAndInputLayout(gfx);
 }
 void Cuboid::CreateBuffers(Graphics& gfx){
-	Vertex verts[] = {
-		{ 1.0,  1.0,  1.0,  0.0,  0.0},	//RUB 0
-		{ 1.0,  1.0, -1.0,  1.0,  0.0},	//RUF 1
-		{ 1.0, -1.0,  1.0,  0.0,  1.0},	//RDB 2
-		{ 1.0, -1.0, -1.0,  1.0,  1.0},	//RDF 3
-		{-1.0,  1.0,  1.0,  1.0,  0.0},	//LUB 4
-		{-1.0,  1.0, -1.0,  0.0,  0.0},	//LUF 5
-		{-1.0, -1.0,  1.0,  1.0,  1.0},	//LDB 6
-		{-1.0, -1.0, -1.0,  0.0,  1.0},	//LDF 7
-	};
-	D3D11_BUFFER_DESC vDesc = CD3D11_BUFFER_DESC(sizeof(verts), D3D11_BIND_VERTEX_BUFFER, D3D11_USAGE_DEFAULT, 0u, 0u, sizeof(Vertex));
+	std::vector<Vertex> verts; 
+	std::vector<unsigned short> inds;
+	if (isWrapped) {
+		verts = std::vector<Vertex>{
+			{ 1.0,  1.0,  1.0,  0.0,  0.0},	//RUB 0
+			{ 1.0,  1.0, -1.0,  1.0,  0.0},	//RUF 1
+			{ 1.0, -1.0,  1.0,  0.0,  1.0},	//RDB 2
+			{ 1.0, -1.0, -1.0,  1.0,  1.0},	//RDF 3
+			{-1.0,  1.0,  1.0,  1.0,  0.0},	//LUB 4
+			{-1.0,  1.0, -1.0,  0.0,  0.0},	//LUF 5
+			{-1.0, -1.0,  1.0,  1.0,  1.0},	//LDB 6
+			{-1.0, -1.0, -1.0,  0.0,  1.0},	//LDF 7
+			};
+		inds = std::vector<unsigned short> {
+			7, 5, 3, //FRONT
+			3, 5, 1,
+
+			2, 0, 6, //BACK
+			6, 0, 4,
+
+			3, 1, 2, //RIGHT
+			2, 1, 0,
+
+			6, 4, 7, //LEFT
+			7, 4, 5,
+
+			5, 4, 1, //TOP
+			1, 4, 0,
+
+			6, 7, 2, //BOTTOM
+			2, 7, 3,
+		};
+		NumOfInds = inds.size();
+	}
+	else {
+		verts = std::vector<Vertex> {
+			{-1.0, -1.0, -1.0, 0.0 , 0.5}, //LDF 0
+			{-1.0,  1.0, -1.0, 0.0 , 0.0}, //LUF 1
+			{ 1.0, -1.0, -1.0, 0.25, 0.5}, //RDF 2
+			{ 1.0,  1.0, -1.0, 0.25, 0.0}, //RUF 3
+
+			{ 1.0, -1.0,  1.0, 0.5 , 0.5}, //RDB 4
+			{ 1.0,  1.0,  1.0, 0.5 , 0.0}, //RUB 5
+
+			{-1.0, -1.0,  1.0, 0.75, 0.5}, //LDB 6
+			{-1.0,  1.0,  1.0, 0.75, 0.0}, //LUB 7
+
+			{-1.0, -1.0, -1.0, 1.0 , 0.5}, //LDF 8
+			{-1.0,  1.0, -1.0, 1.0 , 0.0}, //LDF 9
+
+			{-1.0,  1.0, -1.0, 0.0 , 1.0}, //RUF 10
+			{-1.0,  1.0,  1.0, 0.0 , 0.5}, //RUB 11
+			{ 1.0,  1.0, -1.0, 0.25, 1.0}, //LUF 12
+			{ 1.0,  1.0,  1.0, 0.25, 0.5}, //LUB 13
+
+			{-1.0, -1.0,  1.0, 0.25, 1.0}, //LUB 14
+			{-1.0, -1.0, -1.0, 0.25, 0.5}, //LUB 15
+			{ 1.0, -1.0,  1.0, 0.5 , 1.0}, //LUB 16
+			{ 1.0, -1.0, -1.0, 0.5 , 0.5}, //LUB 17
+		};
+		inds = std::vector<unsigned short> {
+			0, 1, 2,
+			2, 1, 3,
+
+			2, 3, 4,
+			4, 3, 5,
+
+			4, 5, 6,
+			6, 5, 7,
+
+			6, 7, 8,
+			8, 7, 9,
+
+			10, 11, 12,
+			12, 11, 13,
+
+			14, 15, 16,
+			16, 15, 17,
+		};
+		NumOfInds = inds.size();
+	}
+	D3D11_BUFFER_DESC vDesc = CD3D11_BUFFER_DESC(sizeof(Vertex)*verts.size(), D3D11_BIND_VERTEX_BUFFER, D3D11_USAGE_DEFAULT, 0u, 0u, sizeof(Vertex));
 	D3D11_SUBRESOURCE_DATA vData = { 0 };
-	vData.pSysMem = &verts;
+	vData.pSysMem = verts.data();
 	gfx.GetDevice()->CreateBuffer(&vDesc, &vData, &pVertexBuffer);
 	
-	unsigned short inds[] = {
-		7, 5, 3, //FRONT
-		3, 5, 1,
-
-		2, 0, 6, //BACK
-		6, 0, 4,
-
-		3, 1, 2, //RIGHT
-		2, 1, 0,
-
-		6, 4, 7, //LEFT
-		7, 4, 5,
-
-		5, 4, 1, //TOP
-		1, 4, 0,
-
-		6, 7, 2, //BOTTOM
-		2, 7, 3,
-	};
-	D3D11_BUFFER_DESC iDesc = CD3D11_BUFFER_DESC(sizeof(inds), D3D11_BIND_INDEX_BUFFER, D3D11_USAGE_DEFAULT, 0u, 0u, sizeof(short));
+	D3D11_BUFFER_DESC iDesc = CD3D11_BUFFER_DESC(sizeof(short) * inds.size(), D3D11_BIND_INDEX_BUFFER, D3D11_USAGE_DEFAULT, 0u, 0u, sizeof(short));
 	D3D11_SUBRESOURCE_DATA iData = { 0 };
-	iData.pSysMem = &inds;
+	iData.pSysMem = inds.data();
 	gfx.GetDevice()->CreateBuffer(&iDesc, &iData, &pIndexBuffer);
-	NumOfInds = 36;
 }
 void Cuboid::CreateShadersAndInputLayout(Graphics& gfx) {
 	Microsoft::WRL::ComPtr<ID3DBlob> pBlob;
@@ -200,7 +260,7 @@ void Cuboid::Draw(Graphics& gfx){
 	gfx.DrawIndexed(NumOfInds);
 }
 
-Square::Square(Graphics& gfx, float* sizeXY, UsingTexture ut) : tex(gfx, ut) {
+Square::Square(Graphics& gfx, FVec3 sizeXY, UsingTexture ut) : tex(gfx, ut) {
 	UpdateScaling(sizeXY);
 	CreateBuffers(gfx);
 	CreateShadersAndInputLayout(gfx);

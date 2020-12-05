@@ -10,7 +10,7 @@ struct VertexConstBuffer {
 };
 
 enum class UsingTexture {
-	MissingTex, Player, 
+	MissingTex, Player, FireBall
 };
 
 class Texture {
@@ -32,19 +32,31 @@ private:
 	int width, height;
 };
 
+struct FVec3 {
+	float x, y, z;
+};
+struct Translation{
+	FVec3 Position, Rotation, Scaling;
+};
 class Shape {
 public:
 	Shape() = default;
 	~Shape() = default;
-	virtual void UpdatePosition(float* position);
-	virtual void UpdateRotation(float* rotation);
-	virtual void UpdateScaling(float* scaling);
+	void UpdatePosition(FVec3 position);
+	void UpdateRotation(FVec3 rotation);
+	void UpdateScaling(FVec3 scaling);
+
+	FVec3 GetPosition();
+	FVec3 GetRotation();
+	FVec3 GetScaling();
 
 	virtual void Draw(Graphics& gfx) = 0;
 protected:
-	float pos[3] = {0.0, 0.0, 0.0};
-	float rot[3] = {0.0, 0.0, 0.0};
-	float scal[3] = {1.0, 1.0, 1.0};
+	Translation trans = {
+		{0.0, 0.0, 0.0},
+		{0.0, 0.0, 0.0},
+		{1.0, 1.0, 1.0}
+	};
 
 	virtual void CreateBuffers(Graphics& gfx) = 0;
 	virtual void CreateShadersAndInputLayout(Graphics& gfx) = 0;
@@ -61,7 +73,7 @@ protected:
 
 class Cuboid : public Shape {
 public:
-	Cuboid(Graphics& gfx, float* sizeXYZ, UsingTexture ut = UsingTexture::MissingTex);
+	Cuboid(Graphics& gfx, FVec3 sizeXYZ, bool isWrapped = true, UsingTexture ut = UsingTexture::MissingTex);
 	~Cuboid() = default;
 
 	virtual void Draw(Graphics& gfx) override;
@@ -69,12 +81,13 @@ private:
 	virtual void CreateBuffers(Graphics& gfx) override;
 	virtual void CreateShadersAndInputLayout(Graphics& gfx) override;
 private:
+	bool isWrapped = true;
 	Texture tex;
 };
 
 class Square : public Shape {
 public:
-	Square(Graphics& gfx, float* sizeXY, UsingTexture ut = UsingTexture::MissingTex);
+	Square(Graphics& gfx, FVec3 sizeXY, UsingTexture ut = UsingTexture::MissingTex);
 	~Square() = default;
 
 	virtual void Draw(Graphics& gfx) override;
