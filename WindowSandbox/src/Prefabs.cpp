@@ -4,20 +4,26 @@ Player::Player(Graphics& gfx) {//: shape(new Square(gfx, {0.0f, 0.0f, 5.0f}, Usi
 	shape = new Square(gfx, {1.0f, 1.0f, 0.0f}, UsingTexture::Player);
 }
 void Player::Update(Window& wnd) {
+	//Player Position
 	float posZ = 5;
 	float posX = (wnd.mouse.GetX() / (wnd.width / (posZ * 2.0f)) - posZ);
 	float posY;
 	if (posY = (-wnd.mouse.GetY() / (wnd.height / (posZ * 2.0f)) + posZ); posY > -0.5) {
 		posY = -0.5;
 	}
+
+	//Fireball Spawn Position
+	fireBallSpawn.x = posX;
+	fireBallSpawn.y = posY + 1;
+	fireBallSpawn.z = posZ;
+	//Shooting
 	if (wnd.mouse.LeftPressed() && shotCoolDown <= 0.0f) {
-		fireBalls.push_back(FireBall(wnd.Gfx(), { 0.0f, 0.0f, 5.0f }));
+		fireBalls.push_back(FireBall(wnd.Gfx(), fireBallSpawn));
 		shotCoolDown = 1.0f;
 	}
 	shotCoolDown -= 0.032;
 	shape->UpdatePosition({ posX, posY, posZ });
 	shape->UpdateRotation({ 0, sin(wnd.mouse.GetX() / (wnd.width / 2.0f) - 1) * (3.14159f / 2.0f), 0 });
-
 	for (int i = 0; i < fireBalls.size(); ++i) {
 		fireBalls[i].Update(wnd);
 	}

@@ -34,5 +34,6 @@ public:
 private:
 	std::vector<FireBall> fireBalls;
 	float shotCoolDown = 1.0f;
+	FVec3 fireBallSpawn;
 private:
 };
