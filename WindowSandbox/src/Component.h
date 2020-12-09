@@ -1,6 +1,8 @@
 #pragma once
 #include"Graphics.h"
 
+class Entity;
+
 struct Vertex {
 	float x, y, z;
 	float u, v;
@@ -8,11 +10,25 @@ struct Vertex {
 struct VertexConstBuffer {
 	DirectX::XMMATRIX trans;
 };
+struct FVec3 {
+	float x, y, z;
+};
+struct Translation {
+	FVec3 Position, Rotation, Scaling;
+};
+
+//Shape Stuff
+class Component {
+public:
+	Component();
+	virtual ~Component();
+
+	Entity* entity = nullptr;
+};
 
 enum class UsingTexture {
 	MissingTex, Player, FireBall
 };
-
 class Texture {
 public:
 	Texture(Graphics& gfx, UsingTexture usingTex);
@@ -32,35 +48,15 @@ private:
 	int width, height;
 };
 
-struct FVec3 {
-	float x, y, z;
-};
-struct Translation{
-	FVec3 Position, Rotation, Scaling;
-};
-class Shape {
+class Shape : public Component{
 public:
 	Shape() = default;
-	~Shape() = default;
-	void UpdatePosition(FVec3 position);
-	void UpdateRotation(FVec3 rotation);
-	void UpdateScaling(FVec3 scaling);
-
-	FVec3 GetPosition();
-	FVec3 GetRotation();
-	FVec3 GetScaling();
-
+	virtual ~Shape() = default;
 	virtual void Draw(Graphics& gfx) = 0;
+	virtual void UpdateTranslation(Graphics& gfx);
 protected:
-	Translation trans = {
-		{0.0, 0.0, 0.0},
-		{0.0, 0.0, 0.0},
-		{1.0, 1.0, 1.0}
-	};
-
 	virtual void CreateBuffers(Graphics& gfx) = 0;
 	virtual void CreateShadersAndInputLayout(Graphics& gfx) = 0;
-	virtual void UpdateTranslation(Graphics& gfx);
 protected:
 	Microsoft::WRL::ComPtr<ID3D11Buffer> pVertexBuffer = nullptr;
 	Microsoft::WRL::ComPtr<ID3D11Buffer> pIndexBuffer = nullptr;
@@ -73,7 +69,7 @@ protected:
 
 class Cuboid : public Shape {
 public:
-	Cuboid(Graphics& gfx, FVec3 sizeXYZ, bool isWrapped = true, UsingTexture ut = UsingTexture::MissingTex);
+	Cuboid(Graphics& gfx, Entity* ent, FVec3 sizeXYZ, bool isWrapped = true, UsingTexture ut = UsingTexture::MissingTex);
 	~Cuboid() = default;
 
 	virtual void Draw(Graphics& gfx) override;
@@ -87,7 +83,7 @@ private:
 
 class Square : public Shape {
 public:
-	Square(Graphics& gfx, FVec3 sizeXY, UsingTexture ut = UsingTexture::MissingTex);
+	Square(Graphics& gfx, Entity* ent, FVec3 sizeXY, UsingTexture ut = UsingTexture::MissingTex);
 	~Square() = default;
 
 	virtual void Draw(Graphics& gfx) override;
@@ -98,10 +94,4 @@ private:
 	Texture tex;
 };
 
-/*
-class UniqueShape : public Shape {
-public:
-	template<size_t vSize, size_t iSize>
-	UniqueShape(Graphics& gfx, std::array<Vertex, vSize> vertices, std::array<unsigned short, iSize> indeces);
-};
-*/
+//Collider Stuff

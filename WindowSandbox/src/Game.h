@@ -2,8 +2,7 @@
 #include<queue>
 #include"Window.h"
 #include"tools/Timer.h"
-#include"Shape.h"
-#include"Prefabs.h"
+#include"Entity.h"
 
 enum EventType {
 	EventUpdatePhysics
@@ -19,10 +18,11 @@ private:
 	void DoFrame();
 	void UpdatePhysics();
 private:
-	std::vector<Prefab*> prefabs;
+	std::vector<Entity*> entities;
+
+	std::vector<Shape*> shapes;
 
 	Window window;
 	Timer timer;
-	Timer timer2;
 	std::stringstream title;
 };

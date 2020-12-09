@@ -1,37 +1,19 @@
-#include"Shape.h"
+#include"Component.h"
+#include"Entity.h"
 
-void Shape::UpdatePosition(FVec3 position) {
-	trans.Position.x = position.x;
-	trans.Position.y = position.y;
-	trans.Position.z = position.z;
+Component::Component(){}
+Component::~Component() {
+	entity = nullptr;
 }
-void Shape::UpdateRotation(FVec3 rotation) {
-	trans.Rotation.x = rotation.x;
-	trans.Rotation.y = rotation.y;
-	trans.Rotation.z = rotation.z;
-}
-void Shape::UpdateScaling(FVec3 scaling) {
-	trans.Scaling.x = scaling.x;
-	trans.Scaling.y = scaling.y;
-	trans.Scaling.z = scaling.z;
-}
-FVec3 Shape::GetPosition(){
-	return trans.Position;
-}
-FVec3 Shape::GetRotation(){
-	return trans.Rotation;
-}
-FVec3 Shape::GetScaling(){
-	return trans.Scaling;
-}
+
 void Shape::UpdateTranslation(Graphics& gfx) {
 	VertexConstBuffer vcb = { {
 			DirectX::XMMatrixTranspose(
-				DirectX::XMMatrixScaling(trans.Scaling.x, trans.Scaling.y, trans.Scaling.z) *
-				DirectX::XMMatrixRotationX(trans.Rotation.x) *
-				DirectX::XMMatrixRotationY(trans.Rotation.y) *
-				DirectX::XMMatrixRotationZ(trans.Rotation.z) *
-				DirectX::XMMatrixTranslation(trans.Position.x, trans.Position.y, trans.Position.z) *
+				DirectX::XMMatrixScaling(entity->trans.Scaling.x, entity->trans.Scaling.y, entity->trans.Scaling.z) *
+				DirectX::XMMatrixRotationX(entity->trans.Rotation.x) *
+				DirectX::XMMatrixRotationY(entity->trans.Rotation.y) *
+				DirectX::XMMatrixRotationZ(entity->trans.Rotation.z) *
+				DirectX::XMMatrixTranslation(entity->trans.Position.x, entity->trans.Position.y, entity->trans.Position.z) *
 				DirectX::XMMatrixPerspectiveLH(1.0, 1.0, 0.5, 10.0)
 			)
 		}
@@ -133,8 +115,8 @@ void Texture::CreateTexResView(Graphics& gfx) {
 	gfx.GetDevice()->CreateShaderResourceView(pTexture.Get(), &srvDesc, &pResView);
 }
 
-Cuboid::Cuboid(Graphics& gfx, FVec3 sizeXYZ, bool isWrapped, UsingTexture ut) : isWrapped(isWrapped), tex(gfx, ut){
-	UpdateScaling(sizeXYZ);
+Cuboid::Cuboid(Graphics& gfx, Entity* ent, FVec3 sizeXYZ, bool isWrapped, UsingTexture ut) : isWrapped(isWrapped), tex(gfx, ut){
+	entity = ent;
 	CreateBuffers(gfx);
 	CreateShadersAndInputLayout(gfx);
 }
@@ -260,8 +242,8 @@ void Cuboid::Draw(Graphics& gfx){
 	gfx.DrawIndexed(NumOfInds);
 }
 
-Square::Square(Graphics& gfx, FVec3 sizeXY, UsingTexture ut) : tex(gfx, ut) {
-	UpdateScaling(sizeXY);
+Square::Square(Graphics& gfx, Entity* ent, FVec3 sizeXY, UsingTexture ut) : tex(gfx, ut) {
+	entity = ent;
 	CreateBuffers(gfx);
 	CreateShadersAndInputLayout(gfx);
 }

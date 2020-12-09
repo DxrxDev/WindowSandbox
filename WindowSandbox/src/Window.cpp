@@ -61,7 +61,7 @@ Window::Window(int width, int height, const char* name) : width(width), height(h
 	// show window
 	ShowWindow(hWnd, SW_SHOWDEFAULT);
 
-	pGfx = std::make_unique<Graphics>(hWnd);
+	pGfx = std::make_unique<Graphics>(hWnd, width, height);
 }
 
 Window::~Window()

@@ -39,10 +39,10 @@
     <ClCompile Include="src\Graphics.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Shape.cpp">
+    <ClCompile Include="src\Entity.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="src\Prefabs.cpp">
+    <ClCompile Include="src\Component.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,10 +80,10 @@
     <ClInclude Include="src\tools\GfxExcMacros.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Shape.h">
+    <ClInclude Include="src\Entity.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="src\Prefabs.h">
+    <ClInclude Include="src\Component.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

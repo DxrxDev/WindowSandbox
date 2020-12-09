@@ -5,10 +5,10 @@
 #pragma comment(lib,"d3d11.lib")
 #pragma comment(lib,"D3DCompiler.lib")
 
-Graphics::Graphics(HWND hWnd) {
+Graphics::Graphics(HWND hWnd, int width, int height) {
 	CreateSwapChain(hWnd);
 	CreateRenderTargetView();
-	CreateDepthStencil();
+	CreateDepthStencil(width, height);
 }
 
 void Graphics::CreateSwapChain(HWND hWnd) {
@@ -62,7 +62,7 @@ void Graphics::CreateRenderTargetView() {
 	GFX_EXCEPT_THROW(pDevice->CreateRenderTargetView(pBackBuf.Get(), nullptr, &pTarget));
 }
 
-void Graphics::CreateDepthStencil() {
+void Graphics::CreateDepthStencil(int width, int height) {
 	HRESULT hr;
 
 	D3D11_DEPTH_STENCIL_DESC dsd = {};
@@ -76,8 +76,8 @@ void Graphics::CreateDepthStencil() {
 
 	Microsoft::WRL::ComPtr<ID3D11Texture2D> pDS;
 	D3D11_TEXTURE2D_DESC dD = {};
-	dD.Width = 512;
-	dD.Height = 512;
+	dD.Width = width;
+	dD.Height = height;
 	dD.MipLevels = 1u;
 	dD.ArraySize = 1u;
 	dD.Format = DXGI_FORMAT_D32_FLOAT;

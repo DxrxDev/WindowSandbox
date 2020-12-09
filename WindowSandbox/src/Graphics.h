@@ -29,7 +29,7 @@ private:
 		HRESULT hr;
 	};
 public:
-	Graphics(HWND hWnd);
+	Graphics(HWND hWnd, int width, int height);
 	~Graphics() = default;
 	Graphics(const Graphics&) = delete;
 	Graphics& operator=(const Graphics&) = delete;
@@ -48,7 +48,7 @@ public:
 private:
 	void CreateSwapChain(HWND hWnd);
 	void CreateRenderTargetView();
-	void CreateDepthStencil();
+	void CreateDepthStencil(int width, int height);
 private:
 	Microsoft::WRL::ComPtr<ID3D11Device> pDevice;
 	Microsoft::WRL::ComPtr<IDXGISwapChain> pSwap;
