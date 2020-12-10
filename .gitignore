@@ -340,5 +340,5 @@ ASALocalRun/
 healthchecksdb
 
 # Custom
-bin-int/
-.asm
+/bin-int/
+*.asm
